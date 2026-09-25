@@ -1,0 +1,533 @@
+[
+  {
+    "id": 1,
+    "name": "Scenario 1: Giovane Professionista Under 36 (Single, LTV 100% Consap)",
+    "description": "Marco Rossi, 29 anni, dipendente indeterminato 2.100€ netti/mese (13 mensilità). Acquisto 180.000€, Mutuo 180.000€ (LTV 100%), 30 anni, Milano.",
+    "real_ltv": 100.0,
+    "total_net": 2100,
+    "garante_net": 0,
+    "other_loans": 0,
+    "banks_evaluated": [
+      {
+        "bankId": "bnl",
+        "name": "BNL",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "bper",
+        "name": "BPER",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "credit agricole italia",
+        "name": "Crédit Agricole Flexi Tasso Fisso",
+        "status": "deroga",
+        "tan": 3.5,
+        "engine_rata": 808.28,
+        "recalculated_rata": 808.28,
+        "rata_diff_cents": 0.04,
+        "engine_dsr_pct": 38.49,
+        "recalculated_dsr_pct": 38.49,
+        "residuo_netto_mensile": 1291.72,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "ing",
+        "name": "ING Bank",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mediobanca premier",
+        "name": "Mediobanca Premier",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mps",
+        "name": "Monte dei Paschi di Siena",
+        "status": "ko",
+        "tan": 4.06,
+        "engine_rata": 865.59,
+        "recalculated_rata": 865.59,
+        "rata_diff_cents": 0.45,
+        "engine_dsr_pct": 41.22,
+        "recalculated_dsr_pct": 41.22,
+        "residuo_netto_mensile": 1234.41,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Scenario 2: Famiglia Monoreddito con 2 Figli (Nucleo 4 Persone, Prestito 250€, LTV 72%)",
+    "description": "Giuseppe Verdi, 42 anni, dipendente indeterminato 2.800€ netti/mese. Coniuge a carico + 2 figli minori (4 componenti). Prestito 250€/m. Acquisto 250.000€, Mutuo 180.000€ (LTV 72%), 25 anni, Roma.",
+    "real_ltv": 72.0,
+    "total_net": 2800,
+    "garante_net": 0,
+    "other_loans": 250,
+    "banks_evaluated": [
+      {
+        "bankId": "bnl",
+        "name": "BNL",
+        "status": "ok",
+        "tan": 3.45,
+        "engine_rata": 896.3,
+        "recalculated_rata": 896.3,
+        "rata_diff_cents": 0.28,
+        "engine_dsr_pct": 32.01,
+        "recalculated_dsr_pct": 40.94,
+        "residuo_netto_mensile": 1653.7,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+        ]
+      },
+      {
+        "bankId": "bper",
+        "name": "BPER",
+        "status": "ok",
+        "tan": 3.73,
+        "engine_rata": 923.48,
+        "recalculated_rata": 923.48,
+        "rata_diff_cents": 0.21,
+        "engine_dsr_pct": 32.98,
+        "recalculated_dsr_pct": 41.91,
+        "residuo_netto_mensile": 1626.52,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "credit agricole italia",
+        "name": "Crédit Agricole Flexi Tasso Fisso",
+        "status": "ok",
+        "tan": 3,
+        "engine_rata": 853.58,
+        "recalculated_rata": 853.58,
+        "rata_diff_cents": 0.04,
+        "engine_dsr_pct": 30.49,
+        "recalculated_dsr_pct": 39.41,
+        "residuo_netto_mensile": 1696.42,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+        ]
+      },
+      {
+        "bankId": "ing",
+        "name": "ING Bank",
+        "status": "ok",
+        "tan": 4.38,
+        "engine_rata": 988.28,
+        "recalculated_rata": 988.28,
+        "rata_diff_cents": 0.22,
+        "engine_dsr_pct": 35.3,
+        "recalculated_dsr_pct": 44.22,
+        "residuo_netto_mensile": 1561.72,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative.",
+          "🎉 Sconto Spread MRI: -0,25% applicato per reddito residuale superiore a 1.500 €/mese."
+        ]
+      },
+      {
+        "bankId": "mediobanca premier",
+        "name": "Mediobanca Premier",
+        "status": "ok",
+        "tan": 3.83,
+        "engine_rata": 933.29,
+        "recalculated_rata": 933.29,
+        "rata_diff_cents": 0.2,
+        "engine_dsr_pct": 33.33,
+        "recalculated_dsr_pct": 42.26,
+        "residuo_netto_mensile": 1616.71,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mps",
+        "name": "Monte dei Paschi di Siena",
+        "status": "ok",
+        "tan": 3.58,
+        "engine_rata": 908.86,
+        "recalculated_rata": 908.86,
+        "rata_diff_cents": 0.38,
+        "engine_dsr_pct": 32.46,
+        "recalculated_dsr_pct": 41.39,
+        "residuo_netto_mensile": 1641.14,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Scenario 3: Coppia Entrambi Lavoratori (Dipendente 1.800€ + P.IVA Forfettaria 24.000€, LTV 74.3%)",
+    "description": "Davide (36 anni, dipendente 1.800€) + Elena (34 anni, forfettaria RN/LM 24.000€). Nucleo 2 persone. Acquisto 350.000€, Mutuo 260.000€ (LTV 74.3%), 25 anni, Bologna.",
+    "real_ltv": 74.29,
+    "total_net": 3800,
+    "garante_net": 0,
+    "other_loans": 0,
+    "banks_evaluated": [
+      {
+        "bankId": "bnl",
+        "name": "BNL",
+        "status": "ok",
+        "tan": 3.45,
+        "engine_rata": 1294.66,
+        "recalculated_rata": 1294.66,
+        "rata_diff_cents": 0.04,
+        "engine_dsr_pct": 34.07,
+        "recalculated_dsr_pct": 34.07,
+        "residuo_netto_mensile": 2505.34,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+        ]
+      },
+      {
+        "bankId": "bper",
+        "name": "BPER",
+        "status": "deroga",
+        "tan": 3.73,
+        "engine_rata": 1333.91,
+        "recalculated_rata": 1333.91,
+        "rata_diff_cents": 0.25,
+        "engine_dsr_pct": 35.1,
+        "recalculated_dsr_pct": 35.1,
+        "residuo_netto_mensile": 2466.09,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "credit agricole italia",
+        "name": "Crédit Agricole Flexi Tasso Fisso",
+        "status": "ok",
+        "tan": 3,
+        "engine_rata": 1232.95,
+        "recalculated_rata": 1232.95,
+        "rata_diff_cents": 0.06,
+        "engine_dsr_pct": 32.45,
+        "recalculated_dsr_pct": 32.45,
+        "residuo_netto_mensile": 2567.05,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+        ]
+      },
+      {
+        "bankId": "ing",
+        "name": "ING Bank",
+        "status": "ok",
+        "tan": 4.38,
+        "engine_rata": 1427.51,
+        "recalculated_rata": 1427.51,
+        "rata_diff_cents": 0.24,
+        "engine_dsr_pct": 37.57,
+        "recalculated_dsr_pct": 37.57,
+        "residuo_netto_mensile": 2372.49,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative.",
+          "🎉 Sconto Spread MRI: -0,25% applicato per reddito residuale superiore a 1.500 €/mese."
+        ]
+      },
+      {
+        "bankId": "mediobanca premier",
+        "name": "Mediobanca Premier",
+        "status": "deroga",
+        "tan": 3.83,
+        "engine_rata": 1348.09,
+        "recalculated_rata": 1348.09,
+        "rata_diff_cents": 0.15,
+        "engine_dsr_pct": 35.48,
+        "recalculated_dsr_pct": 35.48,
+        "residuo_netto_mensile": 2451.91,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mps",
+        "name": "Monte dei Paschi di Siena",
+        "status": "deroga",
+        "tan": 3.58,
+        "engine_rata": 1312.8,
+        "recalculated_rata": 1312.8,
+        "rata_diff_cents": 0.33,
+        "engine_dsr_pct": 34.55,
+        "recalculated_dsr_pct": 34.55,
+        "residuo_netto_mensile": 2487.2,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Scenario 4: Richiedente Maturo 58 Anni (Dipendente Quadro 3.800€, LTV 50%, Durata 20 anni -> Scadenza 78 anni)",
+    "description": "Roberto Mancini, 58 anni, Quadro 3.800€ netti. Nucleo 2 persone. Acquisto 300.000€, Mutuo 150.000€ (LTV 50%), 20 anni (scadenza a 78 anni), Torino.",
+    "real_ltv": 50.0,
+    "total_net": 3800,
+    "garante_net": 0,
+    "other_loans": 0,
+    "banks_evaluated": [
+      {
+        "bankId": "bnl",
+        "name": "BNL",
+        "status": "ko",
+        "tan": 3.4,
+        "engine_rata": 862.25,
+        "recalculated_rata": 862.25,
+        "rata_diff_cents": 0.15,
+        "engine_dsr_pct": 22.69,
+        "recalculated_dsr_pct": 22.69,
+        "residuo_netto_mensile": 2937.75,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+        ]
+      },
+      {
+        "bankId": "bper",
+        "name": "BPER",
+        "status": "ok",
+        "tan": 3.5,
+        "engine_rata": 869.94,
+        "recalculated_rata": 869.94,
+        "rata_diff_cents": 0.04,
+        "engine_dsr_pct": 22.89,
+        "recalculated_dsr_pct": 22.89,
+        "residuo_netto_mensile": 2930.06,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "credit agricole italia",
+        "name": "Crédit Agricole Flexi Tasso Fisso",
+        "status": "ko",
+        "tan": 3,
+        "engine_rata": 831.9,
+        "recalculated_rata": 831.9,
+        "rata_diff_cents": 0.36,
+        "engine_dsr_pct": 21.89,
+        "recalculated_dsr_pct": 21.89,
+        "residuo_netto_mensile": 2968.1,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+        ]
+      },
+      {
+        "bankId": "ing",
+        "name": "ING Bank",
+        "status": "ok",
+        "tan": 4.15,
+        "engine_rata": 920.87,
+        "recalculated_rata": 920.87,
+        "rata_diff_cents": 0.02,
+        "engine_dsr_pct": 24.23,
+        "recalculated_dsr_pct": 24.23,
+        "residuo_netto_mensile": 2879.13,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative.",
+          "🎉 Sconto Spread MRI: -0,25% applicato per reddito residuale superiore a 1.500 €/mese."
+        ]
+      },
+      {
+        "bankId": "mediobanca premier",
+        "name": "Mediobanca Premier",
+        "status": "ok",
+        "tan": 3.65,
+        "engine_rata": 881.55,
+        "recalculated_rata": 881.55,
+        "rata_diff_cents": 0.42,
+        "engine_dsr_pct": 23.2,
+        "recalculated_dsr_pct": 23.2,
+        "residuo_netto_mensile": 2918.45,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mps",
+        "name": "Monte dei Paschi di Siena",
+        "status": "ok",
+        "tan": 3.45,
+        "engine_rata": 866.09,
+        "recalculated_rata": 866.09,
+        "rata_diff_cents": 0.06,
+        "engine_dsr_pct": 22.79,
+        "recalculated_dsr_pct": 22.79,
+        "residuo_netto_mensile": 2933.91,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Scenario 5: Lavoratore Extra-UE (32 anni, 1.650€, Permesso 1 anno, Anzianità 18m) + Garante Pensionato 68 anni (1.200€) (LTV 82%)",
+    "description": "Ahmed Hassan (32 anni, Extra-UE, 1.650€, permesso 1 anno) + Garante Ali Hassan (68 anni, pensione 1.200€). Acquisto 140.000€, Mutuo 115.000€ (LTV 82.1%), 25 anni, Firenze.",
+    "real_ltv": 82.14,
+    "total_net": 1650,
+    "garante_net": 1200,
+    "other_loans": 0,
+    "banks_evaluated": [
+      {
+        "bankId": "bnl",
+        "name": "BNL",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "bper",
+        "name": "BPER",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "credit agricole italia",
+        "name": "Crédit Agricole Flexi Tasso Fisso",
+        "status": "ko",
+        "tan": 3,
+        "engine_rata": 545.34,
+        "recalculated_rata": 545.34,
+        "rata_diff_cents": 0.3,
+        "engine_dsr_pct": 19.13,
+        "recalculated_dsr_pct": 33.05,
+        "residuo_netto_mensile": 1704.66,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+        ]
+      },
+      {
+        "bankId": "ing",
+        "name": "ING Bank",
+        "status": "ko",
+        "tan": 4.779999999999999,
+        "engine_rata": 657.62,
+        "recalculated_rata": 657.62,
+        "rata_diff_cents": 0.09,
+        "engine_dsr_pct": 23.07,
+        "recalculated_dsr_pct": 39.86,
+        "residuo_netto_mensile": 1592.38,
+        "reasons": [],
+        "deroghe": [],
+        "notes": [
+          "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative.",
+          "🎉 Sconto Spread MRI: -0,25% applicato per reddito residuale superiore a 1.500 €/mese."
+        ]
+      },
+      {
+        "bankId": "mediobanca premier",
+        "name": "Mediobanca Premier",
+        "status": "ko",
+        "tan": 0,
+        "engine_rata": "N/A (Esclusa)",
+        "recalculated_rata": null,
+        "rata_diff_cents": 0,
+        "engine_dsr_pct": null,
+        "recalculated_dsr_pct": null,
+        "residuo_netto_mensile": null,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      },
+      {
+        "bankId": "mps",
+        "name": "Monte dei Paschi di Siena",
+        "status": "ko",
+        "tan": 3.58,
+        "engine_rata": 580.66,
+        "recalculated_rata": 580.66,
+        "rata_diff_cents": 0.3,
+        "engine_dsr_pct": 20.37,
+        "recalculated_dsr_pct": 35.19,
+        "residuo_netto_mensile": 1669.34,
+        "reasons": [],
+        "deroghe": [],
+        "notes": []
+      }
+    ]
+  }
+]

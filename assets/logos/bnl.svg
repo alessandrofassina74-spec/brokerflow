@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="100%" height="100%">
+  <rect width="300" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- BNP Paribas Green Square with Stars/Birds -->
+  <g transform="translate(25, 20)">
+    <rect width="75" height="75" rx="14" fill="#00875A"/>
+    <!-- 4 Soaring White Birds -->
+    <path d="M18 55 C22 45 30 38 42 32 C38 38 32 44 30 52 Z" fill="#FFFFFF"/>
+    <path d="M28 42 C34 32 44 26 58 20 C54 26 46 32 42 40 Z" fill="#FFFFFF"/>
+    <path d="M42 30 C50 20 60 16 70 12 C66 18 58 24 54 30 Z" fill="#FFFFFF"/>
+    <circle cx="62" cy="18" r="3" fill="#FFFFFF"/>
+  </g>
+  <!-- BNL Typography -->
+  <g fill="#1F2937" transform="translate(115, 42)">
+    <text x="0" y="22" font-family="Arial Black, Arial, sans-serif" font-size="34" font-weight="900" fill="#00875A" letter-spacing="2">BNL</text>
+    <text x="0" y="42" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#374151" letter-spacing="1">GRUPPO BNP PARIBAS</text>
+  </g>
+</svg>

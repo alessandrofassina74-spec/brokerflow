@@ -1,0 +1,507 @@
+[
+    {
+        "id": "MB_ACQ_FIS_LTV50",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Fisso (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.4
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.45
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_FIS_LTV60",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Fisso (LTV ≤ 60%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.4
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.45
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_FIS_LTV70",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Fisso (LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.4
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.45
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_FIS_LTV80",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Fisso (LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.45
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_VAR_LTV50",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con Floor (LTV ≤ 50%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_VAR_LTV60",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con Floor (LTV ≤ 60%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_VAR_LTV70",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con Floor (LTV ≤ 70%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_VAR_LTV80",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con CAP (LTV ≤ 80%)",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 1.59
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_RAT_LTV50",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Rata Protetta (LTV ≤ 50%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_RAT_LTV60",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Rata Protetta (LTV ≤ 60%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_RAT_LTV70",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Rata Protetta (LTV ≤ 70%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 25,
+                "spread": 0.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_RAT_LTV80",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Rata Protetta (LTV ≤ 80%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_ACQ_VAR_LTV80",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con CAP (LTV ≤ 80%)",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 1.59
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_FIS_LTV70",
+        "nome": "Mutuo Mediobanca Premier Surroga - Fisso (LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_FIS_LTV80",
+        "nome": "Mutuo Mediobanca Premier Surroga - Fisso (LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_VAR_LTV70",
+        "nome": "Mutuo Mediobanca Premier Surroga - Variabile con Floor (LTV ≤ 70%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_VAR_LTV80",
+        "nome": "Mutuo Mediobanca Premier Surroga - Variabile con CAP (LTV ≤ 80%)",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 1.79
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_RAT_LTV70",
+        "nome": "Mutuo Mediobanca Premier Surroga - Rata Protetta (LTV ≤ 70%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_RAT_LTV80",
+        "nome": "Mutuo Mediobanca Premier Surroga - Rata Protetta (LTV ≤ 80%)",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "MB_SUR_VAR_LTV80",
+        "nome": "Mutuo Mediobanca Premier Surroga - Variabile con CAP (LTV ≤ 80%)",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Listino Mediobanca Premier in vigore",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 1.79
+            }
+        ]
+    }
+]

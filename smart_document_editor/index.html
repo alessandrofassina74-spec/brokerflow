@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Document Editor — Document Understanding & Character Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Tesseract.js optional CDN for in-browser OCR -->
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+    <!-- TOP NAVBAR -->
+    <header class="top-navbar">
+        <div class="logo-section">
+            <span class="logo-badge">SMART DOC</span>
+            <span class="title">Document Editor & Character Bank</span>
+        </div>
+
+        <!-- TOOLBAR: SELECTION MODES & ZOOM -->
+        <div class="toolbar-group">
+            <div class="btn-group">
+                <button id="mode-hand" class="btn" data-mode="HAND" title="Sposta foglio / Pan (trascina il documento)">✋ Sposta</button>
+                <button id="mode-word" class="btn active" data-mode="WORD" title="Seleziona singola parola">Parola</button>
+                <button id="mode-line" class="btn" data-mode="LINE" title="Seleziona intera riga">Riga</button>
+                <button id="mode-box" class="btn" data-mode="BOX" title="Disegna selezione rettangolare libera">Box Libero</button>
+            </div>
+
+            <div class="btn-group" style="margin-left: 8px;">
+                <button id="btn-zoom-out" class="btn" title="Riduci Zoom">−</button>
+                <button id="zoom-display" class="btn" style="min-width: 60px;">100%</button>
+                <button id="btn-zoom-in" class="btn" title="Aumenta Zoom">+</button>
+                <button id="btn-zoom-fit" class="btn" title="Adatta allo schermo">Adatta</button>
+            </div>
+
+            <div class="btn-group" style="margin-left: 8px;">
+                <button id="btn-undo" class="btn" title="Annulla Modifica (Undo)" disabled>↺ Undo</button>
+                <button id="btn-redo" class="btn" title="Ripristina Modifica (Redo)" disabled>↻ Redo</button>
+            </div>
+
+            <button id="btn-compare" class="btn" style="margin-left: 8px;" title="Confronta con originale tramite slider">
+                ↔ Mostra Originale
+            </button>
+        </div>
+
+        <!-- ACTIONS: LOAD, INSPECT & EXPORT -->
+        <div class="toolbar-group">
+            <label class="btn" style="cursor: pointer;">
+                📁 Carica JPG/PNG
+                <input type="file" id="file-input" accept="image/jpeg,image/png,image/jpg" style="display: none;">
+            </label>
+            <button id="btn-load-sample" class="btn" title="Carica documento scansione di prova con tabella">
+                📄 Esempio Demo
+            </button>
+            <button id="btn-open-bank" class="btn" title="Apri Character Bank locale del documento">
+                🔤 Character Bank
+            </button>
+            <button id="btn-open-history" class="btn" title="Visualizza Registro Modifiche & Audit Trail">
+                📜 Cronologia
+            </button>
+            <button id="btn-export" class="btn primary" title="Esporta documento modificato in PNG">
+                💾 Esporta PNG
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-container">
+
+        <!-- SIDEBAR LEFT: METRICHE & STATO DOCUMENTO -->
+        <aside class="sidebar-left">
+            <div class="section-title">Informazioni Documento</div>
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Nome File:</span>
+                    <span id="doc-name" class="info-val">Nessun file</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Dimensioni:</span>
+                    <span id="doc-dimensions" class="info-val">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Tipo:</span>
+                    <span class="info-val" style="color: #60a5fa;">Raster Scansionato</span>
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 8px;">Character Bank Locale</div>
+            <div class="info-card">
+                <div class="info-row">
+                    <span class="info-label">Isolamento:</span>
+                    <span class="info-val" style="color: #34d399;">Locale al doc ✓</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Campioni Glifi:</span>
+                    <span id="char-bank-count" class="info-val">0</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Rumore Sensore:</span>
+                    <span id="noise-level" class="info-val">-</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Parole OCR:</span>
+                    <span id="ocr-word-count" class="info-val">0</span>
+                </div>
+            </div>
+
+            <div class="section-title" style="margin-top: 8px;">Istruzioni d'uso</div>
+            <div class="info-card" style="font-size: 12px; color: var(--text-secondary); line-height: 1.5;">
+                1. <strong>Clicca o trascina</strong> sul testo per selezionare l'area.<br>
+                2. Inserisci il <strong>Nuovo Testo</strong> nel pannello di modifica.<br>
+                3. Il motore preleva i glifi dal <strong>Character Bank</strong> di questa scansione e ricostruisce lo sfondo adiacente.<br>
+                4. Usa <strong>"Mostra Originale"</strong> per verificare la fedeltà visiva.
+            </div>
+
+            <div style="margin-top: auto;">
+                <button id="btn-export-audit" class="btn" style="width: 100%; justify-content: center;">
+                    📋 Esporta Audit Log (JSON)
+                </button>
+            </div>
+        </aside>
+
+        <!-- CENTER: INTERACTIVE CANVAS VIEWPORT -->
+        <section id="canvas-container" class="canvas-viewport"></section>
+
+        <!-- FLOATING TEXT EDITOR MODAL -->
+        <div id="text-editor-modal" class="floating-modal">
+            <div class="modal-header">
+                <span>Modifica Testo Area Selezionata</span>
+                <button id="btn-cancel" class="btn" style="padding: 2px 8px; font-size: 11px;">✕</button>
+            </div>
+
+            <div class="form-group">
+                <label>TESTO ORIGINALE RILEVATO:</label>
+                <input type="text" id="txt-original" class="form-control" readonly style="opacity: 0.75;">
+            </div>
+
+            <div class="form-group">
+                <label>NUOVO TESTO:</label>
+                <input type="text" id="txt-new" class="form-control" placeholder="Digita il nuovo testo...">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group" style="flex: 1.4;">
+                    <label>Carattere / Font:</label>
+                    <select id="select-font-family" class="form-control">
+                        <option value="ARIAL">Arial (Sans-Serif)</option>
+                        <option value="TIMES">Times New Roman (Serif)</option>
+                        <option value="CALIBRI">Calibri (Modern Sans)</option>
+                        <option value="GEORGIA">Georgia (Elegant Serif)</option>
+                        <option value="COURIER">Courier New (Monospace)</option>
+                        <option value="VERDANA">Verdana</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Colore Inchiostro:</label>
+                    <div class="color-picker-wrapper">
+                        <input type="color" id="input-ink-color" class="input-color-circle" value="#111827">
+                        <span id="val-ink-color" class="color-hex-label">#111827</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group" style="flex: 1;">
+                    <label>Adattamento:</label>
+                    <select id="select-fitting-mode" class="form-control">
+                        <option value="MAINTAIN_SIZE" selected>Mantieni Dimensione (Originale)</option>
+                        <option value="FIT_CONTAINER">Adatta al Contenitore</option>
+                        <option value="MAINTAIN_WIDTH">Mantieni Larghezza Box</option>
+                        <option value="MANUAL">Dimensione Personalizzata</option>
+                    </select>
+                </div>
+                <div class="form-group" style="width: 110px;">
+                    <label>Dimensione: <span id="val-custom-size">20px</span></label>
+                    <input type="range" id="slider-custom-size" min="8" max="72" value="20" style="margin-top: 6px;">
+                </div>
+                <div class="form-group" style="width: 80px;">
+                    <label>Stile:</label>
+                    <div class="btn-group" style="margin-top: 2px;">
+                        <button type="button" id="btn-toggle-bold" class="btn" style="font-weight: 900; padding: 6px 10px;" title="Grassetto (Bold)">B</button>
+                        <button type="button" id="btn-toggle-italic" class="btn" style="font-style: italic; padding: 6px 10px;" title="Corsivo (Italic)">I</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row" style="align-items: center;">
+                <div class="form-group" style="flex: 1.3;">
+                    <label>Resa Contorni / Bordi:</label>
+                    <select id="select-edge-mode" class="form-control">
+                        <option value="AUTO" selected>Auto (Adatta al Documento)</option>
+                        <option value="DIGITAL_SHARP">Digitale Nativo (Bordi Nitidissimi)</option>
+                        <option value="SCANNED_PAPER">Scansione Carta (Bordi Morbidi & Grana)</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label>Inclinazione: <span id="val-rotation-angle" style="color: #60a5fa; font-weight: bold;">0.0°</span></label>
+                    <input type="range" id="slider-rotation-angle" min="-8" max="8" step="0.1" value="0" style="margin-top: 4px;">
+                </div>
+                <button type="button" id="btn-auto-skew" class="btn" style="padding: 5px 10px; font-size: 11px; margin-top: 14px;" title="Rileva automaticamente l'inclinazione della scansione">⚡ Auto</button>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btn-preview" class="btn">👁️ Anteprima</button>
+                <button id="btn-apply" class="btn primary">✓ Applica Modifica</button>
+            </div>
+        </div>
+
+        <!-- CHARACTER BANK DRAWER -->
+        <div id="bank-drawer" class="drawer">
+            <div class="drawer-header">
+                <span>🔤 Character Bank Locale</span>
+                <button id="btn-close-bank" class="btn" style="padding: 2px 8px;">✕</button>
+            </div>
+            <div id="bank-grid" class="drawer-body">
+                <!-- Populated dynamically with extracted glyphs -->
+            </div>
+        </div>
+
+        <!-- HISTORY & AUDIT DRAWER -->
+        <div id="history-drawer" class="drawer">
+            <div class="drawer-header">
+                <span>📜 Cronologia & Audit Trail</span>
+                <button id="btn-close-history" class="btn" style="padding: 2px 8px;">✕</button>
+            </div>
+            <div id="history-list" class="drawer-body">
+                <!-- Populated dynamically with version history -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="toast">Notifica</div>
+
+    <!-- SCRIPT MODULES IN ORDER -->
+    <script src="js/character_bank.js"></script>
+    <script src="js/ocr_engine.js"></script>
+    <script src="js/inpainting_engine.js"></script>
+    <script src="js/rendering_engine.js"></script>
+    <script src="js/audit_logger.js"></script>
+    <script src="js/canvas_editor.js"></script>
+    <script src="js/sample_generator.js"></script>
+    <script src="js/export_engine.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

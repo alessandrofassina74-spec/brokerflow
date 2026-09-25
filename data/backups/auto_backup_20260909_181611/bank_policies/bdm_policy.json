@@ -1,0 +1,493 @@
+{
+    "name": "BDM Banca",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 80,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": false,
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 36,
+    "minLoan": 30000,
+    "maxLoan": 1000000,
+    "minDuration": 10,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "autonomo",
+        "pensionato",
+        "apprendista"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "ristrutturazione",
+        "surroga",
+        "liquidita",
+        "consolidamento"
+    ],
+    "mriGrid": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "additional": null,
+        "nord": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "extra_membro": null
+        },
+        "centro": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "extra_membro": null
+        },
+        "sud": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "6": null,
+        "7": null,
+        "sud_isole": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "extra_membro": null
+        }
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_dsr": null,
+                "max_durata": 30,
+                "max_ltv_senza_consap": null,
+                "max_ltv_con_consap": null,
+                "nota": null,
+                "max_ltc": null,
+                "importo_minimo": null
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.4,
+                "max_dsr": null,
+                "max_durata": 20,
+                "erogazione": null
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_dsr": null,
+                "importo_minimo": null,
+                "ammortamento_minimo_mesi": null,
+                "max_durata": 30,
+                "max_liquidita_aggiuntiva": null
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "nota": null
+            },
+            "consap": {
+                "importo_minimo": null,
+                "nota": null,
+                "gestito": null,
+                "max_ltv": null,
+                "max_durata": null,
+                "garanti_ammessi": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null,
+                "erogazione": null
+            },
+            "under_36": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": null,
+                "max_durata": null,
+                "nota": null,
+                "max_dsr": null
+            },
+            "liquidita": {
+                "max_ltv": 0.65,
+                "max_dsr": 0.35,
+                "importo_massimo": 150000,
+                "importo_minimo": 50000,
+                "max_durata": 15,
+                "gestito": null,
+                "nota": null
+            },
+            "consolidamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null,
+                "max_liquidita_con_mutuo": null,
+                "max_liquidita_senza_mutuo": null,
+                "gestito": null,
+                "nota": null
+            },
+            "rifinanziamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_liquidita": null
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": null
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": null
+            },
+            "acquisto_ristrutturazione": {
+                "max_ltv": null,
+                "max_lavori": null,
+                "nota": null
+            },
+            "acquisto_e_ristrutturazione": {
+                "max_ltv_acquisto": null,
+                "max_ristrutturazione": null,
+                "nota": null
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": null
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": null
+            },
+            "autonomi": {
+                "anzianita_minima_mesi": null
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": null
+            },
+            "colf_badanti": "Non ammesse",
+            "insegnanti_non_di_ruolo": "Assimilati a tempo indeterminato con 3 anni di anzianità",
+            "lavoratori_determinati": null,
+            "lavoratori_marittimi": null,
+            "insegnanti_non_ruolo": null,
+            "lavoratori_autonomi": null,
+            "lavoratori_non_ruolo": null
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": null,
+            "eta_massima": null,
+            "eta_massima_fine_mutuo": null,
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": null,
+            "max_garanti": null,
+            "regola_eta_80": null,
+            "ponderazione_reddito": {
+                "coniuge": null,
+                "partner_convivente": null,
+                "genitori": null,
+                "figli": null,
+                "fratelli_sorelle": null,
+                "conviventi_altra_finalita": null
+            },
+            "grado_parentela": "1° e 2° grado",
+            "massimo_garanti": 2,
+            "regola_eta": "Almeno 2/3 della durata del mutuo trascorsi al compimento degli 80 anni",
+            "ammessi": null,
+            "divieto_consap": null
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": null,
+                "descrizione": null
+            },
+            "promozione_green": "Offerta dedicata a immobili ad alta efficienza energetica con condizioni agevolate"
+        },
+        "altri_limiti": {
+            "iscrizione_ipotecaria": null,
+            "vincolo_territoriale": null,
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": null,
+            "stress_test_variabile": null,
+            "mediazione_massima": null,
+            "tasso_indebitamento_massimo": 0.35,
+            "mutuo_chirografario_abbinato": "Importo massimo 25.000 euro, durata massima 5 anni, tasso fisso 5%",
+            "eta_massima_scadenza": null,
+            "eta_minima_stipula": null,
+            "pre_ammortamento_massimo": null
+        },
+        "garanzie_aggiuntive": {
+            "multi_ipoteca_permessa": null,
+            "descrizione": null
+        },
+        "lavoratori_interinali": {
+            "reddito_minimo_garantito": null,
+            "condizioni_secondo_reddito_indeterminato": {
+                "valutazione_reddito": null,
+                "requisiti": {
+                    "mesi_lavorati_richiesti": null,
+                    "mesi_contratto_residui_utilizzatore": null
+                }
+            }
+        }
+    },
+    "bgLogoLetter": "B",
+    "color": "#003366",
+    "isNationwide": false,
+    "territories": [
+        "Abruzzo",
+        "Basilicata",
+        "Calabria",
+        "Campania",
+        "Lazio",
+        "Lombardia",
+        "Marche",
+        "Molise",
+        "Puglia",
+        "Ancona",
+        "Ascoli Piceno",
+        "Avellino",
+        "Bari",
+        "Barletta Andria Trani",
+        "Benevento",
+        "Brindisi",
+        "Campobasso",
+        "Caserta",
+        "Catanzaro",
+        "Chieti",
+        "Cosenza",
+        "Fermo",
+        "Foggia",
+        "L'Aquila",
+        "Lecce",
+        "Macerata",
+        "Matera",
+        "Milano",
+        "Napoli",
+        "Pesaro Urbino",
+        "Pescara",
+        "Potenza",
+        "Roma",
+        "Salerno",
+        "Taranto",
+        "Teramo"
+    ],
+    "minSeniorityAutonomoDeroga": 18,
+    "ageCheckMethod": "oldest",
+    "tdWithoutCoapplicantStatus": null,
+    "isDigitalFirst": false,
+    "telefono": null,
+    "coefficienteForfettario": null,
+    "policy_name": null,
+    "version": null,
+    "description": null,
+    "income_assessment": {
+        "method": null,
+        "mandatory": null,
+        "description": null,
+        "deductions": null,
+        "thresholds": {
+            "status": null,
+            "by_household_size": {}
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": null,
+        "joint_applications": {
+            "rule": null,
+            "priority_cases": null
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": null,
+            "requirement": null
+        },
+        "badante": {
+            "allowed": null,
+            "requirement": null
+        },
+        "apprentice": {
+            "allowed": null,
+            "rules": null
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": null,
+                "description": null
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": null
+        },
+        "life": {
+            "type": null,
+            "financed_interest_rate_percent": null,
+            "rate_scope": null,
+            "capital_scope": null
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": null,
+            "financial_difficulty": {
+                "allowed": null,
+                "condition": null,
+                "assessment": null
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": null
+        },
+        "without_consap": {
+            "max_ltc_percent": null
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": null,
+            "approximate_days": null,
+            "scope": null,
+            "starting_point": null
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": null,
+            "minimum_percent": null,
+            "reducible": null
+        },
+        "appraisal": {
+            "amount_eur": null,
+            "payment_timing": null
+        }
+    },
+    "durationStep": 1,
+    "criteri_reddito": {
+        "assegno_unico": {
+            "fino_11_anni": null,
+            "fino_17_anni": null,
+            "dai_18_anni": null
+        }
+    },
+    "regole_calcolo_reddito": {
+        "dipendente": {
+            "metodo_cu": null,
+            "metodo_buste_paga": {
+                "voci_considerate": null,
+                "detrazione_inps": null,
+                "strumento_calcolo": null
+            }
+        },
+        "autonomi": {
+            "ordinario": {
+                "criterio": null,
+                "quadri_considerati": null,
+                "documenti_richiesti": null
+            },
+            "forfettario": {
+                "criterio": null,
+                "quadri_considerati": null,
+                "aliquota_imposta": null
+            }
+        }
+    }
+}

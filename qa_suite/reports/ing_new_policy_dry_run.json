@@ -1,0 +1,69 @@
+{
+  "target_file": "New Policy (3).pdf",
+  "target_bank": "ing",
+  "timestamp": "2026-09-09 18:58:23",
+  "status": "PASSED",
+  "total_rules": 25,
+  "categories_found": [],
+  "sample_rules": [
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"0,20% - Valido per i tutti i mutui acquisto sia per LTV fino al 80% che per LTC95% e HLTV95% - SOLO per mutuo acquisto e surroga immobili con classe energetica A o B\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"0,25% MRI (>1.500) anche per HLTV95%\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"0,20% Apertura conto ING\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"0,10% Importi > 500K\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"Età massima a fine mutuo 80 anni\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"Età minima 18 anni\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"Cittadini stranieri  residenti in Italia da almeno 3 anni\""
+    },
+    {
+      "category": "",
+      "title": "",
+      "path": "",
+      "value": "",
+      "quote": "💬 \"cittadino italiano con un trascorso all’estero ma attualmente residente in Italia da almeno 6 mesi\""
+    }
+  ],
+  "saved_to_db": false,
+  "error": null,
+  "screenshot_path": "/Users/alessandrofassina/Desktop/broker flow/qa_suite/reports/screenshots/split_screen_auditor_ing.png"
+}

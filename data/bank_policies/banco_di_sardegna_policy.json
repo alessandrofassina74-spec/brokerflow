@@ -1,0 +1,515 @@
+{
+    "name": "Banco di Sardegna",
+    "bgLogoLetter": "B",
+    "color": "#cccccc",
+    "isNationwide": false,
+    "territories": [
+        "Sardegna",
+        "Sassari",
+        "Cagliari",
+        "Nuoro",
+        "Oristano",
+        "Sud Sardegna",
+        "Roma",
+        "Milano",
+        "Genova",
+        "Livorno"
+    ],
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "atipico",
+        "pensionato",
+        "lavoratore_autonomo",
+        "professionista",
+        "imprenditore"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "costruzione",
+        "ristrutturazione",
+        "surroga",
+        "sostituzione",
+        "liquidita"
+    ],
+    "minLoan": 30000,
+    "maxLoan": 1000000,
+    "minDuration": 5,
+    "maxDuration": 30,
+    "durationStep": 1,
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.35,
+    "maxAge": 78,
+    "maxGuarantorAge": 78,
+    "maxBorrowers": 4,
+    "isDigitalFirst": false,
+    "hasMri": true,
+    "ageCheckMethod": "oldest",
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 24,
+    "minSeniorityAutonomoDeroga": 18,
+    "promozioni": {
+        "classi_energetiche_ab": null
+    },
+    "spese_istruttoria": {
+        "classe_c_successive_percentuale": null,
+        "min_euro": null,
+        "max_euro": null,
+        "classe_c_successive": null,
+        "percentuale": null,
+        "min": null,
+        "max": null,
+        "classe_energetica_A_B_azzerate": null
+    },
+    "eccezioni_e_deroghe": {
+        "offerte_consap": {
+            "ltv_gt_80": null,
+            "tasso_fisso_senza_cpi": null,
+            "plafond_dedicato": null,
+            "rapporto_utilizzo": null,
+            "validita": {
+                "domande_entro": null,
+                "stipule_entro": null
+            }
+        },
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "max_durata": null,
+                "max_ltv_senza_consap": null,
+                "max_ltv_con_consap": null,
+                "nota": null,
+                "max_ltc": null,
+                "importo_minimo": null
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "max_durata": null,
+                "erogazione": null
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "importo_minimo": null,
+                "ammortamento_minimo_mesi": null,
+                "max_durata": null,
+                "max_liquidita_aggiuntiva": null
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "nota": "Se la liquidità supera il 50%, la pratica è valutata con finalità liquidità pura e non rientra in convenzione"
+            },
+            "consap": {
+                "importo_minimo": 110000,
+                "nota": "A partire da luglio 2025, limite minimo per mutui Consap in convenzione (acquisto o surroga) di 110.000 euro; importi inferiori caricati come mutuo OFF senza compenso provvigionale",
+                "gestito": null,
+                "max_ltv": null,
+                "max_durata": null,
+                "garanti_ammessi": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null,
+                "erogazione": null
+            },
+            "under_36": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": null,
+                "max_durata": null,
+                "nota": null,
+                "max_dsr": null
+            },
+            "liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "importo_massimo": null,
+                "importo_minimo": null,
+                "max_durata": null,
+                "gestito": null,
+                "nota": null
+            },
+            "consolidamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null,
+                "max_liquidita_con_mutuo": null,
+                "max_liquidita_senza_mutuo": null,
+                "gestito": null,
+                "nota": null
+            },
+            "rifinanziamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_liquidita": null
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": null
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": null
+            },
+            "acquisto_ristrutturazione": {
+                "max_ltv": null,
+                "max_lavori": null,
+                "nota": null
+            },
+            "acquisto_e_ristrutturazione": {
+                "max_ltv_acquisto": null,
+                "max_ristrutturazione": null,
+                "nota": null
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": "Richiesta presenza di almeno un coobbligato (preferibilmente cointestatario) con reddito adeguato ad integrare la capacità reddituale"
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": "Residenza in Italia da almeno 2 anni"
+            },
+            "autonomi": {
+                "anzianita_minima_mesi": null
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": null
+            },
+            "colf_badanti": null,
+            "insegnanti_non_di_ruolo": null,
+            "lavoratori_determinati": null,
+            "lavoratori_marittimi": null,
+            "insegnanti_non_ruolo": null,
+            "lavoratori_autonomi": null,
+            "lavoratori_non_ruolo": null
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": "La banca può richiedere integrazione con garanzie di firma (fideiussione di un terzo), garanzie finanziarie (pegno su deposito titoli) o ipoteca su ulteriore immobile qualora la sola ipoteca sull'immobile oggetto di acquisto sia ritenuta insufficiente",
+            "eta_massima": "L'età alla scadenza del finanziamento non deve superare i 78 anni, valutata rispetto al richiedente più giovane per cointestazioni, oppure rispetto al più anziano in caso di coobbligati",
+            "eta_massima_fine_mutuo": null,
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": null,
+            "max_garanti": null,
+            "regola_eta_80": "Massimo 78-80 anni ai 2/3 della durata del mutuo",
+            "ponderazione_reddito": {
+                "coniuge": null,
+                "partner_convivente": null,
+                "genitori": null,
+                "figli": null,
+                "fratelli_sorelle": null,
+                "conviventi_altra_finalita": null
+            },
+            "grado_parentela": null,
+            "massimo_garanti": null,
+            "regola_eta": "Massimo 78-80 anni ai 2/3 della durata del mutuo",
+            "ammessi": null,
+            "divieto_consap": null
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": null,
+                "descrizione": null
+            },
+            "promozione_green": null
+        },
+        "altri_limiti": {
+            "iscrizione_ipotecaria": "Pari al 180% dell'importo del mutuo",
+            "vincolo_territoriale": "L'istruttoria deve tenere conto della residenza/domicilio o luogo di lavoro, presso la filiale dove il cliente intrattiene rapporti o la più comoda. In presenza di cointestazione i criteri devono essere rispettati da almeno uno",
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": null,
+            "stress_test_variabile": null,
+            "mediazione_massima": null,
+            "tasso_indebitamento_massimo": null,
+            "mutuo_chirografario_abbinato": null,
+            "eta_massima_scadenza": null,
+            "eta_minima_stipula": null,
+            "pre_ammortamento_massimo": null,
+            "stress_test_durata_max_25_per_mri": null,
+            "nota_sussistenza_25_anni": null
+        },
+        "garanzie_aggiuntive": {
+            "multi_ipoteca_permessa": null,
+            "descrizione": null
+        },
+        "lavoratori_interinali": {
+            "reddito_minimo_garantito": null,
+            "condizioni_secondo_reddito_indeterminato": {
+                "valutazione_reddito": null,
+                "requisiti": {
+                    "mesi_lavorati_richiesti": null,
+                    "mesi_contratto_residui_utilizzatore": null
+                }
+            }
+        },
+        "prodotti_specifici": {
+            "mutuo_fisso5_rinegoziabile": {
+                "parametro_irs_riferimento": null,
+                "note_calcolo_tasso": null
+            }
+        }
+    },
+    "regole_calcolo_reddito": {
+        "dipendente": {
+            "metodo": "media_netta_mensilita",
+            "metodo_cu": "(P1 + P2 - P21 - P22 - P26) / 12",
+            "metodo_buste_paga": {
+                "voci_considerate": "Media 3 buste nette con 13/14esima",
+                "straordinari_continuativi": 0.5,
+                "mensilita_ponderate": true,
+                "colf_badanti_ammesse": null,
+                "interinali_ammessi": null,
+                "detrazione_inps": null,
+                "mensilita": null,
+                "strumento_calcolo": null,
+                "scorporo_straordinari": null
+            }
+        },
+        "autonomi": {
+            "ordinario": {
+                "criterio": "Media ultimi 2 Modelli Unici",
+                "formula": "(RN1 - RN26 - RV2 - RV10) / 12",
+                "quadri_considerati": [
+                    "RN1",
+                    "RN26",
+                    "RV2",
+                    "RV10"
+                ],
+                "documenti_richiesti": null
+            },
+            "forfettario": {
+                "criterio": "Media ultimi 2 Modelli Unici",
+                "formula": "(LM36 - LM39) / 12",
+                "quadri_considerati": [
+                    "LM36",
+                    "LM39"
+                ],
+                "aliquota_imposta": null,
+                "coefficiente": null
+            }
+        }
+    },
+    "condizioni_offerta": {
+        "tasso_fisso": {
+            "classe_A_B": {
+                "spread": null,
+                "tasso_fino_a_15": null,
+                "tasso_oltre_15": null
+            },
+            "classe_C": {
+                "spread": null,
+                "tasso_fino_a_15": null,
+                "tasso_oltre_15": null
+            }
+        }
+    },
+    "spese": {
+        "istruttoria": {
+            "percentuale": null,
+            "min": null,
+            "max": null,
+            "azzerate_classe_energetica_A_B": null
+        }
+    },
+    "offerte": {
+        "consap": {
+            "ltv_gt_80": null,
+            "rapporto_utilizzo": null
+        }
+    },
+    "validita": {
+        "condizioni_standard": null,
+        "condizioni_consap": null
+    },
+    "mriGrid": {
+        "1": 880,
+        "2": 330,
+        "3": null,
+        "4": null,
+        "5": null,
+        "additional": null
+    },
+    "tdWithoutCoapplicantStatus": null,
+    "telefono": null,
+    "coefficienteForfettario": null,
+    "policy_name": null,
+    "version": null,
+    "description": null,
+    "income_assessment": {
+        "method": null,
+        "mandatory": null,
+        "description": null,
+        "deductions": null,
+        "thresholds": {
+            "status": null,
+            "by_household_size": {},
+            "nord": {
+                "1": null,
+                "2": null,
+                "extra": null
+            },
+            "centro": {
+                "1": null,
+                "2": null,
+                "extra": null
+            },
+            "sud": {
+                "1": null,
+                "2": null,
+                "extra": null
+            }
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": null,
+        "joint_applications": {
+            "rule": null,
+            "priority_cases": null
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": null,
+            "requirement": null
+        },
+        "badante": {
+            "allowed": null,
+            "requirement": null
+        },
+        "apprentice": {
+            "allowed": null,
+            "rules": null
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": null,
+                "description": null
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": null
+        },
+        "life": {
+            "type": null,
+            "financed_interest_rate_percent": null,
+            "rate_scope": null,
+            "capital_scope": null
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": null,
+            "financial_difficulty": {
+                "allowed": null,
+                "condition": null,
+                "assessment": null
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": null
+        },
+        "without_consap": {
+            "max_ltc_percent": null
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": null,
+            "approximate_days": null,
+            "scope": null,
+            "starting_point": null
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": null,
+            "minimum_percent": null,
+            "reducible": null
+        },
+        "appraisal": {
+            "amount_eur": null,
+            "payment_timing": null
+        }
+    },
+    "criteri_reddito": {
+        "assegno_unico": {
+            "fino_11_anni": 1.0,
+            "fino_17_anni": 1.0,
+            "dai_18_anni": 0.0
+        },
+        "mantenimento_ricevuto": {
+            "ammesso": true,
+            "ponderazione": 1.0,
+            "requisiti": null
+        },
+        "mantenimento_versato": {
+            "trattamento": "impegno_passivo",
+            "descrizione": null
+        },
+        "locazioni": {
+            "ammesso": true,
+            "ponderazione": 0.7,
+            "cedolare_secca_ponderazione": null,
+            "requisiti": null
+        }
+    },
+    "promotions": [
+        {
+            "id": "promo_banco_di_sardegna_20261015_1788970841",
+            "description": "Banco di Sardegna comunicano l'avvio, a partire da domani 10 settembre, della Promo Mutui Casa Autunno 2026, valida esclusivamente per nuove richieste inserite dal 10 settembre al 15 ottobre 2026, salvo chiusura anticipata plafond, che verrà tempestivamente comunicata. La data di ultima stipula inderogabile è fissata al 31 dicembre 2026.\n\nI prodotti oggetto della Promo:\n\nTasso Fisso: Tan 3,40%\n\nTasso Fisso Green: Tan 3.20%  (classi energetiche A, B e C)\n\nTasso Fisso Green Special: 2,95% (classi energetiche A e B) \n\nCARATTERISTICHE E CONDIZIONI ECONOMICHE \n\nFinalità ammesse: acquisto immobile residenziale (compreso ripristino liquidità acquisto casa entro 12 mesi);\n\nFinalità escluse: aste, costruzione, ristrutturazione, sostituzione, sostituzione + liquidità, surroga, pratiche a stato avanzamento lavori, frontalieri, accolli, acquisto nuda proprietà, mutui assistiti da garanzie pubbliche o altre agevolazioni statali (es. Consap);\n\nDurata: da 20 a 30 anni ed intermedie;\n\nLTV: fino all'80%;\n\nImporto minimo: € 40.000;\n\nSpese Istruttoria: come da listino vigente \n\nCommissioni Incasso Rata Bper: € 2,75;\n\nCommissioni Incasso Rata Banco di Sardegna: € 1,00;\n\nData Stipula massima: 31 dicembre 2026.",
+            "expiresAt": "2026-10-15",
+            "updates": {
+                "promozione": "Promo Mutui Casa Autunno 2026",
+                "data_inizio_promo": "2026-09-10",
+                "data_fine_promo": "2026-10-15",
+                "data_ultima_stipula": "2026-12-31",
+                "tassi": {
+                    "fisso": 3.4,
+                    "fisso_green": 3.2,
+                    "fisso_green_special": 2.95
+                },
+                "finalita_ammesse": [
+                    "acquisto immobile residenziale",
+                    "ripristino liquidità acquisto casa entro 12 mesi"
+                ],
+                "finalita_escluse": [
+                    "aste",
+                    "costruzione",
+                    "ristrutturazione",
+                    "sostituzione",
+                    "sostituzione + liquidità",
+                    "surroga",
+                    "pratiche a stato avanzamento lavori",
+                    "frontalieri",
+                    "accolli",
+                    "acquisto nuda proprietà",
+                    "mutui assistiti da garanzie pubbliche o altre agevolazioni statali (es. Consap)"
+                ],
+                "minDuration": 20,
+                "maxDuration": 30,
+                "maxLtv": 80,
+                "minLoan": 40000,
+                "commissioni_incasso_rata_bper": 2.75,
+                "commissioni_incasso_rata_banco_di_sardegna": 1.0
+            }
+        }
+    ],
+    "tassi": {
+        "tasso_fisso": {
+            "valore": null,
+            "percentuale": null,
+            "ambito": null
+        },
+        "applicabilita": null
+    },
+    "maxLtvDeroga": null,
+    "minSeniorityIndeterminato": null
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="100%" height="100%">
+  <rect width="300" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+  <!-- Red Sphere with 1 -->
+  <g transform="translate(25, 20)">
+    <circle cx="38" cy="38" r="36" fill="#E2001A"/>
+    <path d="M32 26 L42 18 L42 56 L32 56 Z" fill="#FFFFFF"/>
+    <path d="M26 56 L52 56 L52 60 L26 60 Z" fill="#FFFFFF"/>
+  </g>
+  <!-- UniCredit Typography -->
+  <g transform="translate(115, 46)">
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F2937" letter-spacing="-0.5">Uni<tspan fill="#E2001A">Credit</tspan></text>
+  </g>
+</svg>

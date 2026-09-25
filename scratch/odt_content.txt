@@ -1,0 +1,21 @@
+Correzioni:
+schermata dashboard su scadenze prossima non numero di partica ma nome e cognome del cliente o al limite un alias da decidere assieme
+erogato mese e provvigioni di base oscurate con pulsante per renderle visibili
+sui suggerimenti sarebbe bello che periodicamente (una volta la mese?) il programma analizzasse le operazioni vecchie in magazzino gia fatte e valutasse a chi potrebbe convenire una surroga
+nella schermata scheda cliente mancano tutti i dati di reddito da inserire manualmente ed in futuro il pulsante acquisisci redditi da file.
+Nei redditi serve:
+tipo di lavoro ( autonomo, dipendente, pensionato, no lavoro, interinale)
+se interinale dettagli se in missione a tempo indeterminato o no
+possibilità di gestire i pluri reddito ad esempio pensione e lavoro dipendente
+tipo di contratto (part time o full time)
+anzianità lavorativa
+partita iva datore di lavoro
+dati del cu o dell'unico (varibile in base al tipo di attività svolta)
+numero componenti della famiglia a carico
+nazionalità
+prestiti in essere con durata iniziale, durata residua, capitale iniziale e capitale residuo e la rata (unico dato obbligatorio)
+oltre a coniugato o noserve sapere se in comunione o in separazione (sarebbe bello integrare una guida con il regime matrimoniale di base dei vari stati esteri)
+Il tutto deve essere dinamico in base alle risposte, se dico dipendente mi chiede i dati del cu indicando le caselle, se invece dico autonomo mi chiede i dati dell'unico, variando le caselle in base a se sono forfettario o ordinario
+su schermata nuova pratica serve anche i pulsanti consolido e acquisto + ristrutturazione
+nella schermata compila dati mutuo va tolto tipo rata (ormai sono tutti mensili), quando scegli il tipo di tasso fisso o variabile ti devono uscire la altre scelte legate a quel tipo di tasso, ad esempio fisso con opzione, varibile con tetto massimo, variabile con rata fissa
+nel caso di mutuo acquisto + ristrutturazione serve un campo costo dei lavori 

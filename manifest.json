@@ -1,0 +1,22 @@
+{
+  "name": "BrokerFlow - CRM & Engine Mutui",
+  "short_name": "BrokerFlow",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#001233",
+  "theme_color": "#0052ff",
+  "orientation": "portrait-primary",
+  "description": "Piattaforma di calcolo fattibilità e gestione pratiche di credito per mediatori",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+    "name": "Crédit Agricole Italia",
+    "bgLogoLetter": "C",
+    "color": "#0052ff",
+    "isNationwide": true,
+    "territories": [
+        "*"
+    ],
+    "allowedContracts": [],
+    "allowedPurposes": [],
+    "minLoan": 30000,
+    "maxLoan": 2000000,
+    "minDuration": 10,
+    "maxDuration": 30,
+    "durationStep": 1,
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 75,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "isDigitalFirst": false,
+    "hasMri": false,
+    "ageCheckMethod": "oldest",
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 24,
+    "minSeniorityAutonomoDeroga": 18,
+    "eccezioni_e_deroghe": {
+        "offerte_consap": {
+            "ltv_gt_80": true,
+            "tasso_fisso_senza_cpi": true,
+            "plafond_dedicato": true,
+            "rapporto_utilizzo": "1:3",
+            "validita": {
+                "domande_entro": "2026-10-10",
+                "stipule_entro": "2026-12-31"
+            }
+        }
+    },
+    "regole_calcolo_reddito": {},
+    "spese_istruttoria": {
+        "percentuale": 1.2,
+        "min": 1500,
+        "max": 2900,
+        "classe_energetica_A_B_azzerate": true
+    },
+    "condizioni_offerta": {
+        "tasso_fisso": {
+            "classe_A_B": {
+                "spread": 1.3,
+                "tasso_fino_a_15": 3.69,
+                "tasso_oltre_15": 3.59
+            },
+            "classe_C": {
+                "spread": 1.7,
+                "tasso_fino_a_15": 3.89,
+                "tasso_oltre_15": 3.79
+            }
+        }
+    },
+    "spese": {
+        "istruttoria": {
+            "percentuale": 1.2,
+            "min": 1500,
+            "max": 2900,
+            "azzerate_classe_energetica_A_B": true
+        }
+    },
+    "offerte": {
+        "consap": {
+            "ltv_gt_80": true,
+            "rapporto_utilizzo": "1:3"
+        }
+    },
+    "validita": {
+        "condizioni_standard": "domande dal 16/09/2026 al 20/11/2026; stipule entro 26/02/2027",
+        "condizioni_consap": "domande entro 10/10/2026; stipule entro 31/12/2026"
+    }
+}

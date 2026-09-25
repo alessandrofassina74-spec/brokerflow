@@ -1,0 +1,2247 @@
+{
+  "allBanks": [
+    "banco_di_sardegna",
+    "bdm",
+    "bnl",
+    "bper",
+    "credit agricole italia",
+    "ing",
+    "mediobanca_premier",
+    "mps",
+    "sparkasse"
+  ],
+  "baselineResults": [
+    {
+      "bankId": "banco_di_sardegna",
+      "name": "Banco di Sardegna",
+      "status": "ko",
+      "rata": 999999,
+      "tan": 0,
+      "dsr": 0,
+      "maxLoan": 0,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ko",
+          "ok": false,
+          "text": "Nessuna copertura territoriale: l'istituto non opera nelle province dell'immobile, residenza o lavoro."
+        }
+      ]
+    },
+    {
+      "bankId": "bdm",
+      "name": "BDM Banca",
+      "status": "ko",
+      "rata": 999999,
+      "tan": 0,
+      "dsr": 0,
+      "maxLoan": 0,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ko",
+          "ok": false,
+          "text": "Nessuna copertura territoriale: l'istituto non opera nelle province dell'immobile, residenza o lavoro."
+        }
+      ]
+    },
+    {
+      "bankId": "bnl",
+      "name": "BNL",
+      "status": "ok",
+      "rata": 746.9190118966717,
+      "tan": 3.45,
+      "dsr": 0.2987676047586687,
+      "maxLoan": 160000,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 30,000 \u20ac - 2,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 5 - 30 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 75)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 4"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 35%, Calcolato: 29.9%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 1100 \u20ac, Residuo: 1753 \u20ac"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 80%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "bper",
+      "name": "BPER",
+      "status": "ok",
+      "rata": 769.5649073336245,
+      "tan": 3.73,
+      "dsr": 0.3078259629334498,
+      "maxLoan": 160000,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 40,000 \u20ac - 1,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 5 - 30 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 78)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 4"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 35%, Calcolato: 30.8%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 1100 \u20ac, Residuo: 1730 \u20ac"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 80%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "credit agricole italia",
+      "name": "Cr\u00e9dit Agricole Italia",
+      "status": "ok",
+      "rata": 763.0563847472349,
+      "tan": 3.65,
+      "dsr": 0.30522255389889397,
+      "maxLoan": 160000,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 30,000 \u20ac - 2,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 10 - 30 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 75)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 4"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 35%, Calcolato: 30.5%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Soglia non prevista"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 80%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "ing",
+      "name": "ING Bank",
+      "status": "ok",
+      "rata": 844.8555168253185,
+      "tan": 4.63,
+      "dsr": 0.3379422067301274,
+      "maxLoan": 190000,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 50,000 \u20ac - 5,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 5 - 30 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 80)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 2"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 50%, Calcolato: 33.8%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 1153 \u20ac, Residuo: 1655 \u20ac"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 95%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "mediobanca_premier",
+      "name": "Mediobanca Premier",
+      "status": "ok",
+      "rata": 769.5649073336245,
+      "tan": 3.73,
+      "dsr": 0.3078259629334498,
+      "maxLoan": 160000,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 50,000 \u20ac - 1,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 10 - 30 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 80)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 4"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 35%, Calcolato: 30.8%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 1163.98 \u20ac, Residuo: 1730 \u20ac"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 80%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "mps",
+      "name": "Monte dei Paschi di Siena",
+      "status": "ok",
+      "rata": 757.3864906183564,
+      "tan": 3.58,
+      "dsr": 0.30295459624734256,
+      "maxLoan": 163390.82031812615,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ok",
+          "ok": true,
+          "text": "Opera in tutto il territorio nazionale (inclusa la provincia di riferimento)"
+        },
+        {
+          "name": "Importo Mutuo",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 150,000 \u20ac, Limiti: 40,000 \u20ac - 5,000,000 \u20ac"
+        },
+        {
+          "name": "Durata",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesta: 25 anni, Limiti: 10 - 40 anni"
+        },
+        {
+          "name": "Finalit\u00e0 Operazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Ammessa: acquisto"
+        },
+        {
+          "name": "Et\u00e0 a Scadenza",
+          "status": "ok",
+          "ok": true,
+          "text": "Max a scadenza: 60 anni (Limite: 80)"
+        },
+        {
+          "name": "Permesso di Soggiorno",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Tipologia Occupazione",
+          "status": "ok",
+          "ok": true,
+          "text": "Tutte le occupazioni dei richiedenti sono accettate"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Coobbligazione TD",
+          "status": "ok",
+          "ok": true,
+          "text": "Non applicabile"
+        },
+        {
+          "name": "Anzianit\u00e0 Lavorativa",
+          "status": "ok",
+          "ok": true,
+          "text": "Anzianit\u00e0 lavorativa conforme alle policy"
+        },
+        {
+          "name": "Numero Co-Intestatari",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesti: 1, Massimo ammesso: 4"
+        },
+        {
+          "name": "Rapporto Rata/Reddito (DSR)",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite: 33%, Calcolato: 30.3%"
+        },
+        {
+          "name": "Sussistenza Minima (MRI)",
+          "status": "ok",
+          "ok": true,
+          "text": "Richiesto: 863 \u20ac, Residuo: 1743 \u20ac"
+        },
+        {
+          "name": "LTV Massimo",
+          "status": "ok",
+          "ok": true,
+          "text": "Limite standard: 100%, Calcolato: 75.0%"
+        }
+      ]
+    },
+    {
+      "bankId": "sparkasse",
+      "name": "Cassa di Risparmio di Bolzano (Sparkasse)",
+      "status": "ko",
+      "rata": 999999,
+      "tan": 0,
+      "dsr": 0,
+      "maxLoan": 0,
+      "checks": [
+        {
+          "name": "Territorialit\u00e0",
+          "status": "ko",
+          "ok": false,
+          "text": "Nessuna copertura territoriale: l'istituto non opera nelle province dell'immobile, residenza o lavoro."
+        }
+      ]
+    }
+  ],
+  "contractResults": {
+    "tempo_indeterminato": {
+      "label": "Dipendente TI (tempo_indeterminato)",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "dipendente_ti": {
+      "label": "Dipendente TI (dipendente_ti)",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "tempo_determinato": {
+      "label": "Dipendente TD (tempo_determinato)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "autonomo_ordinario": {
+      "label": "Autonomo Ordinario (autonomo)",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "forfettario": {
+      "label": "Forfettario (autonomo_forfettario)",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "pensionato": {
+      "label": "Pensionato (65 anni)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "stagionale": {
+      "label": "Stagionale Pluriennale (3 stagioni)",
+      "feasibleCount": 2,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "deroga",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "deroga",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 844.8555168253185
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    }
+  },
+  "ltvResults": {
+    "ltv_50": {
+      "label": "LTV 50%",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 746.9190118966717
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 763.0563847472349
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 836.3049866195239
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 769.5649073336245
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 757.3864906183564
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "ltv_80": {
+      "label": "LTV 80%",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 796.713612689783
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 820.8692344891996
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 813.9268103970504
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 901.1792179470065
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 820.8692344891996
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 807.8789233262469
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "ltv_90": {
+      "label": "LTV 90% (Standard)",
+      "feasibleCount": 1,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 1055.410651581884
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 908.8637887420276
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "ltv_90_green": {
+      "label": "LTV 90% (Green A/B)",
+      "feasibleCount": 2,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "credit agricole italia": {
+          "status": "deroga",
+          "rata": 891.4976549579999
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 1055.410651581884
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 889.5796450629242
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "ltv_100_consap": {
+      "label": "LTV 100% (CONSAP)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "rata": 1053.4663156309853
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 1053.4663156309853
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    },
+    "ltv_100_pluri": {
+      "label": "LTV 100% (Pluri-Ipoteca 2\u00b0 imm 100k)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bnl": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 1026.0865431114994
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "rata": 1017.4085129963131
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 1026.0865431114994
+        },
+        "mps": {
+          "status": "ko",
+          "rata": 999999
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999
+        }
+      }
+    }
+  },
+  "incomeMriResults": {
+    "single_1200": {
+      "label": "Single 1200\u20ac netti",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 398.3568063448915,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 801.6431936551085
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 410.4346172445998,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 789.5653827554002
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 406.9634051985252,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 793.0365948014748
+        },
+        "ing": {
+          "status": "deroga",
+          "rata": 448.3064330619138,
+          "mriCheck": "deroga",
+          "dsrCheck": "ok",
+          "residual": 751.6935669380862
+        },
+        "mediobanca_premier": {
+          "status": "deroga",
+          "rata": 410.4346172445998,
+          "mriCheck": "deroga",
+          "dsrCheck": "ok",
+          "residual": 789.5653827554002
+        },
+        "mps": {
+          "status": "deroga",
+          "rata": 403.93946166312344,
+          "mriCheck": "deroga",
+          "dsrCheck": "deroga",
+          "residual": 796.0605383368766
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        }
+      }
+    },
+    "single_1600": {
+      "label": "Single 1600\u20ac netti",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 547.7406087242258,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 1052.2593912757743
+        },
+        "bper": {
+          "status": "deroga",
+          "rata": 564.3475987113246,
+          "mriCheck": "ok",
+          "dsrCheck": "deroga",
+          "residual": 1035.6524012886753
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 559.5746821479722,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 1040.4253178520278
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 619.560712338567,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 980.439287661433
+        },
+        "mediobanca_premier": {
+          "status": "deroga",
+          "rata": 564.3475987113246,
+          "mriCheck": "ok",
+          "dsrCheck": "deroga",
+          "residual": 1035.6524012886753
+        },
+        "mps": {
+          "status": "deroga",
+          "rata": 555.4167597867947,
+          "mriCheck": "ok",
+          "dsrCheck": "deroga",
+          "residual": 1044.5832402132053
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        }
+      }
+    },
+    "family_2200": {
+      "label": "Famiglia 4p 2200\u20ac netti",
+      "feasibleCount": 3,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bnl": {
+          "status": "deroga",
+          "rata": 647.3298103104488,
+          "mriCheck": "deroga",
+          "dsrCheck": "ok",
+          "residual": 1552.670189689551
+        },
+        "bper": {
+          "status": "ko",
+          "rata": 666.9562530224746,
+          "mriCheck": "ko",
+          "dsrCheck": "ok",
+          "residual": 1533.0437469775254
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 661.3155334476036,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 1538.6844665523963
+        },
+        "ing": {
+          "status": "ko",
+          "rata": 732.2081145819427,
+          "mriCheck": "ko",
+          "dsrCheck": "ok",
+          "residual": 1467.7918854180573
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "rata": 666.9562530224746,
+          "mriCheck": "ko",
+          "dsrCheck": "ok",
+          "residual": 1533.0437469775254
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 656.4016252025755,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 1543.5983747974246
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        }
+      }
+    },
+    "family_3000": {
+      "label": "Famiglia 4p 3000\u20ac netti",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 796.713612689783,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2203.286387310217
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 820.8692344891996,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2179.1307655108003
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 813.9268103970504,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2186.0731896029497
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 901.1792179470065,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2098.8207820529933
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 820.8692344891996,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2179.1307655108003
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 807.8789233262469,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2192.121076673753
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        }
+      }
+    },
+    "family_4000": {
+      "label": "Famiglia 4p 4000\u20ac netti",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bdm": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        },
+        "bnl": {
+          "status": "ok",
+          "rata": 995.8920158622288,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 3004.1079841377714
+        },
+        "bper": {
+          "status": "ok",
+          "rata": 1026.0865431114994,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2973.9134568885006
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "rata": 1017.4085129963131,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2982.591487003687
+        },
+        "ing": {
+          "status": "ok",
+          "rata": 1126.474022433758,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2873.525977566242
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "rata": 1026.0865431114994,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2973.9134568885006
+        },
+        "mps": {
+          "status": "ok",
+          "rata": 1009.8486541578085,
+          "mriCheck": "ok",
+          "dsrCheck": "ok",
+          "residual": 2990.1513458421914
+        },
+        "sparkasse": {
+          "status": "ko",
+          "rata": 999999,
+          "mriCheck": "N/A",
+          "dsrCheck": "N/A",
+          "residual": null
+        }
+      }
+    }
+  },
+  "geoResults": {
+    "Milano": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Torino": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Bologna": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Roma": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Firenze": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Napoli": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Bari": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Palermo": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Cagliari": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    },
+    "Sassari": {
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bdm": {
+          "status": "ko",
+          "geoCheck": "ok"
+        },
+        "bnl": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "bper": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "ing": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "mps": {
+          "status": "ok",
+          "geoCheck": "ok"
+        },
+        "sparkasse": {
+          "status": "ko",
+          "geoCheck": "ok"
+        }
+      }
+    }
+  },
+  "ageResults": {
+    "young_25": {
+      "label": "25 anni / durata 30",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bdm": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bnl": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 75)"
+          }
+        },
+        "bper": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 78)"
+          }
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 75)"
+          }
+        },
+        "ing": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 80)"
+          }
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 80)"
+          }
+        },
+        "mps": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 55 anni (Limite: 80)"
+          }
+        },
+        "sparkasse": {
+          "status": "ko",
+          "ageCheck": null
+        }
+      }
+    },
+    "mid_45": {
+      "label": "45 anni / durata 30",
+      "feasibleCount": 6,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bdm": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bnl": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 75)"
+          }
+        },
+        "bper": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 78)"
+          }
+        },
+        "credit agricole italia": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 75)"
+          }
+        },
+        "ing": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 80)"
+          }
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 80)"
+          }
+        },
+        "mps": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 75 anni (Limite: 80)"
+          }
+        },
+        "sparkasse": {
+          "status": "ko",
+          "ageCheck": null
+        }
+      }
+    },
+    "senior_55_dur25": {
+      "label": "55 anni / durata 25 (scadenza 80)",
+      "feasibleCount": 3,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bdm": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bnl": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 80 anni (Limite: 75)"
+          }
+        },
+        "bper": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 80 anni (Limite: 78)"
+          }
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 80 anni (Limite: 75)"
+          }
+        },
+        "ing": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 80 anni (Limite: 80)"
+          }
+        },
+        "mediobanca_premier": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 80 anni (Limite: 80)"
+          }
+        },
+        "mps": {
+          "status": "ok",
+          "ageCheck": {
+            "status": "ok",
+            "text": "Max a scadenza: 80 anni (Limite: 80)"
+          }
+        },
+        "sparkasse": {
+          "status": "ko",
+          "ageCheck": null
+        }
+      }
+    },
+    "senior_58_dur25": {
+      "label": "58 anni / durata 25 (scadenza 83)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bdm": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bnl": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 75)"
+          }
+        },
+        "bper": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 78)"
+          }
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 75)"
+          }
+        },
+        "ing": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 80)"
+          }
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 80)"
+          }
+        },
+        "mps": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 83 anni (Limite: 80)"
+          }
+        },
+        "sparkasse": {
+          "status": "ko",
+          "ageCheck": null
+        }
+      }
+    },
+    "guarantor_82": {
+      "label": "Richiedente 30A + Garante 72A (scadenza 82, dur 10)",
+      "feasibleCount": 0,
+      "bankStatus": {
+        "banco_di_sardegna": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bdm": {
+          "status": "ko",
+          "ageCheck": null
+        },
+        "bnl": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 40 anni (Limite: 75) | Garante a scadenza: 82 anni (Limite Garante: 80)"
+          }
+        },
+        "bper": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 40 anni (Limite: 78) | Garante a scadenza: 82 anni (Limite Garante: 80)"
+          }
+        },
+        "credit agricole italia": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "deroga",
+            "text": "Max a scadenza: 40 anni (Limite: 75) | Garante a scadenza: 82 anni (In deroga Cr\u00e9dit Agricole fino a 85 anni)"
+          }
+        },
+        "ing": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 40 anni (Limite: 80) | Garante a scadenza: 82 anni (Limite Garante: 80)"
+          }
+        },
+        "mediobanca_premier": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 40 anni (Limite: 80) | Garante a scadenza: 82 anni (Limite Garante: 80)"
+          }
+        },
+        "mps": {
+          "status": "ko",
+          "ageCheck": {
+            "status": "ko",
+            "text": "Max a scadenza: 40 anni (Limite: 80) | Garante a scadenza: 82 anni (Limite Garante: 80)"
+          }
+        },
+        "sparkasse": {
+          "status": "ko",
+          "ageCheck": null
+        }
+      }
+    }
+  }
+}

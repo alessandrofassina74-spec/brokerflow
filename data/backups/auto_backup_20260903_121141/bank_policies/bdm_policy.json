@@ -1,0 +1,72 @@
+{
+    "name": "Mediobanca Premier",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 80,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": false,
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 36,
+    "minLoan": 30000,
+    "maxLoan": 1000000,
+    "minDuration": 10,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "autonomo",
+        "pensionato",
+        "apprendista"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "ristrutturazione",
+        "surroga",
+        "liquidita",
+        "consolidamento"
+    ],
+    "mriGrid": [],
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "liquidita": {
+                "max_ltv": 0.65,
+                "max_dsr": 0.35,
+                "importo_massimo": 150000,
+                "importo_minimo": 50000,
+                "max_durata": 15
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.4,
+                "max_durata": 20
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_durata": 30
+            },
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_durata": 30
+            }
+        },
+        "deroghe_lavoratori": {
+            "colf_badanti": "Non ammesse",
+            "apprendisti": "Ammessi con coobbligato o garante",
+            "insegnanti_non_di_ruolo": "Assimilati a tempo indeterminato con 3 anni di anzianità",
+            "autonomi": "Anzianità minima 3 anni (36 mesi)"
+        },
+        "regole_garanti": {
+            "grado_parentela": "1° e 2° grado",
+            "massimo_garanti": 2,
+            "regola_eta": "Almeno 2/3 della durata del mutuo trascorsi al compimento degli 80 anni"
+        },
+        "promozioni": {
+            "promozione_green": "Offerta dedicata a immobili ad alta efficienza energetica con condizioni agevolate"
+        },
+        "altri_limiti": {
+            "tasso_indebitamento_massimo": 0.35,
+            "mutuo_chirografario_abbinato": "Importo massimo 25.000 euro, durata massima 5 anni, tasso fisso 5%"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="100%" height="100%">
+  <rect width="300" height="120" rx="16" fill="#691426"/>
+  <!-- Fortress Shield Emblem -->
+  <g transform="translate(25, 18)">
+    <!-- Gold Shield Outer -->
+    <path d="M40 5 L75 5 C75 45 65 72 40 82 C15 72 5 45 5 5 Z" fill="none" stroke="#D3A029" stroke-width="3"/>
+    <!-- Fortress Castle silhouette -->
+    <path d="M18 52 L18 25 L26 25 L26 30 L34 30 L34 25 L46 25 L46 30 L54 30 L54 25 L62 25 L62 52 C62 64 52 72 40 76 C28 72 18 64 18 52 Z" fill="#D3A029"/>
+    <path d="M34 52 C34 45 46 45 46 52 L46 62 L34 62 Z" fill="#691426"/>
+  </g>
+  <!-- Typography -->
+  <g fill="#FFFFFF" transform="translate(115, 38)">
+    <text x="0" y="18" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="#D3A029" letter-spacing="1.5">BANCA MPS</text>
+    <text x="0" y="38" font-family="Georgia, serif" font-size="11" font-weight="normal" fill="#F5E6CC" letter-spacing="0.8">MONTE DEI PASCHI DI SIENA</text>
+    <text x="0" y="52" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#D3A029" letter-spacing="2">DAL 1472</text>
+  </g>
+</svg>

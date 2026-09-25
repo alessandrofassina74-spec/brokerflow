@@ -1,0 +1,532 @@
+[
+    {
+        "id": "BNL_ACQ_GREEN_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Green (Classe A/B)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 30,
+                "spread": 3.35
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_STANDARD_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Standard (Classe C/D)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.35
+            },
+            {
+                "dMin": 16,
+                "dMax": 30,
+                "spread": 3.45
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV50_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV <= 50%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.45
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV65_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV 51-65%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.65,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.35
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.5
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV80_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV 66-80%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.55
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_YOUNG_FISSO",
+        "nome": "Mutuo BNL Spensierato Acquisto Young Under 36",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.55
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV50_VAR",
+        "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV <= 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.45
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.5
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV65_VAR",
+        "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV 51-65%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.65,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 1.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 25,
+                "spread": 1.5
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.55
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_DC_LTV80_VAR",
+        "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV 66-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.65
+            }
+        ]
+    },
+    {
+        "id": "BNL_ACQ_YOUNG_VAR",
+        "nome": "Mutuo BNL Variabile Acquisto Young Under 36",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.45
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.5
+            }
+        ]
+    },
+    {
+        "id": "BNL_LTC95_GREEN_FISSO",
+        "nome": "Mutuo BNL Spensierato LTC 95% Green (Classe A/B)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": true,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 30,
+                "spread": 3.35
+            }
+        ]
+    },
+    {
+        "id": "BNL_LTC95_STD_FISSO",
+        "nome": "Mutuo BNL Spensierato LTC 95% Standard (Classe C/D)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.85
+            }
+        ]
+    },
+    {
+        "id": "BNL_ASTE_FISSO",
+        "nome": "Mutuo BNL Spensierato Aste",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "asta"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 3.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 3.55
+            }
+        ]
+    },
+    {
+        "id": "BNL_ASTE_VAR",
+        "nome": "Mutuo BNL Variabile Aste",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto",
+            "asta"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.65
+            }
+        ]
+    },
+    {
+        "id": "BNL_RISTRUTTURAZIONE_FISSO",
+        "nome": "Mutuo BNL Spensierato Ristrutturazione",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.3,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 15,
+                "spread": 3.35
+            },
+            {
+                "dMin": 16,
+                "dMax": 30,
+                "spread": 3.45
+            }
+        ]
+    },
+    {
+        "id": "BNL_SURROGA_GREEN_FISSO",
+        "nome": "Mutuo BNL Spensierato Surroga Green (Classe A/B)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 20,
+                "spread": 3.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 4.1
+            }
+        ]
+    },
+    {
+        "id": "BNL_SURROGA_STD_FISSO",
+        "nome": "Mutuo BNL Spensierato Surroga / Extra Liquidità (Classe C/D)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 20,
+                "spread": 4.2
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 4.25
+            }
+        ]
+    },
+    {
+        "id": "BNL_SURROGA_DC_VAR",
+        "nome": "Mutuo BNL Variabile Surroga Diamo Credito (E/F/G)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 20,
+                "spread": 2
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 2.1
+            }
+        ]
+    },
+    {
+        "id": "BNL_QUASI_FISSO",
+        "nome": "Mutuo BNL Quasi Fisso (Con CAP 6,20%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 30,
+                "spread": 2.2
+            }
+        ]
+    }
+]

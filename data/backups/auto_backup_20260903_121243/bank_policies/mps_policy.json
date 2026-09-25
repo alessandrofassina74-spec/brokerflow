@@ -1,0 +1,368 @@
+{
+    "name": "Monte dei Paschi di Siena",
+    "maxLtv": 1,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 80,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": true,
+    "minResidencyYears": 0,
+    "minSeniorityAutonomo": 24,
+    "minLoan": 45000,
+    "maxLoan": 2000000,
+    "minDuration": 10,
+    "maxDuration": 40,
+    "allowedContracts": [
+        "dipendente_ti",
+        "dipendente_td",
+        "autonomo",
+        "pensionato",
+        "colf_badanti",
+        "interinale",
+        "locazione"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "ristrutturazione",
+        "surroga",
+        "aste"
+    ],
+    "mriGrid": {
+        "nord": {
+            "1": 863,
+            "2": 863,
+            "3": 1016,
+            "4": 1300,
+            "5": 1414,
+            "additional": 300,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "centro": {
+            "1": 843,
+            "2": 843,
+            "3": 1000,
+            "4": 1200,
+            "5": 1300,
+            "additional": 300,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "sud": {
+            "1": 780,
+            "2": 780,
+            "3": 900,
+            "4": 1100,
+            "5": 1200,
+            "additional": 300,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null
+            },
+            "ristrutturazione": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null
+            },
+            "surroga": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "importo_minimo": null,
+                "ammortamento_minimo_mesi": null,
+                "max_durata": null
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "nota": null
+            },
+            "consap": {
+                "importo_minimo": null,
+                "nota": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "under_36": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "importo_massimo": null,
+                "importo_minimo": null,
+                "max_durata": null
+            },
+            "consolidamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null,
+                "max_liquidita_con_mutuo": null,
+                "max_liquidita_senza_mutuo": null
+            },
+            "rifinanziamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_liquidita": null
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": null
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": null
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": null
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": null
+            },
+            "autonomi": {
+                "anzianita_minima_mesi": null
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": null
+            },
+            "colf_badanti": null,
+            "insegnanti_non_di_ruolo": null,
+            "lavoratori_determinati": null,
+            "lavoratori_marittimi": null
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": null,
+            "eta_massima": null,
+            "eta_massima_fine_mutuo": null,
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": null,
+            "max_garanti": null,
+            "regola_eta_80": null,
+            "ponderazione_reddito": {
+                "coniuge": null,
+                "partner_convivente": null,
+                "genitori": null,
+                "figli": null,
+                "fratelli_sorelle": null,
+                "conviventi_altra_finalita": null
+            },
+            "grado_parentela": null,
+            "massimo_garanti": null,
+            "regola_eta": null
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": null,
+                "descrizione": null
+            },
+            "promozione_green": null
+        },
+        "altri_limiti": {
+            "iscrizione_ipotecaria": null,
+            "vincolo_territoriale": null,
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": null,
+            "stress_test_variabile": null,
+            "mediazione_massima": null,
+            "tasso_indebitamento_massimo": null,
+            "mutuo_chirografario_abbinato": null
+        }
+    },
+    "bgLogoLetter": "M",
+    "color": "#800020",
+    "isNationwide": true,
+    "territories": [
+        "*"
+    ],
+    "minSeniorityAutonomoDeroga": 18,
+    "ageCheckMethod": "oldest",
+    "tdWithoutCoapplicantStatus": null,
+    "isDigitalFirst": false,
+    "telefono": null,
+    "coefficienteForfettario": null,
+    "policy_name": null,
+    "version": null,
+    "description": null,
+    "income_assessment": {
+        "method": null,
+        "mandatory": null,
+        "description": null,
+        "deductions": null,
+        "thresholds": {
+            "status": null,
+            "by_household_size": {}
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": null,
+        "joint_applications": {
+            "rule": null,
+            "priority_cases": null
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": null,
+            "requirement": null
+        },
+        "badante": {
+            "allowed": null,
+            "requirement": null
+        },
+        "apprentice": {
+            "allowed": null,
+            "rules": null
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": null,
+                "description": null
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": null
+        },
+        "life": {
+            "type": null,
+            "financed_interest_rate_percent": null,
+            "rate_scope": null,
+            "capital_scope": null
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": null,
+            "financial_difficulty": {
+                "allowed": null,
+                "condition": null,
+                "assessment": null
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": null
+        },
+        "without_consap": {
+            "max_ltc_percent": null
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": null,
+            "approximate_days": null,
+            "scope": null,
+            "starting_point": null
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": null,
+            "minimum_percent": null,
+            "reducible": null
+        },
+        "appraisal": {
+            "amount_eur": null,
+            "payment_timing": null
+        }
+    }
+}

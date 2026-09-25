@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" width="100%" height="100%">
+  <rect width="300" height="120" rx="16" fill="#007A53"/>
+  <!-- CA Geometric Monogram -->
+  <g transform="translate(25, 22)">
+    <!-- Green-white C & Red Slash A -->
+    <path d="M10 38 C10 18 25 10 42 10 C54 10 65 16 70 24 L55 34 C52 28 46 24 40 24 C30 24 24 30 24 40 C24 50 30 56 40 56 C46 56 52 52 56 46 L70 56 C64 64 54 70 42 70 C25 70 10 62 10 38 Z" fill="#FFFFFF"/>
+    <polygon points="52,10 74,10 58,70 36,70" fill="#ED1C24"/>
+    <polygon points="62,38 78,38 74,48 58,48" fill="#FFFFFF"/>
+  </g>
+  <!-- Typography -->
+  <g fill="#FFFFFF" transform="translate(118, 42)">
+    <text x="0" y="16" font-family="Arial, sans-serif" font-size="19" font-weight="900" letter-spacing="1">CRÉDIT AGRICOLE</text>
+    <text x="0" y="36" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#A3E8D0" letter-spacing="2">ITALIA</text>
+  </g>
+</svg>

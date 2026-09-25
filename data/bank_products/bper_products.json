@@ -1,0 +1,26 @@
+[
+    {
+        "id": "BPER_PROMO_CASA_2026_FISSO",
+        "nome": "BPER Mutuo Promo Casa 2026 - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 0.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.35
+            }
+        ]
+    }
+]

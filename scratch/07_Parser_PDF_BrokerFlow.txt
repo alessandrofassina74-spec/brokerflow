@@ -1,0 +1,22 @@
+BrokerFlow
+Documento 7 - Parser PDF
+1. Obiettivo
+Il Parser PDF trasforma listini e policy pubblicati dalle banche in dati strutturati utilizzabili da BrokerFlow. Il parser non prende decisioni ma interpreta la struttura dei documenti e genera file JSON conformi allo standard interno.
+2. Principi di progettazione
+- Separazione tra estrazione e interpretazione.- Nessuna regola bancaria nel parser.- Gestione configurabile delle eccezioni.- Output deterministico.- Tracciabilità completa dell'origine dei dati.
+3. Pipeline
+1. Acquisizione PDF.2. Estrazione di testo e tabelle.3. Individuazione delle aree significative.4. Normalizzazione dei dati.5. Gestione delle celle unite.6. Validazione.7. Produzione del JSON.8. Controlli di coerenza.9. Salvataggio della versione.
+4. Gestione delle tabelle
+Il parser deve riconoscere automaticamente:- intestazioni;- sotto-intestazioni;- colonne;- righe;- celle vuote;- celle unite;- note a piè pagina.Ogni tabella viene convertita in una struttura intermedia prima della trasformazione in JSON.
+5. Celle unite
+Decisione progettuale:quando una cella unita rappresenta un valore valido per tutte le righe sottostanti (es. LTV, durata, finalità, note), il valore deve essere propagato automaticamente a tutte le righe interessate prima della conversione in JSON.
+6. Normalizzazione
+Il parser uniforma:- percentuali;- importi;- durate;- descrizioni prodotto;- codici banca;- formati data;- nomenclature.L'obiettivo è avere uno schema identico per tutte le banche.
+7. Validazione
+Prima della generazione finale il sistema verifica:- assenza di campi obbligatori mancanti;- coerenza delle durate;- correttezza dei valori numerici;- presenza delle versioni;- corrispondenza tra prodotti e griglie tassi.
+8. Output
+Per ogni banca vengono prodotti almeno:- <banca>_listino.json- <banca>_policy.jsonEntrambi devono essere indipendenti dal PDF originale e utilizzabili direttamente dai motori di BrokerFlow.
+9. Gestione degli errori
+Gli errori devono essere classificati come:- bloccanti;- avvisi;- informazioni.Ogni anomalia deve essere registrata con riferimento alla pagina e alla tabella di origine.
+10. Evoluzione
+Il parser dovrà poter supportare in futuro:- OCR per PDF scansionati;- riconoscimento automatico di nuovi layout;- importazione massiva;- confronto tra versioni successive dei listini;- suggerimento delle modifiche introdotte dalle banche.

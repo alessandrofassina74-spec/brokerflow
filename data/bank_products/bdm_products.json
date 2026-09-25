@@ -1,0 +1,358 @@
+[
+    {
+        "id": "BDM_UNO_VAR",
+        "nome": "Mutuo Uno - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.8
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.85
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.9
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDM_UNO_FISSO",
+        "nome": "Mutuo Uno - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.8
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.85
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.9
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDM_SURROGA_UNO_VAR",
+        "nome": "Mutuo Surroga Uno - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.05
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDM_SURROGA_UNO_FISSO",
+        "nome": "Mutuo Surroga Uno - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.05
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDM_ALADINO_VAR",
+        "nome": "Mutuo Liquidità Aladino - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.65,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 2.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.5
+            }
+        ]
+    },
+    {
+        "id": "BDM_ALADINO_FISSO",
+        "nome": "Mutuo Liquidità Aladino - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.65,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 2.35
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.65
+            }
+        ]
+    },
+    {
+        "id": "BDM_CONSAP_VAR",
+        "nome": "Mutuo Prima Casa Consap - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.6
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.75
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "BDM_CONSAP_FISSO",
+        "nome": "Mutuo Prima Casa Consap - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.6
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.75
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "BDM_GREEN_VAR",
+        "nome": "Mutuo Green - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.4
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.4
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ]
+    },
+    {
+        "id": "BDM_GREEN_FISSO",
+        "nome": "Mutuo Green - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 0.4
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.4
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ]
+    }
+]

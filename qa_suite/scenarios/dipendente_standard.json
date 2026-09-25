@@ -1,0 +1,37 @@
+{
+  "name": "Dipendente Tempo Indeterminato Standard (75% LTV)",
+  "description": "Verifica del calcolo fattibilità per lavoratore dipendente a tempo indeterminato con LTV 75% e 0 rate pregresse.",
+  "inputs": {
+    "mortgage_type": "acquisto",
+    "applicant": {
+      "nome": "Marco",
+      "cognome": "Rossi",
+      "data_nascita": "1990-05-15",
+      "stato_civile": "celibe",
+      "figli": "no",
+      "cittadinanza": "italiana",
+      "abitazione": "affitto",
+      "canone_affitto": 600,
+      "persone_nucleo": 1,
+      "comune_immobile": "Milano",
+      "comune_residenza": "Milano",
+      "comune_lavoro": "Milano",
+      "tipo_contratto": "dipendente_ti",
+      "netto_mensile": 2500,
+      "mensilita": 14
+    },
+    "loan": {
+      "finalita": "acquisto",
+      "tipo_tasso": "fisso",
+      "importo": 150000,
+      "valore_immobile": 200000,
+      "durata": 25,
+      "apertura_conto": "si"
+    }
+  },
+  "expected": {
+    "ltv": 75.0,
+    "min_feasible_banks": 1,
+    "no_console_errors": true
+  }
+}

@@ -1,0 +1,51 @@
+BrokerFlow - Registro Funzionalità V1
+Versione: Bozza 0.1Obiettivo: assistente decisionale per il mediatore del credito.
+BF-001 - Nuova Analisi
+Creazione di un'analisi senza aprire una pratica.
+BF-002 - Profilo Cliente
+Anagrafica, stato civile, regime patrimoniale dinamico, nazionalità, residenza.
+BF-003 - Gestione Soggetti
+Richiedenti, co-richiedenti e garanti aggiungibili in qualsiasi momento.
+BF-004 - Profilo Reddituale
+Intervista dinamica per dipendente, autonomo, pensionato e interinale.
+BF-005 - Prestiti
+Gestione prestiti, CQS, revolving, trattenute, CRIF.
+BF-006 - Operazione
+Acquisto, Surroga, Liquidità, Consolidamento, Acquisto+Ristrutturazione.
+BF-007 - Motore Strategico
+Analisi delle banche e proposta della strategia migliore.
+BF-008 - Simulatore Strategico
+Cursori dinamici (anticipo/LTV/importo/durata) con ricalcolo immediato.
+BF-009 - Percorsi Bancari
+Storico dei percorsi verso una o più banche senza invio automatico.
+BF-010 - Dashboard
+Scadenze, opportunità commerciali, dati economici oscurabili.
+BF-011 - Community
+Condivisione anonima delle esperienze su banche e filiali.
+BF-012 - Documenti Intelligenti
+Modulistica compilabile automaticamente (fase successiva della V1).
+BF-013 - Check-list
+Verifica documenti con flag, senza obbligo di caricamento.
+BF-014 - Ruoli
+Broker, Manager, Capo Area, Compagnia con permessi differenziati.
+BF-015 - Supporto Manager
+Modifica pratica solo dopo richiesta esplicita del broker.
+BF-016 - Salvataggio Automatico
+Autosave continuo senza pulsante Salva.
+BF-017 - Statistiche
+Report personali e gerarchici.
+BF-018 - Knowledge Base
+Regole ufficiali + esperienza condivisa sulle banche.
+BF-019 - AI Documentale
+Lettura futura di CU e Modello Redditi.
+BF-020 - Esportazione
+Report finale e preparazione pratica per il gestionale esterno.
+Piano di lavoro - Domani
+1. Validazione completa del modulo Redditi (campo per campo).
+2. Definizione delle caselle CU e Modello Redditi da utilizzare.
+3. Progettazione dettagliata del modulo Prestiti.
+4. Definizione del Motore Strategico: prime regole ufficiali delle banche.
+5. Disegno definitivo del flusso Analisi → Strategia → Percorso Bancario.
+6. Preparazione del database logico delle prime tabelle.
+Regola guida del progetto:
+«Ogni clic deve avere un valore. BrokerFlow non sostituisce il gestionale della banca: aiuta il broker a prendere la decisione migliore.»

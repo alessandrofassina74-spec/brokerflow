@@ -1,0 +1,38 @@
+{
+  "name": "Cliente 2 - Coppia con 2 Figli (Mutuo 100% Famiglia)",
+  "description": "Richiedente 33 anni, sposata con 2 figli a carico, dipendente a tempo indeterminato con netto di 2.800€/mese. Richiesta mutuo 100% Consap (220.000€ su 220.000€) per 30 anni.",
+  "inputs": {
+    "mortgage_type": "acquisto",
+    "applicant": {
+      "nome": "Giulia",
+      "cognome": "Romano",
+      "data_nascita": "1993-08-20",
+      "stato_civile": "sposato",
+      "regime": "separazione",
+      "figli": "si",
+      "num_figli": 2,
+      "cittadinanza": "italiana",
+      "abitazione": "affitto",
+      "canone_affitto": 700,
+      "persone_nucleo": 4,
+      "comune_immobile": "Roma",
+      "comune_residenza": "Roma",
+      "comune_lavoro": "Roma",
+      "tipo_contratto": "dipendente_ti",
+      "netto_mensile": 2800
+    },
+    "loan": {
+      "finalita": "acquisto",
+      "tipo_tasso": "fisso",
+      "importo": 220000,
+      "valore_immobile": 220000,
+      "durata": 30,
+      "apertura_conto": "si",
+      "is_consap": true
+    }
+  },
+  "expected": {
+    "ltv": 100.0,
+    "no_console_errors": true
+  }
+}

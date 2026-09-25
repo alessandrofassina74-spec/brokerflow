@@ -1,0 +1,277 @@
+{
+    "name": "Mediobanca Premier",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 80,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": true,
+    "minResidencyYears": 3,
+    "minSeniorityAutonomo": 36,
+    "minLoan": 50000,
+    "maxLoan": 1000000,
+    "minDuration": 10,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "autonomo",
+        "pensionato",
+        "apprendista",
+        "co.co.pro.",
+        "lavoratore_marittimo"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "acquisto_ristrutturazione",
+        "ristrutturazione",
+        "rifinanziamento",
+        "consolidamento",
+        "liquidita",
+        "surroga",
+        "sostituzione",
+        "sostituzione_ristrutturazione"
+    ],
+    "mriGrid": {
+        "centro": {
+            "1": 874.58,
+            "2": 1220.47,
+            "3": 1526.13,
+            "4": 1838.65,
+            "5": 2119.61,
+            "extra_membro": 311
+        },
+        "nord": {
+            "1": 848.9,
+            "2": 1163.98,
+            "3": 1446.38,
+            "4": 1736.04,
+            "5": 1996.47,
+            "extra_membro": 287
+        },
+        "sud_isole": {
+            "1": 751.17,
+            "2": 1047.48,
+            "3": 1321.96,
+            "4": 1590.24,
+            "5": 1840.45,
+            "extra_membro": 272
+        }
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "max_durata": 30
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.7,
+                "max_dsr": null,
+                "max_durata": 30
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_dsr": null,
+                "importo_minimo": 75000,
+                "ammortamento_minimo_mesi": 24
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "nota": null
+            },
+            "consap": {
+                "importo_minimo": null,
+                "nota": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "under_36": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": 0.75,
+                "max_durata": 20
+            },
+            "liquidita": {
+                "max_ltv": 0.7,
+                "max_dsr": 0.3,
+                "importo_massimo": 200000
+            },
+            "consolidamento": {
+                "max_ltv": 0.7,
+                "max_dsr": 0.3,
+                "max_durata": 25,
+                "max_liquidita_con_mutuo": 100000,
+                "max_liquidita_senza_mutuo": 50000
+            },
+            "rifinanziamento": {
+                "max_ltv": 0.75,
+                "max_dsr": 0.3,
+                "max_liquidita": 100000
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": 0.75
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": 0.7
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": null
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": null
+            },
+            "autonomi": {
+                "anzianita_minima_mesi": null
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": null
+            },
+            "colf_badanti": "Redditi mai quantificabili e non assimilabili ai dipendenti a tempo determinato",
+            "insegnanti_non_di_ruolo": "Assimilati a tempo indeterminato con anzianità minima di 3 anni e incarico pieno annuale (da settembre a giugno)",
+            "lavoratori_determinati": "Anzianità minima 24 mesi, obbligo di coobbligato o garante a tempo indeterminato, autonomo o pensionato",
+            "lavoratori_marittimi": "Anzianità minima 3 anni con almeno 180 giorni di navigazione annui, contratto regolamentato dal diritto italiano, limitato a finalità acquisto, acquisto+ristrutturazione e surroga"
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": null,
+            "eta_massima": null,
+            "eta_massima_fine_mutuo": null,
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": "Solo 1° e 2° grado (coniuge, partner convivente, genitori, figli, fratelli o sorelle con nucleo familiare autonomo)",
+            "max_garanti": 2,
+            "regola_eta_80": "Al compimento dell'80° anno di età il finanziamento deve essere giunto ad almeno 2/3 della sua durata (eccetto acquisto prima casa fiscale)",
+            "ponderazione_reddito": {
+                "coniuge": 1,
+                "partner_convivente": 1,
+                "genitori": 1,
+                "figli": 1,
+                "fratelli_sorelle": 1,
+                "conviventi_altra_finalita": 0.5
+            }
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": null,
+                "descrizione": null
+            },
+            "promozione_green": "Riduzione dello spread di 0.30% per immobili in classe A o B, o per efficientamento energetico con miglioramento di almeno 2 classi o riduzione indice EPgl,nren del 30% entro 30 mesi"
+        },
+        "altri_limiti": {
+            "iscrizione_ipotecaria": null,
+            "vincolo_territoriale": null,
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": 0.6,
+            "stress_test_variabile": "Calcolo con scarto del 7.5% per mutui a tasso variabile puro",
+            "mediazione_massima": 0.03
+        }
+    },
+    "bgLogoLetter": "M",
+    "color": "#cccccc",
+    "isNationwide": true,
+    "territories": [
+        "*"
+    ],
+    "minSeniorityAutonomoDeroga": 18,
+    "ageCheckMethod": "oldest",
+    "tdWithoutCoapplicantStatus": null,
+    "isDigitalFirst": false,
+    "telefono": null,
+    "coefficienteForfettario": null,
+    "policy_name": null,
+    "version": null,
+    "description": null,
+    "income_assessment": {
+        "method": null,
+        "mandatory": null,
+        "description": null,
+        "deductions": null,
+        "thresholds": {
+            "status": null,
+            "by_household_size": {}
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": null,
+        "joint_applications": {
+            "rule": null,
+            "priority_cases": null
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": null,
+            "requirement": null
+        },
+        "badante": {
+            "allowed": null,
+            "requirement": null
+        },
+        "apprentice": {
+            "allowed": null,
+            "rules": null
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": null,
+                "description": null
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": null
+        },
+        "life": {
+            "type": null,
+            "financed_interest_rate_percent": null,
+            "rate_scope": null,
+            "capital_scope": null
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": null,
+            "financial_difficulty": {
+                "allowed": null,
+                "condition": null,
+                "assessment": null
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": null
+        },
+        "without_consap": {
+            "max_ltc_percent": null
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": null,
+            "approximate_days": null,
+            "scope": null,
+            "starting_point": null
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": null,
+            "minimum_percent": null,
+            "reducible": null
+        },
+        "appraisal": {
+            "amount_eur": null,
+            "payment_timing": null
+        }
+    }
+}

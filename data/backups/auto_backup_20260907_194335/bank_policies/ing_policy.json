@@ -1,0 +1,428 @@
+{
+    "name": "ING Bank",
+    "maxLtv": 0.95,
+    "maxDsr": 0.5,
+    "maxDsrDeroga": 0.6,
+    "maxAge": 80,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 2,
+    "hasMri": true,
+    "minResidencyYears": 3,
+    "minSeniorityAutonomo": 24,
+    "minLoan": 50000,
+    "maxLoan": 5000000,
+    "minDuration": 5,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "dipendente_ti",
+        "dipendente_td",
+        "autonomo",
+        "pensionato",
+        "collaboratore",
+        "dottorando"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "surroga",
+        "liquidita",
+        "consolido",
+        "ristrutturazione",
+        "reintegro",
+        "mutuo_in_vista"
+    ],
+    "mriGrid": {
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null,
+        "nord": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": 913,
+                "2": 1263,
+                "3": 1577,
+                "4": 1900,
+                "5": 2191,
+                "6": 2471,
+                "7": 2739
+            },
+            "grande": {
+                "1": 870,
+                "2": 1211,
+                "3": 1517,
+                "4": 1826,
+                "5": 2106,
+                "6": 2375,
+                "7": 2633
+            },
+            "piccolo": {
+                "1": 820,
+                "2": 1153,
+                "3": 1451,
+                "4": 1745,
+                "5": 2015,
+                "6": 2274,
+                "7": 2522
+            }
+        },
+        "centro": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": 868,
+                "2": 1189,
+                "3": 1477,
+                "4": 1776,
+                "5": 2044,
+                "6": 2302,
+                "7": 2548
+            },
+            "grande": {
+                "1": 824,
+                "2": 1136,
+                "3": 1416,
+                "4": 1701,
+                "5": 1958,
+                "6": 2204,
+                "7": 2441
+            },
+            "piccolo": {
+                "1": 774,
+                "2": 1077,
+                "3": 1348,
+                "4": 1618,
+                "5": 1865,
+                "6": 2101,
+                "7": 2327
+            }
+        },
+        "sud": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": 679,
+                "2": 973,
+                "3": 1238,
+                "4": 1496,
+                "5": 1733,
+                "6": 1961,
+                "7": 2161
+            },
+            "grande": {
+                "1": 656,
+                "2": 947,
+                "3": 1208,
+                "4": 1461,
+                "5": 1694,
+                "6": 1918,
+                "7": 2118
+            },
+            "piccolo": {
+                "1": 617,
+                "2": 902,
+                "3": 1158,
+                "4": 1402,
+                "5": 1629,
+                "6": 1847,
+                "7": 2047
+            }
+        }
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.95,
+                "max_dsr": 0.5,
+                "max_durata": 30,
+                "max_ltv_senza_consap": null,
+                "max_ltv_con_consap": null,
+                "nota": "Fino al 95% LTV per acquisto Prima Casa anche HLTV95 e LTC95",
+                "max_ltc": 0.95,
+                "importo_minimo": 50000
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.5,
+                "max_durata": 30,
+                "erogazione": null
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.5,
+                "importo_minimo": 80000,
+                "ammortamento_minimo_mesi": null,
+                "max_durata": 30,
+                "max_liquidita_aggiuntiva": null
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.5,
+                "nota": null
+            },
+            "consap": {
+                "importo_minimo": null,
+                "nota": "Apertura a surroghe di mutui Consap",
+                "gestito": true,
+                "max_ltv": null,
+                "max_durata": null,
+                "garanti_ammessi": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null,
+                "erogazione": null
+            },
+            "under_36": {
+                "max_ltv": 0.95,
+                "max_durata": 30
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": 0.8,
+                "max_durata": 30,
+                "nota": "Massimo 80% LTV per Seconda Casa",
+                "max_dsr": 0.5
+            },
+            "liquidita": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.5,
+                "importo_massimo": null,
+                "importo_minimo": 50000,
+                "max_durata": 30,
+                "gestito": true,
+                "nota": null
+            },
+            "consolidamento": {
+                "max_ltv": 0.7,
+                "max_dsr": 0.5,
+                "max_durata": 30,
+                "max_liquidita_con_mutuo": null,
+                "max_liquidita_senza_mutuo": null,
+                "gestito": true,
+                "nota": null
+            },
+            "rifinanziamento": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.5,
+                "max_liquidita": null
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": null
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": null
+            },
+            "acquisto_ristrutturazione": {
+                "max_ltv": 0.8,
+                "max_lavori": null,
+                "nota": "Valutabile ma non gradito"
+            },
+            "acquisto_e_ristrutturazione": {
+                "max_ltv_acquisto": null,
+                "max_ristrutturazione": null,
+                "nota": null
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": "Accompagnato da soggetto finanziabile, almeno 18 mesi negli ultimi 24 e contratto valido per i 6 mesi successivi"
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": "Cittadini stranieri residenti in Italia da almeno 3 anni."
+            },
+            "autonomi": {
+                "anzianita_minima_mesi": 24
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": "Se anzianità inferiore a 24 mesi presso stessa azienda"
+            },
+            "colf_badanti": null,
+            "insegnanti_non_di_ruolo": null,
+            "lavoratori_determinati": null,
+            "lavoratori_marittimi": null,
+            "insegnanti_non_ruolo": null,
+            "lavoratori_autonomi": null,
+            "lavoratori_non_ruolo": null
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": null,
+            "eta_massima": 80,
+            "eta_massima_fine_mutuo": "80 anni ai 2/3 del mutuo",
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": "Coniuge, Partner, Genitori, Figli, Fratelli o Sorelle",
+            "max_garanti": 2,
+            "regola_eta_80": "Massimo 80 anni ai 2/3 della durata del mutuo",
+            "ponderazione_reddito": {
+                "coniuge": 0.5,
+                "partner_convivente": null,
+                "genitori": null,
+                "figli": null,
+                "fratelli_sorelle": null,
+                "conviventi_altra_finalita": null
+            },
+            "grado_parentela": "Coniuge, Partner, Genitori, Figli, Fratelli o Sorelle",
+            "massimo_garanti": 2,
+            "regola_eta": "Massimo 80 anni ai 2/3 della durata del mutuo",
+            "ammessi": true,
+            "divieto_consap": null
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": 0.2,
+                "descrizione": "Valido per mutui acquisto con LTV fino a 80%, LTC95% e HLTV95% per immobili in classe energetica A o B"
+            },
+            "promozione_green": null
+        },
+        "altri_limiti": {
+            "iscrizione_ipotecaria": null,
+            "vincolo_territoriale": null,
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": 0.6,
+            "stress_test_variabile": 0.005,
+            "mediazione_massima": null,
+            "tasso_indebitamento_massimo": 0.6,
+            "mutuo_chirografario_abbinato": null,
+            "eta_massima_scadenza": 80,
+            "eta_minima_stipula": 18,
+            "pre_ammortamento_massimo": null
+        },
+        "garanzie_aggiuntive": {
+            "multi_ipoteca_permessa": null,
+            "descrizione": null
+        },
+        "lavoratori_interinali": {
+            "reddito_minimo_garantito": 800,
+            "condizioni_secondo_reddito_indeterminato": {
+                "valutazione_reddito": "100%",
+                "requisiti": {
+                    "mesi_lavorati_richiesti": "18 su 24 mesi",
+                    "mesi_contratto_residui_utilizzatore": 6
+                }
+            }
+        }
+    },
+    "bgLogoLetter": "I",
+    "color": "#ff6200",
+    "isNationwide": true,
+    "territories": [
+        "*"
+    ],
+    "minSeniorityAutonomoDeroga": 18,
+    "ageCheckMethod": "oldest",
+    "tdWithoutCoapplicantStatus": null,
+    "isDigitalFirst": true,
+    "telefono": "800 717273",
+    "coefficienteForfettario": 0.8,
+    "policy_name": "ING Bank Policy 2026",
+    "version": "2026.1",
+    "description": "Policy creditizia aggiornata con introduzione nuove regole HLTV, capacità di risparmio, gestione donazioni e documenti d'identità.",
+    "income_assessment": {
+        "method": "Standard DSR + MRI + Capacità di risparmio mensile (min 10% e saldo C/C > 2.000 €)",
+        "mandatory": true,
+        "description": "Verifica della sostenibilità reddituale e della gestione lineare del conto corrente.",
+        "deductions": null,
+        "thresholds": {
+            "status": "active",
+            "by_household_size": {}
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": 80,
+        "joint_applications": {
+            "rule": "Età massima calcolata sul richiedente più anziano (oldest)",
+            "priority_cases": null
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": null,
+            "requirement": null
+        },
+        "badante": {
+            "allowed": null,
+            "requirement": null
+        },
+        "apprentice": {
+            "allowed": null,
+            "rules": null
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": true,
+                "description": "Verifica continuità lavorativa"
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": "Obbligatoria"
+        },
+        "life": {
+            "type": "Facoltativa con sconti dedicati",
+            "financed_interest_rate_percent": null,
+            "rate_scope": null,
+            "capital_scope": null
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": 70,
+            "financial_difficulty": {
+                "allowed": null,
+                "condition": null,
+                "assessment": null
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": null
+        },
+        "without_consap": {
+            "max_ltc_percent": null
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": null,
+            "approximate_days": null,
+            "scope": null,
+            "starting_point": null
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": null,
+            "minimum_percent": null,
+            "reducible": null
+        },
+        "appraisal": {
+            "amount_eur": null,
+            "payment_timing": null
+        }
+    },
+    "durationStep": 5,
+    "criteri_reddito": {
+        "assegno_unico": {
+            "fino_11_anni": 1.0,
+            "fino_17_anni": 0.5,
+            "dai_18_anni": 0.0
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "mps": {
+        "name": "Monte dei Paschi di Siena",
+        "bgLogoLetter": "M",
+        "color": "#800020",
+        "isNationwide": true,
+        "territories": [
+            "*"
+        ],
+        "maxLtv": 1.0,
+        "maxDsr": 0.35,
+        "maxDsrDeroga": 0.4,
+        "maxAge": 80,
+        "maxGuarantorAge": 80,
+        "maxBorrowers": 4,
+        "hasMri": true,
+        "minResidencyYears": 0,
+        "minSeniorityAutonomo": 24,
+        "minSeniorityAutonomoDeroga": 18,
+        "allowedContracts": [
+            "dipendente_ti",
+            "dipendente_td",
+            "autonomo",
+            "pensionato"
+        ],
+        "allowedPurposes": [
+            "acquisto",
+            "ristrutturazione",
+            "surroga",
+            "aste"
+        ],
+        "minLoan": 45000,
+        "maxLoan": 2000000,
+        "minDuration": 10,
+        "maxDuration": 40
+    },
+    "ing": {
+        "name": "ING Bank",
+        "bgLogoLetter": "I",
+        "color": "#ff6200",
+        "isNationwide": true,
+        "territories": [
+            "*"
+        ],
+        "maxLtv": 0.95,
+        "maxDsr": 0.5,
+        "maxDsrDeroga": 0.55,
+        "maxAge": 80,
+        "maxGuarantorAge": 80,
+        "maxBorrowers": 2,
+        "hasMri": true,
+        "minResidencyYears": 3,
+        "minSeniorityAutonomo": 24,
+        "minSeniorityAutonomoDeroga": 18,
+        "allowedContracts": [
+            "dipendente_ti",
+            "dipendente_td",
+            "autonomo",
+            "pensionato"
+        ],
+        "allowedPurposes": [
+            "acquisto",
+            "surroga",
+            "liquidita",
+            "consolido",
+            "ristrutturazione"
+        ],
+        "minLoan": 50000,
+        "maxLoan": 1500000,
+        "minDuration": 5,
+        "maxDuration": 40
+    },
+    "bper": {
+        "name": "BPER Banca",
+        "bgLogoLetter": "B",
+        "color": "#005a50",
+        "isNationwide": true,
+        "territories": [
+            "*"
+        ],
+        "maxLtv": 1.0,
+        "maxDsr": 0.35,
+        "maxDsrDeroga": 0.4,
+        "maxAge": 78,
+        "maxGuarantorAge": 80,
+        "maxBorrowers": 4,
+        "hasMri": false,
+        "minResidencyYears": 2,
+        "minSeniorityAutonomo": 18,
+        "minSeniorityAutonomoDeroga": 12,
+        "allowedContracts": [
+            "dipendente_ti",
+            "dipendente_td",
+            "autonomo",
+            "pensionato"
+        ],
+        "allowedPurposes": [
+            "acquisto",
+            "ristrutturazione",
+            "surroga"
+        ],
+        "minLoan": 0,
+        "maxLoan": 99999999,
+        "minDuration": 1,
+        "maxDuration": 30
+    },
+    "chebanca": {
+        "name": "CheBanca!",
+        "bgLogoLetter": "C",
+        "color": "#ffc20e",
+        "isNationwide": true,
+        "territories": [
+            "*"
+        ],
+        "maxLtv": 1.0,
+        "maxDsr": 0.35,
+        "maxDsrDeroga": 0.4,
+        "maxAge": 75,
+        "maxGuarantorAge": 78,
+        "maxBorrowers": 4,
+        "hasMri": true,
+        "minResidencyYears": 2,
+        "minSeniorityAutonomo": 36,
+        "minSeniorityAutonomoDeroga": 24,
+        "allowedContracts": [
+            "dipendente_ti",
+            "dipendente_td",
+            "autonomo",
+            "pensionato"
+        ],
+        "allowedPurposes": [
+            "acquisto",
+            "surroga",
+            "ristrutturazione",
+            "liquidita",
+            "consolido",
+            "aste"
+        ],
+        "minLoan": 0,
+        "maxLoan": 99999999,
+        "minDuration": 1,
+        "maxDuration": 30
+    }
+}

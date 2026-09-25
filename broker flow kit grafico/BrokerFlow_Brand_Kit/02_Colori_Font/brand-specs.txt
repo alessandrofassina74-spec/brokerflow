@@ -1,0 +1,34 @@
+BROKERFLOW — BRAND SPECIFICATIONS
+
+Brand name: BrokerFlow
+Tagline: IL TUO MUTUO, SEMPLICE
+
+CORE COLORS
+Navy: #071B3A — primary text, dark backgrounds, trust
+Blue: #006BFF — technology, action, Flow accent
+Cyan: #12CFEA — energy, flow, digital accent
+Aqua: #00D4B8 — optional gradient endpoint
+White: #FFFFFF — primary background
+Light: #F4F7FB — secondary background
+
+PRIMARY GRADIENT
+BrokerFlow Flow Gradient: #006BFF → #12CFEA → #00D4B8
+Direction: left to right / upward where appropriate.
+
+WORDMARK
+Broker: Navy #071B3A
+Flow: Blue-to-Cyan gradient
+Typeface direction: modern geometric sans-serif, bold/semi-bold.
+Suggested production fonts: Inter / Manrope / Plus Jakarta Sans.
+
+TAGLINE
+IL TUO MUTUO, SEMPLICE
+Uppercase, generous tracking, Navy or muted slate.
+
+DESIGN PRINCIPLES
+1. Minimal first: avoid unnecessary symbols and visual clutter.
+2. Software, not real estate agency: the identity should feel fintech/SaaS.
+3. Flow is the key visual idea: process, continuity, speed, control.
+4. Use the symbol alone for app icon/favicon.
+5. Never add a house, shield, checkmark or bank icon to the primary mark.
+6. Preserve generous clear space around the logo.

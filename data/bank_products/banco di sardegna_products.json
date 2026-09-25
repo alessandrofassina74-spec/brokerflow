@@ -1,0 +1,3570 @@
+[
+    {
+        "id": "BDS001",
+        "nome": "Mutuo Variabile - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV ≤ 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": null,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS002",
+        "nome": "Mutuo Variabile - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 51-60%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": null,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS003",
+        "nome": "Mutuo Variabile - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 61-70%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": null,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS004",
+        "nome": "Mutuo Variabile - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 71-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": null,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS005",
+        "nome": "Mutuo Variabile - Surroga, Surroga con erogazione liquidità - LTV ≤ 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS006",
+        "nome": "Mutuo Variabile - Surroga, Surroga con erogazione liquidità - LTV 51-60%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS007",
+        "nome": "Mutuo Variabile - Surroga, Surroga con erogazione liquidità - LTV 61-70%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS008",
+        "nome": "Mutuo Variabile - Surroga, Surroga con erogazione liquidità - LTV 71-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS009",
+        "nome": "Mutuo Fisso - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 50%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.75
+            }
+        ]
+    },
+    {
+        "id": "BDS010",
+        "nome": "Mutuo Fisso - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 51-60%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.85
+            }
+        ]
+    },
+    {
+        "id": "BDS011",
+        "nome": "Mutuo Fisso - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 61-70%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.75
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "BDS012",
+        "nome": "Mutuo Fisso - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 71-80%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.75
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.85
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 2.05
+            }
+        ]
+    },
+    {
+        "id": "BDS013",
+        "nome": "Mutuo Fisso - Surroga, Surroga con erogazione liquidità - LTV ≤ 50%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.15
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.45
+            }
+        ]
+    },
+    {
+        "id": "BDS014",
+        "nome": "Mutuo Fisso - Surroga, Surroga con erogazione liquidità - LTV 51-60%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.35
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.55
+            }
+        ]
+    },
+    {
+        "id": "BDS015",
+        "nome": "Mutuo Fisso - Surroga, Surroga con erogazione liquidità - LTV 61-70%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.35
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.65
+            }
+        ]
+    },
+    {
+        "id": "BDS016",
+        "nome": "Mutuo Fisso - Surroga, Surroga con erogazione liquidità - LTV 71-80%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.75
+            }
+        ]
+    },
+    {
+        "id": "BDS017",
+        "nome": "Mutuo Fisso - Liquidità e Consolidamento - LTV ≤ 50%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.75
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "BDS018",
+        "nome": "Mutuo Fisso - Liquidità e Consolidamento - LTV 51-60%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.75
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.85
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 2.05
+            }
+        ]
+    },
+    {
+        "id": "BDS019",
+        "nome": "Mutuo Fisso - Liquidità e Consolidamento - LTV 61-70%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.85
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 2.15
+            }
+        ]
+    },
+    {
+        "id": "BDS020",
+        "nome": "Mutuo Fisso - Liquidità e Consolidamento - LTV 71-80%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Tasso fisso = IRS 30 anni + spread",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1.95
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.05
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 2.25
+            }
+        ]
+    },
+    {
+        "id": "BDS021",
+        "nome": "Mutuo Variabile con CAP - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV ≤ 50%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS022",
+        "nome": "Mutuo Variabile con CAP - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 51-60%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS023",
+        "nome": "Mutuo Variabile con CAP - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 61-70%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDS024",
+        "nome": "Mutuo Variabile con CAP - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 71-80%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 1
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.1
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.2
+            }
+        ]
+    },
+    {
+        "id": "BDS025",
+        "nome": "Mutuo Variabile con CAP - Surroga, Surroga con erogazione liquidità - LTV ≤ 50%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS026",
+        "nome": "Mutuo Variabile con CAP - Surroga, Surroga con erogazione liquidità - LTV 51-60%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS027",
+        "nome": "Mutuo Variabile con CAP - Surroga, Surroga con erogazione liquidità - LTV 61-70%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS028",
+        "nome": "Mutuo Variabile con CAP - Surroga, Surroga con erogazione liquidità - LTV 71-80%",
+        "tipo": "Variabile con CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "CAP 2,5%. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDS029",
+        "nome": "Mutuo Rata Costante - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV ≤ 50%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS030",
+        "nome": "Mutuo Rata Costante - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 51-60%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS031",
+        "nome": "Mutuo Rata Costante - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 61-70%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS032",
+        "nome": "Mutuo Rata Costante - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL, Liquidità, Consolidamento - LTV 71-80%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione",
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDS033",
+        "nome": "Mutuo Rata Costante - Surroga, Surroga con erogazione liquidità - LTV ≤ 50%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS034",
+        "nome": "Mutuo Rata Costante - Surroga, Surroga con erogazione liquidità - LTV 51-60%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS035",
+        "nome": "Mutuo Rata Costante - Surroga, Surroga con erogazione liquidità - LTV 61-70%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS036",
+        "nome": "Mutuo Rata Costante - Surroga, Surroga con erogazione liquidità - LTV 71-80%",
+        "tipo": "Rata Costante",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Rata costante: la rata non varia, si adegua la durata. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS037",
+        "nome": "Mutuo Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.35
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.55
+            }
+        ]
+    },
+    {
+        "id": "BDS038",
+        "nome": "Mutuo Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 51-60%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "BDS039",
+        "nome": "Mutuo Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 61-70%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.75
+            }
+        ]
+    },
+    {
+        "id": "BDS040",
+        "nome": "Mutuo Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 71-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.75
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "BDS041",
+        "nome": "Mutuo Green - Liquidità e Consolidamento - LTV ≤ 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ]
+    },
+    {
+        "id": "BDS042",
+        "nome": "Mutuo Green - Liquidità e Consolidamento - LTV 51-60%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.75
+            }
+        ]
+    },
+    {
+        "id": "BDS043",
+        "nome": "Mutuo Green - Liquidità e Consolidamento - LTV 61-70%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.75
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "BDS044",
+        "nome": "Mutuo Green - Liquidità e Consolidamento - LTV 71-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.75
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.85
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.95
+            }
+        ]
+    },
+    {
+        "id": "BDS045",
+        "nome": "Mutuo Green - Surroga, Surroga con erogazione liquidità - LTV ≤ 50%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS046",
+        "nome": "Mutuo Green - Surroga, Surroga con erogazione liquidità - LTV 51-60%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS047",
+        "nome": "Mutuo Green - Surroga, Surroga con erogazione liquidità - LTV 61-70%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS048",
+        "nome": "Mutuo Green - Surroga, Surroga con erogazione liquidità - LTV 71-80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS049",
+        "nome": "Mutuo Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS050",
+        "nome": "Mutuo Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS051",
+        "nome": "Mutuo Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS052",
+        "nome": "Mutuo Consap - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS053",
+        "nome": "Mutuo Consap - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS054",
+        "nome": "Mutuo Consap - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1.1
+            }
+        ]
+    },
+    {
+        "id": "BDS055",
+        "nome": "Mutuo Consap - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS056",
+        "nome": "Mutuo Consap - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS057",
+        "nome": "Mutuo Consap - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS058",
+        "nome": "Mutuo Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS059",
+        "nome": "Mutuo Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS060",
+        "nome": "Mutuo Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS061",
+        "nome": "Mutuo Green Consap - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS062",
+        "nome": "Mutuo Green Consap - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS063",
+        "nome": "Mutuo Green Consap - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS064",
+        "nome": "Mutuo Green Consap - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS065",
+        "nome": "Mutuo Green Consap - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS066",
+        "nome": "Mutuo Green Consap - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS067",
+        "nome": "Mutuo Under 36 - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS068",
+        "nome": "Mutuo Under 36 - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS069",
+        "nome": "Mutuo Under 36 - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS070",
+        "nome": "Mutuo Under 36 - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS071",
+        "nome": "Mutuo Under 36 - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS072",
+        "nome": "Mutuo Under 36 - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 1
+            }
+        ]
+    },
+    {
+        "id": "BDS073",
+        "nome": "Mutuo Under 36 - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS074",
+        "nome": "Mutuo Under 36 - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS075",
+        "nome": "Mutuo Under 36 - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo riservato a clienti Under 36. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS076",
+        "nome": "Mutuo Under 36 Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS077",
+        "nome": "Mutuo Under 36 Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS078",
+        "nome": "Mutuo Under 36 Green - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS079",
+        "nome": "Mutuo Under 36 Green - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS080",
+        "nome": "Mutuo Under 36 Green - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS081",
+        "nome": "Mutuo Under 36 Green - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS082",
+        "nome": "Mutuo Under 36 Green - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ]
+    },
+    {
+        "id": "BDS083",
+        "nome": "Mutuo Under 36 Green - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS084",
+        "nome": "Mutuo Under 36 Green - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS085",
+        "nome": "Mutuo Under 36 Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS086",
+        "nome": "Mutuo Under 36 Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS087",
+        "nome": "Mutuo Under 36 Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS088",
+        "nome": "Mutuo Under 36 Consap - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS089",
+        "nome": "Mutuo Under 36 Consap - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.8
+            }
+        ]
+    },
+    {
+        "id": "BDS090",
+        "nome": "Mutuo Under 36 Consap - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.8
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "BDS091",
+        "nome": "Mutuo Under 36 Consap - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS092",
+        "nome": "Mutuo Under 36 Consap - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS093",
+        "nome": "Mutuo Under 36 Consap - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": false,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS094",
+        "nome": "Mutuo Under 36 Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ]
+    },
+    {
+        "id": "BDS095",
+        "nome": "Mutuo Under 36 Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS096",
+        "nome": "Mutuo Under 36 Green Consap - Acquisto, Asta, Acquisto+Ristrutturazione, Ristrutturazione, Costruzione/SAL - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "asta",
+            "acquisto_ristrutturazione",
+            "ristrutturazione",
+            "costruzione"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS097",
+        "nome": "Mutuo Under 36 Green Consap - Liquidità e Consolidamento - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "BDS098",
+        "nome": "Mutuo Under 36 Green Consap - Liquidità e Consolidamento - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.4
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.6
+            }
+        ]
+    },
+    {
+        "id": "BDS099",
+        "nome": "Mutuo Under 36 Green Consap - Liquidità e Consolidamento - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolidamento"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.7
+            }
+        ]
+    },
+    {
+        "id": "BDS100",
+        "nome": "Mutuo Under 36 Green Consap - Surroga, Surroga con erogazione liquidità - LTV ≤ 80%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.1
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.2
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.3
+            }
+        ]
+    },
+    {
+        "id": "BDS101",
+        "nome": "Mutuo Under 36 Green Consap - Surroga, Surroga con erogazione liquidità - LTV 81-90%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ]
+    },
+    {
+        "id": "BDS102",
+        "nome": "Mutuo Under 36 Green Consap - Surroga, Surroga con erogazione liquidità - LTV 91-100%",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 1,
+        "isGreen": true,
+        "isConsap": true,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Mutuo Under 36 Green con garanzia Consap. Include surroga con erogazione liquidità",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    }
+]

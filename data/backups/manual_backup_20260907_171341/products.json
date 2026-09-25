@@ -1,0 +1,1683 @@
+{
+    "bdm": [
+        {
+            "id": "BDM_UNO_VAR",
+            "nome": "Mutuo Uno - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.8
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.8
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.85
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.9
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1
+                }
+            ]
+        },
+        {
+            "id": "BDM_UNO_FISSO",
+            "nome": "Mutuo Uno - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.8
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.8
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.85
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.9
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1
+                }
+            ]
+        },
+        {
+            "id": "BDM_SURROGA_UNO_VAR",
+            "nome": "Mutuo Surroga Uno - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 1
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 1
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.05
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.1
+                }
+            ]
+        },
+        {
+            "id": "BDM_SURROGA_UNO_FISSO",
+            "nome": "Mutuo Surroga Uno - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 1
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 1
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.05
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.1
+                }
+            ]
+        },
+        {
+            "id": "BDM_ALADINO_VAR",
+            "nome": "Mutuo Liquidità Aladino - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "liquidita",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.65,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 2.2
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 2.5
+                }
+            ]
+        },
+        {
+            "id": "BDM_ALADINO_FISSO",
+            "nome": "Mutuo Liquidità Aladino - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "liquidita",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.65,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 2.35
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 2.65
+                }
+            ]
+        },
+        {
+            "id": "BDM_CONSAP_VAR",
+            "nome": "Mutuo Prima Casa Consap - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.6
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.65
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.7
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.75
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 0.85
+                }
+            ]
+        },
+        {
+            "id": "BDM_CONSAP_FISSO",
+            "nome": "Mutuo Prima Casa Consap - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.6
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.65
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.7
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.75
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 0.85
+                }
+            ]
+        },
+        {
+            "id": "BDM_GREEN_VAR",
+            "nome": "Mutuo Green - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 0.4
+                }
+            ]
+        },
+        {
+            "id": "BDM_GREEN_FISSO",
+            "nome": "Mutuo Green - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 1,
+                    "dMax": 10,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 11,
+                    "dMax": 15,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 0.4
+                }
+            ]
+        }
+    ],
+    "bnl": [
+        {
+            "id": "BNL_ACQ_GREEN_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Green (Classe A/B)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.25
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 30,
+                    "spread": 3.35
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_STANDARD_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Standard (Classe C/D)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.35
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 30,
+                    "spread": 3.45
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV50_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV <= 50%",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.5,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.3
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.4
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.45
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV65_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV 51-65%",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.65,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.35
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.45
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.5
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV80_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Diamo Credito (E/F/G) LTV 66-80%",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.5
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.55
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_YOUNG_FISSO",
+            "nome": "Mutuo BNL Spensierato Acquisto Young Under 36",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.5
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.55
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV50_VAR",
+            "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV <= 50%",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.5,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 1.3
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.4
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.45
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1.5
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV65_VAR",
+            "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV 51-65%",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.65,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 1.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 25,
+                    "spread": 1.5
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1.55
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_DC_LTV80_VAR",
+            "nome": "Mutuo BNL Variabile Acquisto Diamo Credito (E/F/G) LTV 66-80%",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 1.5
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.55
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.6
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1.65
+                }
+            ]
+        },
+        {
+            "id": "BNL_ACQ_YOUNG_VAR",
+            "nome": "Mutuo BNL Variabile Acquisto Young Under 36",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 1.3
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.4
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.45
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1.5
+                }
+            ]
+        },
+        {
+            "id": "BNL_LTC95_GREEN_FISSO",
+            "nome": "Mutuo BNL Spensierato LTC 95% Green (Classe A/B)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.25
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 30,
+                    "spread": 3.35
+                }
+            ]
+        },
+        {
+            "id": "BNL_LTC95_STD_FISSO",
+            "nome": "Mutuo BNL Spensierato LTC 95% Standard (Classe C/D)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.7
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.8
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.85
+                }
+            ]
+        },
+        {
+            "id": "BNL_ASTE_FISSO",
+            "nome": "Mutuo BNL Spensierato Aste",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto",
+                "asta"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.4
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 3.5
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 3.55
+                }
+            ]
+        },
+        {
+            "id": "BNL_ASTE_VAR",
+            "nome": "Mutuo BNL Variabile Aste",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "asta"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 1.5
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 20,
+                    "spread": 1.55
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 25,
+                    "spread": 1.6
+                },
+                {
+                    "dMin": 26,
+                    "dMax": 30,
+                    "spread": 1.65
+                }
+            ]
+        },
+        {
+            "id": "BNL_RISTRUTTURAZIONE_FISSO",
+            "nome": "Mutuo BNL Spensierato Ristrutturazione",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.3,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 15,
+                    "spread": 3.35
+                },
+                {
+                    "dMin": 16,
+                    "dMax": 30,
+                    "spread": 3.45
+                }
+            ]
+        },
+        {
+            "id": "BNL_SURROGA_GREEN_FISSO",
+            "nome": "Mutuo BNL Spensierato Surroga Green (Classe A/B)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 20,
+                    "spread": 3.95
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 4.1
+                }
+            ]
+        },
+        {
+            "id": "BNL_SURROGA_STD_FISSO",
+            "nome": "Mutuo BNL Spensierato Surroga / Extra Liquidità (Classe C/D)",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "liquidita",
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 20,
+                    "spread": 4.2
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 4.25
+                }
+            ]
+        },
+        {
+            "id": "BNL_SURROGA_DC_VAR",
+            "nome": "Mutuo BNL Variabile Surroga Diamo Credito (E/F/G)",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 20,
+                    "spread": 2
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 2.1
+                }
+            ]
+        },
+        {
+            "id": "BNL_QUASI_FISSO",
+            "nome": "Mutuo BNL Quasi Fisso (Con CAP 6,20%)",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 30,
+                    "spread": 2.2
+                }
+            ]
+        }
+    ],
+    "bper": [
+        {
+            "id": "BPER_PROMO_CASA_2026_FISSO",
+            "nome": "BPER Mutuo Promo Casa 2026 - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 20,
+                    "spread": 0.25
+                },
+                {
+                    "dMin": 21,
+                    "dMax": 30,
+                    "spread": 0.35
+                }
+            ]
+        }
+    ],
+    "chebanca": [
+        {
+            "id": "CB001",
+            "nome": "Mutuo CheBanca Acquisto - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.35
+                }
+            ]
+        },
+        {
+            "id": "CB002",
+            "nome": "Mutuo CheBanca Acquisto - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.55
+                }
+            ]
+        },
+        {
+            "id": "CB005",
+            "nome": "Mutuo CheBanca Surroga - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.4
+                }
+            ]
+        }
+    ],
+    "ing": [
+        {
+            "id": "ING001",
+            "nome": "Mutuo Arancio Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 40,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "ING002",
+            "nome": "Mutuo Arancio Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 3M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 40,
+                    "spread": 0.5
+                }
+            ]
+        },
+        {
+            "id": "ING003",
+            "nome": "Mutuo Arancio Green Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 40,
+                    "spread": 0.15
+                }
+            ]
+        },
+        {
+            "id": "ING005",
+            "nome": "Mutuo Arancio Surroga - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.95,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 40,
+                    "spread": 0.4
+                }
+            ]
+        }
+    ],
+    "mps": [
+        {
+            "id": "MPS001",
+            "nome": "Mutuo MPS MIO Acquisto Abitazione",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "acquisto_ristrutturazione",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.4
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 1.6
+                }
+            ]
+        },
+        {
+            "id": "MPS002",
+            "nome": "Mutuo MPS MIO Acquisto Abitazione",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto",
+                "acquisto_ristrutturazione",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.2
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 1.9
+                }
+            ]
+        },
+        {
+            "id": "MPS003",
+            "nome": "Mutuo MPS MIO Acquisto Abitazione Green",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.0
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 0.8
+                }
+            ]
+        },
+        {
+            "id": "MPS004",
+            "nome": "Mutuo MPS MIO Acquisto Abitazione Green",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.0
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "MPS005",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 50% Prioritari",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "MPS006",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 50% Prioritari",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.1
+                }
+            ]
+        },
+        {
+            "id": "MPS007",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 80% Prioritari",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS008",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 80% Prioritari",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS009",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 50% Prioritari ISEE > 40.000",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS010",
+            "nome": "Mutuo MIO Acquisto Abitazione CONSAP 50% Prioritari ISEE > 40.000",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS011",
+            "nome": "Mutuo MIO Acquisto Abitazione CAP",
+            "tipo": "Variabile CAP",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "acquisto_ristrutturazione",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.5
+                }
+            ]
+        },
+        {
+            "id": "MPS012",
+            "nome": "Mutuo MIO Acquisto Abitazione BCE",
+            "tipo": "Variabile BCE",
+            "parametro": "BCE",
+            "finalita": [
+                "acquisto",
+                "acquisto_ristrutturazione",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 10,
+                    "spread": 2.5
+                },
+                {
+                    "dMin": 15,
+                    "dMax": 15,
+                    "spread": 2.6
+                },
+                {
+                    "dMin": 20,
+                    "dMax": 20,
+                    "spread": 2.7
+                },
+                {
+                    "dMin": 25,
+                    "dMax": 30,
+                    "spread": 2.9
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 3.0
+                }
+            ]
+        },
+        {
+            "id": "MPS013",
+            "nome": "Mutuo MIO Acquisto Abitazione BCE Green",
+            "tipo": "Variabile BCE",
+            "parametro": "BCE",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 10,
+                    "spread": 2.4
+                },
+                {
+                    "dMin": 15,
+                    "dMax": 15,
+                    "spread": 2.5
+                },
+                {
+                    "dMin": 20,
+                    "dMax": 20,
+                    "spread": 2.6
+                },
+                {
+                    "dMin": 25,
+                    "dMax": 30,
+                    "spread": 2.8
+                },
+                {
+                    "dMin": 35,
+                    "dMax": 40,
+                    "spread": 2.9
+                }
+            ]
+        },
+        {
+            "id": "MPS014",
+            "nome": "Mutuo MPS MIO Surroga",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.4
+                }
+            ]
+        },
+        {
+            "id": "MPS015",
+            "nome": "Mutuo MPS MIO Surroga",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.4
+                }
+            ]
+        },
+        {
+            "id": "MPS016",
+            "nome": "Mutuo MPS MIO Surroga CONSAP 50%",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "MPS017",
+            "nome": "Mutuo MPS MIO Surroga CONSAP 50%",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "MPS018",
+            "nome": "Mutuo MPS MIO Surroga CONSAP 50% e 80%",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS019",
+            "nome": "Mutuo MPS MIO Surroga CONSAP 50% e 80%",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        },
+        {
+            "id": "MPS020",
+            "nome": "Mutuo MPS MIO Surroga Green",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.3
+                }
+            ]
+        },
+        {
+            "id": "MPS021",
+            "nome": "Mutuo MPS MIO Surroga Green",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": true,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.1
+                }
+            ]
+        },
+        {
+            "id": "MPS022",
+            "nome": "Mutuo MPS Mio Tandem",
+            "tipo": "Variabile/Fisso",
+            "parametro": "Euribor 1M / IRS",
+            "finalita": [
+                "acquisto",
+                "acquisto_ristrutturazione",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.5
+                }
+            ]
+        },
+        {
+            "id": "MPS023",
+            "nome": "Mutuo MPS Mio Surroga Tandem",
+            "tipo": "Variabile/Fisso",
+            "parametro": "Euribor 1M / IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.5
+                }
+            ]
+        },
+        {
+            "id": "MPS024",
+            "nome": "Mutuo MPS Mio Acquisto in Asta",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "asta"
+            ],
+            "ltvMax": 0.9,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.6
+                }
+            ]
+        }
+    ],
+    "sparkasse": [
+        {
+            "id": "SPK001",
+            "nome": "Mutuo Sparkasse Acquisto - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 30,
+                    "spread": 0.0
+                }
+            ]
+        },
+        {
+            "id": "SPK002",
+            "nome": "Mutuo Sparkasse Acquisto - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto",
+                "ristrutturazione"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 5,
+                    "dMax": 30,
+                    "spread": 0.5
+                }
+            ]
+        },
+        {
+            "id": "SPK003",
+            "nome": "Mutuo Sparkasse Surroga - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "surroga"
+            ],
+            "ltvMax": 0.8,
+            "isGreen": false,
+            "isConsap": false,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.0
+                }
+            ]
+        },
+        {
+            "id": "SPK004",
+            "nome": "Mutuo Sparkasse CONSAP - Fisso",
+            "tipo": "Fisso",
+            "parametro": "IRS",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.0
+                }
+            ]
+        },
+        {
+            "id": "SPK005",
+            "nome": "Mutuo Sparkasse CONSAP - Variabile",
+            "tipo": "Variabile",
+            "parametro": "Euribor 1M",
+            "finalita": [
+                "acquisto"
+            ],
+            "ltvMax": 1.0,
+            "isGreen": false,
+            "isConsap": true,
+            "grigliaTassi": [
+                {
+                    "dMin": 10,
+                    "dMax": 30,
+                    "spread": 0.5
+                }
+            ]
+        }
+    ]
+}

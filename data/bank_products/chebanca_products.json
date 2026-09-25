@@ -1,0 +1,252 @@
+[
+    {
+        "id": "MB_ACQ_FISSO_2026_09",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Fisso (Listino Settembre 2026)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "prima_casa",
+            "seconda_casa"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 15,
+                "spread": 0.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.45
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.45
+            }
+        ],
+        "note": "Spread standard 0,45% (riducibile a 0,15% in classe energetica A/B con sconto Green -30 bps)"
+    },
+    {
+        "id": "MB_ACQ_VAR_FLOOR_2026_09",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con Floor",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "prima_casa",
+            "seconda_casa"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ],
+        "note": "Spread 0,65% con Floor, indicizzato Euribor 3 Mesi"
+    },
+    {
+        "id": "MB_ACQ_RATA_PROTETTA_2026_09",
+        "nome": "Mutuo Mediobanca Premier - Rata Protetta (Acquisto)",
+        "tipo": "Rata Protetta",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "prima_casa",
+            "seconda_casa"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ],
+        "note": "Rata costante protetta con variazione della durata. Esente dallo scarto cautelativo del variabile puro sul DTI"
+    },
+    {
+        "id": "MB_SURR_RATA_PROTETTA_2026_09",
+        "nome": "Mutuo Mediobanca Premier - Rata Protetta (Surroga)",
+        "tipo": "Rata Protetta",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ],
+        "note": "Surroga a Rata Protetta. Importo minimo 75.000 €"
+    },
+    {
+        "id": "MB_RISTR_RATA_PROTETTA_2026_09",
+        "nome": "Mutuo Mediobanca Premier - Rata Protetta (Ristrutturazione)",
+        "tipo": "Rata Protetta",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "ristrutturazione",
+            "acquisto_ristrutturazione",
+            "sostituzione_ristrutturazione"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 0.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.65
+            }
+        ],
+        "note": "Ristrutturazione a Rata Protetta (Spread 0,65% o 0,85% per Acquisto+Ristrutturazione)"
+    },
+    {
+        "id": "MB_LIQ_RATA_PROTETTA_2026_09",
+        "nome": "Mutuo Mediobanca Premier - Rata Protetta (Liquidità / Consolidamento)",
+        "tipo": "Rata Protetta",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "liquidita",
+            "consolido",
+            "consolidamento",
+            "rifinanziamento"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 2.75
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.75
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.75
+            }
+        ],
+        "note": "Liquidità / Consolidamento a Rata Protetta. Max durata 25/30 anni"
+    },
+    {
+        "id": "MB_ACQ_CAP_2026_09",
+        "nome": "Mutuo Mediobanca Premier Acquisto - Variabile con CAP",
+        "tipo": "Variabile CAP",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto",
+            "prima_casa",
+            "seconda_casa",
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "cap": 2.5,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 20,
+                "spread": 1.59
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.59
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.59
+            }
+        ],
+        "note": "Tasso variabile con CAP e protezione tetto massimo"
+    },
+    {
+        "id": "MB_SURR_FISSO_2026_09",
+        "nome": "Mutuo Mediobanca Premier Surroga - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.4
+            }
+        ],
+        "note": "Surroga a tasso fisso garantito IRS"
+    }
+]

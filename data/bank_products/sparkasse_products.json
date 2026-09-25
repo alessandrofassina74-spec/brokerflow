@@ -1,0 +1,99 @@
+[
+    {
+        "id": "SPK001",
+        "nome": "Mutuo Sparkasse Acquisto - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 30,
+                "spread": 0.85
+            }
+        ]
+    },
+    {
+        "id": "SPK002",
+        "nome": "Mutuo Sparkasse Acquisto - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto",
+            "ristrutturazione"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    },
+    {
+        "id": "SPK003",
+        "nome": "Mutuo Sparkasse Surroga - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.0
+            }
+        ]
+    },
+    {
+        "id": "SPK004",
+        "nome": "Mutuo Sparkasse CONSAP - Fisso",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 1.0,
+        "isGreen": false,
+        "isConsap": true,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.0
+            }
+        ]
+    },
+    {
+        "id": "SPK005",
+        "nome": "Mutuo Sparkasse CONSAP - Variabile",
+        "tipo": "Variabile",
+        "parametro": "Euribor 1M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 1.0,
+        "isGreen": false,
+        "isConsap": true,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.5
+            }
+        ]
+    }
+]

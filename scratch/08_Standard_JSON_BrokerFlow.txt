@@ -1,0 +1,20 @@
+BrokerFlow
+Documento 8 - Standard JSON BrokerFlow
+1. Obiettivo
+Definire un formato JSON unico per tutte le banche, indipendente dal layout dei PDF e utilizzabile da tutti i motori di BrokerFlow.
+2. Principi
+- Uno schema comune per ogni banca.- Separazione tra listino e policy.- Versionamento obbligatorio.- Nessuna informazione duplicata.- Estendibilità senza modifiche al codice.
+3. File previsti
+Per ogni banca:- banca.json (anagrafica)- <banca>_listino.json- <banca>_policy.json- eventuali file accessori futuri.
+4. Struttura del listino
+Metadati:- banca- versione- decorrenza- validitàProdotti:- codice- nome- finalità- categoriePer ogni prodotto:- griglie tassi- spread- riduzioni- maggiorazioni- costi- condizioni- note operative.
+5. Struttura della policy
+Requisiti:- età- reddito- anzianità lavorativa- tipologie di contratto- immobili ammessi- limiti LTV- documentazioneEccezioni:- deroghe- esclusioni- casi particolari.
+6. Convenzioni
+Codici prodotto univoci.Date ISO-8601.Valori numerici normalizzati.Percentuali espresse come numeri decimali configurabili.Nessun testo libero quando sostituibile con codifiche.
+7. Versionamento
+Ogni file deve contenere:- versione- data creazione- data decorrenza- data fine validità- origine del documento- hash opzionale del PDF sorgente.
+8. Utilizzo
+Il Motore Bancario legge listino e policy.Il Parser produce i JSON.Il Frontend non interpreta direttamente i PDF ma utilizza esclusivamente i JSON.
+9. Evoluzione
+Lo schema dovrà supportare nuovi prodotti, nuovi campi e nuove banche mantenendo la retrocompatibilità delle versioni precedenti.

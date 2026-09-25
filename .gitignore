@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+.env
+__pycache__/
+*.pyc
+*.zip
+data/backups/
+data/ai_usage_log.json
+bin/
+backup_last_ok_parser/
+backup_v2_parser/
+qa_suite/reports/screenshots/
+qa_suite/.venv/
+scratch/temp_docs/

@@ -1,0 +1,542 @@
+[
+    {
+        "id": "CA_FLEXI_TF_GREEN",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Crédit Agricole Flexi Tasso Fisso Green (Classi A/B)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "spread": 1.3,
+        "ltvMax": 0.9,
+        "isGreen": true,
+        "isConsap": false,
+        "speseIstruttoria": 0,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ]
+    },
+    {
+        "id": "CA_FLEXI_TF_STANDARD",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Crédit Agricole Flexi Tasso Fisso Standard",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "spread": 1.7,
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ]
+    },
+    {
+        "id": "CA_FLEXI_TV_CAP",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Crédit Agricole Flexi Tasso Variabile con CAP",
+        "tipo": "Variabile CAP",
+        "parametro": "Euribor 3M",
+        "spread": 0.9,
+        "cap": 4.4,
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 5,
+                "dMax": 10,
+                "spread": 0.9
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 0.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 0.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 0.9
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 0.9
+            }
+        ]
+    },
+    {
+        "id": "CA_CONSAP_80",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Crédit Agricole Giovani CONSAP 80%",
+        "tipo": "Fisso",
+        "parametro": "Finito",
+        "isTassoFinito": true,
+        "spread": 3.5,
+        "ltvMax": 1.0,
+        "isGreen": false,
+        "isConsap": true,
+        "note": "Applicato tasso fisso TAN 3,5% per tutte le durate per mutui con LTV > 80%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 3.5
+            }
+        ]
+    },
+    {
+        "id": "CA_ACQ_FIX_LTV100",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Credit Agricole Acquisto - Fisso (LTV > 80%)",
+        "tipo": "Fisso",
+        "parametro": "Finito",
+        "isTassoFinito": true,
+        "finalita": [
+            "acquisto"
+        ],
+        "spread": 3.5,
+        "ltvMax": 1.0,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Applicato tasso fisso TAN 3,5% per tutte le durate per mutui con LTV > 80%",
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 3.5
+            }
+        ]
+    },
+    {
+        "id": "CA_CONSAP_50",
+        "bankId": "credit agricole italia",
+        "nome": "Mutuo Crédit Agricole Giovani CONSAP 50%",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "spread": 0.1,
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": true,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 30,
+                "spread": 0.1
+            }
+        ]
+    },
+    {
+        "id": "CA_FLEXI_AB_FIX_LTV50",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classi A/B (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Immobili in classe energetica A/B: spese istruttoria azzerate.",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_AB_FIX_LTV60",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classi A/B (LTV ≤ 60%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Immobili in classe energetica A/B: spese istruttoria azzerate.",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_AB_FIX_LTV70",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classi A/B (LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Immobili in classe energetica A/B: spese istruttoria azzerate.",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_AB_FIX_LTV80",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classi A/B (LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": true,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Immobili in classe energetica A/B: spese istruttoria azzerate.",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_C_FIX_LTV50",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classe C e successivi (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Spese di istruttoria: 1,20% del valore erogato (minimo 1.500€ e massimo 2.900€).",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_C_FIX_LTV60",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classe C e successivi (LTV ≤ 60%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.6,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Spese di istruttoria: 1,20% del valore erogato (minimo 1.500€ e massimo 2.900€).",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_C_FIX_LTV70",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classe C e successivi (LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Spese di istruttoria: 1,20% del valore erogato (minimo 1.500€ e massimo 2.900€).",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ],
+        "bankId": "credit agricole italia"
+    },
+    {
+        "id": "CA_FLEXI_C_FIX_LTV80",
+        "nome": "Mutuo Crédit Agricole Flexi - Fisso Classe C e successivi (LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto",
+            "surroga"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "is_temporary": false,
+        "expires_at": null,
+        "territories": null,
+        "note": "Spese di istruttoria: 1,20% del valore erogato (minimo 1.500€ e massimo 2.900€).",
+        "grigliaTassi": [
+            {
+                "dMin": 1,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ],
+        "bankId": "credit agricole italia"
+    }
+]

@@ -1,0 +1,83 @@
+{
+    "name": "Banco di Sardegna",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.35,
+    "maxAge": 78,
+    "maxGuarantorAge": 78,
+    "maxBorrowers": 4,
+    "hasMri": true,
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 24,
+    "minLoan": 0,
+    "maxLoan": 1000000,
+    "minDuration": 1,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "atipico",
+        "pensionato",
+        "lavoratore_autonomo",
+        "professionista",
+        "imprenditore"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "costruzione",
+        "ristrutturazione",
+        "surroga",
+        "sostituzione",
+        "liquidita"
+    ],
+    "mriGrid": {
+        "1": 880,
+        "2": 330,
+        "3": null,
+        "4": null,
+        "5": null,
+        "additional": null
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35
+            },
+            "sostituzione_liquidita": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "nota": "Se la liquidità supera il 50%, la pratica è valutata con finalità liquidità pura e non rientra in convenzione"
+            },
+            "consap": {
+                "importo_minimo": 110000,
+                "nota": "A partire da luglio 2025, limite minimo per mutui Consap in convenzione (acquisto o surroga) di 110.000 euro; importi inferiori caricati come mutuo OFF senza compenso provvigionale"
+            }
+        },
+        "deroghe_lavoratori": {
+            "contratto_determinato_o_atipico": {
+                "regola": "Richiesta presenza di almeno un coobbligato (preferibilmente cointestatario) con reddito adeguato ad integrare la capacità reddituale"
+            },
+            "stranieri_extracomunitari": {
+                "requisito_residenza": "Residenza in Italia da almeno 2 anni"
+            }
+        },
+        "regole_garanti": {
+            "garanzie_aggiuntive": "La banca può richiedere integrazione con garanzie di firma (fideiussione di un terzo), garanzie finanziarie (pegno su deposito titoli) o ipoteca su ulteriore immobile qualora la sola ipoteca sull'immobile oggetto di acquisto sia ritenuta insufficiente",
+            "eta_massima": "L'età alla scadenza del finanziamento non deve superare i 78 anni, valutata rispetto al richiedente più giovane per cointestazioni, oppure rispetto al più anziano in caso di coobbligati"
+        },
+        "promozioni": {},
+        "altri_limiti": {
+            "iscrizione_ipotecaria": "Pari al 180% dell'importo del mutuo",
+            "vincolo_territoriale": "L'istruttoria deve tenere conto della residenza/domicilio o luogo di lavoro, presso la filiale dove il cliente intrattiene rapporti o la più comoda. In presenza di cointestazione i criteri devono essere rispettati da almeno uno"
+        }
+    }
+}

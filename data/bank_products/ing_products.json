@@ -1,0 +1,1562 @@
+[
+    {
+        "id": "ING_ACQ_VAR_SCONTO_LTV50",
+        "nome": "Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (LTV ≤ 50%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.15
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.15
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.15
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.15
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.15
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SCONTO_LTV70",
+        "nome": "Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (50% < LTV ≤ 70%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.2
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SCONTO_LTV80",
+        "nome": "Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (70% < LTV ≤ 80%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.25
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.25
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SCONTO_LTC95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (80% < LTC ≤ 95%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.65
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.65
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SCONTO_HLTV95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (80% < HLTV ≤ 95%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.95
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.95
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.95
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SCONTO_LTV50",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 5 Rinegoziabile (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.15
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.15
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.15
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.15
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.15
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SCONTO_LTV70",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 5 Rinegoziabile (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.2
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SCONTO_LTV80",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 5 Rinegoziabile (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.25
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.25
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SCONTO_LTC95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 5 Rinegoziabile (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.65
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.65
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.65
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.65
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SCONTO_HLTV95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 5 Rinegoziabile (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.95
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.95
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.95
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SCONTO_LTV50",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 10 Rinegoziabile (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.2
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SCONTO_LTV70",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 10 Rinegoziabile (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.25
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.25
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SCONTO_LTV80",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 10 Rinegoziabile (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.3
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SCONTO_LTC95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 10 Rinegoziabile (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.7
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.7
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SCONTO_HLTV95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Fisso 10 Rinegoziabile (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SCONTO_LTV50",
+        "nome": "Mutuo Acquisto con Sconto Rata - Tasso Fisso (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.4
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.3
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SCONTO_LTV70",
+        "nome": "Mutuo Acquisto con Sconto Rata - Tasso Fisso (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.45
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.65
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.35
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SCONTO_LTV80",
+        "nome": "Mutuo Acquisto con Sconto Rata - Tasso Fisso (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.5
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.4
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SCONTO_LTC95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Tasso Fisso (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.9
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.1
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.7
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.8
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SCONTO_HLTV95",
+        "nome": "Mutuo Acquisto con Sconto Rata - Tasso Fisso (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 3.1
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SENZA_LTV50",
+        "nome": "Mutuo Acquisto senza sconto - Variabile Euribor 3M (LTV ≤ 50%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.45
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.45
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.45
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SENZA_LTV70",
+        "nome": "Mutuo Acquisto senza sconto - Variabile Euribor 3M (50% < LTV ≤ 70%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.5
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.5
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.5
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SENZA_LTV80",
+        "nome": "Mutuo Acquisto senza sconto - Variabile Euribor 3M (70% < LTV ≤ 80%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.55
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.55
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.55
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SENZA_LTC95",
+        "nome": "Mutuo Acquisto senza sconto - Variabile Euribor 3M (80% < LTC ≤ 95%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.95
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.95
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.95
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_VAR_SENZA_HLTV95",
+        "nome": "Mutuo Acquisto senza sconto - Variabile Euribor 3M (80% < HLTV ≤ 95%)",
+        "tipo": "Variabile",
+        "parametro": "Euribor 3M",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.25
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.25
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SENZA_LTV50",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 5 Rinegoziabile (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.45
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.45
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.45
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.45
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.45
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SENZA_LTV70",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 5 Rinegoziabile (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.5
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.5
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.5
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SENZA_LTV80",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 5 Rinegoziabile (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.55
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.55
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.55
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SENZA_LTC95",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 5 Rinegoziabile (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.95
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.95
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.95
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.95
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX5_SENZA_HLTV95",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 5 Rinegoziabile (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.25
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.25
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.25
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.25
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.25
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SENZA_LTV50",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 10 Rinegoziabile (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.5
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.5
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.5
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.5
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.5
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SENZA_LTV70",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 10 Rinegoziabile (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.55
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.55
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.55
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.55
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.55
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SENZA_LTV80",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 10 Rinegoziabile (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.6
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.6
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 1.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 1.6
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SENZA_LTC95",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 10 Rinegoziabile (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX10_SENZA_HLTV95",
+        "nome": "Mutuo Acquisto senza sconto - Fisso 10 Rinegoziabile (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.3
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.3
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.3
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SENZA_LTV50",
+        "nome": "Mutuo Acquisto senza sconto - Tasso Fisso (LTV ≤ 50%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.5,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.7
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.8
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.9
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.5
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.6
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SENZA_LTV70",
+        "nome": "Mutuo Acquisto senza sconto - Tasso Fisso (50% < LTV ≤ 70%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.7,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.75
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.85
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 1.95
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.55
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.65
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SENZA_LTV80",
+        "nome": "Mutuo Acquisto senza sconto - Tasso Fisso (70% < LTV ≤ 80%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.8,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 1.8
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 1.9
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 2.6
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 2.7
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SENZA_LTC95",
+        "nome": "Mutuo Acquisto senza sconto - Tasso Fisso (80% < LTC ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.2
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.3
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.4
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 3.1
+            }
+        ]
+    },
+    {
+        "id": "ING_ACQ_FIX_SENZA_HLTV95",
+        "nome": "Mutuo Acquisto senza sconto - Tasso Fisso (80% < HLTV ≤ 95%)",
+        "tipo": "Fisso",
+        "parametro": "IRS",
+        "finalita": [
+            "acquisto"
+        ],
+        "ltvMax": 0.95,
+        "isGreen": false,
+        "isConsap": false,
+        "grigliaTassi": [
+            {
+                "dMin": 10,
+                "dMax": 10,
+                "spread": 2.5
+            },
+            {
+                "dMin": 11,
+                "dMax": 15,
+                "spread": 2.6
+            },
+            {
+                "dMin": 16,
+                "dMax": 20,
+                "spread": 2.7
+            },
+            {
+                "dMin": 21,
+                "dMax": 25,
+                "spread": 3.3
+            },
+            {
+                "dMin": 26,
+                "dMax": 30,
+                "spread": 3.4
+            }
+        ]
+    }
+]

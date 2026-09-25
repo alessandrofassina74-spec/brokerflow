@@ -1,0 +1,39 @@
+{
+  "name": "Cliente 3 - 37 Anni Autonomo Separato con 1 Figlio (Mutuo 100%)",
+  "description": "Richiedente di 37 anni (over 36), separato con 1 figlio, lavoratore autonomo con netto di 3.600€/mese. Richiesta mutuo 100% (200.000€ su 200.000€) per 25 anni senza fondo Consap giovani.",
+  "inputs": {
+    "mortgage_type": "acquisto",
+    "applicant": {
+      "nome": "Roberto",
+      "cognome": "Ferri",
+      "data_nascita": "1989-02-15",
+      "stato_civile": "separato",
+      "alimenti": "paga",
+      "alimenti_importo": 350,
+      "figli": "si",
+      "num_figli": 1,
+      "cittadinanza": "italiana",
+      "abitazione": "affitto",
+      "canone_affitto": 650,
+      "persone_nucleo": 2,
+      "comune_immobile": "Torino",
+      "comune_residenza": "Torino",
+      "comune_lavoro": "Torino",
+      "tipo_contratto": "autonomo",
+      "netto_mensile": 3600
+    },
+    "loan": {
+      "finalita": "acquisto",
+      "tipo_tasso": "any",
+      "importo": 200000,
+      "valore_immobile": 200000,
+      "durata": 25,
+      "apertura_conto": "si",
+      "is_consap": false
+    }
+  },
+  "expected": {
+    "ltv": 100.0,
+    "no_console_errors": true
+  }
+}

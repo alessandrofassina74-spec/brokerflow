@@ -1,0 +1,5 @@
+id,name,bgLogoLetter,color,isNationwide,territories,maxLtv,maxDsr,maxDsrDeroga,maxAge,maxGuarantorAge,maxBorrowers,hasMri,minResidencyYears,minSeniorityAutonomo,minSeniorityAutonomoDeroga,allowedContracts,allowedPurposes,minLoan,maxLoan,minDuration,maxDuration
+mps,Monte dei Paschi di Siena,M,#800020,Sì,*,1.00,0.35,0.40,80,80,4,Sì,0,24,18,"dipendente_ti, dipendente_td, autonomo, pensionato","acquisto, ristrutturazione, surroga, aste",45000,2000000,10,40
+ing,ING Bank,I,#ff6200,Sì,*,0.95,0.50,0.55,80,80,2,Sì,3,24,18,"dipendente_ti, dipendente_td, autonomo, pensionato","acquisto, surroga, liquidita, consolido, ristrutturazione",50000,1500000,5,40
+bper,BPER Banca,B,#005a50,Sì,*,1.00,0.35,0.40,78,80,4,No,2,18,12,"dipendente_ti, dipendente_td, autonomo, pensionato","acquisto, ristrutturazione, surroga",50000,1500000,5,30
+chebanca,Mediobanca Premier,M,#ffcc00,Sì,*,0.80,0.35,0.40,75,75,4,Sì,2,24,12,"dipendente_ti, dipendente_td, autonomo, pensionato","acquisto, ristrutturazione, surroga, liquidita",50000,1000000,10,30

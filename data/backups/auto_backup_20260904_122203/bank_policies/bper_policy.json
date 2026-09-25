@@ -1,0 +1,99 @@
+{
+    "name": "BPER",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 78,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": true,
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 36,
+    "minLoan": 40000,
+    "maxLoan": 1000000,
+    "minDuration": 5,
+    "maxDuration": 30,
+    "allowedContracts": [
+        "tempo_indeterminato",
+        "tempo_determinato",
+        "autonomo",
+        "pensionato",
+        "apprendista"
+    ],
+    "allowedPurposes": [
+        "acquisto",
+        "ristrutturazione",
+        "costruzione",
+        "surroga",
+        "liquidita",
+        "consolidamento"
+    ],
+    "mriGrid": {
+        "nord": {
+            "singolo": 750,
+            "coppia": 1100,
+            "familiare_3": 1400,
+            "familiare_4": 1700
+        },
+        "centro": {
+            "singolo": 700,
+            "coppia": 1000,
+            "familiare_3": 1300,
+            "familiare_4": 1600
+        },
+        "sud_isole": {
+            "singolo": 600,
+            "coppia": 900,
+            "familiare_3": 1150,
+            "familiare_4": 1400
+        }
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": 0.8,
+                "max_dsr": 0.35,
+                "importo_minimo": 40000
+            },
+            "liquidita": {
+                "max_ltv": 0.5,
+                "max_dsr": 0.3,
+                "nota": "La quota liquidità non può superare il 50% del totale del mutuo concesso e non può essere finalizzata al consolidamento di prestiti o cessioni del quinto."
+            },
+            "ristrutturazione": {
+                "max_ltv": 0.8,
+                "max_durata": 30,
+                "erogazione": "Stato Avanzamento Lavori"
+            },
+            "costruzione": {
+                "max_ltv": 0.8,
+                "max_durata": 30,
+                "erogazione": "Stato Avanzamento Lavori"
+            },
+            "surroga": {
+                "max_ltv": 0.8,
+                "max_liquidita_aggiuntiva": 0.5
+            }
+        },
+        "deroghe_lavoratori": {
+            "colf_badanti": "Non ammesse salvo valutazioni specifiche in deroga con garante",
+            "apprendisti": "Ammessi con contratto di apprendistato e presenza di coobbligato o garante",
+            "insegnanti_non_ruolo": "Assimilati a tempo indeterminato previo possesso di specifica anzianità di servizio",
+            "lavoratori_autonomi": "Anzianità minima richiesta pari a 36 mesi"
+        },
+        "regole_garanti": {
+            "parentela_ammessa": "Fino al 2° grado",
+            "max_garanti": 2,
+            "regola_eta": "Almeno 2/3 della durata del mutuo trascorsi al compimento degli 80 anni del garante",
+            "ponderazione_reddito": "Reddito ponderato al 100% per cointestatari, valutato caso per caso per i garanti"
+        },
+        "promozioni": {
+            "promozione_green": "Condizioni agevolate per immobili in classe energetica A o B con requisiti specifici"
+        },
+        "altri_limiti": {
+            "eta_massima_scadenza": 78,
+            "eta_minima_stipula": 18,
+            "pre_ammortamento_massimo": 36
+        }
+    }
+}

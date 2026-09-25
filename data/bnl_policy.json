@@ -1,0 +1,106 @@
+{
+  "policy_name": "policy_mutuo_reddito_minimo_e_soglie",
+  "version": "1.0",
+  "description": "Policy di valutazione del mutuo basata sul reddito residuo, sulle soglie minime per nucleo familiare e sulle caratteristiche del richiedente e dell'operazione.",
+  "income_assessment": {
+    "method": "residual_income",
+    "mandatory": true,
+    "description": "Il reddito residuo deve rimanere sopra la soglia prevista per il nucleo familiare.",
+    "deductions": [
+      "impegni_finanziari",
+      "oneri_giudiziali",
+      "costi_abitativi"
+    ],
+    "thresholds": {
+      "status": "da_completare_con_tabella_allegata",
+      "by_household_size": {}
+    }
+  },
+  "age": {
+    "max_age_at_maturity_years": 80,
+    "joint_applications": {
+      "rule": "generally_consider_younger_subject",
+      "priority_cases": [
+        "figlio_genitore",
+        "figlio_garante_genitore"
+      ]
+    }
+  },
+  "employment_categories": {
+    "colf": {
+      "allowed": true,
+      "requirement": "contratto"
+    },
+    "badante": {
+      "allowed": true,
+      "requirement": "contratto"
+    },
+    "apprentice": {
+      "allowed": true,
+      "rules": [
+        {
+          "condition": "appena_inserito",
+          "preferred_structure": "garante_o_cointestatario"
+        },
+        {
+          "condition": "periodo_di_prova_superato_e_impegno_assunzione",
+          "possible_structure": "monofirma"
+        }
+      ]
+    },
+    "general_rule": {
+      "employment_history": {
+        "mandatory": true,
+        "description": "Lo storico lavorativo è fondamentale per tutte le categorie di lavoratori."
+      }
+    }
+  },
+  "insurance": {
+    "fire": {
+      "type": "annual_premium"
+    },
+    "life": {
+      "type": "monthly_premium_financed",
+      "financed_interest_rate_percent": 2.5,
+      "rate_scope": "entire_duration",
+      "capital_scope": "entire_capital"
+    }
+  },
+  "mortgage_types": {
+    "consolidation_liquidity": {
+      "max_ltv_percent": 80,
+      "financial_difficulty": {
+        "allowed": true,
+        "condition": "no_evident_financial_difficulty",
+        "assessment": "case_by_case"
+      }
+    }
+  },
+  "consap": {
+    "with_consap": {
+      "max_ltc_percent": 100
+    },
+    "without_consap": {
+      "max_ltc_percent": 80
+    }
+  },
+  "processing_times": {
+    "credit_hub_deliberation": {
+      "type": "working_days",
+      "approximate_days": 5,
+      "scope": "mutui_privati",
+      "starting_point": "presa_in_carico_in_hub_crediti"
+    }
+  },
+  "costs": {
+    "origination_fee": {
+      "standard_percent": 1.0,
+      "minimum_percent": 0.6,
+      "reducible": true
+    },
+    "appraisal": {
+      "amount_eur": 300,
+      "payment_timing": "uscita_del_perito"
+    }
+  }
+}

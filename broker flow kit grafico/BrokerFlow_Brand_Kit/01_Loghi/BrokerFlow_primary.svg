@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#006BFF"/><stop offset=".55" stop-color="#12CFEA"/><stop offset="1" stop-color="#00D4B8"/></linearGradient></defs>
+<rect width="1200" height="520" fill="#fff"/>
+<g transform="translate(455 35)">
+<path d="M0 20 C0 0 22 -15 43 -8 L210 48 C229 54 239 73 233 92 L222 126 C216 145 197 156 178 150 L82 118 L82 174 L0 202 Z" fill="#071B3A"/>
+<path d="M12 176 L91 145 L198 180 C218 186 231 204 225 223 L215 253 C209 272 188 283 169 276 L83 246 L83 296 L12 321 Z" fill="url(#g)"/>
+<path d="M82 118 L177 150 L154 187 L82 164 Z" fill="#fff"/>
+</g>
+<text x="600" y="405" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="92" font-weight="800" fill="#071B3A">Broker<tspan fill="url(#g)">Flow</tspan></text>
+<text x="600" y="458" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="24" letter-spacing="7" fill="#31425D">IL TUO MUTUO, SEMPLICE</text>
+</svg>

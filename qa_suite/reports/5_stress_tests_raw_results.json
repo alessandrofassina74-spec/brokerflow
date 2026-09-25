@@ -1,0 +1,864 @@
+[
+  {
+    "scenario": {
+      "id": 1,
+      "name": "Scenario 1: Giovane Professionista Under 36 (Single, LTV 100% Consap)",
+      "setup": "() => {\n                window.switchCrmModule('engine');\n                window.initNuovaPratica();\n                \n                // Finalità\n                window.selectMortgageType('acquisto');\n                \n                // Soggetto 1\n                wizardSubjects = [{\n                    role: 'Richiedente Principale',\n                    nome: 'Marco',\n                    cognome: 'Rossi',\n                    dataNascita: '1997-03-10',\n                    eta: 29,\n                    sesso: 'M',\n                    cittadinanza: 'IT',\n                    statoCivile: 'celibe',\n                    tipoContratto: 'indeterminato',\n                    macroCategoria: 'dipendente',\n                    netto: 2100,\n                    mensilita: 13,\n                    anzianitaMesi: 48,\n                    incomes: [{\n                        tipoContratto: 'indeterminato',\n                        macroCategoria: 'dipendente',\n                        netto: 2100,\n                        mensilita: 13,\n                        anzianitaMesi: 48,\n                        cu1: 2100 * 13 * 1.3,\n                        cu6: 365,\n                        orarioLavoro: 'full_time'\n                    }]\n                }];\n                window.userLoans = [];\n                if (typeof renderSubjectsChips === 'function') renderSubjectsChips();\n                if (typeof renderLoansCards === 'function') renderLoansCards();\n                \n                const persEl = document.getElementById('wiz-persone-nucleo');\n                if (persEl) persEl.value = '1';\n                \n                document.getElementById('wiz-prov-immobile').value = 'Milano';\n                document.getElementById('wiz-prov-residenza').value = 'Milano';\n                document.getElementById('wiz-prov-lavoro').value = 'Milano';\n                \n                // Step 3\n                document.getElementById('p3-valore-field').value = '180000';\n                document.getElementById('p3-importo-field').value = '180000';\n                document.getElementById('wiz-p3-durata').value = '30';\n                document.getElementById('wiz-p3-finalita').value = 'acquisto';\n                if (document.getElementById('p3-consap-select')) document.getElementById('p3-consap-select').value = 'si';\n                \n                // Run calculations\n                window.goToStep(4);\n                if (typeof updateCalculations === 'function') updateCalculations();\n            }"
+    },
+    "data": {
+      "feasible": false,
+      "topKpis": {
+        "maxFinanziabile": "",
+        "rataSostenibile": "",
+        "score": "",
+        "chosenBanner": ""
+      },
+      "cards": [],
+      "rawBanks": [
+        {
+          "bankId": "sparkasse",
+          "name": "Cassa di Risparmio di Bolzano (Sparkasse)",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 757.7228166381275,
+          "tan": 2.988,
+          "dsr": 0.3606486514222406,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "mps",
+          "name": "Monte dei Paschi di Siena",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 767.4568184627894,
+          "tan": 3.088,
+          "dsr": 0.36528168418029006,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "banco_di_sardegna",
+          "name": "Banco di Sardegna",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 800.6635016035264,
+          "tan": 3.4240000000000004,
+          "dsr": 0.38108686416160226,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bdm",
+          "name": "BDM Banca",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 805.6702814195557,
+          "tan": 3.474,
+          "dsr": 0.38346991024253013,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "credit agricole italia",
+          "name": "Crédit Agricole Flexi Tasso Fisso",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 808.2804380558823,
+          "tan": 3.5,
+          "dsr": 0.3847122503835708,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bnl",
+          "name": "BNL",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bper",
+          "name": "BPER",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "ing",
+          "name": "ING Bank",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "mediobanca premier",
+          "name": "Mediobanca Premier",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        }
+      ]
+    }
+  },
+  {
+    "scenario": {
+      "id": 2,
+      "name": "Scenario 2: Famiglia Monoreddito con 2 Figli (Nucleo 4 Persone, Prestito 250€, LTV 72%)",
+      "setup": "() => {\n                window.switchCrmModule('engine');\n                window.initNuovaPratica();\n                \n                window.selectMortgageType('acquisto');\n                \n                wizardSubjects = [{\n                    role: 'Richiedente Principale',\n                    nome: 'Giuseppe',\n                    cognome: 'Verdi',\n                    dataNascita: '1984-05-15',\n                    eta: 42,\n                    sesso: 'M',\n                    cittadinanza: 'IT',\n                    statoCivile: 'sposato',\n                    regime: 'separazione',\n                    tipoContratto: 'indeterminato',\n                    macroCategoria: 'dipendente',\n                    netto: 2800,\n                    mensilita: 13,\n                    anzianitaMesi: 120,\n                    incomes: [{\n                        tipoContratto: 'indeterminato',\n                        macroCategoria: 'dipendente',\n                        netto: 2800,\n                        mensilita: 13,\n                        anzianitaMesi: 120,\n                        cu1: 2800 * 13 * 1.3,\n                        cu6: 365,\n                        orarioLavoro: 'full_time'\n                    }]\n                }];\n                \n                // Prestito da 250€ attivo\n                window.userLoans = [{\n                    id: 'loan_1',\n                    tipo: 'personale',\n                    rata: 250,\n                    debitoResiduo: 8000,\n                    durataResidua: 36,\n                    verraChiuso: false\n                }];\n                \n                if (typeof renderSubjectsChips === 'function') renderSubjectsChips();\n                if (typeof renderLoansCards === 'function') renderLoansCards();\n                \n                const persEl = document.getElementById('wiz-persone-nucleo');\n                if (persEl) persEl.value = '4';\n                \n                document.getElementById('wiz-prov-immobile').value = 'Roma';\n                document.getElementById('wiz-prov-residenza').value = 'Roma';\n                document.getElementById('wiz-prov-lavoro').value = 'Roma';\n                \n                document.getElementById('p3-valore-field').value = '250000';\n                document.getElementById('p3-importo-field').value = '180000';\n                document.getElementById('wiz-p3-durata').value = '25';\n                document.getElementById('wiz-p3-finalita').value = 'acquisto';\n                if (document.getElementById('p3-consap-select')) document.getElementById('p3-consap-select').value = 'no';\n                \n                window.goToStep(4);\n                if (typeof updateCalculations === 'function') updateCalculations();\n            }"
+    },
+    "data": {
+      "feasible": true,
+      "topKpis": {
+        "maxFinanziabile": "",
+        "rataSostenibile": "",
+        "score": "",
+        "chosenBanner": "⭐ OFFERTA SELEZIONATA PER LA PRATICA\n🟢 Pienamente Idonea\nING Bank (Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (70% < LTV ≤ 80%))\nRata Mensile\n€ 937,63\nTasso Applicato\n3.87% (Variabile)"
+      },
+      "cards": [
+        {
+          "title": "ING Bank",
+          "statusClass": "bank-card approved is-selected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Monte dei Paschi di Siena",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Crédit Agricole Flexi Tasso Fisso",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Mediobanca Premier",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Banco di Sardegna",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BNL",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BDM Banca",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BPER",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        }
+      ],
+      "rawBanks": [
+        {
+          "bankId": "ing",
+          "name": "ING Bank",
+          "status": "ok",
+          "isNotFeasible": false,
+          "rata": 937.6282690219841,
+          "tan": 3.874,
+          "dsr": 0.4462771389919011,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative."
+          ]
+        },
+        {
+          "bankId": "mps",
+          "name": "Monte dei Paschi di Siena",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 843.1317226012285,
+          "tan": 2.888,
+          "dsr": 0.4013002011428979,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "credit agricole italia",
+          "name": "Crédit Agricole Flexi Tasso Fisso",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 853.5803649438237,
+          "tan": 3,
+          "dsr": 0.4062733769366129,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+          ]
+        },
+        {
+          "bankId": "mediobanca premier",
+          "name": "Mediobanca Premier",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 879.4529632209066,
+          "tan": 3.274,
+          "dsr": 0.41858779782051714,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "banco_di_sardegna",
+          "name": "Banco di Sardegna",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 884.2215632104345,
+          "tan": 3.324,
+          "dsr": 0.42085747891976893,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bnl",
+          "name": "BNL",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 896.302814276006,
+          "tan": 3.45,
+          "dsr": 0.4266077174088558,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+          ]
+        },
+        {
+          "bankId": "bdm",
+          "name": "BDM Banca",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 903.4409646908055,
+          "tan": 3.524,
+          "dsr": 0.4300052187961949,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bper",
+          "name": "BPER",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 932.308056292514,
+          "tan": 3.8200000000000003,
+          "dsr": 0.44374491018206286,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        }
+      ]
+    }
+  },
+  {
+    "scenario": {
+      "id": 3,
+      "name": "Scenario 3: Coppia Entrambi Lavoratori (Dipendente 1.800€ + P.IVA Forfettaria 24.000€, LTV 74.3%)",
+      "setup": "() => {\n                window.switchCrmModule('engine');\n                window.initNuovaPratica();\n                \n                window.selectMortgageType('acquisto');\n                \n                wizardSubjects = [\n                    {\n                        role: 'Richiedente Principale',\n                        nome: 'Davide',\n                        cognome: 'Ferrari',\n                        dataNascita: '1990-08-20',\n                        eta: 36,\n                        sesso: 'M',\n                        cittadinanza: 'IT',\n                        statoCivile: 'coniugato',\n                        regime: 'separazione',\n                        tipoContratto: 'indeterminato',\n                        macroCategoria: 'dipendente',\n                        netto: 1800,\n                        mensilita: 13,\n                        incomes: [{\n                            tipoContratto: 'indeterminato',\n                            macroCategoria: 'dipendente',\n                            netto: 1800,\n                            mensilita: 13,\n                            anzianitaMesi: 60,\n                            cu1: 1800 * 13 * 1.3,\n                            cu6: 365,\n                            orarioLavoro: 'full_time'\n                        }]\n                    },\n                    {\n                        role: 'Cointestatario',\n                        nome: 'Elena',\n                        cognome: 'Bianchi',\n                        dataNascita: '1992-04-12',\n                        eta: 34,\n                        sesso: 'F',\n                        cittadinanza: 'IT',\n                        statoCivile: 'coniugato',\n                        regime: 'separazione',\n                        tipoContratto: 'autonomo',\n                        macroCategoria: 'autonomo',\n                        netto: 2000,\n                        incomes: [{\n                            tipoContratto: 'autonomo',\n                            macroCategoria: 'autonomo',\n                            netto: 2000,\n                            autRegime: 'forfettario',\n                            autAnniAttivita: 3,\n                            autRnlm: 24000,\n                            autFatturato: 32000,\n                            autSettore: 'servizi',\n                            anniAttivita: 3\n                        }]\n                    }\n                ];\n                window.userLoans = [];\n                if (typeof renderSubjectsChips === 'function') renderSubjectsChips();\n                if (typeof renderLoansCards === 'function') renderLoansCards();\n                \n                const persEl = document.getElementById('wiz-persone-nucleo');\n                if (persEl) persEl.value = '2';\n                \n                document.getElementById('wiz-prov-immobile').value = 'Bologna';\n                document.getElementById('wiz-prov-residenza').value = 'Bologna';\n                document.getElementById('wiz-prov-lavoro').value = 'Bologna';\n                \n                document.getElementById('p3-valore-field').value = '350000';\n                document.getElementById('p3-importo-field').value = '260000';\n                document.getElementById('wiz-p3-durata').value = '25';\n                document.getElementById('wiz-p3-finalita').value = 'acquisto';\n                if (document.getElementById('p3-consap-select')) document.getElementById('p3-consap-select').value = 'no';\n                \n                window.goToStep(4);\n                if (typeof updateCalculations === 'function') updateCalculations();\n            }"
+    },
+    "data": {
+      "feasible": true,
+      "topKpis": {
+        "maxFinanziabile": "",
+        "rataSostenibile": "",
+        "score": "",
+        "chosenBanner": "⭐ OFFERTA SELEZIONATA PER LA PRATICA\n🟢 Pienamente Idonea\nBNL (Mutuo BNL Spensierato Acquisto Standard (Classe C/D))\nRata Mensile\n€ 1294,66\nTasso Applicato\n3.45% (Fisso)"
+      },
+      "cards": [
+        {
+          "title": "Monte dei Paschi di Siena",
+          "statusClass": "bank-card approved",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BNL",
+          "statusClass": "bank-card approved is-selected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "ING Bank",
+          "statusClass": "bank-card approved",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Crédit Agricole Flexi Tasso Fisso",
+          "statusClass": "bank-card deroga",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Mediobanca Premier",
+          "statusClass": "bank-card deroga",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BPER",
+          "statusClass": "bank-card deroga",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        }
+      ],
+      "rawBanks": [
+        {
+          "bankId": "mps",
+          "name": "Monte dei Paschi di Siena",
+          "status": "ok",
+          "isNotFeasible": false,
+          "rata": 1217.856932646219,
+          "tan": 2.888,
+          "dsr": 0.2969658455611361,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bnl",
+          "name": "BNL",
+          "status": "ok",
+          "isNotFeasible": false,
+          "rata": 1294.6596206208976,
+          "tan": 3.45,
+          "dsr": 0.3156936407268709,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+          ]
+        },
+        {
+          "bankId": "ing",
+          "name": "ING Bank",
+          "status": "ok",
+          "isNotFeasible": false,
+          "rata": 1318.9759941822642,
+          "tan": 3.624,
+          "dsr": 0.32162301735729437,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative.",
+            "🎉 Sconto Spread MRI: -0,25% applicato per reddito residuale superiore a 1.500 €/mese."
+          ]
+        },
+        {
+          "bankId": "credit agricole italia",
+          "name": "Crédit Agricole Flexi Tasso Fisso",
+          "status": "deroga",
+          "isNotFeasible": false,
+          "rata": 1232.9494160299676,
+          "tan": 3,
+          "dsr": 0.30064604146061147,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+          ]
+        },
+        {
+          "bankId": "mediobanca premier",
+          "name": "Mediobanca Premier",
+          "status": "deroga",
+          "isNotFeasible": false,
+          "rata": 1270.320946874643,
+          "tan": 3.274,
+          "dsr": 0.30975882635324137,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bper",
+          "name": "BPER",
+          "status": "deroga",
+          "isNotFeasible": false,
+          "rata": 1346.6671924225204,
+          "tan": 3.8200000000000003,
+          "dsr": 0.3283753212442137,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        }
+      ]
+    }
+  },
+  {
+    "scenario": {
+      "id": 4,
+      "name": "Scenario 4: Richiedente Maturo 58 Anni (Dipendente Quadro 3.800€, LTV 50%, Durata 20 anni -> Scadenza 78 anni)",
+      "setup": "() => {\n                window.switchCrmModule('engine');\n                window.initNuovaPratica();\n                \n                window.selectMortgageType('acquisto');\n                \n                wizardSubjects = [{\n                    role: 'Richiedente Principale',\n                    nome: 'Roberto',\n                    cognome: 'Mancini',\n                    dataNascita: '1968-02-14',\n                    eta: 58,\n                    sesso: 'M',\n                    cittadinanza: 'IT',\n                    statoCivile: 'coniugato',\n                    regime: 'separazione',\n                    tipoContratto: 'indeterminato',\n                    macroCategoria: 'dipendente',\n                    netto: 3800,\n                    mensilita: 14,\n                    incomes: [{\n                        tipoContratto: 'indeterminato',\n                        macroCategoria: 'dipendente',\n                        netto: 3800,\n                        mensilita: 14,\n                        anzianitaMesi: 200,\n                        cu1: 3800 * 14 * 1.35,\n                        cu6: 365,\n                        orarioLavoro: 'full_time'\n                    }]\n                }];\n                window.userLoans = [];\n                if (typeof renderSubjectsChips === 'function') renderSubjectsChips();\n                if (typeof renderLoansCards === 'function') renderLoansCards();\n                \n                const persEl = document.getElementById('wiz-persone-nucleo');\n                if (persEl) persEl.value = '2';\n                \n                document.getElementById('wiz-prov-immobile').value = 'Torino';\n                document.getElementById('wiz-prov-residenza').value = 'Torino';\n                document.getElementById('wiz-prov-lavoro').value = 'Torino';\n                \n                document.getElementById('p3-valore-field').value = '300000';\n                document.getElementById('p3-importo-field').value = '150000';\n                document.getElementById('wiz-p3-durata').value = '20';\n                document.getElementById('wiz-p3-finalita').value = 'acquisto';\n                if (document.getElementById('p3-consap-select')) document.getElementById('p3-consap-select').value = 'no';\n                \n                window.goToStep(4);\n                if (typeof updateCalculations === 'function') updateCalculations();\n            }"
+    },
+    "data": {
+      "feasible": true,
+      "topKpis": {
+        "maxFinanziabile": "",
+        "rataSostenibile": "",
+        "score": "",
+        "chosenBanner": "⭐ OFFERTA SELEZIONATA PER LA PRATICA\n🟢 Pienamente Idonea\nING Bank (Mutuo Acquisto con Sconto Rata - Variabile Euribor 3M (LTV ≤ 50%))\nRata Mensile\n€ 891,21\nTasso Applicato\n3.77% (Variabile)"
+      },
+      "cards": [
+        {
+          "title": "ING Bank",
+          "statusClass": "bank-card approved is-selected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Crédit Agricole Flexi Tasso Fisso",
+          "statusClass": "bank-card deroga",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Monte dei Paschi di Siena",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "Mediobanca Premier",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BNL",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        },
+        {
+          "title": "BPER",
+          "statusClass": "bank-card rejected",
+          "statusBadge": "",
+          "rata": "",
+          "tan": "",
+          "taeg": "",
+          "dsr": "",
+          "reasons": [],
+          "notes": []
+        }
+      ],
+      "rawBanks": [
+        {
+          "bankId": "ing",
+          "name": "ING Bank",
+          "status": "ok",
+          "isNotFeasible": false,
+          "rata": 891.2071159464668,
+          "tan": 3.774,
+          "dsr": 0.42418234933196897,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "💳 Sconto Rata Conto Corrente Arancio applicato: spread ridotto (-0,20% Fisso / -0,30% Variabile) per accredito stipendio/entrate continuative."
+          ]
+        },
+        {
+          "bankId": "credit agricole italia",
+          "name": "Crédit Agricole Flexi Tasso Fisso",
+          "status": "deroga",
+          "isNotFeasible": false,
+          "rata": 831.8963967808811,
+          "tan": 3,
+          "dsr": 0.39595259247067166,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,50% (-50 bps) per sottoscrizione Polizza Protezione Vita/Danni Crédit Agricole."
+          ]
+        },
+        {
+          "bankId": "mps",
+          "name": "Monte dei Paschi di Siena",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 823.5115263528521,
+          "tan": 2.888,
+          "dsr": 0.391961697454951,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "mediobanca premier",
+          "name": "Mediobanca Premier",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 848.816713119844,
+          "tan": 3.224,
+          "dsr": 0.4040060509851709,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bnl",
+          "name": "BNL",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 862.2514685850781,
+          "tan": 3.4,
+          "dsr": 0.410400508607843,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": [
+            "🛡️ Sconto Convenzione CPI applicato: -0,30% (-30 bps) per sottoscrizione Polizza Protezione BNL."
+          ]
+        },
+        {
+          "bankId": "bper",
+          "name": "BPER",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 892.4581325465331,
+          "tan": 3.79,
+          "dsr": 0.4247777879802632,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        }
+      ]
+    }
+  },
+  {
+    "scenario": {
+      "id": 5,
+      "name": "Scenario 5: Lavoratore Extra-UE (32 anni, 1.650€, Permesso 1 anno, Anzianità 18m) + Garante Pensionato 68 anni (1.200€) (LTV 82%)",
+      "setup": "() => {\n                window.switchCrmModule('engine');\n                window.initNuovaPratica();\n                \n                window.selectMortgageType('acquisto');\n                \n                wizardSubjects = [\n                    {\n                        role: 'Richiedente Principale',\n                        nome: 'Ahmed',\n                        cognome: 'Hassan',\n                        dataNascita: '1994-06-10',\n                        eta: 32,\n                        sesso: 'M',\n                        cittadinanza: 'extra',\n                        statoCivile: 'celibe',\n                        permScadenza: '2027-06-10',\n                        anzianitaItaliaMesi: 24,\n                        tipoContratto: 'indeterminato',\n                        macroCategoria: 'dipendente',\n                        netto: 1650,\n                        mensilita: 13,\n                        anzianitaMesi: 18,\n                        incomes: [{\n                            tipoContratto: 'indeterminato',\n                            macroCategoria: 'dipendente',\n                            netto: 1650,\n                            mensilita: 13,\n                            anzianitaMesi: 18,\n                            cu1: 1650 * 13 * 1.3,\n                            cu6: 365,\n                            orarioLavoro: 'full_time'\n                        }]\n                    },\n                    {\n                        role: 'Garante',\n                        nome: 'Ali',\n                        cognome: 'Hassan',\n                        dataNascita: '1958-01-10',\n                        eta: 68,\n                        sesso: 'M',\n                        cittadinanza: 'extra',\n                        permScadenza: '2035-01-01',\n                        anzianitaItaliaMesi: 120,\n                        statoCivile: 'coniugato',\n                        tipoContratto: 'pensionato',\n                        macroCategoria: 'pensionato',\n                        netto: 1200,\n                        mensilita: 13,\n                        incomes: [{\n                            tipoContratto: 'pensionato',\n                            macroCategoria: 'pensionato',\n                            netto: 1200,\n                            mensilita: 13\n                        }]\n                    }\n                ];\n                window.userLoans = [];\n                if (typeof renderSubjectsChips === 'function') renderSubjectsChips();\n                if (typeof renderLoansCards === 'function') renderLoansCards();\n                \n                const persEl = document.getElementById('wiz-persone-nucleo');\n                if (persEl) persEl.value = '1';\n                \n                document.getElementById('wiz-prov-immobile').value = 'Firenze';\n                document.getElementById('wiz-prov-residenza').value = 'Firenze';\n                document.getElementById('wiz-prov-lavoro').value = 'Firenze';\n                \n                document.getElementById('p3-valore-field').value = '140000';\n                document.getElementById('p3-importo-field').value = '115000';\n                document.getElementById('wiz-p3-durata').value = '25';\n                document.getElementById('wiz-p3-finalita').value = 'acquisto';\n                if (document.getElementById('p3-consap-select')) document.getElementById('p3-consap-select').value = 'no';\n                \n                window.goToStep(4);\n                if (typeof updateCalculations === 'function') updateCalculations();\n            }"
+    },
+    "data": {
+      "feasible": false,
+      "topKpis": {
+        "maxFinanziabile": "",
+        "rataSostenibile": "",
+        "score": "",
+        "chosenBanner": ""
+      },
+      "cards": [],
+      "rawBanks": [
+        {
+          "bankId": "mps",
+          "name": "Monte dei Paschi di Siena",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 550.621180185757,
+          "tan": 3.088,
+          "dsr": 0.16680435631195303,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "credit agricole italia",
+          "name": "Crédit Agricole Flexi Tasso Fisso",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 575.7171057984154,
+          "tan": 3.5,
+          "dsr": 0.17440687846059238,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bnl",
+          "name": "BNL",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "bper",
+          "name": "BPER",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "ing",
+          "name": "ING Bank",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        },
+        {
+          "bankId": "mediobanca premier",
+          "name": "Mediobanca Premier",
+          "status": "ko",
+          "isNotFeasible": true,
+          "rata": 999999,
+          "tan": 0,
+          "dsr": 0,
+          "evaluatedLtv": null,
+          "maxLtvAllowed": null,
+          "mriPassed": null,
+          "reasons": [],
+          "deroghe": [],
+          "notes": []
+        }
+      ]
+    }
+  }
+]

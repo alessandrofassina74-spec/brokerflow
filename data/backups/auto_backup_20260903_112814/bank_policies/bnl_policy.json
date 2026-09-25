@@ -1,0 +1,342 @@
+{
+    "name": "BNL",
+    "maxLtv": 0.8,
+    "maxDsr": 0.35,
+    "maxDsrDeroga": 0.4,
+    "maxAge": 75,
+    "maxGuarantorAge": 80,
+    "maxBorrowers": 4,
+    "hasMri": true,
+    "minResidencyYears": 2,
+    "minSeniorityAutonomo": 24,
+    "minLoan": 30000,
+    "maxLoan": 2000000,
+    "minDuration": 5,
+    "maxDuration": 30,
+    "allowedContracts": [],
+    "allowedPurposes": [],
+    "mriGrid": {
+        "nord": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "centro": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "sud": {
+            "1": null,
+            "2": null,
+            "3": null,
+            "4": null,
+            "5": null,
+            "additional": null,
+            "metropoli": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "grande": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            },
+            "piccolo": {
+                "1": null,
+                "2": null,
+                "3": null,
+                "4": null,
+                "5": null,
+                "6": null,
+                "7": null
+            }
+        },
+        "1": null,
+        "2": null,
+        "3": null,
+        "4": null,
+        "5": null,
+        "6": null,
+        "7": null
+    },
+    "eccezioni_e_deroghe": {
+        "limiti_finalita": {
+            "acquisto": {
+                "max_ltv": null,
+                "max_durata": null,
+                "max_dsr": null
+            },
+            "surroga": {
+                "max_ltv": null,
+                "importo_minimo": null,
+                "ammortamento_minimo_mesi": null
+            },
+            "ristrutturazione": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "costruzione": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "under_36": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "acquisto_seconda_casa": {
+                "max_ltv": null,
+                "max_durata": null
+            },
+            "liquidita": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "importo_massimo": null
+            },
+            "consolidamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_durata": null,
+                "max_liquidita_con_mutuo": null,
+                "max_liquidita_senza_mutuo": null
+            },
+            "rifinanziamento": {
+                "max_ltv": null,
+                "max_dsr": null,
+                "max_liquidita": null
+            },
+            "acquisto_sostituzione": {
+                "max_ltv": null
+            },
+            "sostituzione_ristrutturazione": {
+                "max_ltv": null
+            }
+        },
+        "deroghe_lavoratori": {
+            "autonomi": {
+                "anzianita_minima_mesi": null
+            },
+            "apprendisti": {
+                "richiede_coobbligato_o_garante": null
+            },
+            "colf_badanti": null,
+            "insegnanti_non_di_ruolo": null,
+            "lavoratori_determinati": null,
+            "lavoratori_marittimi": null
+        },
+        "regole_garanti": {
+            "eta_massima_fine_mutuo": null,
+            "grado_parentela_ammesso": null,
+            "parentela_ammessa": null,
+            "max_garanti": null,
+            "regola_eta_80": null,
+            "ponderazione_reddito": {
+                "coniuge": null,
+                "partner_convivente": null,
+                "genitori": null,
+                "figli": null,
+                "fratelli_sorelle": null,
+                "conviventi_altra_finalita": null
+            }
+        },
+        "promozioni": {
+            "mutuo_green": {
+                "sconto_spread": null,
+                "descrizione": null
+            },
+            "promozione_green": null
+        },
+        "altri_limiti": {
+            "mutui_a_sal": null,
+            "mutui_consap": null,
+            "tasso_indebitamento_max": null,
+            "stress_test_variabile": null,
+            "mediazione_massima": null
+        }
+    },
+    "bgLogoLetter": "B",
+    "color": "#cccccc",
+    "isNationwide": true,
+    "territories": [
+        "*"
+    ],
+    "minSeniorityAutonomoDeroga": 18,
+    "ageCheckMethod": "oldest",
+    "tdWithoutCoapplicantStatus": null,
+    "isDigitalFirst": false,
+    "telefono": null,
+    "coefficienteForfettario": null,
+    "policy_name": "policy_mutuo_reddito_minimo_e_soglie",
+    "version": "1.0",
+    "description": "Policy di valutazione del mutuo basata sul reddito residuo, sulle soglie minime per nucleo familiare e sulle caratteristiche del richiedente e dell'operazione.",
+    "income_assessment": {
+        "method": "residual_income",
+        "mandatory": true,
+        "description": "Il reddito residuo deve rimanere sopra la soglia prevista per il nucleo familiare.",
+        "deductions": [
+            "impegni_finanziari",
+            "oneri_giudiziali",
+            "costi_abitativi"
+        ],
+        "thresholds": {
+            "status": "da_completare_con_tabella_allegata",
+            "by_household_size": {}
+        }
+    },
+    "age": {
+        "max_age_at_maturity_years": 80,
+        "joint_applications": {
+            "rule": "generally_consider_younger_subject",
+            "priority_cases": [
+                "figlio_genitore",
+                "figlio_garante_genitore"
+            ]
+        }
+    },
+    "employment_categories": {
+        "colf": {
+            "allowed": true,
+            "requirement": "contratto"
+        },
+        "badante": {
+            "allowed": true,
+            "requirement": "contratto"
+        },
+        "apprentice": {
+            "allowed": true,
+            "rules": [
+                {
+                    "condition": "appena_inserito",
+                    "preferred_structure": "garante_o_cointestatario"
+                },
+                {
+                    "condition": "periodo_di_prova_superato_e_impegno_assunzione",
+                    "possible_structure": "monofirma"
+                }
+            ]
+        },
+        "general_rule": {
+            "employment_history": {
+                "mandatory": true,
+                "description": "Lo storico lavorativo è fondamentale per tutte le categorie di lavoratori."
+            }
+        }
+    },
+    "insurance": {
+        "fire": {
+            "type": "annual_premium"
+        },
+        "life": {
+            "type": "monthly_premium_financed",
+            "financed_interest_rate_percent": 2.5,
+            "rate_scope": "entire_duration",
+            "capital_scope": "entire_capital"
+        }
+    },
+    "mortgage_types": {
+        "consolidation_liquidity": {
+            "max_ltv_percent": 80,
+            "financial_difficulty": {
+                "allowed": true,
+                "condition": "no_evident_financial_difficulty",
+                "assessment": "case_by_case"
+            }
+        }
+    },
+    "consap": {
+        "with_consap": {
+            "max_ltc_percent": 100
+        },
+        "without_consap": {
+            "max_ltc_percent": 80
+        }
+    },
+    "processing_times": {
+        "credit_hub_deliberation": {
+            "type": "working_days",
+            "approximate_days": 5,
+            "scope": "mutui_privati",
+            "starting_point": "presa_in_carico_in_hub_crediti"
+        }
+    },
+    "costs": {
+        "origination_fee": {
+            "standard_percent": 1.0,
+            "minimum_percent": 0.6,
+            "reducible": true
+        },
+        "appraisal": {
+            "amount_eur": 300,
+            "payment_timing": "uscita_del_perito"
+        }
+    }
+}

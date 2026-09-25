@@ -1,0 +1,3249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrokerFlow - Dashboard di Gestione</title>
+    <!-- PDF.js for Visual Grounding & Interactive Document Rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        if (window.pdfjsLib) {
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        }
+    </script>
+    <style>
+        :root {
+            --primary: #0052ff;
+            --primary-hover: #0041cc;
+            --purple: #7c3aed;
+            --purple-hover: #6d28d9;
+            --amber: #d97706;
+            --amber-hover: #b45309;
+            --slate: #475569;
+            --slate-hover: #334155;
+            --bg: #f1f5f9;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --success-hover: #059669;
+            --error: #ef4444;
+            --badge-green: #dcfce7;
+            --badge-green-text: #166534;
+            --badge-blue: #dbeafe;
+            --badge-blue-text: #1e40af;
+            --badge-purple: #f3e8ff;
+            --badge-purple-text: #6b21a8;
+            --badge-amber: #fef3c7;
+            --badge-amber-text: #92400e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 960px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 1px solid var(--border);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .container.wide-mode {
+            max-width: 96vw;
+            width: 96vw;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 2.25rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #334155;
+        }
+
+        .header h1 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.4rem;
+        }
+
+        .header p {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Top Navigation Tabs */
+        .tabs-nav {
+            display: flex;
+            background-color: #f8fafc;
+            border-bottom: 2px solid var(--border);
+            padding: 0.5rem 1rem 0 1rem;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 0.85rem 1.25rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 8px 8px 0 0;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: var(--text);
+            background-color: #f1f5f9;
+        }
+
+        .tab-btn.active-blue {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+            background-color: #ffffff;
+        }
+
+        .tab-btn.active-purple {
+            color: var(--purple);
+            border-bottom-color: var(--purple);
+            background-color: #ffffff;
+        }
+
+        .tab-btn.active-emerald {
+            color: #059669;
+            border-bottom-color: #059669;
+            background-color: #ffffff;
+        }
+
+        .tab-btn.active-amber {
+            color: var(--amber);
+            border-bottom-color: var(--amber);
+            background-color: #ffffff;
+        }
+
+        .tab-btn.active-slate {
+            color: var(--slate);
+            border-bottom-color: var(--slate);
+            background-color: #ffffff;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        /* Section Card Containers */
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            padding: 1.75rem;
+            margin-bottom: 2rem;
+            transition: all 0.2s ease;
+        }
+
+        .section-card.theme-blue {
+            border-top: 5px solid var(--primary);
+        }
+
+        .section-card.theme-purple {
+            border-top: 5px solid var(--purple);
+        }
+
+        .section-card.theme-emerald {
+            border-top: 5px solid #10b981;
+        }
+
+        .section-card.theme-amber {
+            border-top: 5px solid var(--amber);
+        }
+
+        .section-card.theme-slate {
+            border-top: 5px solid var(--slate);
+        }
+
+        .section-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-card-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #0f172a;
+        }
+
+        .section-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #334155;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background-color: #f8fafc;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            border-color: var(--primary);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.1);
+        }
+
+        /* Drag and Drop Zone */
+        .upload-zone {
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f8fafc;
+            transition: all 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: var(--primary);
+            background-color: #f0f5ff;
+        }
+
+        .upload-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .upload-subtext {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .file-info {
+            margin-top: 0.75rem;
+            padding: 0.5rem 1rem;
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: none;
+            word-break: break-all;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Buttons styling */
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 0.9rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:disabled {
+            background-color: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+        }
+
+        .btn-purple { background-color: var(--purple); }
+        .btn-purple:hover { background-color: var(--purple-hover); }
+
+        .btn-emerald { background-color: #10b981; }
+        .btn-emerald:hover { background-color: #059669; }
+
+        .btn-amber { background-color: var(--amber); }
+        .btn-amber:hover { background-color: var(--amber-hover); }
+
+        .btn-success { background-color: var(--success); }
+        .btn-success:hover { background-color: var(--success-hover); }
+
+        .btn-gray { background-color: var(--slate); }
+        .btn-gray:hover { background-color: var(--slate-hover); }
+
+        /* Preview Cards */
+        .preview-card {
+            margin-top: 1.5rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .preview-header h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        /* Rules Table Styling */
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .rules-table th {
+            background-color: #f8fafc;
+            color: #475569;
+            padding: 0.75rem 0.6rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border);
+            text-align: left;
+        }
+
+        .rules-table td {
+            padding: 0.75rem 0.6rem;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .rules-table tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .rules-table .rule-key {
+            font-weight: 700;
+            color: #1e293b;
+            width: 35%;
+        }
+
+        .rules-table .rule-val {
+            color: #0f172a;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        .badge-blue { background-color: var(--badge-blue); color: var(--badge-blue-text); }
+        .badge-purple { background-color: var(--badge-purple); color: var(--badge-purple-text); }
+        .badge-emerald { background-color: #d1fae5; color: #065f46; }
+        .badge-amber { background-color: var(--badge-amber); color: var(--badge-amber-text); }
+        .badge-green { background-color: var(--badge-green); color: var(--badge-green-text); }
+        .badge-gray { background-color: #f1f5f9; color: #475569; }
+
+        /* Chat System */
+        .chat-container {
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            background-color: #f8fafc;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-top: 0.75rem;
+        }
+
+        .chat-box {
+            padding: 1rem;
+            height: 220px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            background-color: #fff;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .chat-bubble.user {
+            background-color: var(--primary);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-bubble.assistant {
+            background-color: #f1f5f9;
+            color: var(--text);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .chat-bubble.system {
+            background-color: #fef3c7;
+            color: #d97706;
+            align-self: center;
+            font-size: 0.8rem;
+            text-align: center;
+            border-radius: 6px;
+            border: 1px solid #fde68a;
+            max-width: 90%;
+        }
+
+        .chat-input-area {
+            display: flex;
+            padding: 0.75rem;
+            gap: 0.75rem;
+            background-color: #f8fafc;
+            align-items: center;
+        }
+
+        .chat-input-area input {
+            flex: 1;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .chat-quick-actions {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            background-color: #f1f5f9;
+            color: var(--slate);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Backup Grid */
+        .backup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            background-color: #f8fafc;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .backup-column h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--slate);
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--slate);
+            padding-left: 0.5rem;
+        }
+
+        /* Terminal Console */
+        .result-panel {
+            margin-top: 2rem;
+            border-top: 2px solid var(--border);
+            padding-top: 1.5rem;
+            display: none;
+        }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .status-badge {
+            margin-left: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .status-badge.working { background-color: #fef3c7; color: #d97706; }
+        .status-badge.success { background-color: #d1fae5; color: #059669; }
+        .status-badge.error { background-color: #fee2e2; color: #dc2626; }
+
+        .terminal {
+            background-color: #0f172a;
+            color: #38bdf8;
+            border-radius: 10px;
+            padding: 1.25rem;
+            font-family: "Fira Code", Monaco, Consolas, monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            height: 260px;
+            overflow-y: auto;
+            border: 1px solid #1e293b;
+            white-space: pre-wrap;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s ease-in-out infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ==================== SPLIT-SCREEN GROUNDED POLICY AUDITOR STYLES ==================== */
+        .auditor-split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr;
+            gap: 1.25rem;
+            margin-top: 1rem;
+            height: 780px;
+        }
+
+        @media (max-width: 1024px) {
+            .auditor-split-layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+        }
+
+        /* Left Pane: Numbered Rules Auditor */
+        .auditor-rules-pane {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .auditor-rules-header {
+            padding: 0.85rem 1.1rem;
+            background: #f8fafc;
+            border-bottom: 1.5px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .auditor-filter-pills {
+            display: flex;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding-bottom: 0.2rem;
+        }
+
+        .filter-pill {
+            padding: 0.3rem 0.65rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--slate);
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+
+        .filter-pill:hover, .filter-pill.active {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        .auditor-rules-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            background: #f1f5f9;
+        }
+
+        /* Rule Card */
+        .grounded-rule-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .grounded-rule-card:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 4px 10px rgba(0, 82, 255, 0.08);
+        }
+
+        .grounded-rule-card.active-target {
+            border-color: #0052ff;
+            background: #f0f7ff;
+            box-shadow: 0 0 0 3px rgba(0, 82, 255, 0.15);
+        }
+
+        .rule-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .rule-badge-num {
+            font-weight: 800;
+            font-size: 0.78rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            background: #0052ff;
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .rule-badge-cat {
+            font-weight: 700;
+            font-size: 0.72rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            background: #e2e8f0;
+            color: #334155;
+        }
+
+        .rule-card-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .rule-btn-jump {
+            background: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .rule-btn-jump:hover {
+            background: #0284c7;
+            color: #ffffff;
+        }
+
+        .rule-btn-delete {
+            background: none;
+            border: none;
+            color: #94a3b8;
+            font-size: 1.05rem;
+            cursor: pointer;
+            padding: 0.15rem 0.35rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+            line-height: 1;
+        }
+
+        .rule-btn-delete:hover {
+            color: #ef4444;
+            background: #fee2e2;
+        }
+
+        .rule-input-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 0.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .rule-input-field {
+            width: 100%;
+            padding: 0.45rem 0.65rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text);
+            background: #f8fafc;
+            outline: none;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+
+        .rule-input-field:focus {
+            border-color: var(--primary);
+            background: #ffffff;
+            box-shadow: 0 0 0 2px rgba(0, 82, 255, 0.1);
+        }
+
+        .rule-quote-box {
+            font-size: 0.78rem;
+            color: #475569;
+            background: #f8fafc;
+            border-left: 3px solid #3b82f6;
+            padding: 0.4rem 0.65rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 0.45rem;
+            font-style: italic;
+            line-height: 1.35;
+            max-height: 65px;
+            overflow-y: auto;
+            border-top: 1px solid #f1f5f9;
+            border-right: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .rule-key-path-tag {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            font-family: monospace;
+        }
+
+        /* Right Pane: Document Viewer */
+        .auditor-doc-pane {
+            display: flex;
+            flex-direction: column;
+            background: #1e293b;
+            border: 1.5px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .doc-toolbar {
+            padding: 0.6rem 1rem;
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #f8fafc;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .doc-toolbar-group {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .doc-btn {
+            background: #334155;
+            color: #f8fafc;
+            border: 1px solid #475569;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .doc-btn:hover {
+            background: #475569;
+            color: #ffffff;
+        }
+
+        .doc-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .doc-viewer-scroll {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            background: #475569;
+            position: relative;
+            user-select: text;
+        }
+
+        .pdf-page-wrapper {
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+            border-radius: 4px;
+            background: #ffffff;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .pdf-canvas {
+            display: block;
+        }
+
+        .pdf-text-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            opacity: 0.9;
+            line-height: 1.0;
+            pointer-events: auto;
+        }
+
+        .pdf-text-layer span {
+            color: transparent;
+            position: absolute;
+            white-space: pre;
+            cursor: text;
+            transform-origin: 0% 0%;
+        }
+
+        .pdf-text-layer span::selection {
+            background: rgba(0, 82, 255, 0.4);
+            color: transparent;
+        }
+
+        .highlight-flash {
+            animation: flashQuote 2.5s ease-out;
+        }
+
+        @keyframes flashQuote {
+            0% { background-color: rgba(254, 240, 138, 0.9); box-shadow: 0 0 15px rgba(234, 179, 8, 0.8); }
+            50% { background-color: rgba(254, 240, 138, 0.6); }
+            100% { background-color: transparent; }
+        }
+
+        /* Floating Tooltip Button for Text Selection */
+        .floating-quote-btn {
+            position: absolute;
+            display: none;
+            z-index: 1000;
+            background: #7c3aed;
+            color: #ffffff;
+            border: none;
+            padding: 0.45rem 0.85rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.15s ease, background-color 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .floating-quote-btn:hover {
+            background: #6d28d9;
+            transform: translateY(-2px);
+        }
+
+        /* Master Bottom Bar */
+        .master-save-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            margin-top: 1.25rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>BrokerFlow - Dashboard di Gestione</h1>
+        <p>Configura policy di credito, tabelle tassi e regole aggiuntive con estrazione AI ad altissima precisione e anteprima grafica di sicurezza.</p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+        <button class="tab-btn active-blue" id="tab-btn-policy" onclick="switchSection('policy')">
+            📥 1. Caricamento Policy
+        </button>
+        <button class="tab-btn" id="tab-btn-rates" onclick="switchSection('rates')">
+            📊 2. Tabelle Tassi & Prodotti
+        </button>
+        <button class="tab-btn" id="tab-btn-branches" onclick="switchSection('branches')">
+            🏢 3. Rete Filiali & Territorio
+        </button>
+        <button class="tab-btn" id="tab-btn-chat" onclick="switchSection('chat')">
+            💬 4. Chat Regole & Advisor
+        </button>
+        <button class="tab-btn" id="tab-btn-backup" onclick="switchSection('backup')">
+            ⚙️ 5. Backup & Ripristino
+        </button>
+    </div>
+    
+    <div class="content">
+        <!-- Global AI Model Config -->
+        <div class="form-group" style="margin-bottom: 1.75rem; background:#f8fafc; padding:1rem; border-radius:10px; border:1px solid var(--border);">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <label for="model-select" style="margin-bottom:0; font-size:0.9rem;">🤖 Modello AI di Estrazione:</label>
+                <select id="model-select" style="width: auto; padding: 0.5rem 1rem;">
+                    <option value="gemini-flash-lite-latest" selected>Gemini Flash Lite (Ultra-rapido & Stabile)</option>
+                    <option value="gemini-pro-latest">Gemini Pro Latest</option>
+                    <option value="gemini-flash-latest">Gemini Flash Latest</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 1: POLICY UPLOADER ==================== -->
+        <div id="section-policy" class="section-card theme-blue">
+            <div class="section-card-header">
+                <div>
+                    <div class="section-card-title">
+                        📥 Caricamento Nuova Policy Bancaria
+                    </div>
+                    <div class="section-card-desc">
+                        Carica il documento completo (PDF, Word o Testo) con le linee guida creditizie della banca.
+                    </div>
+                </div>
+                <span class="badge badge-blue">Modulo Policy</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="bank-id">ID Banca (minuscolo, senza spazi - es. 'bper', 'mps', 'bnl', 'ing', 'sparkasse', 'credit agricole italia')</label>
+                <input type="text" id="bank-id" placeholder="Inserisci l'identificativo della banca...">
+            </div>
+
+            <label>File del Documento di Policy</label>
+            <div class="upload-zone" id="drop-zone">
+                <div class="upload-icon">📄</div>
+                <div class="upload-text">Trascina qui il file della policy oppure clicca per sfogliare</div>
+                <div class="upload-subtext">PDF (.pdf), Excel (.xlsx multi-foglio), Word (.docx), Testo (.txt)</div>
+                <div class="file-info" id="file-info-box"></div>
+                <input type="file" id="file-input" accept=".pdf,.docx,.xlsx,.xlsm,.xls,.txt">
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+                <label for="policy-user-notes">📝 Note, Deroghe & Precisazioni Integrative (Opzionale)</label>
+                <textarea id="policy-user-notes" rows="2" placeholder="Es. Promozione temporanea valida fino al 31/12/2026; Limite LTV 95% valido solo per residenti in Lombardia e Veneto; Regola calcolo redditi autonomi valida solo per forfettari..."></textarea>
+            </div>
+
+            <button class="btn" id="start-btn" disabled>
+                Analizza Policy e Mostra Anteprima
+            </button>
+
+            <!-- Split-Screen Grounded Policy Auditor Card -->
+            <div class="preview-card" id="policy-preview-card">
+                <div class="preview-header">
+                    <div>
+                        <h3 id="policy-preview-title">Document Grounding & Auditor Regole</h3>
+                        <p id="policy-preview-desc" style="font-size:0.85rem; color:var(--text-light); margin-top:0.2rem;">
+                            Verifica, modifica e correggi le regole estratte a sinistra con l'ancoraggio visivo al documento originale a destra.
+                        </p>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:0.5rem;">
+                        <span class="badge badge-blue" id="policy-rules-count-badge">0 Regole Rilevate</span>
+                        <span class="badge badge-green" id="policy-preview-status-badge">In attesa di revisione</span>
+                    </div>
+                </div>
+
+                <!-- Sezione Smart Diff Summary (se banca esistente) -->
+                <div id="policy-diff-container" style="margin-bottom: 1rem; display: none;">
+                    <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 0.75rem 1rem; display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-size: 0.88rem; font-weight: 700; color: #166534; display: flex; align-items: center; gap: 0.5rem;">
+                            <span>🔄</span> Aggiornamento Incrementale: patrimonio regole consolidate preservato al 100%.
+                        </div>
+                        <span class="badge badge-emerald" id="diff-changes-count-badge">0 Variazioni</span>
+                    </div>
+                </div>
+
+                <!-- Split Screen Auditor Layout -->
+                <div class="auditor-split-layout">
+                    <!-- Left Column: Numbered Grounded Rules List -->
+                    <div class="auditor-rules-pane">
+                        <div class="auditor-rules-header">
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:0.85rem; font-weight:800; color:#1e293b;">📋 Elenco Regole Estratte</span>
+                                <button class="btn btn-purple" id="btn-add-manual-rule" style="padding:0.35rem 0.75rem; font-size:0.75rem; flex:0 0 auto;">
+                                    + Aggiungi Regola Manuale
+                                </button>
+                            </div>
+                            <!-- Category Filter Pills -->
+                            <div class="auditor-filter-pills" id="auditor-filter-pills">
+                                <span class="filter-pill active" data-cat="all">Tutte (<span id="count-all">0</span>)</span>
+                                <span class="filter-pill" data-cat="Limiti Finanziari">Limiti</span>
+                                <span class="filter-pill" data-cat="Sussistenza & MRI">Sussistenza</span>
+                                <span class="filter-pill" data-cat="Contratti & Lavoratori">Lavoratori</span>
+                                <span class="filter-pill" data-cat="Regole Garanti">Garanti</span>
+                                <span class="filter-pill" data-cat="Finalità & Vincoli">Finalità</span>
+                                <span class="filter-pill" data-cat="Promozioni & Green">Promozioni</span>
+                            </div>
+                            <!-- Search filter -->
+                            <input type="text" id="rule-search-filter" class="rule-input-field" placeholder="🔍 Cerca per parametro, valore o parola chiave...">
+                        </div>
+
+                        <!-- Scrollable list of rules -->
+                        <div class="auditor-rules-list" id="grounded-rules-list">
+                            <!-- Rule cards injected dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Document / PDF Viewer -->
+                    <div class="auditor-doc-pane">
+                        <div class="doc-toolbar">
+                            <div class="doc-toolbar-group">
+                                <button class="doc-btn" id="btn-doc-prev" title="Pagina precedente">◄</button>
+                                <span style="font-size:0.8rem; font-weight:600;">Pagina</span>
+                                <input type="number" id="doc-page-num" value="1" min="1" style="width:42px; padding:0.2rem 0.3rem; text-align:center; background:#0f172a; color:#fff; border:1px solid #475569; border-radius:4px; font-weight:700;">
+                                <span style="font-size:0.8rem; color:#94a3b8;">/ <span id="doc-page-count">1</span></span>
+                                <button class="doc-btn" id="btn-doc-next" title="Pagina successiva">►</button>
+                            </div>
+                            <div class="doc-toolbar-group">
+                                <button class="doc-btn" id="btn-doc-zoom-out" title="Riduci zoom">−</button>
+                                <span id="doc-zoom-label" style="font-size:0.78rem; font-weight:700; color:#cbd5e1; min-width:40px; text-align:center;">100%</span>
+                                <button class="doc-btn" id="btn-doc-zoom-in" title="Aumenta zoom">+</button>
+                                <button class="doc-btn" id="btn-doc-fit" title="Adatta a larghezza">Adatta</button>
+                            </div>
+                        </div>
+
+                        <!-- Viewer Scroll Area -->
+                        <div class="doc-viewer-scroll" id="doc-viewer-scroll">
+                            <!-- PDF Container -->
+                            <div id="pdf-render-container" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                                <!-- Canvas and text layer injected dynamically -->
+                            </div>
+                            <!-- Text/Fallback Container for Word/Text -->
+                            <div id="doc-text-container" style="display:none; width:100%; background:white; color:#0f172a; padding:1.5rem; border-radius:6px; font-family:serif; line-height:1.6; white-space:pre-wrap; box-shadow:0 4px 12px rgba(0,0,0,0.2);"></div>
+                            <!-- Floating Button for Text Selection -->
+                            <button class="floating-quote-btn" id="floating-quote-btn">✨ Crea Regola da Selezione</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Master Save Action Bar -->
+                <div class="master-save-bar">
+                    <div>
+                        <div id="master-save-summary" style="font-size:0.92rem; font-weight:800; color:#0f172a;">
+                            0 regole attive pronte per l'applicazione
+                        </div>
+                        <div style="font-size:0.8rem; color:var(--text-light); margin-top:0.15rem;">
+                            Un solo click convalida le regole, aggiorna le policy individuali e sincronizza <code style="font-weight:700;">engine.js</code>.
+                        </div>
+                    </div>
+                    <div style="display:flex; gap:0.75rem; align-items:center;">
+                        <button class="btn btn-gray" id="btn-cancel-policy" style="flex:0 0 auto; padding:0.75rem 1.25rem;">
+                            Annulla
+                        </button>
+                        <button class="btn btn-success" id="btn-confirm-grounded-policy" style="flex:0 0 auto; padding:0.85rem 1.75rem; font-size:0.95rem; font-weight:800; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+                            💾 Salva e Applica Policy a BrokerFlow
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 2: RATE TABLES IMPORTER ==================== -->
+        <div id="section-rates" class="section-card theme-purple" style="display: none;">
+            <div class="section-card-header">
+                <div>
+                    <div class="section-card-title">
+                        📊 Importazione Tabelle Tassi & Prodotti Mutuo
+                    </div>
+                    <div class="section-card-desc">
+                        Estrai fogli condizioni, tassi finiti e griglie spread con anteprima e chiarimento in chat.
+                    </div>
+                </div>
+                <span class="badge badge-purple">Modulo Tassi</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="rates-bank-id">ID Banca (opzionale se indicato nel documento/testo)</label>
+                <input type="text" id="rates-bank-id" placeholder="es. 'bper', 'mps', 'bnl', 'ing', 'sparkasse'...">
+            </div>
+
+            <label>File Tabella Tassi o Foglio Condizioni</label>
+            <div class="upload-zone" id="rates-drop-zone">
+                <div class="upload-icon">📈</div>
+                <div class="upload-text">Trascina qui il file con la tabella tassi o foglio informativo</div>
+                <div class="upload-subtext">Excel multi-foglio (.xlsx, .xlsm, .xls), PDF (.pdf), Word (.docx), Testo (.txt)</div>
+                <div class="file-info" id="rates-file-info-box"></div>
+                <input type="file" id="rates-file-input" accept=".xlsx,.xlsm,.xls,.pdf,.docx,.txt">
+            </div>
+
+            <div class="form-group">
+                <label for="rates-raw-textarea">Oppure incolla qui il testo/tabella tassi copiata:</label>
+                <textarea id="rates-raw-textarea" rows="3" placeholder="Incolla qui il testo della tabella tassi (es. Mutuo BPER Fisso 10-15 anni spread 0.20%, 16-20 anni spread 0.30%...)"></textarea>
+            </div>
+
+            <div class="form-group" style="margin-top: 1rem;">
+                <label for="rates-user-notes">📝 Note, Validità Temporale & Zone/Province (Opzionale)</label>
+                <textarea id="rates-user-notes" rows="2" placeholder="Es. Offerta promozionale tasso speciale valida fino al 31/12/2026; Riservata agli immobili situati in Lombardia, Veneto ed Emilia-Romagna; Solo per finalità surroga e acquisto prima casa..."></textarea>
+            </div>
+
+            <button class="btn btn-purple" id="btn-rates-start">
+                Estrai Tabella Tassi e Mostra Anteprima
+            </button>
+
+            <!-- Rates Clarification Chat Box -->
+            <div class="chat-container" id="rates-chat-ui" style="display: none; margin-top: 1.25rem;">
+                <div class="chat-box" id="rates-chat-box"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="rates-chat-message-input" placeholder="Rispondi per chiarire i dettagli della tabella tassi...">
+                    <button class="btn btn-purple" id="btn-rates-chat-send" style="flex:0 0 auto; padding:0.6rem 1.2rem;">Invia Chiarimento</button>
+                </div>
+            </div>
+
+            <!-- Rates Preview Card -->
+            <div class="preview-card" id="rates-preview-card">
+                <div class="preview-header">
+                    <div>
+                        <h3 id="preview-bank-title">Anteprima Prodotti & Griglie Tassi</h3>
+                        <p id="preview-summary-text" style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;"></p>
+                    </div>
+                    <span class="badge badge-green">Pronto per l'inserimento</span>
+                </div>
+
+                <!-- Rates Incremental Merge Banner -->
+                <div id="rates-merge-banner" style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:0.75rem 1rem; margin-bottom:1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                    <div style="font-size:0.86rem; font-weight:700; color:#166534; display:flex; align-items:center; gap:0.5rem;">
+                        <span>🔄</span> Aggiornamento Incrementale: i prodotti esistenti non presenti nel nuovo file rimarranno intatti a sistema.
+                    </div>
+                    <label style="font-size:0.8rem; font-weight:600; color:#475569; display:flex; align-items:center; gap:0.35rem; cursor:pointer;">
+                        <input type="checkbox" id="rates-replace-all-checkbox"> Sostituisci intero catalogo banca
+                    </label>
+                </div>
+
+                <!-- Rates Multi-Purpose Filter Bar -->
+                <div style="display: flex; gap: 1rem; align-items: center; justify-content: space-between; margin-bottom: 1rem; padding: 0.75rem 1rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; font-weight: 700; color: #475569;">Filtra per Finalità:</span>
+                        <select id="rates-purpose-filter" style="padding: 0.4rem 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; font-weight: 600; background: #ffffff; outline: none;">
+                            <option value="all">🔍 Tutte le finalità</option>
+                            <option value="acquisto">🏠 Acquisto Ordinario</option>
+                            <option value="asta">🏛️ Acquisto all'Asta</option>
+                            <option value="surroga">🔄 Surroga / Portabilità</option>
+                            <option value="acquisto_ristrutturazione">🛠️ Acquisto + Ristrutturazione</option>
+                            <option value="ristrutturazione">🖌️ Ristrutturazione</option>
+                            <option value="liquidita">💶 Liquidità</option>
+                            <option value="consolidamento">⚖️ Consolidamento Debiti</option>
+                            <option value="costruzione">📐 Costruzione / SAL</option>
+                        </select>
+                    </div>
+                    <div id="rates-purpose-pills" style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+                        <!-- Dynamic count pills -->
+                    </div>
+                </div>
+
+                <div style="overflow-x: auto; margin-bottom: 1.25rem;">
+                    <table class="rules-table">
+                        <thead>
+                            <tr>
+                                <th>Nome Prodotto</th>
+                                <th>Tipo</th>
+                                <th>Parametro</th>
+                                <th>Finalità</th>
+                                <th>LTV Max</th>
+                                <th>Validità / Promo</th>
+                                <th>Zone / Note</th>
+                                <th>Caratteristiche</th>
+                                <th>Griglia Tassi / Spread per Durata</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rates-table-body">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn btn-success" id="btn-confirm-rates">
+                        ✅ Conferma e Inserisci Tassi a Sistema
+                    </button>
+                    <button class="btn btn-gray" id="btn-cancel-rates" style="flex: 0.3;">
+                        Annulla
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 3: BRANCHES UPLOADER ==================== -->
+        <div id="section-branches" class="section-card theme-emerald" style="display: none;">
+            <div class="section-card-header">
+                <div>
+                    <div class="section-card-title">
+                        🏢 Import Rete Filiali Territoriali
+                    </div>
+                    <div class="section-card-desc">
+                        Importa l'elenco degli sportelli aperti (.xlsx multi-foglio, .xls, .pdf, .docx, .csv, .txt) con geolocalizzazione automatica delle coordinate GPS e allineamento della territorialità della banca.
+                    </div>
+                </div>
+                <span class="badge badge-emerald">Modulo Filiali & Territorio</span>
+            </div>
+
+            <div class="form-group">
+                <label for="branches-bank-select">Banca di Riferimento:</label>
+                <select id="branches-bank-select">
+                    <option value="banco di sardegna">Banco di Sardegna</option>
+                    <option value="bper">BPER Banca</option>
+                    <option value="mps">Monte dei Paschi di Siena (MPS)</option>
+                    <option value="ing">ING Bank</option>
+                    <option value="sparkasse">Cassa di Risparmio di Bolzano (Sparkasse)</option>
+                    <option value="mediobanca_premier">Mediobanca Premier</option>
+                    <option value="bnl">BNL - Gruppo BNP Paribas</option>
+                    <option value="credit agricole italia">Crédit Agricole Italia</option>
+                    <option value="unicredit">UniCredit</option>
+                    <option value="intesa sanpaolo">Intesa Sanpaolo</option>
+                    <option value="banco bpm">Banco BPM</option>
+                    <option value="credem">Credem (Credito Emiliano)</option>
+                    <option value="mediolanum">Banca Mediolanum</option>
+                    <option value="sella">Banca Sella</option>
+                    <option value="avvera">Avvera (Gruppo Credem)</option>
+                    <option value="custom">Altra Banca (Personalizzata)...</option>
+                </select>
+                <div id="branches-custom-bank-group" style="display:none; margin-top:0.5rem;">
+                    <input type="text" id="branches-custom-bank-id" placeholder="Inserisci ID univoco nuova banca (es. 'banca_sella', 'volksbank')">
+                </div>
+            </div>
+
+            <label>File Elenco Filiali / Sportelli Aperti</label>
+            <div class="upload-zone" id="branches-drop-zone">
+                <div class="upload-icon">🏢</div>
+                <div class="upload-text">Trascina qui il file delle filiali (.xlsx multi-foglio, .xls, .pdf, .docx, .csv, .txt) oppure clicca per sfogliare</div>
+                <div class="upload-subtext">Supporto automatico per fogli 'Sportelli aperti', colonne indirizzi, CAP, comuni e recapiti</div>
+                <div class="file-info" id="branches-file-info-box"></div>
+                <input type="file" id="branches-file-input" accept=".xlsx,.xlsm,.xls,.pdf,.docx,.csv,.txt">
+            </div>
+
+            <div class="form-group">
+                <label for="branches-raw-textarea">Oppure incolla qui il testo o tabella con l'elenco delle filiali:</label>
+                <textarea id="branches-raw-textarea" rows="3" placeholder="Incolla qui l'elenco delle filiali copiato (es. 'Filiale Milano Centro - Via Mengoni 2, 20121 Milano (MI) - Tel. 02 88291'...)"></textarea>
+            </div>
+
+            <button class="btn btn-emerald" id="btn-branches-start">
+                Estrai Filiali e Mostra Anteprima
+            </button>
+
+            <!-- Branches Preview Card -->
+            <div class="preview-card" id="branches-preview-card" style="display: none;">
+                <div class="preview-header">
+                    <div>
+                        <h3 id="branches-preview-title">Anteprima Filiali & Territorio</h3>
+                        <p id="branches-preview-subtitle" style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;"></p>
+                    </div>
+                    <span class="badge badge-emerald" id="branches-count-badge">0 Filiali</span>
+                </div>
+
+                <!-- Provinces Summary Badges -->
+                <div style="margin: 1rem 0; padding: 0.85rem 1rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #166534; margin-bottom: 0.4rem;">📍 Distribuzione Territoriale per Provincia:</div>
+                    <div id="branches-provinces-badges" style="display: flex; flex-wrap: wrap; gap: 0.35rem;"></div>
+                </div>
+
+                <!-- Search filter for table -->
+                <div style="margin-bottom: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
+                    <input type="text" id="branches-filter-input" placeholder="Filtra filiali per comune, indirizzo o provincia..." style="max-width: 340px; padding: 0.4rem 0.75rem; font-size: 0.85rem;">
+                    <span id="branches-showing-count" style="font-size: 0.8rem; color: var(--text-light);"></span>
+                </div>
+
+                <!-- Branches Table Container -->
+                <div style="max-height: 400px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1.25rem;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+                        <thead style="background: #f8fafc; position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--border);">
+                            <tr>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">#</th>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">Denominazione</th>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">Comune / Prov</th>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">Indirizzo Completo</th>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">Recapito</th>
+                                <th style="padding: 0.6rem 0.85rem; font-weight: 700; color: #334155;">GPS (Lat/Lng)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="branches-table-body"></tbody>
+                    </table>
+                </div>
+
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1.25rem; font-size: 0.85rem; color: #1e40af;">
+                    ℹ️ <strong>Impatto sul Motore Decisionale:</strong> La conferma salverà l'elenco in <code>data/branches.json</code> e aggiornerà istantaneamente i comuni e le province servite nella policy della banca, permettendo al sistema di calcolare la vicinanza chilometrica per le pratiche dei clienti.
+                </div>
+
+                <div class="btn-container">
+                    <button class="btn btn-emerald" id="btn-branches-confirm">
+                        ✅ Conferma e Salva Filiali in BrokerFlow
+                    </button>
+                    <button class="btn btn-gray" id="btn-branches-cancel" style="flex: 0.3;">
+                        Annulla
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 4: RULES CHAT ==================== -->
+        <div id="section-chat" class="section-card theme-amber" style="display: none;">
+            <div class="section-card-header">
+                <div>
+                    <div class="section-card-title">
+                        💬 Inserimento Rapido & Chiarimento Regole Policy (Chat)
+                    </div>
+                    <div class="section-card-desc">
+                        Inserisci regole singole, deroghe o consulta l'AI Advisor su tutte le policy bancarie convenzionate.
+                    </div>
+                </div>
+                <span class="badge badge-amber">Modulo Chat & Advisor</span>
+            </div>
+            
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+                <button type="button" class="btn btn-sm" id="btn-chatmode-rule" style="background: var(--amber); color: #fff; font-weight: 700; border-radius: 8px; border:none; padding:0.5rem 1rem; cursor:pointer;" onclick="switchParserChatMode('rule')">✏️ Modifica Regola Singola Banca</button>
+                <button type="button" class="btn btn-sm" id="btn-chatmode-multi" style="background: #f1f5f9; color: #475569; font-weight: 700; border-radius: 8px; border:none; padding:0.5rem 1rem; cursor:pointer;" onclick="switchParserChatMode('multi')">🤖 AI Advisor Territoriale Multi-Banca</button>
+            </div>
+
+            <!-- Single Rule Mode Box -->
+            <div id="parser-chat-rule-box">
+                <div class="form-group">
+                    <label for="chat-textarea">Spiega la nuova regola o eccezione (indica sempre la banca - es. "Per BPER...")</label>
+                    <textarea id="chat-textarea" rows="3" placeholder="Scrivi qui la regola. Esempio: 'Per BNL fino al 31/10/2026 il mutuo 80% tasso fisso passa al 3.45% per immobili in classe A o B' oppure 'Per BPER il DSR massimo passa al 40%'"></textarea>
+                </div>
+                <button class="btn btn-amber" id="btn-chat-start">Analizza Regola con AI</button>
+            </div>
+
+            <!-- Multi-Bank Advisor Mode Box -->
+            <div id="parser-chat-multi-box" style="display: none;">
+                <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1rem; font-size: 0.88rem; color: #1e40af;">
+                    💡 <strong>Advisor Territoriale:</strong> Fai qualsiasi domanda trasversale su tutte le banche convenzionate (es. <em>"Quale banca mi fa gli 80 anni a fine mutuo?"</em>). Se non inserisci la città, l'AI ti chiederà dove si trova l'immobile per filtrare solo gli istituti operanti nella tua zona.
+                </div>
+            </div>
+            
+            <div class="chat-container" id="chat-ui" style="display: none; margin-top: 1.25rem;">
+                <div class="chat-box" id="chat-box"></div>
+                <div class="chat-quick-actions" id="quick-actions" style="display: none;">
+                    <button class="quick-btn" onclick="sendQuickReply('È una modifica permanente')">Modifica Permanente</button>
+                    <button class="quick-btn" onclick="sendQuickReply('È una modifica temporanea')">Modifica Temporanea (Promozione)</button>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-message-input" placeholder="Rispondi all'AI...">
+                    <button class="btn btn-amber" id="btn-chat-send" style="flex:0 0 auto; padding:0.6rem 1.2rem;">Invia</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SECTION 4: BACKUPS ==================== -->
+        <div id="section-backup" class="section-card theme-slate" style="display: none;">
+            <div class="section-card-header">
+                <div>
+                    <div class="section-card-title">
+                        ⚙️ Gestione Backup & Punti di Ripristino
+                    </div>
+                    <div class="section-card-desc">
+                        Salva o ripristina lo stato stabile di BrokerFlow in qualsiasi momento con un clic.
+                    </div>
+                </div>
+                <span class="badge badge-gray">Sicurezza Database</span>
+            </div>
+            
+            <div class="backup-grid">
+                <div class="backup-column">
+                    <h3>Salva Stato Corrente</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 1rem;">
+                        Metti in sicurezza la configurazione attuale funzionante di policy e tassi. Verrà salvata come <strong>last_ok</strong>.
+                    </p>
+                    <button class="btn btn-amber" id="btn-backup-ok">
+                        Salva come 'last_ok'
+                    </button>
+                </div>
+                
+                <div class="backup-column">
+                    <h3>Ripristina Stato Precedente</h3>
+                    <div class="form-group" style="margin-bottom: 0.75rem;">
+                        <label for="backup-select">Scegli il backup da ripristinare:</label>
+                        <select id="backup-select">
+                            <option value="">Caricamento backup...</option>
+                        </select>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-gray" id="btn-restore-selected" style="font-size: 0.85rem; padding: 0.6rem;">
+                            Ripristina Selezionato
+                        </button>
+                        <button class="btn btn-gray" id="btn-restore-latest" style="font-size: 0.85rem; padding: 0.6rem;" title="Ripristina l'ultimo backup automatico generato">
+                            Annulla Ultima Modifica
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMINAL LOG PANEL -->
+        <div class="result-panel" id="result-panel">
+            <div class="status-header">
+                Stato Operazione: 
+                <span id="status-badge" class="status-badge">Pronto</span>
+            </div>
+            <div class="terminal" id="terminal-console">In attesa dell'avvio...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab Navigation Logic
+    function switchSection(sectionId) {
+        document.querySelectorAll('.section-card').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.tab-btn').forEach(el => el.className = 'tab-btn');
+
+        if (sectionId === 'policy') {
+            document.getElementById('section-policy').style.display = 'block';
+            document.getElementById('tab-btn-policy').className = 'tab-btn active-blue';
+        } else if (sectionId === 'rates') {
+            document.getElementById('section-rates').style.display = 'block';
+            document.getElementById('tab-btn-rates').className = 'tab-btn active-purple';
+        } else if (sectionId === 'branches') {
+            document.getElementById('section-branches').style.display = 'block';
+            document.getElementById('tab-btn-branches').className = 'tab-btn active-emerald';
+        } else if (sectionId === 'chat') {
+            document.getElementById('section-chat').style.display = 'block';
+            document.getElementById('tab-btn-chat').className = 'tab-btn active-amber';
+        } else if (sectionId === 'backup') {
+            document.getElementById('section-backup').style.display = 'block';
+            document.getElementById('tab-btn-backup').className = 'tab-btn active-slate';
+        }
+    }
+
+    // DOM Elements
+    const modelSelect = document.getElementById('model-select');
+    const resultPanel = document.getElementById('result-panel');
+    const statusBadge = document.getElementById('status-badge');
+    const terminalConsole = document.getElementById('terminal-console');
+
+    // Section 1: Policies
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const fileInfoBox = document.getElementById('file-info-box');
+    const bankIdInput = document.getElementById('bank-id');
+    const startBtn = document.getElementById('start-btn');
+    const policyPreviewCard = document.getElementById('policy-preview-card');
+    const policyPreviewTitle = document.getElementById('policy-preview-title');
+    const btnCancelPolicy = document.getElementById('btn-cancel-policy');
+
+    let selectedFile = null;
+    let extractedPolicyToConfirm = null;
+    let targetBankForPolicy = "";
+
+    // Section 2: Rates
+    const ratesBankIdInput = document.getElementById('rates-bank-id');
+    const ratesDropZone = document.getElementById('rates-drop-zone');
+    const ratesFileInput = document.getElementById('rates-file-input');
+    const ratesFileInfoBox = document.getElementById('rates-file-info-box');
+    const ratesRawTextarea = document.getElementById('rates-raw-textarea');
+    const btnRatesStart = document.getElementById('btn-rates-start');
+    const ratesChatUi = document.getElementById('rates-chat-ui');
+    const ratesChatBox = document.getElementById('rates-chat-box');
+    const ratesChatMessageInput = document.getElementById('rates-chat-message-input');
+    const btnRatesChatSend = document.getElementById('btn-rates-chat-send');
+    const ratesPreviewCard = document.getElementById('rates-preview-card');
+    const previewBankTitle = document.getElementById('preview-bank-title');
+    const previewSummaryText = document.getElementById('preview-summary-text');
+    const ratesPurposeFilter = document.getElementById('rates-purpose-filter');
+    const ratesPurposePills = document.getElementById('rates-purpose-pills');
+    const ratesTableBody = document.getElementById('rates-table-body');
+    const btnConfirmRates = document.getElementById('btn-confirm-rates');
+    const btnCancelRates = document.getElementById('btn-cancel-rates');
+
+    let selectedRatesFile = null;
+    let currentRatesSessionId = null;
+    let extractedProductsToConfirm = [];
+    let targetBankForRates = "";
+
+    // Section 3: Branches
+    const branchesBankSelect = document.getElementById('branches-bank-select');
+    const branchesCustomBankGroup = document.getElementById('branches-custom-bank-group');
+    const branchesCustomBankId = document.getElementById('branches-custom-bank-id');
+    const branchesDropZone = document.getElementById('branches-drop-zone');
+    const branchesFileInput = document.getElementById('branches-file-input');
+    const branchesFileInfoBox = document.getElementById('branches-file-info-box');
+    const branchesRawTextarea = document.getElementById('branches-raw-textarea');
+    const btnBranchesStart = document.getElementById('btn-branches-start');
+    const branchesPreviewCard = document.getElementById('branches-preview-card');
+    const branchesPreviewTitle = document.getElementById('branches-preview-title');
+    const branchesPreviewSubtitle = document.getElementById('branches-preview-subtitle');
+    const branchesCountBadge = document.getElementById('branches-count-badge');
+    const branchesProvincesBadges = document.getElementById('branches-provinces-badges');
+    const branchesFilterInput = document.getElementById('branches-filter-input');
+    const branchesShowingCount = document.getElementById('branches-showing-count');
+    const branchesTableBody = document.getElementById('branches-table-body');
+    const btnBranchesConfirm = document.getElementById('btn-branches-confirm');
+    const btnBranchesCancel = document.getElementById('btn-branches-cancel');
+
+    let selectedBranchesFile = null;
+    let extractedBranchesToConfirm = [];
+    let targetBankForBranches = "";
+
+    // Section 3: Rules Chat
+    const chatTextarea = document.getElementById('chat-textarea');
+    const btnChatStart = document.getElementById('btn-chat-start');
+    const chatUi = document.getElementById('chat-ui');
+    const chatBox = document.getElementById('chat-box');
+    const quickActions = document.getElementById('quick-actions');
+    const chatMessageInput = document.getElementById('chat-message-input');
+    const btnChatSend = document.getElementById('btn-chat-send');
+    let currentSessionId = null;
+
+    // Section 4: Backups
+    const backupSelect = document.getElementById('backup-select');
+    const btnBackupOk = document.getElementById('btn-backup-ok');
+    const btnRestoreSelected = document.getElementById('btn-restore-selected');
+    const btnRestoreLatest = document.getElementById('btn-restore-latest');
+
+    // Load available backups on load
+    window.addEventListener('load', loadBackups);
+
+    function loadBackups() {
+        fetch('/api/backups')
+            .then(res => res.json())
+            .then(data => {
+                backupSelect.innerHTML = '';
+                if (data.length === 0) {
+                    const opt = document.createElement('option');
+                    opt.value = '';
+                    opt.textContent = 'Nessun backup salvato';
+                    backupSelect.appendChild(opt);
+                    btnRestoreSelected.disabled = true;
+                } else {
+                    data.forEach(b => {
+                        const opt = document.createElement('option');
+                        opt.value = b.name;
+                        opt.textContent = `${b.name} (${b.type} - ${b.date})`;
+                        backupSelect.appendChild(opt);
+                    });
+                    btnRestoreSelected.disabled = false;
+                }
+            })
+            .catch(err => {
+                console.error("Errore caricamento backup:", err);
+                backupSelect.innerHTML = '<option value="">Errore nel caricamento</option>';
+            });
+    }
+
+    // --- POLICY UPLOAD LOGIC ---
+    function checkValidity() {
+        const hasBankId = bankIdInput.value.trim().length > 0;
+        const hasFile = selectedFile !== null;
+        startBtn.disabled = !(hasBankId && hasFile);
+    }
+
+    bankIdInput.addEventListener('input', checkValidity);
+    dropZone.addEventListener('click', () => fileInput.click());
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) handleFileSelection(e.target.files[0]);
+    });
+
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('dragover'); });
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+    dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) handleFileSelection(e.dataTransfer.files[0]);
+    });
+
+
+    function detectBankFromFilename(fileName) {
+        if (!fileName) return "";
+        const s = fileName.toLowerCase().replace(/[-_.]/g, " ");
+        if (s.includes("mediobanca") || s.includes("chebanca") || s.includes("premier")) return "mediobanca_premier";
+        if (s.includes("agricole") || s.includes("credit agricole") || s.includes("creval") || s.includes("cariparma") || s.includes("friuladria")) return "credit agricole italia";
+        if (s.includes("mps") || s.includes("monte dei paschi") || s.includes("paschi")) return "mps";
+        if (s.includes("bper") || s.includes("emilia")) return "bper";
+        if (s.includes("bnl") || s.includes("paribas") || s.includes("findomestic")) return "bnl";
+        if (s.includes("ing") || s.includes("direct")) return "ing";
+        if (s.includes("sparkasse") || s.includes("bolzano")) return "sparkasse";
+        if (s.includes("sardegna") || s.includes("bds")) return "banco_di_sardegna";
+        if (s.includes("bdm") || s.includes("bari")) return "bdm";
+        
+        const namePart = fileName.split(".")[0].toLowerCase();
+        const matches = namePart.match(/[a-z]+/g);
+        if (matches && matches.length > 0) {
+            const bank = matches.find(w => !["policy", "profilo", "operativo", "banca", "documento", "linee", "guida", "credito", "mutui", "listino", "spread", "tassi", "analitico", "temp"].includes(w));
+            if (bank) return bank;
+        }
+        return "";
+    }
+
+    function handleFileSelection(file) {
+        selectedFile = file;
+        fileInfoBox.textContent = `File selezionato: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        fileInfoBox.style.display = "block";
+
+        const detectedBank = detectBankFromFilename(file.name);
+        if (detectedBank && !bankIdInput.value) {
+            bankIdInput.value = detectedBank;
+        }
+
+        const isRateSheet = file.name.toLowerCase().includes("listino") || file.name.toLowerCase().includes("spread") || file.name.toLowerCase().includes("tassi");
+        if (isRateSheet) {
+            fileInfoBox.innerHTML = `📄 <strong>File selezionato:</strong> ${file.name} (${(file.size / 1024).toFixed(1)} KB)<br><span style="color:#0369a1; font-weight:600; font-size:0.8rem;">💡 Questo file contiene un listino tassi/spread. Per estrarre i prodotti mutuo, puoi usare la scheda <em>"2. Tabelle Tassi & Prodotti"</em>.</span>`;
+        }
+        checkValidity();
+    }
+
+    function formatCurrency(val) {
+        if (typeof val === 'number') return val.toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €';
+        return val ? String(val) : '-';
+    }
+
+    // ==================== GROUNDED POLICY AUDITOR LOGIC ====================
+    let currentGroundedRules = [];
+    let currentGroundedFullPolicy = {};
+    let currentGroundedMriGrid = null;
+    let currentDocId = null;
+    let currentDocIsPdf = false;
+    let pdfDoc = null;
+    let currentPdfPage = 1;
+    let currentPdfZoom = 1.0;
+    let activeCategoryFilter = 'all';
+
+    function getCategoryBadgeClass(cat) {
+        if (!cat) return 'badge-gray';
+        const c = cat.toLowerCase();
+        if (c.includes('limiti') || c.includes('finanz')) return 'badge-blue';
+        if (c.includes('sussistenza') || c.includes('mri')) return 'badge-amber';
+        if (c.includes('lavorator') || c.includes('contratt')) return 'badge-purple';
+        if (c.includes('garant')) return 'badge-emerald';
+        if (c.includes('finalit')) return 'badge-blue';
+        if (c.includes('promo') || c.includes('green')) return 'badge-green';
+        return 'badge-gray';
+    }
+
+    function renderGroundedRulesList() {
+        const listEl = document.getElementById('grounded-rules-list');
+        const searchVal = document.getElementById('rule-search-filter').value.toLowerCase().trim();
+        listEl.innerHTML = '';
+
+        const catCounts = { 'all': currentGroundedRules.length };
+
+        const filtered = currentGroundedRules.filter(r => {
+            const cat = r.category || 'Altre Regole';
+            catCounts[cat] = (catCounts[cat] || 0) + 1;
+
+            if (activeCategoryFilter !== 'all' && r.category !== activeCategoryFilter) {
+                return false;
+            }
+            if (searchVal) {
+                const labelMatch = (r.label || '').toLowerCase().includes(searchVal);
+                const valMatch = String(r.value || '').toLowerCase().includes(searchVal);
+                const quoteMatch = (r.source_quote || '').toLowerCase().includes(searchVal);
+                const catMatch = (r.category || '').toLowerCase().includes(searchVal);
+                return labelMatch || valMatch || quoteMatch || catMatch;
+            }
+            return true;
+        });
+
+        const countAllEl = document.getElementById('count-all');
+        if (countAllEl) countAllEl.textContent = currentGroundedRules.length;
+
+        const rulesBadge = document.getElementById('policy-rules-count-badge');
+        if (rulesBadge) rulesBadge.textContent = `${currentGroundedRules.length} Regole Rilevate`;
+
+        const masterSummary = document.getElementById('master-save-summary');
+        if (masterSummary) masterSummary.textContent = `${currentGroundedRules.length} regole attive pronte per l'applicazione`;
+
+        if (filtered.length === 0) {
+            listEl.innerHTML = `
+                <div style="text-align:center; padding:2rem 1rem; color:#64748b; background:#fff; border-radius:10px; border:1px dashed #cbd5e1;">
+                    <div style="font-size:1.5rem; margin-bottom:0.4rem;">🔍</div>
+                    <div style="font-weight:700; font-size:0.9rem;">Nessuna regola trovata con questi filtri.</div>
+                    <div style="font-size:0.8rem; color:#94a3b8; margin-top:0.2rem;">Prova a selezionare 'Tutte' o a cancellare la ricerca.</div>
+                </div>
+            `;
+            return;
+        }
+
+        filtered.forEach((r, idx) => {
+            const card = document.createElement('div');
+            card.className = 'grounded-rule-card';
+            card.id = `rule-card-${r.id}`;
+
+            const catBadgeClass = getCategoryBadgeClass(r.category);
+            const displayVal = (r.value !== null && r.value !== undefined) ? r.value : '';
+
+            card.innerHTML = `
+                <div class="rule-card-top">
+                    <div style="display:flex; align-items:center; gap:0.45rem;">
+                        <span class="rule-badge-num">#${r.id}</span>
+                        <span class="badge ${catBadgeClass}" style="font-size:0.72rem;">${r.category || 'Regola'}</span>
+                    </div>
+                    <div class="rule-card-actions">
+                        ${r.page ? `<button class="rule-btn-jump" onclick="jumpToDocPage(${r.page}, '${escape(r.source_quote || '')}', ${r.id})">📄 Pag. ${r.page}</button>` : ''}
+                        <button class="rule-btn-delete" onclick="deleteGroundedRule(${r.id})" title="Rimuovi questa regola">🗑</button>
+                    </div>
+                </div>
+
+                <div class="rule-input-row">
+                    <div>
+                        <label style="font-size:0.75rem; color:#475569; margin-bottom:0.2rem;">Parametro / Descrizione</label>
+                        <input type="text" class="rule-input-field" value="${escapeHtml(r.label || '')}" oninput="updateGroundedRule(${r.id}, 'label', this.value)">
+                    </div>
+                    <div>
+                        <label style="font-size:0.75rem; color:#475569; margin-bottom:0.2rem;">Valore Regola</label>
+                        <input type="text" class="rule-input-field" style="font-weight:700; color:#0f172a;" value="${escapeHtml(String(displayVal))}" oninput="updateGroundedRule(${r.id}, 'value', this.value)">
+                    </div>
+                </div>
+
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.3rem;">
+                    <span class="rule-key-path-tag">chiave: ${r.key_path || 'custom_rule'}</span>
+                    ${r.unit && r.unit !== 'testo' ? `<span style="font-size:0.72rem; color:#64748b; font-weight:600;">Unità: ${r.unit}</span>` : ''}
+                </div>
+
+                ${r.source_quote ? `
+                    <div class="rule-quote-box" onclick="jumpToDocPage(${r.page || 1}, '${escape(r.source_quote)}', ${r.id})" title="Clicca per evidenziare nel documento" style="cursor:pointer;">
+                        💬 "${escapeHtml(r.source_quote)}"
+                    </div>
+                ` : ''}
+            `;
+            listEl.appendChild(card);
+        });
+    }
+
+    function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+    }
+
+    function updateGroundedRule(ruleId, field, newVal) {
+        const rule = currentGroundedRules.find(r => r.id === ruleId);
+        if (rule) {
+            rule[field] = newVal;
+        }
+    }
+
+    function deleteGroundedRule(ruleId) {
+        const card = document.getElementById(`rule-card-${ruleId}`);
+        if (card) {
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0';
+            setTimeout(() => {
+                currentGroundedRules = currentGroundedRules.filter(r => r.id !== ruleId);
+                renderGroundedRulesList();
+            }, 180);
+        } else {
+            currentGroundedRules = currentGroundedRules.filter(r => r.id !== ruleId);
+            renderGroundedRulesList();
+        }
+    }
+
+    function addManualGroundedRule(quoteText = "", pageNum = 1) {
+        const label = prompt("Inserisci il nome/etichetta della nuova regola (es. 'LTV Seconde Case'):", quoteText ? "Regola da selezione" : "");
+        if (!label) return;
+        const val = prompt("Inserisci il valore (es. '70%', '30 anni', 'Ammesso con garante'):", "");
+        if (val === null) return;
+
+        const maxId = currentGroundedRules.reduce((max, r) => Math.max(max, r.id || 0), 0);
+        const newRule = {
+            id: maxId + 1,
+            category: "Altre Regole & Vincoli",
+            key_path: `eccezioni_e_deroghe.altri_limiti.${label.toLowerCase().replace(/[^a-z0-9]/g, '_')}`,
+            label: label,
+            value: val,
+            formatted_value: val,
+            unit: val.includes('%') ? '%' : 'testo',
+            page: pageNum,
+            source_quote: quoteText || label
+        };
+        currentGroundedRules.unshift(newRule);
+        renderGroundedRulesList();
+
+        const newCard = document.getElementById(`rule-card-${newRule.id}`);
+        if (newCard) {
+            newCard.classList.add('active-target');
+            newCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => newCard.classList.remove('active-target'), 2000);
+        }
+    }
+
+    // Filter pill events
+    document.addEventListener('click', (e) => {
+        if (e.target && e.target.classList.contains('filter-pill')) {
+            document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+            e.target.classList.add('active');
+            activeCategoryFilter = e.target.getAttribute('data-cat');
+            renderGroundedRulesList();
+        }
+    });
+
+    const searchFilterInput = document.getElementById('rule-search-filter');
+    if (searchFilterInput) {
+        searchFilterInput.addEventListener('input', renderGroundedRulesList);
+    }
+
+    const btnAddManualRule = document.getElementById('btn-add-manual-rule');
+    if (btnAddManualRule) {
+        btnAddManualRule.addEventListener('click', () => addManualGroundedRule("", currentPdfPage));
+    }
+
+    // --- PDF / DOCUMENT VIEWER ENGINE ---
+    function loadDocumentViewer(docId, isPdf) {
+        currentDocId = docId;
+        currentDocIsPdf = isPdf;
+        currentPdfPage = 1;
+        currentPdfZoom = 1.0;
+
+        const pdfContainer = document.getElementById('pdf-render-container');
+        const textContainer = document.getElementById('doc-text-container');
+        const pageCountSpan = document.getElementById('doc-page-count');
+        const pageNumInput = document.getElementById('doc-page-num');
+        const zoomLabel = document.getElementById('doc-zoom-label');
+
+        pdfContainer.innerHTML = '<div style="color:#fff; padding:2rem;"><span class="spinner"></span> Caricamento anteprima documento...</div>';
+        textContainer.style.display = 'none';
+        pdfContainer.style.display = 'flex';
+
+        if (isPdf && window.pdfjsLib) {
+            const url = `/api/document_preview?id=${docId}`;
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                pdfDoc = pdf;
+                pageCountSpan.textContent = pdf.numPages;
+                pageNumInput.max = pdf.numPages;
+                pageNumInput.value = 1;
+                zoomLabel.textContent = `${Math.round(currentPdfZoom * 100)}%`;
+                renderPdfPage(1);
+            }).catch(err => {
+                console.warn("Errore caricamento PDF.js:", err);
+                fallbackToTextOrIframe(docId);
+            });
+        } else {
+            fallbackToTextOrIframe(docId);
+        }
+    }
+
+    function fallbackToTextOrIframe(docId) {
+        const pdfContainer = document.getElementById('pdf-render-container');
+        const textContainer = document.getElementById('doc-text-container');
+        pdfContainer.style.display = 'none';
+        textContainer.style.display = 'block';
+        textContainer.textContent = "Caricamento testo...";
+
+        fetch(`/api/document_preview?id=${docId}`)
+            .then(res => res.text())
+            .then(txt => {
+                textContainer.textContent = txt || "(Documento vuoto o formato binario non visualizzabile come testo)";
+            })
+            .catch(err => {
+                textContainer.textContent = "Impossibile caricare l'anteprima del testo: " + err.message;
+            });
+    }
+
+    function renderPdfPage(num) {
+        if (!pdfDoc) return;
+        currentPdfPage = num;
+        document.getElementById('doc-page-num').value = num;
+
+        pdfDoc.getPage(num).then(page => {
+            const pdfContainer = document.getElementById('pdf-render-container');
+            pdfContainer.innerHTML = '';
+
+            const viewport = page.getViewport({ scale: currentPdfZoom * 1.35 });
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = 'pdf-page-wrapper';
+            wrapper.id = `pdf-page-wrapper-${num}`;
+            wrapper.style.width = `${viewport.width}px`;
+            wrapper.style.height = `${viewport.height}px`;
+
+            const canvas = document.createElement('canvas');
+            canvas.className = 'pdf-canvas';
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+
+            const textLayerDiv = document.createElement('div');
+            textLayerDiv.className = 'pdf-text-layer';
+            textLayerDiv.style.width = `${viewport.width}px`;
+            textLayerDiv.style.height = `${viewport.height}px`;
+
+            wrapper.appendChild(canvas);
+            wrapper.appendChild(textLayerDiv);
+            pdfContainer.appendChild(wrapper);
+
+            const ctx = canvas.getContext('2d');
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport: viewport
+            };
+
+            page.render(renderCtx).promise.then(() => {
+                return page.getTextContent();
+            }).then(textContent => {
+                if (window.pdfjsLib && pdfjsLib.renderTextLayer) {
+                    pdfjsLib.renderTextLayer({
+                        textContent: textContent,
+                        container: textLayerDiv,
+                        viewport: viewport,
+                        textDivs: []
+                    });
+                }
+            });
+        });
+    }
+
+    function jumpToDocPage(pageNum, quoteText, ruleId) {
+        const page = parseInt(pageNum) || 1;
+        if (pdfDoc && page <= pdfDoc.numPages) {
+            renderPdfPage(page);
+        }
+
+        // Highlight active rule card
+        document.querySelectorAll('.grounded-rule-card').forEach(c => c.classList.remove('active-target'));
+        if (ruleId) {
+            const activeCard = document.getElementById(`rule-card-${ruleId}`);
+            if (activeCard) activeCard.classList.add('active-target');
+        }
+
+        // Highlight flash on canvas wrapper
+        setTimeout(() => {
+            const wrapper = document.getElementById(`pdf-page-wrapper-${page}`);
+            if (wrapper) {
+                wrapper.classList.remove('highlight-flash');
+                void wrapper.offsetWidth;
+                wrapper.classList.add('highlight-flash');
+            }
+        }, 150);
+    }
+
+    // Document Toolbar Buttons
+    const btnDocPrev = document.getElementById('btn-doc-prev');
+    const btnDocNext = document.getElementById('btn-doc-next');
+    const docPageNumInput = document.getElementById('doc-page-num');
+    const btnDocZoomIn = document.getElementById('btn-doc-zoom-in');
+    const btnDocZoomOut = document.getElementById('btn-doc-zoom-out');
+    const btnDocFit = document.getElementById('btn-doc-fit');
+
+    if (btnDocPrev) {
+        btnDocPrev.addEventListener('click', () => {
+            if (currentPdfPage > 1) renderPdfPage(currentPdfPage - 1);
+        });
+    }
+    if (btnDocNext) {
+        btnDocNext.addEventListener('click', () => {
+            if (pdfDoc && currentPdfPage < pdfDoc.numPages) renderPdfPage(currentPdfPage + 1);
+        });
+    }
+    if (docPageNumInput) {
+        docPageNumInput.addEventListener('change', (e) => {
+            let val = parseInt(e.target.value) || 1;
+            if (pdfDoc) {
+                val = Math.max(1, Math.min(val, pdfDoc.numPages));
+                renderPdfPage(val);
+            }
+        });
+    }
+    if (btnDocZoomIn) {
+        btnDocZoomIn.addEventListener('click', () => {
+            currentPdfZoom = Math.min(2.5, currentPdfZoom + 0.15);
+            document.getElementById('doc-zoom-label').textContent = `${Math.round(currentPdfZoom * 100)}%`;
+            renderPdfPage(currentPdfPage);
+        });
+    }
+    if (btnDocZoomOut) {
+        btnDocZoomOut.addEventListener('click', () => {
+            currentPdfZoom = Math.max(0.6, currentPdfZoom - 0.15);
+            document.getElementById('doc-zoom-label').textContent = `${Math.round(currentPdfZoom * 100)}%`;
+            renderPdfPage(currentPdfPage);
+        });
+    }
+    if (btnDocFit) {
+        btnDocFit.addEventListener('click', () => {
+            currentPdfZoom = 1.0;
+            document.getElementById('doc-zoom-label').textContent = '100%';
+            renderPdfPage(currentPdfPage);
+        });
+    }
+
+    // Floating Tooltip for Text Selection
+    const docViewerScroll = document.getElementById('doc-viewer-scroll');
+    const floatingQuoteBtn = document.getElementById('floating-quote-btn');
+    let currentSelectedText = "";
+
+    if (docViewerScroll && floatingQuoteBtn) {
+        docViewerScroll.addEventListener('mouseup', (e) => {
+            const sel = window.getSelection();
+            const text = sel.toString().trim();
+            if (text.length >= 3) {
+                currentSelectedText = text;
+                const rect = docViewerScroll.getBoundingClientRect();
+                floatingQuoteBtn.style.left = `${e.clientX - rect.left + 15}px`;
+                floatingQuoteBtn.style.top = `${e.clientY - rect.top + docViewerScroll.scrollTop - 40}px`;
+                floatingQuoteBtn.style.display = 'block';
+            } else {
+                floatingQuoteBtn.style.display = 'none';
+            }
+        });
+
+        floatingQuoteBtn.addEventListener('click', () => {
+            floatingQuoteBtn.style.display = 'none';
+            if (currentSelectedText) {
+                addManualGroundedRule(currentSelectedText, currentPdfPage);
+            }
+        });
+    }
+
+    startBtn.addEventListener('click', () => {
+        if (!selectedFile) return;
+        const bankId = bankIdInput.value.trim().toLowerCase();
+        const model = modelSelect.value;
+        const userNotes = document.getElementById('policy-user-notes') ? document.getElementById('policy-user-notes').value.trim() : '';
+
+        startBtn.disabled = true;
+        startBtn.innerHTML = '<span class="spinner"></span> Analisi AI e Grounding Documentale...';
+        policyPreviewCard.style.display = 'none';
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const base64Data = e.target.result.split(',')[1];
+            fetch('/api/policy/parse_grounded', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ bankId, fileName: selectedFile.name, fileContent: base64Data, model, userNotes })
+            })
+            .then(res => res.json())
+            .then(data => {
+                startBtn.disabled = false;
+                startBtn.textContent = 'Analizza Policy e Mostra Anteprima';
+
+                if (data.status === 'error') {
+                    alert(`Errore durante l'analisi: ${data.message}`);
+                    return;
+                }
+
+                targetBankForPolicy = bankId;
+                currentGroundedRules = data.rules || [];
+                currentGroundedFullPolicy = data.fullPolicy || {};
+                currentGroundedMriGrid = data.mriGrid || null;
+
+                const officialName = data.bankName || bankId.toUpperCase();
+                document.getElementById('policy-preview-title').textContent = `Document Grounding: ${officialName}`;
+
+                // Expand container to wide mode for comfortable split-screen review
+                document.querySelector('.container').classList.add('wide-mode');
+
+                // Render left pane rules list
+                renderGroundedRulesList();
+
+                // Render right pane document viewer
+                loadDocumentViewer(data.docId, data.isPdf);
+
+                // Show preview card and smooth scroll
+                policyPreviewCard.style.display = 'block';
+                policyPreviewCard.scrollIntoView({ behavior: 'smooth' });
+            })
+            .catch(err => {
+                startBtn.disabled = false;
+                startBtn.textContent = 'Analizza Policy e Mostra Anteprima';
+                alert(`Errore di rete durante il caricamento: ${err.message}`);
+            });
+        };
+        reader.readAsDataURL(selectedFile);
+    });
+
+    const btnConfirmGroundedPolicy = document.getElementById('btn-confirm-grounded-policy');
+    if (btnConfirmGroundedPolicy) {
+        btnConfirmGroundedPolicy.addEventListener('click', () => {
+            if (!targetBankForPolicy || currentGroundedRules.length === 0) {
+                alert("Nessuna regola da confermare per la banca.");
+                return;
+            }
+
+            if (!confirm(`Sei sicuro di voler salvare e applicare le ${currentGroundedRules.length} regole della policy per '${targetBankForPolicy.toUpperCase()}'?\n\nBrokerFlow creerà un backup automatico e sincronizzerà istantaneamente il motore di calcolo engine.js.`)) {
+                return;
+            }
+
+            btnConfirmGroundedPolicy.disabled = true;
+            btnConfirmGroundedPolicy.innerHTML = '<span class="spinner"></span> Applicazione Policy a BrokerFlow...';
+            resultPanel.style.display = 'block';
+            statusBadge.textContent = 'Salvataggio...';
+            statusBadge.className = 'status-badge working';
+            terminalConsole.textContent = `[INFO] Avvio applicazione e allineamento database per '${targetBankForPolicy}' (${currentGroundedRules.length} regole modificate/confermate)...\n`;
+
+            fetch('/api/policy/save_grounded', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    bankId: targetBankForPolicy,
+                    rules: currentGroundedRules,
+                    fullPolicy: currentGroundedFullPolicy,
+                    mriGrid: currentGroundedMriGrid,
+                    model: modelSelect.value
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                btnConfirmGroundedPolicy.disabled = false;
+                btnConfirmGroundedPolicy.innerHTML = '💾 Salva e Applica Policy a BrokerFlow';
+                loadBackups();
+
+                terminalConsole.textContent += `\n--- LOG DI SALVATAGGIO POLICY ---\n${data.logs || ''}\n`;
+
+                if (data.status === 'success') {
+                    statusBadge.textContent = 'Successo';
+                    statusBadge.className = 'status-badge success';
+                    terminalConsole.textContent += `\n[OK] ${data.message}\nLa policy e le regole per '${targetBankForPolicy.toUpperCase()}' sono ora attive in BrokerFlow!`;
+                    alert(`Policy per '${targetBankForPolicy.toUpperCase()}' applicata con successo in BrokerFlow!`);
+                    
+                    document.getElementById('policy-preview-status-badge').textContent = 'Policy Applicata e Sincronizzata';
+                    document.getElementById('policy-preview-status-badge').className = 'badge badge-green';
+                } else {
+                    statusBadge.textContent = 'Errore';
+                    statusBadge.className = 'status-badge error';
+                    terminalConsole.textContent += `\n[ERRORE] Salvataggio fallito: ${data.message}`;
+                    alert(`Errore durante il salvataggio: ${data.message}`);
+                }
+            })
+            .catch(err => {
+                btnConfirmGroundedPolicy.disabled = false;
+                btnConfirmGroundedPolicy.innerHTML = '💾 Salva e Applica Policy a BrokerFlow';
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `\n[ERRORE] Connessione fallita: ${err.message}`;
+            });
+        });
+    }
+
+    btnCancelPolicy.addEventListener('click', () => {
+        if (confirm("Vuoi chiudere l'anteprima delle regole?")) {
+            policyPreviewCard.style.display = 'none';
+            document.querySelector('.container').classList.remove('wide-mode');
+            currentGroundedRules = [];
+        }
+    });
+
+    // --- RATE TABLES & PRODUCTS LOGIC ---
+    ratesDropZone.addEventListener('click', () => ratesFileInput.click());
+    ratesFileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) handleRatesFileSelection(e.target.files[0]);
+    });
+    ratesDropZone.addEventListener('dragover', (e) => { e.preventDefault(); ratesDropZone.classList.add('dragover'); });
+    ratesDropZone.addEventListener('dragleave', () => ratesDropZone.classList.remove('dragover'));
+    ratesDropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        ratesDropZone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) handleRatesFileSelection(e.dataTransfer.files[0]);
+    });
+
+    function handleRatesFileSelection(file) {
+        selectedRatesFile = file;
+        ratesFileInfoBox.textContent = `File tassi selezionato: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        ratesFileInfoBox.style.display = 'block';
+    }
+
+    function addRatesChatBubble(text, role) {
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${role}`;
+        bubble.textContent = text;
+        ratesChatBox.appendChild(bubble);
+        ratesChatBox.scrollTop = ratesChatBox.scrollHeight;
+    }
+
+    function getPurposeBadgeHtml(fin) {
+        const f = String(fin).toLowerCase().trim();
+        if (f === 'acquisto') return '<span class="badge badge-blue">🏠 Acquisto</span>';
+        if (f === 'seconda_casa') return '<span class="badge badge-blue">🏡 2ª Casa</span>';
+        if (f === 'asta') return '<span class="badge badge-purple" style="background:#f3e8ff; color:#7e22ce; border:1px solid #d8b4fe;">🏛️ Asta</span>';
+        if (f === 'surroga') return '<span class="badge badge-green">🔄 Surroga</span>';
+        if (f === 'acquisto_ristrutturazione' || f === 'acquisto+ristrutturazione') return '<span class="badge" style="background:#e0e7ff; color:#3730a3; border:1px solid #c7d2fe;">🛠️ Acq+Ristr</span>';
+        if (f === 'ristrutturazione') return '<span class="badge" style="background:#ffedd5; color:#9a3412; border:1px solid #fed7aa;">🖌️ Ristrutturazione</span>';
+        if (f === 'liquidita') return '<span class="badge" style="background:#fef3c7; color:#92400e; border:1px solid #fde68a;">💶 Liquidità</span>';
+        if (f === 'consolido' || f === 'consolidamento' || f === 'consolidamento_debiti') return '<span class="badge" style="background:#fce7f3; color:#9d174d; border:1px solid #fbcfe8;">⚖️ Consolidamento</span>';
+        if (f === 'costruzione' || f === 'sal') return '<span class="badge" style="background:#ccfbf1; color:#115e59; border:1px solid #99f6e4;">📐 Costruzione/SAL</span>';
+        return `<span class="badge badge-gray">${fin}</span>`;
+    }
+
+    function renderRatesPreviewTable(bankId, products, summary) {
+        targetBankForRates = bankId;
+        extractedProductsToConfirm = products;
+
+        previewBankTitle.textContent = `Anteprima Prodotti & Griglie Tassi: Banca ${bankId.toUpperCase()}`;
+        previewSummaryText.textContent = summary || `${products.length} prodotti individuati ed estratti con successo.`;
+
+        // Compute purpose stats
+        const counts = { all: products.length, acquisto: 0, asta: 0, surroga: 0, acq_ristr: 0, ristrutturazione: 0, liquidita: 0, consolidamento: 0, costruzione: 0 };
+        products.forEach(p => {
+            const fins = Array.isArray(p.finalita) ? p.finalita.map(f => String(f).toLowerCase()) : [String(p.finalita || '').toLowerCase()];
+            if (fins.some(f => f.includes('acquisto') && !f.includes('ristr'))) counts.acquisto++;
+            if (fins.some(f => f.includes('asta'))) counts.asta++;
+            if (fins.some(f => f.includes('surroga'))) counts.surroga++;
+            if (fins.some(f => f.includes('ristr') && f.includes('acq'))) counts.acq_ristr++;
+            else if (fins.some(f => f.includes('ristr'))) counts.ristrutturazione++;
+            if (fins.some(f => f.includes('liq'))) counts.liquidita++;
+            if (fins.some(f => f.includes('consol'))) counts.consolidamento++;
+            if (fins.some(f => f.includes('costruz') || f.includes('sal'))) counts.costruzione++;
+        });
+
+        // Render pills
+        ratesPurposePills.innerHTML = '';
+        const pillData = [
+            { key: 'all', label: `Tutti (${counts.all})`, color: 'var(--primary)' },
+            { key: 'acquisto', label: `🏠 Acquisto (${counts.acquisto})`, show: counts.acquisto > 0 },
+            { key: 'asta', label: `🏛️ Asta (${counts.asta})`, show: counts.asta > 0 },
+            { key: 'surroga', label: `🔄 Surroga (${counts.surroga})`, show: counts.surroga > 0 },
+            { key: 'acquisto_ristrutturazione', label: `🛠️ Acq+Ristr (${counts.acq_ristr})`, show: counts.acq_ristr > 0 },
+            { key: 'ristrutturazione', label: `🖌️ Ristr (${counts.ristrutturazione})`, show: counts.ristrutturazione > 0 },
+            { key: 'liquidita', label: `💶 Liquidità (${counts.liquidita})`, show: counts.liquidita > 0 },
+            { key: 'consolidamento', label: `⚖️ Consolido (${counts.consolidamento})`, show: counts.consolidamento > 0 },
+            { key: 'costruzione', label: `📐 Costruzione (${counts.costruzione})`, show: counts.costruzione > 0 }
+        ];
+
+        pillData.forEach(item => {
+            if (item.show !== false) {
+                const pill = document.createElement('span');
+                pill.style.fontSize = '0.78rem';
+                pill.style.fontWeight = '700';
+                pill.style.padding = '0.2rem 0.6rem';
+                pill.style.borderRadius = '50px';
+                pill.style.background = '#e2e8f0';
+                pill.style.color = '#334155';
+                pill.style.cursor = 'pointer';
+                pill.style.transition = 'all 0.2s';
+                pill.textContent = item.label;
+                pill.onclick = () => {
+                    ratesPurposeFilter.value = item.key;
+                    applyFilter();
+                };
+                ratesPurposePills.appendChild(pill);
+            }
+        });
+
+        function applyFilter() {
+            const selected = ratesPurposeFilter.value;
+            ratesTableBody.innerHTML = '';
+            
+            const filtered = products.filter(p => {
+                if (selected === 'all') return true;
+                const fins = Array.isArray(p.finalita) ? p.finalita.map(f => String(f).toLowerCase()) : [String(p.finalita || '').toLowerCase()];
+                if (selected === 'acquisto') return fins.some(f => f === 'acquisto' || f === 'seconda_casa');
+                if (selected === 'asta') return fins.some(f => f.includes('asta'));
+                if (selected === 'surroga') return fins.some(f => f.includes('surroga'));
+                if (selected === 'acquisto_ristrutturazione') return fins.some(f => f.includes('acq') && f.includes('ristr'));
+                if (selected === 'ristrutturazione') return fins.some(f => f.includes('ristr') && !f.includes('acq'));
+                if (selected === 'liquidita') return fins.some(f => f.includes('liq'));
+                if (selected === 'consolidamento') return fins.some(f => f.includes('consol'));
+                if (selected === 'costruzione') return fins.some(f => f.includes('costruz') || f.includes('sal'));
+                return fins.includes(selected);
+            });
+
+            if (filtered.length === 0) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td colspan="7" style="text-align:center; padding: 2rem; color: var(--text-light);">Nessun prodotto trovato per la finalità selezionata.</td>`;
+                ratesTableBody.appendChild(tr);
+                return;
+            }
+
+            filtered.forEach(p => {
+                const tr = document.createElement('tr');
+
+                // Name & ID
+                const tdName = document.createElement('td');
+                tdName.innerHTML = `<strong style="color:var(--text); font-size:0.92rem;">${p.nome}</strong><br><small style="color:var(--text-light); font-family:monospace;">${p.id || '-'}</small>`;
+                tr.appendChild(tdName);
+
+                // Tipo
+                const tdTipo = document.createElement('td');
+                const tipoClass = (p.tipo && p.tipo.toLowerCase().includes('fisso')) ? 'badge-blue' : (p.tipo && p.tipo.toLowerCase().includes('cap') ? 'badge-purple' : 'badge-gray');
+                tdTipo.innerHTML = `<span class="badge ${tipoClass}">${p.tipo || 'Fisso'}</span>`;
+                tr.appendChild(tdTipo);
+
+                // Parametro
+                const tdParam = document.createElement('td');
+                tdParam.innerHTML = `<strong style="color:var(--primary); font-size:0.85rem;">${p.parametro || 'IRS'}</strong>`;
+                tr.appendChild(tdParam);
+
+                // Finalità (Badges)
+                const tdFin = document.createElement('td');
+                const fins = Array.isArray(p.finalita) ? p.finalita : [p.finalita || 'acquisto'];
+                tdFin.innerHTML = fins.map(f => getPurposeBadgeHtml(f)).join(' ');
+                tr.appendChild(tdFin);
+
+                // LTV Max
+                const tdLtv = document.createElement('td');
+                let ltvVal = p.ltvMax ? (p.ltvMax > 1 ? p.ltvMax : p.ltvMax * 100) : 80;
+                let ltvClass = ltvVal <= 50 ? 'badge-green' : (ltvVal <= 80 ? 'badge-blue' : 'badge-yellow');
+                tdLtv.innerHTML = `<span class="badge ${ltvClass}">≤ ${ltvVal.toFixed(0)}%</span>`;
+                tr.appendChild(tdLtv);
+
+                // Validità / Promo
+                const tdPromo = document.createElement('td');
+                if (p.is_temporary || p.expires_at) {
+                    tdPromo.innerHTML = `<span class="badge badge-amber" style="background:#fef3c7; color:#b45309; border:1px solid #fcd34d; font-size:0.75rem;">🕒 Promo: ${p.expires_at || 'A tempo'}</span>`;
+                } else {
+                    tdPromo.innerHTML = `<span class="badge badge-gray" style="background:#f1f5f9; color:#64748b; font-size:0.75rem;">Permanente</span>`;
+                }
+                tr.appendChild(tdPromo);
+
+                // Zone / Note
+                const tdTerritory = document.createElement('td');
+                let terrHtml = '';
+                if (p.territories && (Array.isArray(p.territories) ? p.territories.length > 0 : String(p.territories).trim())) {
+                    const tList = Array.isArray(p.territories) ? p.territories.join(', ') : p.territories;
+                    terrHtml += `<span class="badge badge-blue" style="font-size:0.74rem;">📍 ${tList}</span>`;
+                }
+                if (p.note && String(p.note).trim()) {
+                    if (terrHtml) terrHtml += '<br>';
+                    terrHtml += `<small style="color:var(--text-light); font-size:0.78rem; line-height:1.2; display:inline-block; margin-top:0.2rem;">${p.note}</small>`;
+                }
+                if (!terrHtml) {
+                    terrHtml = `<span style="color:var(--text-light); font-size:0.8rem;">Nazionale</span>`;
+                }
+                tdTerritory.innerHTML = terrHtml;
+                tr.appendChild(tdTerritory);
+
+                // Caratteristiche (Green / Consap)
+                const tdBadges = document.createElement('td');
+                let badgesHtml = '';
+                if (p.isGreen) badgesHtml += '<span class="badge badge-green">🌱 Green</span> ';
+                if (p.isConsap) badgesHtml += '<span class="badge badge-blue">🏛️ CONSAP</span>';
+                if (!badgesHtml) badgesHtml = '<span style="color:var(--text-light);">-</span>';
+                tdBadges.innerHTML = badgesHtml;
+                tr.appendChild(tdBadges);
+
+                // Griglia Tassi / Spread
+                const tdGrid = document.createElement('td');
+                const gridList = document.createElement('div');
+                gridList.style.display = 'flex';
+                gridList.style.flexWrap = 'wrap';
+                gridList.style.gap = '0.25rem';
+                gridList.style.fontFamily = 'monospace';
+                gridList.style.fontSize = '0.82rem';
+
+                if (p.grigliaTassi && Array.isArray(p.grigliaTassi) && p.grigliaTassi.length > 0) {
+                    p.grigliaTassi.forEach(g => {
+                        const span = document.createElement('span');
+                        span.style.background = '#f8fafc';
+                        span.style.padding = '0.2rem 0.45rem';
+                        span.style.borderRadius = '5px';
+                        span.style.border = '1px solid #e2e8f0';
+                        span.style.fontWeight = '600';
+                        span.textContent = `${g.dMin}-${g.dMax}a: ${g.spread >= 0 ? '+' : ''}${g.spread.toFixed(2)}%`;
+                        gridList.appendChild(span);
+                    });
+                } else {
+                    gridList.textContent = 'Nessuna griglia specificata';
+                }
+                tdGrid.appendChild(gridList);
+                tr.appendChild(tdGrid);
+
+                ratesTableBody.appendChild(tr);
+            });
+        }
+
+        ratesPurposeFilter.onchange = applyFilter;
+        ratesPurposeFilter.value = 'all';
+        applyFilter();
+
+        ratesPreviewCard.style.display = 'block';
+        ratesPreviewCard.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    btnRatesStart.addEventListener('click', () => {
+        const bankId = ratesBankIdInput.value.trim().toLowerCase();
+        const rawText = ratesRawTextarea.value.trim();
+        const userNotes = document.getElementById('rates-user-notes') ? document.getElementById('rates-user-notes').value.trim() : '';
+        const model = modelSelect.value;
+
+        if (!selectedRatesFile && !rawText) {
+            alert("Seleziona un file PDF/Word di tassi oppure incolla il testo delle condizioni nella casella.");
+            return;
+        }
+
+        btnRatesStart.disabled = true;
+        btnRatesStart.innerHTML = '<span class="spinner"></span> Estrazione tassi in corso...';
+        ratesPreviewCard.style.display = 'none';
+        ratesChatUi.style.display = 'none';
+
+        const payload = { bankId, rawText, model, userNotes };
+
+        const executeParse = (base64Data, fileName) => {
+            if (base64Data) {
+                payload.fileContent = base64Data;
+                payload.fileName = fileName;
+            }
+
+            fetch('/api/rates/parse', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.json())
+            .then(data => {
+                btnRatesStart.disabled = false;
+                btnRatesStart.textContent = 'Estrai Tabella Tassi e Mostra Anteprima';
+
+                if (data.status === 'error') {
+                    alert(`Errore durante l'estrazione: ${data.message}`);
+                    return;
+                }
+
+                currentRatesSessionId = data.sessionId;
+
+                if (data.status === 'clarification_needed') {
+                    ratesChatUi.style.display = 'flex';
+                    ratesChatBox.innerHTML = '';
+                    addRatesChatBubble(data.question, 'assistant');
+                } else if (data.status === 'preview_ready') {
+                    renderRatesPreviewTable(data.bank_id || bankId || 'banca', data.products, data.summary);
+                }
+            })
+            .catch(err => {
+                btnRatesStart.disabled = false;
+                btnRatesStart.textContent = 'Estrai Tabella Tassi e Mostra Anteprima';
+                alert(`Errore di rete: ${err.message}`);
+            });
+        };
+
+        if (selectedRatesFile) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Data = e.target.result.split(',')[1];
+                executeParse(base64Data, selectedRatesFile.name);
+            };
+            reader.readAsDataURL(selectedRatesFile);
+        } else {
+            executeParse(null, null);
+        }
+    });
+
+    function sendRatesChatMessage() {
+        const text = ratesChatMessageInput.value.trim();
+        if (!text || !currentRatesSessionId) return;
+
+        addRatesChatBubble(text, 'user');
+        ratesChatMessageInput.value = '';
+
+        const loader = document.createElement('div');
+        loader.className = 'chat-bubble assistant';
+        loader.innerHTML = '<span class="spinner" style="border-top-color: var(--purple);"></span> Elaborazione chiarimento...';
+        loader.id = 'rates-chat-loader';
+        ratesChatBox.appendChild(loader);
+        ratesChatBox.scrollTop = ratesChatBox.scrollHeight;
+
+        fetch('/api/rates/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                sessionId: currentRatesSessionId,
+                text: text,
+                model: modelSelect.value
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            const loaderEl = document.getElementById('rates-chat-loader');
+            if (loaderEl) loaderEl.remove();
+
+            if (data.status === 'error') {
+                addRatesChatBubble(`[ERRORE] ${data.message}`, 'system');
+                return;
+            }
+
+            if (data.status === 'clarification_needed') {
+                addRatesChatBubble(data.question, 'assistant');
+            } else if (data.status === 'preview_ready') {
+                addRatesChatBubble(`Perfetto! Ho chiarito tutti i dettagli. Ecco l'anteprima dei prodotti in basso.`, 'assistant');
+                renderRatesPreviewTable(data.bank_id || targetBankForRates || 'banca', data.products, data.summary);
+            }
+        })
+        .catch(err => {
+            const loaderEl = document.getElementById('rates-chat-loader');
+            if (loaderEl) loaderEl.remove();
+            addRatesChatBubble(`Errore di rete: ${err.message}`, 'system');
+        });
+    }
+
+    btnRatesChatSend.addEventListener('click', sendRatesChatMessage);
+    ratesChatMessageInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendRatesChatMessage(); });
+
+    btnConfirmRates.addEventListener('click', () => {
+        if (!targetBankForRates || extractedProductsToConfirm.length === 0) {
+            alert("Nessun prodotto valido da confermare.");
+            return;
+        }
+
+        if (!confirm(`Sei sicuro di voler salvare ${extractedProductsToConfirm.length} prodotti per la banca '${targetBankForRates.toUpperCase()}'? I tassi di questa banca verranno aggiornati in BrokerFlow.`)) {
+            return;
+        }
+
+        btnConfirmRates.disabled = true;
+        btnConfirmRates.innerHTML = '<span class="spinner"></span> Sincronizzazione in corso...';
+        resultPanel.style.display = 'block';
+        statusBadge.textContent = 'Salvataggio...';
+        statusBadge.className = 'status-badge working';
+        terminalConsole.textContent = `[INFO] Avvio inserimento a sistema di ${extractedProductsToConfirm.length} prodotti per '${targetBankForRates}'...\n`;
+
+        const replaceAll = document.getElementById('rates-replace-all-checkbox') ? document.getElementById('rates-replace-all-checkbox').checked : false;
+
+        fetch('/api/rates/confirm', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                bankId: targetBankForRates,
+                products: extractedProductsToConfirm,
+                replaceAll: replaceAll
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            btnConfirmRates.disabled = false;
+            btnConfirmRates.innerHTML = '✅ Conferma e Inserisci Tassi a Sistema';
+            loadBackups();
+
+            terminalConsole.textContent += `\n--- LOG DI SALVATAGGIO ---\n${data.logs || ''}\n`;
+
+            if (data.status === 'success') {
+                statusBadge.textContent = 'Successo';
+                statusBadge.className = 'status-badge success';
+                terminalConsole.textContent += `\n[OK] ${data.message}\nI nuovi tassi sono ora operativi in BrokerFlow!`;
+                alert(`Salvataggio completato con successo!\n${data.message}`);
+                ratesPreviewCard.style.display = 'none';
+                ratesChatUi.style.display = 'none';
+                ratesRawTextarea.value = '';
+                ratesFileInfoBox.style.display = 'none';
+                selectedRatesFile = null;
+            } else {
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `\n[ERRORE] Salvataggio fallito: ${data.message}`;
+            }
+        })
+        .catch(err => {
+            btnConfirmRates.disabled = false;
+            btnConfirmRates.innerHTML = '✅ Conferma e Inserisci Tassi a Sistema';
+            statusBadge.textContent = 'Errore';
+            statusBadge.className = 'status-badge error';
+            terminalConsole.textContent += `\n[ERRORE] Errore di rete: ${err.message}`;
+        });
+    });
+
+    btnCancelRates.addEventListener('click', () => {
+        if (confirm("Vuoi annullare l'operazione?")) {
+            ratesPreviewCard.style.display = 'none';
+            ratesChatUi.style.display = 'none';
+            extractedProductsToConfirm = [];
+        }
+    });
+
+    // ==================== SECTION 3: BRANCHES LOGIC ====================
+    if (branchesBankSelect) {
+        branchesBankSelect.addEventListener('change', () => {
+            if (branchesBankSelect.value === 'custom') {
+                branchesCustomBankGroup.style.display = 'block';
+            } else {
+                branchesCustomBankGroup.style.display = 'none';
+            }
+        });
+    }
+
+    if (branchesDropZone) {
+        branchesDropZone.addEventListener('click', () => branchesFileInput.click());
+        branchesDropZone.addEventListener('dragover', (e) => { e.preventDefault(); branchesDropZone.classList.add('dragover'); });
+        branchesDropZone.addEventListener('dragleave', () => branchesDropZone.classList.remove('dragover'));
+        branchesDropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            branchesDropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length > 0) {
+                handleBranchesFile(e.dataTransfer.files[0]);
+            }
+        });
+        branchesFileInput.addEventListener('change', () => {
+            if (branchesFileInput.files.length > 0) {
+                handleBranchesFile(branchesFileInput.files[0]);
+            }
+        });
+    }
+
+    function handleBranchesFile(file) {
+        selectedBranchesFile = file;
+        branchesFileInfoBox.textContent = `File selezionato: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        branchesFileInfoBox.style.display = 'inline-block';
+
+        const detectedBank = detectBankFromFilename(file.name);
+        if (detectedBank && branchesBankSelect) {
+            branchesBankSelect.value = detectedBank;
+        }
+    }
+
+    function renderBranchesPreview(bankId, branches, provincesSummary) {
+        targetBankForBranches = bankId;
+        extractedBranchesToConfirm = branches || [];
+        
+        branchesPreviewTitle.textContent = `Anteprima Rete Filiali: ${bankId.toUpperCase()}`;
+        branchesPreviewSubtitle.textContent = `Rilevate ${branches.length} filiali con coordinate e geocoding automatico.`;
+        branchesCountBadge.textContent = `${branches.length} Filiali Totali`;
+
+        // Render province summary badges
+        branchesProvincesBadges.innerHTML = '';
+        if (provincesSummary && typeof provincesSummary === 'object') {
+            Object.entries(provincesSummary).forEach(([prov, count]) => {
+                const badge = document.createElement('span');
+                badge.className = 'badge badge-green';
+                badge.style.fontSize = '0.75rem';
+                badge.style.fontWeight = '700';
+                badge.textContent = `${prov}: ${count}`;
+                branchesProvincesBadges.appendChild(badge);
+            });
+        }
+
+        // Render Table Rows
+        renderFilteredBranchesRows('');
+
+        branchesPreviewCard.style.display = 'block';
+        branchesPreviewCard.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function renderFilteredBranchesRows(query) {
+        branchesTableBody.innerHTML = '';
+        const q = String(query || '').toLowerCase().trim();
+        
+        const filtered = extractedBranchesToConfirm.filter(b => {
+            if (!q) return true;
+            return (b.name && b.name.toLowerCase().includes(q)) ||
+                   (b.prov && b.prov.toLowerCase().includes(q)) ||
+                   (b.indirizzo && b.indirizzo.toLowerCase().includes(q)) ||
+                   (b.prov_code && b.prov_code.toLowerCase().includes(q));
+        });
+
+        branchesShowingCount.textContent = `Mostrate ${Math.min(filtered.length, 100)} di ${filtered.length} filiali`;
+
+        filtered.slice(0, 100).forEach((b, idx) => {
+            const tr = document.createElement('tr');
+            tr.style.borderBottom = '1px solid #f1f5f9';
+            if (idx % 2 === 1) tr.style.background = '#fafafa';
+
+            const gpsDisplay = (b.lat && b.lng) 
+                ? `<span style="color:#059669; font-family:monospace; font-size:0.75rem;">📍 ${Number(b.lat).toFixed(4)}, ${Number(b.lng).toFixed(4)}</span>`
+                : `<span style="color:#dc2626; font-size:0.75rem;">⚠️ Sede Centrale</span>`;
+
+            tr.innerHTML = `
+                <td style="padding: 0.55rem 0.85rem; font-weight: 700; color: #64748b;">${idx + 1}</td>
+                <td style="padding: 0.55rem 0.85rem; font-weight: 700; color: #0f172a;">${b.name || '-'}</td>
+                <td style="padding: 0.55rem 0.85rem;"><span class="badge badge-blue" style="font-size:0.75rem;">${b.prov || '-'}</span></td>
+                <td style="padding: 0.55rem 0.85rem; font-size: 0.8rem; color: #334155;">${b.indirizzo || '-'}</td>
+                <td style="padding: 0.55rem 0.85rem; font-size: 0.8rem; color: #64748b;">${b.telefono || (b.email || '-')}</td>
+                <td style="padding: 0.55rem 0.85rem;">${gpsDisplay}</td>
+            `;
+            branchesTableBody.appendChild(tr);
+        });
+    }
+
+    if (branchesFilterInput) {
+        branchesFilterInput.addEventListener('input', (e) => {
+            renderFilteredBranchesRows(e.target.value);
+        });
+    }
+
+    if (btnBranchesStart) {
+        btnBranchesStart.addEventListener('click', () => {
+            let bankId = branchesBankSelect.value;
+            if (bankId === 'custom') {
+                bankId = branchesCustomBankId.value.trim().toLowerCase();
+            }
+            if (!bankId) {
+                alert("Seleziona o specifica la banca di riferimento.");
+                return;
+            }
+
+            const rawText = branchesRawTextarea.value.trim();
+            const model = modelSelect.value;
+
+            if (!selectedBranchesFile && !rawText) {
+                alert("Seleziona un file Excel (.xlsx), PDF, CSV, Word oppure incolla il testo delle filiali nella casella.");
+                return;
+            }
+
+            btnBranchesStart.disabled = true;
+            btnBranchesStart.innerHTML = '<span class="spinner"></span> Analisi & geolocalizzazione filiali in corso...';
+            branchesPreviewCard.style.display = 'none';
+
+            const payload = { bankId, rawText, model };
+
+            const executeParse = (base64Data, fileName) => {
+                if (base64Data) {
+                    payload.fileContent = base64Data;
+                    payload.fileName = fileName;
+                }
+
+                resultPanel.style.display = 'block';
+                statusBadge.textContent = 'Analisi Filiali in corso...';
+                statusBadge.className = 'status-badge working';
+                terminalConsole.textContent = `[INFO] Avvio estrazione rete territoriale per '${bankId}'...`;
+
+                fetch('/api/branches/parse', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    btnBranchesStart.disabled = false;
+                    btnBranchesStart.innerHTML = 'Estrai Filiali e Mostra Anteprima';
+
+                    if (data.status === 'error') {
+                        statusBadge.textContent = 'Errore';
+                        statusBadge.className = 'status-badge error';
+                        terminalConsole.textContent += `\n[ERRORE] ${data.message}`;
+                        alert(`Errore durante l'estrazione delle filiali:\n${data.message}`);
+                        return;
+                    }
+
+                    statusBadge.textContent = 'Anteprima Pronta';
+                    statusBadge.className = 'status-badge success';
+                    terminalConsole.textContent += `\n[OK] Estratte ${data.total_branches} filiali per '${data.bank_id}'!`;
+
+                    renderBranchesPreview(data.bank_id, data.branches, data.provinces_summary);
+                })
+                .catch(err => {
+                    btnBranchesStart.disabled = false;
+                    btnBranchesStart.innerHTML = 'Estrai Filiali e Mostra Anteprima';
+                    statusBadge.textContent = 'Errore';
+                    statusBadge.className = 'status-badge error';
+                    terminalConsole.textContent += `\n[ERRORE] Errore di rete: ${err.message}`;
+                    alert(`Errore di rete: ${err.message}`);
+                });
+            };
+
+            if (selectedBranchesFile) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const base64Data = e.target.result.split(',')[1];
+                    executeParse(base64Data, selectedBranchesFile.name);
+                };
+                reader.readAsDataURL(selectedBranchesFile);
+            } else {
+                executeParse(null, null);
+            }
+        });
+    }
+
+    if (btnBranchesConfirm) {
+        btnBranchesConfirm.addEventListener('click', () => {
+            if (!targetBankForBranches || extractedBranchesToConfirm.length === 0) {
+                alert("Nessuna filiale da salvare.");
+                return;
+            }
+
+            btnBranchesConfirm.disabled = true;
+            btnBranchesConfirm.innerHTML = '<span class="spinner"></span> Salvataggio in corso...';
+
+            resultPanel.style.display = 'block';
+            statusBadge.textContent = 'Salvataggio in corso...';
+            statusBadge.className = 'status-badge working';
+            terminalConsole.textContent += `\n[INFO] Salvataggio ${extractedBranchesToConfirm.length} filiali per '${targetBankForBranches}' e aggiornamento territorialità...`;
+
+            fetch('/api/branches/confirm', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    bankId: targetBankForBranches,
+                    branches: extractedBranchesToConfirm
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                btnBranchesConfirm.disabled = false;
+                btnBranchesConfirm.innerHTML = '✅ Conferma e Salva Filiali in BrokerFlow';
+
+                terminalConsole.textContent += `\n--- LOG DI SALVATAGGIO ---\n${data.logs || ''}\n`;
+
+                if (data.status === 'success') {
+                    statusBadge.textContent = 'Successo';
+                    statusBadge.className = 'status-badge success';
+                    terminalConsole.textContent += `\n[OK] ${data.message}\nLa rete filiali e i territori sono ora aggiornati in BrokerFlow!`;
+                    alert(`Salvataggio completato con successo!\n${data.message}`);
+                    branchesPreviewCard.style.display = 'none';
+                    branchesRawTextarea.value = '';
+                    branchesFileInfoBox.style.display = 'none';
+                    selectedBranchesFile = null;
+                } else {
+                    statusBadge.textContent = 'Errore';
+                    statusBadge.className = 'status-badge error';
+                    terminalConsole.textContent += `\n[ERRORE] Salvataggio fallito: ${data.message}`;
+                }
+            })
+            .catch(err => {
+                btnBranchesConfirm.disabled = false;
+                btnBranchesConfirm.innerHTML = '✅ Conferma e Salva Filiali in BrokerFlow';
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `\n[ERRORE] Errore di rete: ${err.message}`;
+            });
+        });
+    }
+
+    if (btnBranchesCancel) {
+        btnBranchesCancel.addEventListener('click', () => {
+            if (confirm("Vuoi annullare l'operazione?")) {
+                branchesPreviewCard.style.display = 'none';
+                extractedBranchesToConfirm = [];
+            }
+        });
+    }
+
+    // --- RULES CHAT LOGIC ---
+    function addChatBubble(text, role) {
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${role}`;
+        bubble.textContent = text;
+        chatBox.appendChild(bubble);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    btnChatStart.addEventListener('click', () => {
+        const text = chatTextarea.value.trim();
+        if (!text) return;
+
+        btnChatStart.disabled = true;
+        chatTextarea.disabled = true;
+        chatUi.style.display = 'flex';
+        chatBox.innerHTML = '';
+        quickActions.style.display = 'none';
+        
+        addChatBubble(text, 'user');
+        
+        const loader = document.createElement('div');
+        loader.className = 'chat-bubble assistant';
+        loader.innerHTML = '<span class="spinner" style="border-top-color: var(--amber);"></span> Analisi in corso...';
+        loader.id = 'chat-loader-bubble';
+        chatBox.appendChild(loader);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        fetch('/api/chat/start', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ text, model: modelSelect.value })
+        })
+        .then(res => res.json())
+        .then(data => {
+            const loaderBubble = document.getElementById('chat-loader-bubble');
+            if (loaderBubble) loaderBubble.remove();
+
+            if (data.status === 'error') {
+                addChatBubble(`[ERRORE SERVER] ${data.message}`, 'system');
+                btnChatStart.disabled = false;
+                chatTextarea.disabled = false;
+                return;
+            }
+
+            currentSessionId = data.sessionId;
+
+            if (data.status === 'clarification_needed') {
+                addChatBubble(data.question, 'assistant');
+                const lowerQ = data.question.toLowerCase();
+                if (lowerQ.includes('permanente') && lowerQ.includes('temporanea')) {
+                    quickActions.style.display = 'flex';
+                } else {
+                    quickActions.style.display = 'none';
+                }
+            } else if (data.status === 'ready_to_save') {
+                addChatBubble(data.message, 'assistant');
+                addChatBubble(`Modifiche applicate:\n${JSON.stringify(data.extracted_updates, null, 2)}`, 'system');
+                
+                if (data.logs) {
+                    resultPanel.style.display = 'block';
+                    statusBadge.textContent = 'Successo';
+                    statusBadge.className = 'status-badge success';
+                    terminalConsole.textContent = data.logs;
+                    terminalConsole.scrollTop = terminalConsole.scrollHeight;
+                }
+                
+                loadBackups();
+                btnChatStart.disabled = false;
+                chatTextarea.disabled = false;
+                chatTextarea.value = '';
+                currentSessionId = null;
+            }
+        })
+        .catch(err => {
+            const loaderBubble = document.getElementById('chat-loader-bubble');
+            if (loaderBubble) loaderBubble.remove();
+            addChatBubble(`Errore di rete: ${err.message}`, 'system');
+            btnChatStart.disabled = false;
+            chatTextarea.disabled = false;
+        });
+    });
+
+    let currentParserChatMode = 'rule';
+    let parserMultiBankHistory = [];
+
+    window.switchParserChatMode = function(mode) {
+        currentParserChatMode = mode;
+        const btnRule = document.getElementById('btn-chatmode-rule');
+        const btnMulti = document.getElementById('btn-chatmode-multi');
+        const ruleBox = document.getElementById('parser-chat-rule-box');
+        const multiBox = document.getElementById('parser-chat-multi-box');
+        const chatUi = document.getElementById('chat-ui');
+        const chatBox = document.getElementById('chat-box');
+        
+        if (mode === 'rule') {
+            btnRule.style.background = 'var(--amber)';
+            btnRule.style.color = '#fff';
+            btnMulti.style.background = '#f1f5f9';
+            btnMulti.style.color = '#475569';
+            ruleBox.style.display = 'block';
+            multiBox.style.display = 'none';
+            chatUi.style.display = 'none';
+            chatBox.innerHTML = '';
+        } else {
+            btnMulti.style.background = 'var(--primary)';
+            btnMulti.style.color = '#fff';
+            btnRule.style.background = '#f1f5f9';
+            btnRule.style.color = '#475569';
+            ruleBox.style.display = 'none';
+            multiBox.style.display = 'block';
+            chatUi.style.display = 'block';
+            chatBox.innerHTML = '';
+            parserMultiBankHistory = [];
+            addChatBubble("👋 Ciao! Sono l'AI Advisor Multi-Banca. Puoi farmi qualsiasi domanda di confronto sulle policy di tutte le banche convenzionate (es. 'Quale banca mi fa gli 80 anni a fine mutuo?').\n\n📌 Ricordati di indicare la città o provincia dell'operazione affinché possa filtrare solo gli istituti attivi nella tua zona!", 'assistant');
+        }
+    };
+
+    function sendChatMessage(text) {
+        if (!text) return;
+
+        if (currentParserChatMode === 'multi') {
+            addChatBubble(text, 'user');
+            chatMessageInput.value = '';
+            quickActions.style.display = 'none';
+
+            const loader = document.createElement('div');
+            loader.className = 'chat-bubble assistant';
+            loader.innerHTML = '<span class="spinner" style="border-top-color: var(--primary);"></span> Confronto policy in corso...';
+            loader.id = 'chat-loader-bubble';
+            chatBox.appendChild(loader);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            fetch('/api/chat-multibank', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ question: text, history: parserMultiBankHistory, model: modelSelect.value })
+            })
+            .then(res => res.json())
+            .then(data => {
+                const loaderBubble = document.getElementById('chat-loader-bubble');
+                if (loaderBubble) loaderBubble.remove();
+
+                if (data.status === 'error') {
+                    addChatBubble(`[ERRORE] ${data.message}`, 'system');
+                    return;
+                }
+
+                parserMultiBankHistory.push({ role: 'user', text: text });
+                parserMultiBankHistory.push({ role: 'model', text: data.answer });
+                addChatBubble(data.answer, 'assistant');
+            })
+            .catch(err => {
+                const loaderBubble = document.getElementById('chat-loader-bubble');
+                if (loaderBubble) loaderBubble.remove();
+                addChatBubble(`Errore di rete: ${err.message}`, 'system');
+            });
+            return;
+        }
+
+        if (!currentSessionId) return;
+
+        addChatBubble(text, 'user');
+        chatMessageInput.value = '';
+        quickActions.style.display = 'none';
+
+        const loader = document.createElement('div');
+        loader.className = 'chat-bubble assistant';
+        loader.innerHTML = '<span class="spinner" style="border-top-color: var(--amber);"></span> Elaborazione...';
+        loader.id = 'chat-loader-bubble';
+        chatBox.appendChild(loader);
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        fetch('/api/chat/message', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ sessionId: currentSessionId, text, model: modelSelect.value })
+        })
+        .then(res => res.json())
+        .then(data => {
+            const loaderBubble = document.getElementById('chat-loader-bubble');
+            if (loaderBubble) loaderBubble.remove();
+
+            if (data.status === 'error') {
+                addChatBubble(`[ERRORE] ${data.message}`, 'system');
+                return;
+            }
+
+            if (data.status === 'clarification_needed') {
+                addChatBubble(data.question, 'assistant');
+                const lowerQ = data.question.toLowerCase();
+                if (lowerQ.includes('permanente') && lowerQ.includes('temporanea')) {
+                    quickActions.style.display = 'flex';
+                } else {
+                    quickActions.style.display = 'none';
+                }
+            } else if (data.status === 'ready_to_save') {
+                addChatBubble(data.message, 'assistant');
+                addChatBubble(`Modifiche applicate:\n${JSON.stringify(data.extracted_updates, null, 2)}`, 'system');
+                
+                if (data.logs) {
+                    resultPanel.style.display = 'block';
+                    statusBadge.textContent = 'Successo';
+                    statusBadge.className = 'status-badge success';
+                    terminalConsole.textContent = data.logs;
+                    terminalConsole.scrollTop = terminalConsole.scrollHeight;
+                }
+
+                loadBackups();
+                btnChatStart.disabled = false;
+                chatTextarea.disabled = false;
+                chatTextarea.value = '';
+                currentSessionId = null;
+            }
+        })
+        .catch(err => {
+            const loaderBubble = document.getElementById('chat-loader-bubble');
+            if (loaderBubble) loaderBubble.remove();
+            addChatBubble(`Errore di rete: ${err.message}`, 'system');
+        });
+    }
+
+    btnChatSend.addEventListener('click', () => sendChatMessage(chatMessageInput.value.trim()));
+    chatMessageInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChatMessage(chatMessageInput.value.trim()); });
+    function sendQuickReply(text) { sendChatMessage(text); }
+
+    // --- BACKUP ACTIONS ---
+    btnBackupOk.addEventListener('click', () => {
+        btnBackupOk.disabled = true;
+        resultPanel.style.display = 'block';
+        statusBadge.textContent = 'Salvataggio in corso...';
+        statusBadge.className = 'status-badge working';
+        terminalConsole.textContent = `[INFO] Avvio salvataggio backup manuale 'last_ok'...\n`;
+
+        fetch('/api/backup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ name: 'last_ok' })
+        })
+        .then(res => res.json())
+        .then(data => {
+            loadBackups();
+            btnBackupOk.disabled = false;
+            if (data.status === 'success') {
+                statusBadge.textContent = 'Successo';
+                statusBadge.className = 'status-badge success';
+                terminalConsole.textContent += `[OK] Stato salvato come 'last_ok'.\n`;
+            } else {
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `[ERRORE] Salvataggio fallito: ${data.message}\n`;
+            }
+        })
+        .catch(err => {
+            btnBackupOk.disabled = false;
+            statusBadge.textContent = 'Errore';
+            statusBadge.className = 'status-badge error';
+            terminalConsole.textContent += `[ERRORE] Connessione fallita: ${err.message}\n`;
+        });
+    });
+
+    btnRestoreSelected.addEventListener('click', () => {
+        const backupName = backupSelect.value;
+        if (!backupName) return;
+
+        if (!confirm(`Sei sicuro di voler ripristinare il backup '${backupName}'? Le policy, tassi e filiali correnti verranno sovrascritti.`)) return;
+
+        btnRestoreSelected.disabled = true;
+        btnRestoreLatest.disabled = true;
+        resultPanel.style.display = 'block';
+        statusBadge.textContent = 'Ripristino...';
+        statusBadge.className = 'status-badge working';
+        terminalConsole.textContent = `[INFO] Avvio ripristino del backup '${backupName}'...\n`;
+
+        fetch('/api/restore', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ name: backupName })
+        })
+        .then(res => res.json())
+        .then(data => {
+            loadBackups();
+            btnRestoreSelected.disabled = false;
+            btnRestoreLatest.disabled = false;
+            terminalConsole.textContent += `\n--- LOG DI RIPRISTINO ---\n${data.logs || ''}\n`;
+            if (data.status === 'success') {
+                statusBadge.textContent = 'Successo';
+                statusBadge.className = 'status-badge success';
+                terminalConsole.textContent += `[OK] Ripristino completato con successo!\n`;
+            } else {
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `[ERRORE] Ripristino fallito: ${data.message}\n`;
+            }
+        })
+        .catch(err => {
+            btnRestoreSelected.disabled = false;
+            btnRestoreLatest.disabled = false;
+            statusBadge.textContent = 'Errore';
+            statusBadge.className = 'status-badge error';
+            terminalConsole.textContent += `[ERRORE] Connessione fallita: ${err.message}\n`;
+        });
+    });
+
+    btnRestoreLatest.addEventListener('click', () => {
+        if (!confirm("Sei sicuro di voler annullare l'ultima modifica? Verrà ripristinato l'ultimo backup automatico generato.")) return;
+
+        btnRestoreSelected.disabled = true;
+        btnRestoreLatest.disabled = true;
+        resultPanel.style.display = 'block';
+        statusBadge.textContent = 'Ripristino...';
+        statusBadge.className = 'status-badge working';
+        terminalConsole.textContent = `[INFO] Avvio rollback all'ultimo backup automatico...\n`;
+
+        fetch('/api/restore', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ name: '' })
+        })
+        .then(res => res.json())
+        .then(data => {
+            loadBackups();
+            btnRestoreSelected.disabled = false;
+            btnRestoreLatest.disabled = false;
+            terminalConsole.textContent += `\n--- LOG DI RIPRISTINO ---\n${data.logs || ''}\n`;
+            if (data.status === 'success') {
+                statusBadge.textContent = 'Successo';
+                statusBadge.className = 'status-badge success';
+                terminalConsole.textContent += `[OK] Rollback completato con successo!\n`;
+            } else {
+                statusBadge.textContent = 'Errore';
+                statusBadge.className = 'status-badge error';
+                terminalConsole.textContent += `[ERRORE] Ripristino fallito: ${data.message}\n`;
+            }
+        })
+        .catch(err => {
+            btnRestoreSelected.disabled = false;
+            btnRestoreLatest.disabled = false;
+            statusBadge.textContent = 'Errore';
+            statusBadge.className = 'status-badge error';
+            terminalConsole.textContent += `[ERRORE] Connessione fallita: ${err.message}\n`;
+        });
+    });
+</script>
+
+</body>
+</html>
