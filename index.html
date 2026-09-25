@@ -632,62 +632,82 @@
             <!-- MODULE 1: DASHBOARD (Replicated from dashboard.jpg) -->
             <div id="module-dashboard" class="crm-module-section">
                 
-                <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
-                    <button type="button" onclick="window.toggleSensitiveDataObfuscation()" style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; font-weight: 700; font-size: 0.8rem; padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: background 0.15s ease;">
-                        <span id="obfuscation-eye-icon">👁️</span> <span id="obfuscation-btn-text">Mostra Erogato & Provvigioni</span>
-                    </button>
+                <!-- Broker & Company Profile Banner -->
+                <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; color: #ffffff; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.06); flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(135deg, #0052ff, #00c6ff); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 12px rgba(0,82,255,0.35);">
+                            💼
+                        </div>
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                                <span style="font-size: 1.2rem; font-weight: 800; color: #ffffff;">Broker: <span id="dash-user-name-span">Alessandro Fassina</span></span>
+                                <span style="background: #0052ff; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 0.2rem 0.65rem; border-radius: 6px; letter-spacing: 0.03em;">
+                                    🏢 <span id="dash-user-company-badge">Credipass</span>
+                                </span>
+                            </div>
+                            <span style="font-size: 0.78rem; color: #94a3b8; margin-top: 0.2rem; display: block;">Dashboard Operativa • Parametri calcolati e liste clienti personalizzate</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                        <button type="button" onclick="window.Auth && window.Auth.openProfileModal()" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-weight: 700; font-size: 0.8rem; padding: 0.5rem 0.95rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: background 0.15s ease;">
+                            ✏️ Modifica Dati Broker
+                        </button>
+                        <button type="button" onclick="window.toggleSensitiveDataObfuscation()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #cbd5e1; font-weight: 700; font-size: 0.8rem; padding: 0.5rem 0.85rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; transition: background 0.15s ease;">
+                            <span id="obfuscation-eye-icon">👁️</span> <span id="obfuscation-btn-text">Mostra Erogato</span>
+                        </button>
+                    </div>
                 </div>
 
                 <!-- 5 Stat Cards Row -->
-                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-bottom: 2rem;">
+                <div class="dash-kpi-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; margin-bottom: 2rem;">
                     <!-- Card 1 -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div class="dash-kpi-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 38px; height: 38px; border-radius: 10px; background: #dbeafe; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">💼</div>
-                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Pratiche in lavorazione</span>
+                            <div class="dash-kpi-icon-box" style="width: 38px; height: 38px; border-radius: 10px; background: #dbeafe; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">💼</div>
+                            <span class="dash-kpi-label" style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Pratiche in lavorazione</span>
                         </div>
-                        <div id="dash-kpi-lavorazione" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">28</div>
-                        <a href="#" onclick="switchCrmModule('pratiche')" style="font-size: 0.78rem; color: #0052ff; font-weight: 700; text-decoration: none;">Vedi tutte →</a>
+                        <div id="dash-kpi-lavorazione" class="dash-kpi-val" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">28</div>
+                        <a href="#" onclick="switchCrmModule('pratiche')" class="dash-kpi-foot" style="font-size: 0.78rem; color: #0052ff; font-weight: 700; text-decoration: none;">Vedi tutte →</a>
                     </div>
                     <!-- Card 2 -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div class="dash-kpi-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 38px; height: 38px; border-radius: 10px; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📄</div>
-                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Pratiche in delibera</span>
+                            <div class="dash-kpi-icon-box" style="width: 38px; height: 38px; border-radius: 10px; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📄</div>
+                            <span class="dash-kpi-label" style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Pratiche in delibera</span>
                         </div>
-                        <div id="dash-kpi-delibera" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">7</div>
-                        <a href="#" onclick="switchCrmModule('pratiche')" style="font-size: 0.78rem; color: #0052ff; font-weight: 700; text-decoration: none;">Vedi tutte →</a>
+                        <div id="dash-kpi-delibera" class="dash-kpi-val" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">7</div>
+                        <a href="#" onclick="switchCrmModule('pratiche')" class="dash-kpi-foot" style="font-size: 0.78rem; color: #0052ff; font-weight: 700; text-decoration: none;">Vedi tutte →</a>
                     </div>
                     <!-- Card 3 -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div class="dash-kpi-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 38px; height: 38px; border-radius: 10px; background: #dcfce7; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📑</div>
-                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Delibere ottenute (mese)</span>
+                            <div class="dash-kpi-icon-box" style="width: 38px; height: 38px; border-radius: 10px; background: #dcfce7; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📑</div>
+                            <span class="dash-kpi-label" style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Delibere ottenute (mese)</span>
                         </div>
-                        <div id="dash-kpi-concluse" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">12</div>
-                        <span style="font-size: 0.72rem; color: #15803d; background: #dcfce7; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px;">Questo mese</span>
+                        <div id="dash-kpi-concluse" class="dash-kpi-val" style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">12</div>
+                        <span class="dash-kpi-foot" style="font-size: 0.72rem; color: #15803d; background: #dcfce7; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 4px; display: inline-block;">Questo mese</span>
                     </div>
                     <!-- Card 4 -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div class="dash-kpi-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 38px; height: 38px; border-radius: 10px; background: #f3e8ff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">💶</div>
-                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Importo erogato (mese)</span>
+                            <div class="dash-kpi-icon-box" style="width: 38px; height: 38px; border-radius: 10px; background: #f3e8ff; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">💶</div>
+                            <span class="dash-kpi-label" style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Importo erogato (mese)</span>
                         </div>
-                        <div style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
+                        <div class="dash-kpi-val" style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
                             <span id="dash-kpi-erogato" class="sensitive-data obfuscated">€ 1.850.000</span>
                         </div>
-                        <span style="font-size: 0.72rem; color: #15803d; font-weight: 700;">↑ 18% vs mese scorso</span>
+                        <span class="dash-kpi-foot" style="font-size: 0.72rem; color: #15803d; font-weight: 700; display: inline-block;">↑ 18% vs mese scorso</span>
                     </div>
                     <!-- Card 5 -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div class="dash-kpi-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 38px; height: 38px; border-radius: 10px; background: #cffafe; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📈</div>
-                            <span style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Provvigioni maturate (mese)</span>
+                            <div class="dash-kpi-icon-box" style="width: 38px; height: 38px; border-radius: 10px; background: #cffafe; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">📈</div>
+                            <span class="dash-kpi-label" style="font-size: 0.78rem; color: #64748b; font-weight: 600; line-height: 1.2;">Provvigioni maturate (mese)</span>
                         </div>
-                        <div style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
+                        <div class="dash-kpi-val" style="font-size: 1.45rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">
                             <span id="dash-kpi-provvigioni" class="sensitive-data obfuscated">€ 14.250</span>
                         </div>
-                        <span style="font-size: 0.72rem; color: #15803d; font-weight: 700;">↑ 16% vs mese scorso</span>
+                        <span class="dash-kpi-foot" style="font-size: 0.72rem; color: #15803d; font-weight: 700; display: inline-block;">↑ 16% vs mese scorso</span>
                     </div>
                 </div>
 
@@ -2868,7 +2888,7 @@
                 <!-- STANDARD BANCHE CONVENZIONATE SCREEN -->
                 <div id="banche-standard-view" style="background: #ffffff; padding: 2.25rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
                     <h1 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                        <span>🏛️</span> <span id="secret-trigger-b" style="cursor: pointer; user-select: none;">B</span>anche convenzionate
+                        <span>🏛️</span> <span id="secret-trigger-b" style="cursor: pointer; user-select: none;">Banche convenzionate</span>
                     </h1>
                     <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.5;">
                         Inserisci un comune per verificare l'operatività degli istituti di credito sul territorio e visualizzare i dettagli operativi delle filiali locali più vicine.
@@ -2917,17 +2937,27 @@
 
                 <!-- SECRET POLICY EDITOR SCREEN -->
                 <div id="banche-secret-view" style="display: none; background: #ffffff; padding: 2.25rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #0052ff; padding-bottom: 1rem;">
-                        <h1 style="font-size: 1.8rem; font-weight: 800; color: #0052ff; margin: 0; display: flex; align-items: center; gap: 0.75rem;">
-                            <span>⚙️</span> Configurazione Secret Policy Editor (JSON Rewrite)
-                        </h1>
-                        <button class="btn" onclick="window.closeSecretBancheView()" style="background: #ef4444; color: #ffffff; font-weight: 700; border: none; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer;">
-                            Esci Editor ✖
-                        </button>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #0052ff; padding-bottom: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+                        <div>
+                            <h1 style="font-size: 1.6rem; font-weight: 800; color: #0052ff; margin: 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span>⚙️</span> Policy Bancarie (Personale & Dispositivo Locale)
+                            </h1>
+                            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; padding: 0.2rem 0.55rem; border-radius: 6px; font-weight: 700; margin-top: 0.35rem;">
+                                🔒 Modalità Offline Locale: I cambiamenti restano memorizzati solo su questo computer / dispositivo.
+                            </span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.6rem;">
+                            <button type="button" class="btn" onclick="window.resetLocalBankPolicies()" style="background: #f1f5f9; color: #475569; font-weight: 700; border: 1px solid #cbd5e1; padding: 0.6rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.82rem;" title="Ripristina valori di fabbrica">
+                                🔄 Ripristina Default
+                            </button>
+                            <button class="btn" onclick="window.closeSecretBancheView()" style="background: #ef4444; color: #ffffff; font-weight: 700; border: none; padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem;">
+                                Esci Editor ✖
+                            </button>
+                        </div>
                     </div>
                     
-                    <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.5;">
-                        Questa interfaccia riservata consente di visualizzare ed editare in tempo reale i parametri delle policy di credito salvate nel file <code style="background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 4px; color: #0052ff;">policies.json</code>. Qualsiasi modifica effettuata sovrascriverà direttamente il database.
+                    <p style="color: #64748b; font-size: 0.88rem; margin-bottom: 1.5rem; line-height: 1.5;">
+                        Questa interfaccia riservata consente a ciascun mediatore di calibrare i parametri di delibera e le soglie (LTV, DSR, Età, Deroghe). Le modifiche vengono salvate <strong>esclusivamente sul tuo dispositivo</strong> e non viaggiano su server né intaccano le impostazioni globali degli altri colleghi.
                     </p>
 
                     <!-- Input Comune/Regione secret search -->
@@ -3127,42 +3157,27 @@
 
             <!-- MODULE: AGENDA & SCADENZARIO PRATICHE -->
             <div id="module-agenda" class="crm-module-section" style="display: none;">
-                <div style="background: #ffffff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+                <div style="background: #ffffff; padding: 1.75rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
                     
-                    <!-- Header Section -->
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <!-- Header Section: Title & Main Action (Nuovo Evento) at Top -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
                         <div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
-                                <h1 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 0.75rem;">
-                                    <span>📅</span> Agenda &amp; Scadenzario Pratiche
-                                </h1>
-                                <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: #e8f0fe; color: #1a73e8; border: 1px solid #d2e3fc; padding: 0.25rem 0.65rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;">
-                                    <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
-                                    Google Calendar Connesso
-                                </span>
-                            </div>
-                            <p style="color: #64748b; font-size: 0.92rem; margin: 0; line-height: 1.4;">
-                                Gestisci appuntamenti, rogiti notarili, scadenze delibere e recall clienti. Sincronizzazione automatica bidirezionale con Google Calendar (<strong>alessandro.fassina@credipass.it</strong>) e Apple Calendar.
+                            <h1 style="font-size: 1.75rem; font-weight: 800; color: #0f172a; margin: 0; display: flex; align-items: center; gap: 0.6rem;">
+                                <span>📅</span> Agenda &amp; Scadenzario
+                            </h1>
+                            <p style="color: #64748b; font-size: 0.88rem; margin: 0.25rem 0 0 0; line-height: 1.4;">
+                                Appuntamenti, rogiti notarili, scadenze delibere e recall clienti.
                             </p>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-                            <button type="button" id="btn-sync-gcal" onclick="window.syncGoogleCalendar(true)" style="background: #ffffff; color: #1a73e8; border: 1.5px solid #1a73e8; border-radius: 8px; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.45rem; box-shadow: 0 1px 4px rgba(26,115,232,0.12);">
-                                <span id="sync-gcal-spinner">🔄</span> Sincronizza Google Calendar
-                            </button>
-                            <button type="button" onclick="window.openAgendaSettingsModal()" style="background: #ffffff; color: #475569; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.45rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
-                                <span>🎨</span> Personalizza Colori
-                            </button>
-                            <button type="button" onclick="window.syncAgendaWithDeals(true)" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
-                                <span>📁</span> Sincronizza Pratiche
-                            </button>
-                            <button type="button" onclick="window.openNewAgendaEventModal()" style="background: #0052ff; color: #ffffff; border: none; border-radius: 8px; padding: 0.55rem 1.25rem; font-size: 0.88rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 12px rgba(0,82,255,0.25);">
+                        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                            <button type="button" onclick="window.openNewAgendaEventModal()" style="background: #0052ff; color: #ffffff; border: none; border-radius: 8px; padding: 0.6rem 1.3rem; font-size: 0.88rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 12px rgba(0,82,255,0.25);">
                                 <span>➕</span> Nuovo Evento / Scadenza
                             </button>
                         </div>
                     </div>
 
                     <!-- 4 KPI Summary Cards -->
-                    <div class="agenda-kpis-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 2rem;">
+                    <div class="agenda-kpis-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 1.75rem;">
                         <div class="agenda-kpi-card" style="border-left: 4px solid #0052ff;">
                             <div class="agenda-kpi-icon" style="background: #eff6ff; color: #0052ff;">📅</div>
                             <div>
@@ -3193,9 +3208,9 @@
                         </div>
                     </div>
 
-                    <!-- Filter Bar -->
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;" id="agenda-filter-buttons-bar">
+                    <!-- Filter Bar & Search -->
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.85rem 1.15rem; margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.85rem;">
+                        <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; align-items: center;" id="agenda-filter-buttons-bar">
                             <button type="button" class="btn agenda-filter-btn active" data-type="all" onclick="window.filterAgendaEvents('all', this)" style="background: #0052ff; color: #fff; border: none; padding: 0.45rem 0.9rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer;">
                                 Tutti
                             </button>
@@ -3219,12 +3234,12 @@
                             </button>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.75rem;">
-                            <input type="text" id="agenda-search-input" placeholder="🔍 Cerca cliente, lead, nota, luogo..." oninput="window.handleAgendaSearch(this.value)" style="padding: 0.5rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.84rem; background: #ffffff; width: 240px; outline: none;">
+                            <input type="text" id="agenda-search-input" placeholder="🔍 Cerca cliente, lead, nota, luogo..." oninput="window.handleAgendaSearch(this.value)" style="padding: 0.48rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.84rem; background: #ffffff; width: 230px; outline: none;">
                         </div>
                     </div>
 
                     <!-- Main Grid: Left = Calendar, Right = Events List -->
-                    <div class="agenda-main-grid" style="display: grid; grid-template-columns: 360px 1fr; gap: 1.75rem;">
+                    <div class="agenda-main-grid" style="display: grid; grid-template-columns: 360px 1fr; gap: 1.75rem; margin-bottom: 2rem;">
                         
                         <!-- Left Pane: Interactive Monthly Calendar -->
                         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem;">
@@ -3267,6 +3282,36 @@
                         </div>
 
                     </div>
+
+                    <!-- Bottom Configuration & Synchronization Tools Panel -->
+                    <div class="agenda-bottom-tools-panel" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.25rem;">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.25rem; flex-wrap: wrap;">
+                                <span style="font-size: 0.92rem; font-weight: 800; color: #0f172a; display: flex; align-items: center; gap: 0.4rem;">
+                                    <span>⚙️</span> Sincronizzazione &amp; Impostazioni Calendario
+                                </span>
+                                <span style="display: inline-flex; align-items: center; gap: 0.4rem; background: #e8f0fe; color: #1a73e8; border: 1px solid #d2e3fc; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.74rem; font-weight: 700;">
+                                    <span style="width: 7px; height: 7px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+                                    Google Calendar Connesso
+                                </span>
+                            </div>
+                            <p style="color: #64748b; font-size: 0.8rem; margin: 0; line-height: 1.35;">
+                                Feed sincronizzato con <strong>alessandro.fassina@credipass.it</strong> e Apple Calendar.
+                            </p>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+                            <button type="button" id="btn-sync-gcal" onclick="window.syncGoogleCalendar(true)" style="background: #ffffff; color: #1a73e8; border: 1.5px solid #1a73e8; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(26,115,232,0.1);">
+                                <span id="sync-gcal-spinner">🔄</span> Sincronizza Google Calendar
+                            </button>
+                            <button type="button" onclick="window.syncAgendaWithDeals(true)" style="background: #ffffff; color: #334155; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                                <span>📁</span> Sincronizza Pratiche
+                            </button>
+                            <button type="button" onclick="window.openAgendaSettingsModal()" style="background: #ffffff; color: #475569; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                                <span>🎨</span> Personalizza Colori
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -3808,6 +3853,50 @@
                     Accedi come altro utente
                 </button>
             </div>
+        </div>
+    </div>
+    <!-- MODALE MODIFICA PROFILO BROKER & SOCIETÀ DI MEDIAZIONE -->
+    <div id="profile-edit-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.65); backdrop-filter: blur(5px); z-index: 9999; align-items: center; justify-content: center; font-family: var(--font-sans);">
+        <div style="background: #ffffff; width: 92%; max-width: 520px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e2e8f0;">
+            <!-- Modal Header -->
+            <div style="padding: 1.15rem 1.5rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">👤</div>
+                    <div>
+                        <h2 style="font-size: 1.1rem; font-weight: 800; color: #ffffff; margin: 0;">Profilo Broker & Mediatore</h2>
+                        <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">Personalizza il tuo nome e la società di mediazione</span>
+                    </div>
+                </div>
+                <button type="button" onclick="window.Auth && window.Auth.closeProfileModal()" style="background: rgba(255,255,255,0.15); border: none; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; cursor: pointer; color: #ffffff;">✕</button>
+            </div>
+
+            <!-- Modal Body Form -->
+            <form onsubmit="window.Auth && window.Auth.handleSaveProfile(event);" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.15rem; background: #ffffff;">
+                <div>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Nome & Cognome Broker</label>
+                    <input type="text" id="profile-edit-name" placeholder="es. Alessandro Fassina" required style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; outline: none;">
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Società di Mediazione Creditizia</label>
+                    <input type="text" id="profile-edit-company" placeholder="es. Credipass" required style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; outline: none;">
+                    <span style="font-size: 0.72rem; color: #64748b; margin-top: 0.25rem; display: block;">Questo nome apparirà automaticamente nei messaggi WhatsApp e nella documentazione inviata ai clienti.</span>
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Telefono / WhatsApp</label>
+                    <input type="text" id="profile-edit-phone" placeholder="es. +39 340 1234567" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; outline: none;">
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 0.5rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+                    <button type="button" onclick="window.Auth && window.Auth.closeProfileModal()" style="padding: 0.6rem 1rem; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">
+                        Annulla
+                    </button>
+                    <button type="submit" style="padding: 0.6rem 1.25rem; background: #0052ff; color: #ffffff; border: none; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,82,255,0.25);">
+                        💾 Salva Profilo
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 

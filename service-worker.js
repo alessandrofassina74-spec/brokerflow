@@ -1,4 +1,4 @@
-const CACHE_NAME = 'brokerflow-v20260925-v7';
+const CACHE_NAME = 'brokerflow-v20260925-v8';
 
 const ASSETS_TO_CACHE = [
   './',

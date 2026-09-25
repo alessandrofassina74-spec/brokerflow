@@ -86,6 +86,7 @@
             email: "dev@brokerflow.it",
             password: "1604",
             name: "Alessandro Fassina",
+            company: "Credipass",
             initials: "AF",
             role: "super_admin",
             areaId: "area_nord",
@@ -98,6 +99,7 @@
             email: "direzione@societa.it",
             password: "dir",
             name: "Dott. Mario Rossi",
+            company: "Credipass",
             initials: "MR",
             role: "direzione",
             areaId: "area_nord",
@@ -110,6 +112,7 @@
             email: "capoarea.nord@societa.it",
             password: "nord",
             name: "Roberto Bianchi",
+            company: "Credipass",
             initials: "RB",
             role: "capo_area",
             areaId: "area_nord",
@@ -122,6 +125,7 @@
             email: "resp.milano@societa.it",
             password: "resp",
             name: "Elena Verdi",
+            company: "Credipass",
             initials: "EV",
             role: "responsabile_ufficio",
             areaId: "area_nord",
@@ -134,6 +138,7 @@
             email: "broker.rossi@societa.it",
             password: "rossi",
             name: "Marco Rossi (Broker)",
+            company: "Credipass",
             initials: "MR",
             role: "broker",
             areaId: "area_nord",
@@ -146,6 +151,7 @@
             email: "broker.bianchi@societa.it",
             password: "roma",
             name: "Luca Bianchi (Broker)",
+            company: "Credipass",
             initials: "LB",
             role: "broker",
             areaId: "area_centro",
@@ -170,8 +176,11 @@
                     const devUser = parsed.find(u => u.email && u.email.toLowerCase() === "dev@brokerflow.it");
                     if (devUser && devUser.password !== "1604") {
                         devUser.password = "1604";
-                        localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(parsed));
                     }
+                    parsed.forEach(u => {
+                        if (!u.company) u.company = "Credipass";
+                    });
+                    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(parsed));
                     return parsed;
                 }
             }
@@ -198,25 +207,7 @@
 
         init() {
             getUsers(); // seed if missing
-            let session = this.getCurrentUser();
-            if (!session) {
-                // Default to Super Admin on initial load for immediate full access
-                const defaultUser = getUsers().find(u => u.email === "dev@brokerflow.it");
-                if (defaultUser) {
-                    const sessionData = {
-                        email: defaultUser.email,
-                        name: defaultUser.name,
-                        initials: defaultUser.initials,
-                        role: defaultUser.role,
-                        areaId: defaultUser.areaId,
-                        ufficioId: defaultUser.ufficioId,
-                        phone: defaultUser.phone,
-                        loginTime: new Date().toISOString()
-                    };
-                    localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessionData));
-                    session = sessionData;
-                }
-            }
+            const session = this.getCurrentUser();
 
             if (session) {
                 this.updateUIForUser(session);
@@ -255,6 +246,7 @@
             const sessionData = {
                 email: user.email,
                 name: user.name,
+                company: user.company || "Credipass",
                 initials: user.initials,
                 role: user.role,
                 areaId: user.areaId,
@@ -290,6 +282,72 @@
             localStorage.removeItem(SESSION_STORAGE_KEY);
             localStorage.removeItem(LOCK_STORAGE_KEY);
             this.showLoginScreen();
+        },
+
+        updateProfile(updatedData) {
+            const current = this.getCurrentUser();
+            if (!current) return { success: false, message: "Nessun utente connesso." };
+
+            const users = getUsers();
+            const idx = users.findIndex(u => u.email.toLowerCase() === current.email.toLowerCase());
+            
+            const initials = updatedData.name ? updatedData.name.split(" ").map(w => w[0]).join("").toUpperCase().substring(0, 2) : current.initials;
+            const updated = {
+                ...current,
+                ...updatedData,
+                initials: initials || current.initials
+            };
+
+            if (idx !== -1) {
+                users[idx] = { ...users[idx], ...updated };
+                saveUsers(users);
+            }
+
+            localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(updated));
+            this.updateUIForUser(updated);
+            return { success: true, user: updated };
+        },
+
+        openProfileModal() {
+            const modal = document.getElementById("profile-edit-modal");
+            if (!modal) return;
+            const user = this.getCurrentUser();
+            if (user) {
+                const nameInp = document.getElementById("profile-edit-name");
+                const companyInp = document.getElementById("profile-edit-company");
+                const phoneInp = document.getElementById("profile-edit-phone");
+                if (nameInp) nameInp.value = user.name || "";
+                if (companyInp) companyInp.value = user.company || "Credipass";
+                if (phoneInp) phoneInp.value = user.phone || "";
+            }
+            modal.style.display = "flex";
+        },
+
+        closeProfileModal() {
+            const modal = document.getElementById("profile-edit-modal");
+            if (modal) modal.style.display = "none";
+        },
+
+        handleSaveProfile(e) {
+            if (e) e.preventDefault();
+            const nameInp = document.getElementById("profile-edit-name");
+            const companyInp = document.getElementById("profile-edit-company");
+            const phoneInp = document.getElementById("profile-edit-phone");
+
+            const name = nameInp ? nameInp.value.trim() : "";
+            const company = companyInp ? companyInp.value.trim() : "Credipass";
+            const phone = phoneInp ? phoneInp.value.trim() : "";
+
+            if (!name) {
+                alert("Il nome del broker non può essere vuoto.");
+                return;
+            }
+
+            const res = this.updateProfile({ name, company, phone });
+            if (res.success) {
+                this.closeProfileModal();
+                alert("Profilo aggiornato con successo!");
+            }
         },
 
         lockScreen() {
@@ -455,6 +513,7 @@
             }
             const initials = userData.name.split(" ").map(w => w[0]).join("").toUpperCase().substring(0, 2) || "UT";
             const newUser = {
+                company: "Credipass",
                 ...userData,
                 initials,
                 createdAt: new Date().toISOString().split("T")[0]
@@ -546,6 +605,7 @@
 
         updateUIForUser(user) {
             if (!user) return;
+            const company = user.company || "Credipass";
             const rInfo = ROLES[user.role] || ROLES.broker;
             const officeInfo = OFFICES[user.ufficioId]?.name || "Sede Generale";
             const areaInfo = AREAS[user.areaId]?.name || "Nazionale";
@@ -561,13 +621,19 @@
                         <div style="text-align: left; line-height: 1.25;">
                             <div style="display: flex; align-items: center; gap: 0.4rem;">
                                 <strong style="font-size: 0.85rem; color: #0f172a;">${user.name}</strong>
-                                <span style="background: ${rInfo.bgColor}; color: ${rInfo.color}; border: 1px solid ${rInfo.borderColor}; font-size: 0.70rem; font-weight: 800; padding: 0.15rem 0.5rem; border-radius: 4px;">
+                                <span style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-size: 0.68rem; font-weight: 800; padding: 0.1rem 0.4rem; border-radius: 4px;">
+                                    🏢 ${company}
+                                </span>
+                                <span style="background: ${rInfo.bgColor}; color: ${rInfo.color}; border: 1px solid ${rInfo.borderColor}; font-size: 0.68rem; font-weight: 800; padding: 0.1rem 0.4rem; border-radius: 4px;">
                                     ${rInfo.icon} ${rInfo.label}
                                 </span>
                             </div>
                             <span style="font-size: 0.72rem; color: #64748b;">📍 ${officeInfo}</span>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.35rem; margin-left: 0.5rem; border-left: 1px solid #e2e8f0; padding-left: 0.6rem;">
+                            <button type="button" onclick="window.Auth.openProfileModal()" class="btn" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;" title="Modifica Profilo Broker">
+                                ✏️ Profilo
+                            </button>
                             ${(user.role === 'super_admin' || user.role === 'direzione') ? `
                                 <button type="button" onclick="window.Auth.openUsersModal()" class="btn" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; gap: 0.25rem;" title="Gestione Collaboratori">
                                     👥 Utenti
@@ -592,14 +658,20 @@
                 sideAvatar.innerText = user.initials || "BF";
                 sideAvatar.style.background = rInfo.color;
             }
-            if (sideName) sideName.innerText = user.name;
+            if (sideName) sideName.innerText = `${user.name} (${company})`;
             if (sideRole) sideRole.innerText = `${rInfo.icon} ${rInfo.label}`;
 
             // Update Top Welcome Title in Dashboard
             const welcomeSub = document.querySelector("#module-dashboard p");
             if (welcomeSub) {
-                welcomeSub.innerText = `Benvenuto ${user.name.split(" ")[0]} (${rInfo.label} - ${officeInfo}).`;
+                welcomeSub.innerText = `Benvenuto ${user.name} - Mediatore: ${company} (${rInfo.label} - ${officeInfo}).`;
             }
+
+            // Update custom dashboard banner elements if present
+            const dashNameSpan = document.getElementById("dash-user-name-span");
+            if (dashNameSpan) dashNameSpan.innerText = user.name;
+            const dashCompanyBadge = document.getElementById("dash-user-company-badge");
+            if (dashCompanyBadge) dashCompanyBadge.innerText = company;
 
             // Show/hide Admin only tools
             const adminTools = document.querySelectorAll(".super-admin-only");

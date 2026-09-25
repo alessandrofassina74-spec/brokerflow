@@ -3562,19 +3562,38 @@ window.updateDashboardStats = function() {
                 const bankName = d.banca || d.bancaScelta || "In valutazione";
 
                 return `
-                    <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;">
-                        <td style="padding: 0.75rem 0.5rem;"><strong style="color: #0052ff; cursor: pointer;" onclick="window.apriSchedaPratica('${d.id}')">#${d.id}</strong></td>
-                        <td style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a; font-size: 0.88rem;">${d.cliente || 'Cliente'}</strong></td>
-                        <td style="padding: 0.75rem 0.5rem;">
+                    <tr class="dash-deal-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;">
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0052ff; cursor: pointer;" onclick="window.apriSchedaPratica('${d.id}')">#${d.id}</strong></td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a; font-size: 0.88rem;">${d.cliente || 'Cliente'}</strong></td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;">
                             <div style="display: flex; align-items: center; gap: 0.35rem;">
                                 ${bankLogo}
                                 <span style="color: #334155; font-weight: 600; font-size: 0.82rem;">${bankName}</span>
                             </div>
                         </td>
-                        <td style="padding: 0.75rem 0.5rem;">${statusBadge}</td>
-                        <td style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a;">€ ${loanStr}</strong></td>
-                        <td style="padding: 0.75rem 0.5rem; text-align: right;">
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;">${statusBadge}</td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a;">€ ${loanStr}</strong></td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem; text-align: right;">
                             <button type="button" onclick="window.apriSchedaPratica('${d.id}')" style="background: #eff6ff; color: #0052ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 0.3rem 0.65rem; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Apri ➔</button>
+                        </td>
+                        <!-- Mobile Card View -->
+                        <td class="deal-mobile-card-cell" style="padding: 0.65rem 0; border: none;">
+                            <div class="dash-mobile-deal-card" onclick="window.apriSchedaPratica('${d.id}')" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.85rem; cursor: pointer; display: flex; flex-direction: column; gap: 0.4rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div style="display: flex; align-items: center; gap: 0.45rem;">
+                                        <span style="font-weight: 800; color: #0052ff; font-size: 0.85rem;">#${d.id}</span>
+                                        <strong style="color: #0f172a; font-size: 0.92rem;">${d.cliente || 'Cliente'}</strong>
+                                    </div>
+                                    <div>${statusBadge}</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #475569;">
+                                    <div style="display: flex; align-items: center; gap: 0.35rem;">
+                                        ${bankLogo}
+                                        <span style="font-weight: 600; color: #334155;">${bankName}</span>
+                                    </div>
+                                    <strong style="color: #0f172a; font-size: 0.9rem;">€ ${loanStr}</strong>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 `;
@@ -4095,30 +4114,75 @@ function renderCrmDeals() {
     }
     crmDeals.forEach(d => {
         const tr = document.createElement("tr");
+        tr.className = "crm-deal-card-row";
         const loanStr = typeof d.mutuo === "number" ? d.mutuo.toLocaleString('it-IT') : (d.mutuo || "--");
         const rataStr = typeof d.rata === "number" ? d.rata.toFixed(2) : (d.rata || "--");
         const statusBadgeHtml = window.getDealStatusBadgeHtml(d);
+        const bankLogo = (typeof window.getBankLogoHtml === "function") ? window.getBankLogoHtml(d.banca) : '';
 
         tr.innerHTML = `
-            <td><strong style="color: #006BFF;">#${d.id}</strong></td>
-            <td><strong style="color: #0f172a; font-size: 0.92rem;">${d.cliente || 'Cliente'}</strong></td>
-            <td><span style="color: #475569; font-weight: 500;">${d.comune || '--'}</span></td>
-            <td><strong style="color: #0f172a;">${loanStr} €</strong></td>
-            <td><span style="font-weight: 700; color: #334155;">${d.ltv || '--'}%</span></td>
-            <td>
+            <!-- Desktop Columns -->
+            <td class="desktop-only-cell"><strong style="color: #006BFF;">#${d.id}</strong></td>
+            <td class="desktop-only-cell"><strong style="color: #0f172a; font-size: 0.92rem;">${d.cliente || 'Cliente'}</strong></td>
+            <td class="desktop-only-cell"><span style="color: #475569; font-weight: 500;">${d.comune || '--'}</span></td>
+            <td class="desktop-only-cell"><strong style="color: #0f172a;">${loanStr} €</strong></td>
+            <td class="desktop-only-cell"><span style="font-weight: 700; color: #334155;">${d.ltv || '--'}%</span></td>
+            <td class="desktop-only-cell">
                 <div style="display: flex; align-items: center; gap: 0.4rem;">
-                    ${window.getBankLogoHtml ? window.getBankLogoHtml(d.banca) : ''}
+                    ${bankLogo}
                     <strong style="color: #006BFF;">${d.banca || 'N.D.'}</strong>
                 </div>
             </td>
-            <td><strong style="color: #047857; font-size: 0.92rem;">${rataStr} €/m</strong></td>
-            <td>${statusBadgeHtml}</td>
-            <td style="text-align: right;">
+            <td class="desktop-only-cell"><strong style="color: #047857; font-size: 0.92rem;">${rataStr} €/m</strong></td>
+            <td class="desktop-only-cell">${statusBadgeHtml}</td>
+            <td class="desktop-only-cell" style="text-align: right;">
                 <div style="display: inline-flex; gap: 0.35rem; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
                     <button class="btn" onclick="window.apriDocumentiPratica('${d.id}')" title="Apri Checklist Documenti" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; font-weight: 700; background: #eff6ff; color: #006BFF; border: 1.5px solid #bfdbfe; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;">📑 Documenti</button>
                     <button class="btn btn-primary" onclick="window.apriSchedaPratica('${d.id}')" title="Avanzamento / Caricata in Banca" style="padding: 0.35rem 0.75rem; font-size: 0.78rem; font-weight: 700; background: #006BFF; color: #ffffff; border: none; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem;">🏛️ Avanzamento</button>
                     <button class="btn" onclick="window.modificaPreventivo('${d.id}')" title="Modifica questo preventivo nel Wizard" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; font-weight: 600; background: #ffffff; border: 1px solid #cbd5e1; color: #334155; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.2rem;">✏️ Modifica</button>
                     <button class="btn" onclick="window.eliminaPratica('${d.id}')" title="Elimina pratica" style="padding: 0.35rem 0.55rem; font-size: 0.78rem; background: #fee2e2; color: #ef4444; border: 1px solid #fca5a5; border-radius: 6px; cursor: pointer;">🗑️</button>
+                </div>
+            </td>
+
+            <!-- Mobile-Only Card View (Shown on App / Mobile screens) -->
+            <td class="deal-mobile-card-cell" style="padding: 0; border: none;">
+                <div class="deal-mobile-card">
+                    <div class="deal-mobile-header">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="deal-mobile-id">#${d.id}</span>
+                            <strong class="deal-mobile-title">${d.cliente || 'Cliente'}</strong>
+                        </div>
+                        <div>${statusBadgeHtml}</div>
+                    </div>
+                    
+                    <div class="deal-mobile-grid">
+                        <div class="deal-mobile-item">
+                            <span class="deal-mobile-lbl">🏛️ Banca Proposta</span>
+                            <div style="display: flex; align-items: center; gap: 0.35rem; margin-top: 2px;">
+                                ${bankLogo}
+                                <strong style="color: #006BFF; font-size: 0.88rem;">${d.banca || 'N.D.'}</strong>
+                            </div>
+                        </div>
+                        <div class="deal-mobile-item">
+                            <span class="deal-mobile-lbl">💶 Importo Mutuo</span>
+                            <strong style="color: #0f172a; font-size: 0.95rem; margin-top: 2px; display: block;">${loanStr} €</strong>
+                        </div>
+                        <div class="deal-mobile-item">
+                            <span class="deal-mobile-lbl">📅 Rata Mensile</span>
+                            <strong style="color: #047857; font-size: 0.95rem; margin-top: 2px; display: block;">${rataStr} €/m</strong>
+                        </div>
+                        <div class="deal-mobile-item">
+                            <span class="deal-mobile-lbl">📍 Immobile / LTV</span>
+                            <span style="color: #334155; font-size: 0.85rem; margin-top: 2px; display: block;">${d.comune || '--'} <strong>(${d.ltv || '--'}%)</strong></span>
+                        </div>
+                    </div>
+
+                    <div class="deal-mobile-actions">
+                        <button type="button" class="btn-m-action doc" onclick="window.apriDocumentiPratica('${d.id}')">📑 Documenti</button>
+                        <button type="button" class="btn-m-action avz" onclick="window.apriSchedaPratica('${d.id}')">🏛️ Avanzamento</button>
+                        <button type="button" class="btn-m-action mod" onclick="window.modificaPreventivo('${d.id}')">✏️ Modifica</button>
+                        <button type="button" class="btn-m-action del" onclick="window.eliminaPratica('${d.id}')" title="Elimina">🗑️</button>
+                    </div>
                 </div>
             </td>
         `;
@@ -4920,37 +4984,60 @@ window.renderSchedaDocumenti = function(deal) {
 };
 
 /**
- * Genera il testo completo formattato della checklist (per WhatsApp / Email / Copia)
+ * Genera il testo essenziale e diretto della checklist per WhatsApp / Copia
+ * Formato: "Ciao [Nome], sono [Broker] di [Società]. Ti invio la lista dei documenti necessari..."
+ * Documenti già ricevuti: barrati con ~titolo~
  */
 window.getFormattedChecklistText = function(deal) {
     if (!deal) return "";
-    const sections = window.generateDocumentChecklist(deal);
-    const clientName = deal.cliente || "Gentile Cliente";
     
-    let text = `📄 *CHECKLIST DOCUMENTI MUTUO - BROKERFLOW*\n`;
-    text += `*Cliente:* ${clientName}\n`;
-    text += `*Pratica:* #${deal.id} (${deal.banca || 'Banca Convenzionata'})\n`;
-    text += `------------------------------------\n\n`;
-    text += `Gentile ${clientName},\nper procedere con l'istruttoria della richiesta di mutuo, ti chiediamo di predisporre e inviarci i seguenti documenti:\n\n`;
+    // Recupera i dati del mediatore/broker autenticato o salvato
+    let brokerName = "Alessandro Fassina";
+    let companyName = "Credipass";
+    try {
+        if (window.Auth && typeof window.Auth.getCurrentUser === "function") {
+            const user = window.Auth.getCurrentUser();
+            if (user) {
+                if (user.name) brokerName = user.name;
+                if (user.company) companyName = user.company;
+            }
+        }
+    } catch(e) {}
 
-    sections.forEach(sec => {
-        text += `🔹 *${sec.subjectRole.toUpperCase()}: ${sec.subjectName.toUpperCase()}*\n`;
-        text += `(${sec.profileBadges.join(", ")})\n`;
-        
+    // Nome cliente (primo nome per tono diretto e professionale)
+    const clientFullName = (deal.cliente || "Cliente").trim();
+    const clientFirstName = clientFullName.split(" ")[0];
+
+    const sections = window.generateDocumentChecklist(deal);
+
+    let text = `Ciao ${clientFirstName}, sono ${brokerName} di ${companyName}.\n`;
+    text += `Ti invio la lista dei documenti necessari per la tua pratica di mutuo:\n\n`;
+
+    sections.forEach((sec, sIdx) => {
+        // Se ci sono più soggetti (es. richiedente + garante), indichiamo a chi appartengono
+        if (sections.length > 1) {
+            text += `*📋 Documenti ${sec.subjectName} (${sec.subjectRole}):*\n`;
+        }
+
         sec.categories.forEach(cat => {
-            if (cat.docs.length > 0) {
-                text += `\n${cat.icon} *${cat.label}:*\n`;
+            if (cat.docs && cat.docs.length > 0) {
                 cat.docs.forEach(doc => {
                     const isChecked = !!(deal.documentiRaccolti && deal.documentiRaccolti[doc.id]);
-                    text += `${isChecked ? '✅' : '◻️'} *${doc.title}* (${doc.desc})\n`;
+                    if (isChecked) {
+                        text += `✅ ~${doc.title}~\n`;
+                    } else {
+                        text += `⬜ ${doc.title}\n`;
+                    }
                 });
             }
         });
-        text += `\n------------------------------------\n`;
+
+        if (sIdx < sections.length - 1) {
+            text += `\n`;
+        }
     });
 
-    text += `\nI documenti possono essere inviati in formato PDF chiaro e leggibile o consegnati presso il nostro ufficio.\nRestiamo a completa disposizione!`;
-    return text;
+    return text.trim();
 };
 
 /**
@@ -8618,6 +8705,25 @@ async function loadDatabases(forceFresh = true) {
         ]);
         comuniData = await comuniRes.json();
         policiesData = await policiesRes.json();
+        
+        // Merge device-local custom overrides (localStorage) so changes stay strictly local to this device
+        try {
+            const localPoliciesStr = localStorage.getItem("brokerflow_local_policies");
+            if (localPoliciesStr) {
+                const localPolicies = JSON.parse(localPoliciesStr);
+                if (localPolicies && typeof localPolicies === "object") {
+                    Object.keys(localPolicies).forEach(bId => {
+                        if (policiesData[bId]) {
+                            policiesData[bId] = { ...policiesData[bId], ...localPolicies[bId] };
+                        }
+                    });
+                    console.log("Applicate policy personalizzate locali da questo dispositivo:", Object.keys(localPolicies));
+                }
+            }
+        } catch(e) {
+            console.warn("Errore caricamento policy locali:", e);
+        }
+
         productsData = await productsRes.json();
         const branchesData = await branchesRes.json();
         
@@ -9058,7 +9164,7 @@ window.updateSecretBancheTable = function() {
     });
 };
 
-window.saveBankPolicy = async function(bankId) {
+window.saveBankPolicy = function(bankId) {
     const maxLtv = parseFloat(document.getElementById(`sec-${bankId}-maxLtv`).value);
     const maxDsr = parseFloat(document.getElementById(`sec-${bankId}-maxDsr`).value);
     const maxDsrDeroga = parseFloat(document.getElementById(`sec-${bankId}-maxDsrDeroga`).value);
@@ -9069,14 +9175,13 @@ window.saveBankPolicy = async function(bankId) {
     const minAutonomoDeroga = parseInt(document.getElementById(`sec-${bankId}-minAutonomoDeroga`).value);
     const hasMri = document.getElementById(`sec-${bankId}-hasMri`).value === "true";
     
-    const updatedPolicies = { ...policiesData };
-    if (!updatedPolicies[bankId]) {
+    if (!policiesData[bankId]) {
         alert("Banca non trovata!");
         return;
     }
     
-    updatedPolicies[bankId] = {
-        ...updatedPolicies[bankId],
+    const updatedPolicy = {
+        ...policiesData[bankId],
         maxLtv,
         maxDsr,
         maxDsrDeroga,
@@ -9088,28 +9193,44 @@ window.saveBankPolicy = async function(bankId) {
         hasMri
     };
     
+    policiesData[bankId] = updatedPolicy;
+    if (BrokerFlowEngine && BrokerFlowEngine.bankPolicies) {
+        BrokerFlowEngine.bankPolicies[bankId] = updatedPolicy;
+    }
+    
+    // Save EXCLUSIVELY to device-local storage (localStorage) - no network / server overwrite
     try {
-        const response = await fetch("/api/save-policies", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(updatedPolicies)
-        });
-        
-        if (response.ok) {
-            const resData = await response.json();
-            alert(`🎉 Successo! ${resData.message}`);
-            policiesData = updatedPolicies;
-            BrokerFlowEngine.bankPolicies = updatedPolicies;
-            updateCalculations();
-        } else {
-            const errData = await response.json();
-            alert(`❌ Errore durante il salvataggio: ${errData.message}`);
+        let localPolicies = {};
+        const localPoliciesStr = localStorage.getItem("brokerflow_local_policies");
+        if (localPoliciesStr) {
+            localPolicies = JSON.parse(localPoliciesStr);
         }
-    } catch (e) {
-        console.error("Save error:", e);
-        alert(`❌ Errore di rete: ${e.message}`);
+        localPolicies[bankId] = updatedPolicy;
+        localStorage.setItem("brokerflow_local_policies", JSON.stringify(localPolicies));
+        
+        updateCalculations();
+        if (typeof window.showToast === "function") {
+            window.showToast(`🔒 Parametri ${updatedPolicy.name} salvati solo su questo dispositivo!`, "success");
+        } else {
+            alert(`🔒 Parametri ${updatedPolicy.name} salvati sul tuo dispositivo.`);
+        }
+    } catch(err) {
+        console.error("Errore salvataggio policy locale:", err);
+        alert("Errore salvataggio locale: " + err.message);
+    }
+};
+
+window.resetLocalBankPolicies = function() {
+    if (confirm("Vuoi ripristinare tutte le policy bancarie ai valori predefiniti originali su questo dispositivo?")) {
+        localStorage.removeItem("brokerflow_local_policies");
+        loadDatabases(true).then(() => {
+            window.updateSecretBancheTable();
+            if (typeof window.showToast === "function") {
+                window.showToast("🔄 Policy bancarie ripristinate ai valori predefiniti!", "success");
+            } else {
+                alert("Policy bancarie ripristinate ai valori predefiniti!");
+            }
+        });
     }
 };
 

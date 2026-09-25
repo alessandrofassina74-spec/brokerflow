@@ -1513,11 +1513,18 @@ input, select, textarea, button {
     box-sizing: border-box !important;
 }
 
+/* Desktop vs Mobile Cell toggles (Default Desktop) */
+.desktop-only-cell {
+    display: table-cell;
+}
+.deal-mobile-card-cell {
+    display: none;
+}
+
 /* 1. Large Laptops & Standard PC screens (max-width: 1440px) */
 @media (max-width: 1440px) {
-    #module-dashboard div[style*="grid-template-columns: repeat(5, 1fr)"],
-    #module-dashboard div[style*="repeat(5, 1fr)"] {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    .dash-kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)) !important;
         gap: 1rem !important;
     }
 }
@@ -1577,9 +1584,8 @@ input, select, textarea, button {
         padding: 1.15rem 1.25rem !important;
     }
 
-    #module-dashboard div[style*="grid-template-columns: repeat(5, 1fr)"],
-    #module-dashboard div[style*="repeat(5, 1fr)"] {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .dash-kpi-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
         gap: 0.85rem !important;
     }
 
@@ -1632,7 +1638,7 @@ input, select, textarea, button {
         width: 100vw !important;
         max-width: 100vw !important;
         box-sizing: border-box !important;
-        padding: 0.85rem 0.85rem calc(80px + env(safe-area-inset-bottom, 20px)) 0.85rem !important;
+        padding: 0.75rem 0.75rem calc(80px + env(safe-area-inset-bottom, 20px)) 0.75rem !important;
         overflow-x: hidden !important;
     }
     
@@ -1648,28 +1654,48 @@ input, select, textarea, button {
         display: none !important;
     }
 
-    /* All Multi-column Grids Collapse Gracefully */
-    .agenda-main-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.25rem !important;
-    }
-
-    .agenda-kpis-grid {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 0.65rem !important;
-    }
-
-    /* Dashboard Stats & Grids */
-    #module-dashboard div[style*="grid-template-columns: repeat(5, 1fr)"],
-    #module-dashboard div[style*="repeat(5, 1fr)"] {
+    /* -------------------------------------------------------------
+       1. DASHBOARD COMPACT & BEAUTIFUL ON MOBILE
+       ------------------------------------------------------------- */
+    .dash-kpi-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.75rem !important;
+        gap: 0.65rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .dash-kpi-card {
+        padding: 0.75rem 0.85rem !important;
+        border-radius: 10px !important;
+    }
+
+    .dash-kpi-card .dash-kpi-icon-box {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+    }
+
+    .dash-kpi-card .dash-kpi-label {
+        font-size: 0.72rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .dash-kpi-card .dash-kpi-val {
+        font-size: 1.3rem !important;
+        margin-bottom: 0.25rem !important;
+        line-height: 1.15 !important;
+    }
+
+    .dash-kpi-card .dash-kpi-foot {
+        font-size: 0.68rem !important;
+    }
+
+    .dash-kpi-grid > .dash-kpi-card:last-child {
+        grid-column: span 2 !important;
     }
 
     .dash-middle-grid,
-    .dash-bottom-grid,
-    #module-dashboard div[style*="grid-template-columns: 2fr 1fr"],
-    #module-dashboard div[style*="grid-template-columns: repeat(3, 1fr)"] {
+    .dash-bottom-grid {
         display: flex !important;
         flex-direction: column !important;
         gap: 1.15rem !important;
@@ -1683,25 +1709,210 @@ input, select, textarea, button {
         max-width: 100% !important;
         min-width: 0 !important;
         box-sizing: border-box !important;
+        padding: 1.15rem 1rem !important;
     }
 
-    .dash-table-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
+    /* -------------------------------------------------------------
+       2. PRATICHE: RESPONSIVE CARDS (No horizontal scroll!)
+       ------------------------------------------------------------- */
+    .crm-table-container {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
         margin-top: 0.5rem !important;
     }
 
-    .dash-table-wrapper table {
+    .crm-table {
+        display: block !important;
         width: 100% !important;
-        min-width: 500px !important;
-        display: table !important;
+        border: none !important;
+    }
+
+    .crm-table thead {
+        display: none !important;
+    }
+
+    .crm-table tbody {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.85rem !important;
+        width: 100% !important;
+    }
+
+    .crm-deal-card-row {
+        display: block !important;
+        width: 100% !important;
+        background: transparent !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .desktop-only-cell {
+        display: none !important;
+    }
+
+    .deal-mobile-card-cell {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        border: none !important;
+    }
+
+    .deal-mobile-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 12px !important;
+        padding: 1rem !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .deal-mobile-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-bottom: 1px solid #f1f5f9 !important;
+        padding-bottom: 0.5rem !important;
+    }
+
+    .deal-mobile-id {
+        font-weight: 800 !important;
+        color: #006BFF !important;
+        font-size: 0.92rem !important;
+    }
+
+    .deal-mobile-title {
+        font-size: 0.98rem !important;
+        color: #0f172a !important;
+        font-weight: 800 !important;
+    }
+
+    .deal-mobile-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.55rem !important;
+        background: #f8fafc !important;
+        padding: 0.75rem !important;
+        border-radius: 8px !important;
+        border: 1px solid #f1f5f9 !important;
+    }
+
+    .deal-mobile-item {
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+    }
+
+    .deal-mobile-lbl {
+        font-size: 0.68rem !important;
+        color: #64748b !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .deal-mobile-actions {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.45rem !important;
+        margin-top: 0.25rem !important;
+    }
+
+    .btn-m-action {
+        padding: 0.5rem 0.65rem !important;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        border-radius: 7px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.35rem !important;
+        border: none !important;
+        box-sizing: border-box !important;
+    }
+
+    .btn-m-action.doc {
+        background: #eff6ff !important;
+        color: #006BFF !important;
+        border: 1.5px solid #bfdbfe !important;
+    }
+
+    .btn-m-action.avz {
+        background: #006BFF !important;
+        color: #ffffff !important;
+    }
+
+    .btn-m-action.mod {
+        background: #ffffff !important;
+        color: #334155 !important;
+        border: 1px solid #cbd5e1 !important;
+    }
+
+    .btn-m-action.del {
+        background: #fee2e2 !important;
+        color: #ef4444 !important;
+        border: 1px solid #fca5a5 !important;
+    }
+
+    /* -------------------------------------------------------------
+       3. AGENDA ON MOBILE
+       ------------------------------------------------------------- */
+    .agenda-main-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+
+    .agenda-kpis-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.65rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .agenda-kpi-card {
+        padding: 0.75rem 0.85rem !important;
+        gap: 0.65rem !important;
+    }
+
+    .agenda-kpi-icon {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 1.05rem !important;
+    }
+
+    .agenda-bottom-tools-panel {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+    }
+
+    .agenda-bottom-tools-panel > div:last-child {
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.5rem !important;
+    }
+
+    .agenda-bottom-tools-panel button {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.6rem 1rem !important;
+    }
+
+    .agenda-filter-btn {
+        padding: 0.35rem 0.65rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    #agenda-search-input {
+        width: 100% !important;
     }
 
     /* Scheda Pratica */
-    .scheda-pratica-grid,
-    div[style*="grid-template-columns: 1fr 1.1fr"] {
+    .scheda-pratica-grid {
         grid-template-columns: 1fr !important;
         gap: 1rem !important;
     }
@@ -1714,27 +1925,6 @@ input, select, textarea, button {
     .crm-module-section div[style*="grid-template-columns: repeat(4, 1fr)"] {
         grid-template-columns: 1fr !important;
         gap: 0.85rem !important;
-    }
-
-    /* Responsive Inputs & Buttons */
-    input, select, textarea, button {
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Filter Bars & Tags */
-    .agenda-filter-btn {
-        padding: 0.35rem 0.65rem !important;
-        font-size: 0.75rem !important;
-    }
-
-    /* Responsive Tables with Smooth Horizontal Scroll */
-    table {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
     }
 
     /* Modals & Popups for Mobile */
