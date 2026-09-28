@@ -2507,3 +2507,78 @@ div.selected,
     background: #11192C !important;
     border: 1px solid #1C273E !important;
 }
+
+
+/* ==========================================================================
+   OCCUPAZIONE E REDDITO & WIZARD FORM LABELS HIGH CONTRAST DARK FINTECH
+   Garantisce leggibilità assoluta a contrasto elevato per tutti i campi, 
+   etichette, sottosezioni e caselle CU/Unico in Richiedente 1, 2 e Garanti.
+   ========================================================================== */
+
+#module-engine label,
+#phase-1-panel label,
+#phase-2-panel label,
+#phase-3-panel label,
+#phase-4-panel label,
+.coapp-card label,
+.guarantor-card label,
+#wiz-coapplicants-guarantors-section label,
+#spouse-auto-card-container label {
+    color: #E2E8F0 !important;
+}
+
+#module-engine h1, #module-engine h2, #module-engine h3, #module-engine h4, #module-engine h5,
+#phase-1-panel h1, #phase-1-panel h2, #phase-1-panel h3, #phase-1-panel h4,
+#phase-2-panel h1, #phase-2-panel h2, #phase-2-panel h3, #phase-2-panel h4,
+#phase-3-panel h1, #phase-3-panel h2, #phase-3-panel h3, #phase-3-panel h4,
+#phase-4-panel h1, #phase-4-panel h2, #phase-4-panel h3, #phase-4-panel h4,
+.coapp-card h3, .coapp-card h4,
+.guarantor-card h3, .guarantor-card h4 {
+    color: #FFFFFF !important;
+}
+
+/* Sotto-pannelli di dettaglio (Cascata Dipendente, Autonomo, Pensionato, Garanti) */
+#group-q10-dipendente-cascade,
+#group-q10-autonomo-cascade,
+#group-q10-pensionato-cascade,
+#group-q10-locazione-cascade,
+#group-q10-colf-cascade,
+#group-q10-interinale-cascade,
+#group-q10-second-income-container,
+div[id*="-cascade"],
+.coapp-card,
+.guarantor-card {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    border-radius: 10px !important;
+    color: #E2E8F0 !important;
+}
+
+/* Box per Campi Fiscali CU e Modello Unico */
+div[style*="background: #ffffff; border: 1px solid #cbd5e1"],
+div[style*="background:#ffffff; border:1px solid #cbd5e1"],
+div[style*="background: #f1f5f9"],
+div[style*="background:#f1f5f9"] {
+    background: #080D1A !important;
+    border: 1.5px solid #1C273E !important;
+    border-radius: 8px !important;
+    color: #E2E8F0 !important;
+}
+
+/* Etichette dei codici CU (CU1, CU6, CU21, CU22, ecc.) e Unico (RN1, LM22, ecc.) */
+#phase-2-panel label[style*="color: #64748b"],
+#phase-2-panel label[style*="color:#64748b"],
+.coapp-card label[style*="color: #64748b"],
+.coapp-card label[style*="color:#64748b"],
+.guarantor-card label[style*="color: #64748b"],
+.guarantor-card label[style*="color:#64748b"] {
+    color: #94A3B8 !important;
+    font-weight: 700 !important;
+}
+
+/* Badge ed evidenziatori reddito calcolato */
+#lbl-computed-income,
+span[id*="computed-income"] {
+    color: #00D2FF !important;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.4) !important;
+}
