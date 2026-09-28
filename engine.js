@@ -32,6 +32,71 @@ const PraticaNormalizer = {
             });
         }
 
+        // Merge coapplicantsData if not already present in subjects
+        if (Array.isArray(p.coapplicantsData) && p.coapplicantsData.length > 0) {
+            p.coapplicantsData.forEach(c => {
+                const cNome = (c.nome || "").trim().toLowerCase();
+                const cCognome = (c.cognome || "").trim().toLowerCase();
+                const exists = subjects.some(s => 
+                    ((s.nome || "").trim().toLowerCase() === cNome && (s.cognome || "").trim().toLowerCase() === cCognome)
+                );
+                if (!exists && (c.nome || c.cognome || c.netto)) {
+                    subjects.push({
+                        role: "Cointestatario",
+                        nome: c.nome,
+                        cognome: c.cognome,
+                        dataNascita: c.dataNascita,
+                        sesso: c.sesso,
+                        statoCivile: c.statoCivile,
+                        regime: c.regime,
+                        anniSposato: c.anniSposato,
+                        cittadinanza: c.cittadinanza,
+                        permScadenza: c.permScadenza,
+                        famigliaSede: c.famigliaSede,
+                        tipoContratto: c.dipContratto ? ("dipendente_" + (c.dipContratto === "indeterminato" ? "ti" : "td")) : (c.macroCategoria || "dipendente_ti"),
+                        anzianita: parseInt(c.dipAnzianita) || 24,
+                        anzianitaMesi: parseInt(c.dipAnzianita) || 24,
+                        netto: parseFloat(c.netto) || 0,
+                        redditoNetto: parseFloat(c.netto) || 0,
+                        rawBoxData: {
+                            cu1: parseFloat(c.cu1) || 0,
+                            cu6: parseFloat(c.cu6) || 365,
+                            cu21: parseFloat(c.cu21) || 0,
+                            cu22: parseFloat(c.cu22) || 0,
+                            cu26: parseFloat(c.cu26) || 0,
+                            cu27: parseFloat(c.cu27) || 0,
+                            cu29: parseFloat(c.cu29) || 0
+                        }
+                    });
+                }
+            });
+        }
+
+        // Merge guarantorsData if not already present in subjects
+        if (Array.isArray(p.guarantorsData) && p.guarantorsData.length > 0) {
+            p.guarantorsData.forEach(g => {
+                const gNome = (g.nome || "").trim().toLowerCase();
+                const gCognome = (g.cognome || "").trim().toLowerCase();
+                const exists = subjects.some(s => 
+                    ((s.nome || "").trim().toLowerCase() === gNome && (s.cognome || "").trim().toLowerCase() === gCognome)
+                );
+                if (!exists && (g.nome || g.cognome || g.netto)) {
+                    subjects.push({
+                        role: "Garante",
+                        nome: g.nome,
+                        cognome: g.cognome,
+                        dataNascita: g.dataNascita,
+                        sesso: g.sesso,
+                        cittadinanza: g.cittadinanza,
+                        tipoContratto: g.tipoContratto || "dipendente_ti",
+                        netto: parseFloat(g.netto) || 0,
+                        redditoNetto: parseFloat(g.netto) || 0,
+                        rawBoxData: g.rawBoxData || {}
+                    });
+                }
+            });
+        }
+
         // Normalize roles
         subjects = subjects.map(s => {
             const copy = Object.assign({}, s);
@@ -67642,6 +67707,7 @@ const BrokerFlowEngine = {
             };
 
             let baseRequired = null;
+            const bankId = policy?.id || (policy?.name ? policy.name.toLowerCase() : "");
 
             if (bankId === "bper" || bankId === "banco_di_sardegna" || bankId === "banco di sardegna") {
                 const numRichiedenti = Math.max(1, (pratica && pratica.richiedenti) ? pratica.richiedenti.length : 1);
@@ -67716,7 +67782,8 @@ const BrokerFlowEngine = {
         return (baseGrid[5] || 1414) + (numPersone - 5) * 300;
     },
 
-    evaluate(pratica, tassiBaseInput) {
+    evaluate(rawPraticaInput, tassiBaseInput) {
+        const pratica = PraticaNormalizer.normalize(rawPraticaInput);
         const defaultTassi = (this.tassiBase && Object.keys(this.tassiBase).length > 0) ? this.tassiBase : {
             euribor1m: 2.321, euribor3m: 2.655, euribor6m: 2.789, irs: 3.46, bce: 3.75,
             irsRates: { 5: 3.12, 10: 2.95, 15: 3.12, 20: 3.25, 25: 3.38, 30: 3.46 },
@@ -69043,7 +69110,7 @@ const BrokerFlowEngine = {
                     if (ltc > 0.80) {
                         const household = PraticaHelper.countHouseholdMembers(pratica);
                         const mriDerogaRequired = (household <= 2) ? 2000 : (2000 + (household - 2) * 250);
-                        const bnlNote = `ℹ️ BNL (Deroga LTC > 80%): ammissibile per sussistenza minima residua >= € ${mriDerogaRequired.toLocaleString('it-IT')} (rilevata: € ${Math.round(residual).toLocaleString('it-IT')}).`;
+                        const bnlNote = `ℹ️ BNL (Deroga LTC > 80%): ammissibile per sussistenza minima residua >= € ${mriDerogaRequired.toLocaleString('it-IT')} (rilevata: € ${Math.round(bestChoice ? bestChoice.residual : 0).toLocaleString('it-IT')}).`;
                         if (!notes.includes(bnlNote)) notes.push(bnlNote);
                     }
                 }
@@ -69055,7 +69122,7 @@ const BrokerFlowEngine = {
                 }
 
                 if (bankId.includes("agricole")) {
-                    const annualIncomeNet = totalIncomeWithGuarantors * 12;
+                    const annualIncomeNet = (calculatedTotalIncome + guarantorIncome) * 12;
                     const ltiVal = annualIncomeNet > 0 ? (pratica.importoMutuo / annualIncomeNet) : 0;
                     if (ltiVal >= 7.0) {
                         checks.push({
