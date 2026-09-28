@@ -1009,8 +1009,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .scheda-step-card {
-    background: #ffffff;
-    border: 1.5px solid #e2e8f0;
+    background: #0D1424;
+    border: 1.5px solid #1C273E;
     border-radius: 10px;
     padding: 0.85rem 1rem;
     display: flex;
@@ -1022,19 +1022,20 @@ input:focus, select:focus, textarea:focus {
 }
 
 .scheda-step-card:hover {
-    border-color: #93c5fd;
-    background: #f8fafc;
+    border-color: #00D2FF;
+    box-shadow: 0 0 14px rgba(0, 210, 255, 0.3);
     transform: translateX(2px);
 }
 
 .scheda-step-card.active-step {
-    background: #f0fdf4;
-    border-color: #22c55e;
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.12);
+    background: rgba(16, 185, 129, 0.12);
+    border-color: #10B981;
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
 }
 
 .scheda-step-card.active-step:hover {
-    background: #dcfce7;
+    border-color: #34D399;
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.45);
 }
 
 .scheda-step-left {
@@ -1047,36 +1048,38 @@ input:focus, select:focus, textarea:focus {
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: #f1f5f9;
-    color: #64748b;
+    background: #11192C;
+    color: #94A3B8;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
+    border: 1px solid #1C273E;
     transition: all 0.2s ease;
     flex-shrink: 0;
 }
 
 .scheda-step-card.active-step .scheda-step-icon {
-    background: #22c55e;
+    background: #10B981;
     color: #ffffff;
-    box-shadow: 0 2px 8px rgba(34, 197, 94, 0.3);
+    border-color: #10B981;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
 }
 
 .scheda-step-title {
     font-size: 0.92rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #FFFFFF;
     margin-bottom: 0.1rem;
 }
 
 .scheda-step-card.active-step .scheda-step-title {
-    color: #15803d;
+    color: #34D399;
 }
 
 .scheda-step-desc {
     font-size: 0.74rem;
-    color: #64748b;
+    color: #94A3B8;
 }
 
 .scheda-step-right {
@@ -1094,39 +1097,39 @@ input:focus, select:focus, textarea:focus {
     font-weight: 700;
     padding: 0.3rem 0.65rem;
     border-radius: 6px;
-    background: #f1f5f9;
-    color: #64748b;
-    border: 1px solid #cbd5e1;
+    background: #11192C;
+    color: #94A3B8;
+    border: 1px solid #1C273E;
     transition: all 0.2s ease;
 }
 
 .scheda-step-card.active-step .scheda-step-toggle {
-    background: #16a34a;
+    background: #10B981;
     color: #ffffff;
-    border-color: #15803d;
+    border-color: #059669;
 }
 
 .scheda-step-date-badge {
     font-size: 0.72rem;
     font-weight: 600;
-    color: #15803d;
-    background: #dcfce7;
-    padding: 0.15rem 0.5rem;
-    border-radius: 4px;
-    border: 1px solid #bbf7d0;
-    display: flex;
+    color: #34D399;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
 }
 
 /* MOTIVI RIFIUTO (KO) */
 .scheda-ko-btn {
-    background: #ffffff;
-    border: 1.5px solid #fed7aa;
+    background: #0D1424;
+    border: 1.5px solid #1C273E;
     border-radius: 8px;
     padding: 0.75rem 0.85rem;
-    text-align: left;
     cursor: pointer;
+    text-align: left;
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -1134,33 +1137,37 @@ input:focus, select:focus, textarea:focus {
 }
 
 .scheda-ko-btn:hover {
-    border-color: #f87171;
-    background: #fff1f2;
+    border-color: #EF4444;
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
     transform: translateY(-1px);
 }
 
 .scheda-ko-btn.active-ko {
-    background: #fee2e2;
-    border-color: #ef4444;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    background: rgba(239, 68, 68, 0.15);
+    border-color: #EF4444;
+    box-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
 }
 
 .scheda-ko-title {
     font-size: 0.85rem;
-    font-weight: 800;
-    color: #991b1b;
+    font-weight: 700;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 0.35rem;
 }
 
-.scheda-ko-desc {
-    font-size: 0.72rem;
-    color: #7f1d1d;
-    opacity: 0.85;
+.scheda-ko-btn.active-ko .scheda-ko-title {
+    color: #EF4444;
 }
 
-/* TIMELINE */
+.scheda-ko-desc {
+    font-size: 0.72rem;
+    color: #94A3B8;
+    line-height: 1.25;
+}
+
+/* TIMELINE DEDICATA DARK */
 .sp-timeline {
     position: relative;
     padding-left: 2rem;
@@ -1173,7 +1180,7 @@ input:focus, select:focus, textarea:focus {
     bottom: 10px;
     left: 8px;
     width: 2px;
-    background: #e2e8f0;
+    background: #1C273E;
 }
 
 .sp-timeline-item {
@@ -1192,30 +1199,30 @@ input:focus, select:focus, textarea:focus {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #ffffff;
-    border: 3px solid #006BFF;
+    background: #0D1424;
+    border: 3px solid #00D2FF;
     z-index: 2;
-    box-shadow: 0 0 0 3px rgba(0, 107, 255, 0.15);
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
 }
 
 .sp-timeline-dot.success {
-    border-color: #22c55e;
-    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    border-color: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
 }
 
 .sp-timeline-dot.danger {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    border-color: #EF4444;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
 }
 
 .sp-timeline-dot.warning {
-    border-color: #f59e0b;
-    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+    border-color: #F59E0B;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
 }
 
 .sp-timeline-content {
-    background: #f8fafc;
-    border: 1px solid #f1f5f9;
+    background: #0D1424;
+    border: 1px solid #1C273E;
     border-radius: 8px;
     padding: 0.75rem 1rem;
 }
@@ -1230,18 +1237,18 @@ input:focus, select:focus, textarea:focus {
 .sp-timeline-title {
     font-size: 0.88rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #FFFFFF;
 }
 
 .sp-timeline-date {
     font-size: 0.74rem;
-    color: #64748b;
+    color: #94A3B8;
     font-weight: 500;
 }
 
 .sp-timeline-body {
     font-size: 0.8rem;
-    color: #475569;
+    color: #CBD5E1;
 }
 
 /* ==========================================================================
@@ -1947,3 +1954,407 @@ input, select, textarea, button {
 
 
 
+
+
+/* ==========================================================================
+   BROKERFLOW MASTER DESIGN SYSTEM — LOGICA GLOBALE BORDI ILLUMINATI AZZURRO
+   Tutto ciò che è selezionato, attivo o al passaggio del mouse (hover)
+   ha il bordo illuminato di azzurro/ciano sfumato ad alto contrasto.
+   ========================================================================== */
+
+:root {
+    --bg-color: #070B14;
+    --sidebar-bg: #050811;
+    --surface-color: #11192C;
+    --surface-border: #1C273E;
+    
+    --text-main: #F8FAFC;
+    --text-muted: #94A3B8;
+    --text-light: #F8FAFC;
+    
+    --primary: #006BFF;
+    --accent-cyan: #00D2FF;
+    --glow-cyan: 0 0 16px rgba(0, 210, 255, 0.4);
+    --glow-cyan-strong: 0 0 22px rgba(0, 210, 255, 0.5);
+}
+
+body {
+    background-color: #070B14 !important;
+    color: #F8FAFC !important;
+}
+
+.app-sidebar {
+    background: #050811 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.app-main-content {
+    background: #070B14 !important;
+    color: #F8FAFC !important;
+}
+
+/* 1. TUTTI I PANNELLI E CONTENITORI GENERALI SCURI */
+.panel,
+.crm-module-section,
+.crm-module-section > div,
+.scheda-pratica-card,
+div[style*="background: #ffffff"],
+div[style*="background:#ffffff"],
+div[style*="background: #f8fafc"],
+div[style*="background:#f8fafc"] {
+    background: #11192C !important;
+    border-color: #1C273E !important;
+    color: #F8FAFC !important;
+    box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* 2. CAMPI COMPILABILI UNIFORMI (#0B1222) CON BORDO ILLUMINATO SU HOVER & FOCUS */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="search"],
+input,
+select,
+textarea {
+    background-color: #0B1222 !important;
+    background: #0B1222 !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid #1E2D4A !important;
+    border-radius: 8px !important;
+    outline: none !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input:hover, select:hover, textarea:hover {
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.25) !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 16px rgba(0, 210, 255, 0.4) !important;
+    background-color: #0D162B !important;
+    background: #0D162B !important;
+}
+
+select option {
+    background-color: #0B1222 !important;
+    background: #0B1222 !important;
+    color: #FFFFFF !important;
+}
+
+/* 3. PULSANTI E SELEZIONI (HOVER & SELEZIONE = BORDO ILLUMINATO AZZURRO) */
+.sidebar-nav-btn {
+    transition: all 0.2s ease !important;
+    border: 1px solid transparent !important;
+}
+.sidebar-nav-btn:hover {
+    color: #FFFFFF !important;
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 14px rgba(0, 210, 255, 0.3) !important;
+}
+.sidebar-nav-btn.active {
+    color: #FFFFFF !important;
+    border: 1.5px solid #00D2FF !important;
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.42) !important;
+}
+
+/* Pulsanti Standard & Bottoni Azione */
+button, .btn {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+button:hover, .btn:hover {
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 14px rgba(0, 210, 255, 0.38) !important;
+}
+
+button.active,
+.btn.active,
+button[data-choice].active,
+button.interview-option-btn.active,
+.btn-toggle-option.active,
+.option-btn.active,
+button.selected,
+div.selected,
+.is-selected {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.42) !important;
+    color: #FFFFFF !important;
+}
+
+/* 4. CARD TIPOLOGIA MUTUO (Fase 1) */
+.mortgage-type-card {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    border-radius: 12px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+.mortgage-type-card strong {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    display: block !important;
+}
+.mortgage-type-card span {
+    color: #94A3B8 !important;
+    display: block !important;
+}
+
+.mortgage-type-card:hover {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.mortgage-type-card.active {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 22px rgba(0, 210, 255, 0.48) !important;
+}
+.mortgage-type-card.active strong {
+    color: #FFFFFF !important;
+}
+.mortgage-type-card.active span {
+    color: #A5F3FC !important;
+}
+
+/* 5. BANK CARDS & RISULTATI ANALISI */
+.bank-card {
+    background: #11192C !important;
+    border: 1.5px solid #1C273E !important;
+    color: #F8FAFC !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+.bank-card:hover {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.42) !important;
+    transform: translateY(-2px) !important;
+}
+
+.bank-card.approved {
+    border: 1.5px solid #10B981 !important;
+}
+.bank-card.approved:hover {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 22px rgba(0, 210, 255, 0.45) !important;
+}
+
+.bank-card.is-selected {
+    border: 2.5px solid #00D2FF !important;
+    box-shadow: 0 0 24px rgba(0, 210, 255, 0.5) !important;
+}
+
+/* 6. TABELLE (PRATICHE, CLIENTI, BANCHE, FILIALI) — BORDO ILLUMINATO SU HOVER & SELEZIONE */
+.crm-table-container {
+    background: #11192C !important;
+    border: 1px solid #1C273E !important;
+    border-radius: 14px !important;
+}
+
+.crm-table {
+    background: #11192C !important;
+    color: #F8FAFC !important;
+    border-collapse: separate !important;
+    border-spacing: 0 4px !important;
+}
+
+.crm-table th {
+    background: #141E34 !important;
+    color: #93C5FD !important;
+    font-weight: 700 !important;
+    border-bottom: 1.5px solid #1C273E !important;
+    padding: 12px 16px !important;
+}
+
+.crm-deal-card-row td,
+.crm-table tbody td {
+    background: #11192C !important;
+    color: #F8FAFC !important;
+    border-top: 1.5px solid #1C273E !important;
+    border-bottom: 1.5px solid #1C273E !important;
+    padding: 14px 16px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.crm-deal-card-row td:first-child,
+.crm-table tbody td:first-child {
+    border-left: 1.5px solid #1C273E !important;
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.crm-deal-card-row td:last-child,
+.crm-table tbody td:last-child {
+    border-right: 1.5px solid #1C273E !important;
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+/* HOVER SULLA RIGA DELLA TABELLA: SOLO BORDO ILLUMINATO AZZURRO SFUMATO */
+.crm-deal-card-row:hover td,
+.crm-table tbody tr:hover td {
+    background: #11192C !important;
+    border-top: 1.5px solid #00D2FF !important;
+    border-bottom: 1.5px solid #00D2FF !important;
+    color: #FFFFFF !important;
+}
+
+.crm-deal-card-row:hover td:first-child,
+.crm-table tbody tr:hover td:first-child {
+    border-left: 2.5px solid #00D2FF !important;
+    box-shadow: inset 3px 0 12px rgba(0, 210, 255, 0.35) !important;
+}
+
+.crm-deal-card-row:hover td:last-child,
+.crm-table tbody tr:hover td:last-child {
+    border-right: 2.5px solid #00D2FF !important;
+    box-shadow: inset -3px 0 12px rgba(0, 210, 255, 0.35) !important;
+}
+
+/* SELEZIONE RIGA CON CLICK: BORDO ILLUMINATO INTENSO */
+.crm-deal-card-row.is-selected td,
+.crm-table tbody tr.is-selected td {
+    background: #11192C !important;
+    border-top: 2px solid #00D2FF !important;
+    border-bottom: 2px solid #00D2FF !important;
+    color: #FFFFFF !important;
+}
+
+.crm-deal-card-row.is-selected td:first-child,
+.crm-table tbody tr.is-selected td:first-child {
+    border-left: 3.5px solid #00D2FF !important;
+    box-shadow: inset 5px 0 16px rgba(0, 210, 255, 0.5) !important;
+}
+
+.crm-deal-card-row.is-selected td:last-child,
+.crm-table tbody tr.is-selected td:last-child {
+    border-right: 3.5px solid #00D2FF !important;
+    box-shadow: inset -5px 0 16px rgba(0, 210, 255, 0.5) !important;
+}
+
+.crm-deal-card-row td strong, .crm-table td strong { color: #FFFFFF !important; }
+.crm-deal-card-row td span, .crm-table td span { color: #CBD5E1 !important; }
+
+/* 7. CARD MOBILE & CARDS DASHBOARD / KPI */
+.deal-mobile-card,
+.dash-kpi-card,
+.agenda-kpi-card,
+.agenda-event-card {
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+.deal-mobile-card:hover,
+.dash-kpi-card:hover,
+.agenda-kpi-card:hover,
+.agenda-event-card:hover {
+    border: 1.5px solid #00D2FF !important;
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+.deal-mobile-card.is-selected {
+    border: 2px solid #00D2FF !important;
+    box-shadow: 0 0 22px rgba(0, 210, 255, 0.48) !important;
+}
+
+/* 8. UPLOAD DROPZONE */
+.upload-area {
+    background: #080D1A !important;
+    border: 2px dashed rgba(0, 210, 255, 0.35) !important;
+    transition: all 0.2s ease !important;
+}
+.upload-area:hover,
+.upload-area.dragover {
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.35) !important;
+}
+
+
+/* ==========================================================================
+   ANAGRAFICA CLIENTI — BADGE NAZIONALITÀ E PRATICHE AD ALTO CONTRASTO (DARK)
+   Zero testo chiaro su sfondo chiaro: sfondi scuri traslucidi e colori nitidi
+   ========================================================================== */
+
+#clients-table-body td {
+    background: #11192C !important;
+    color: #F8FAFC !important;
+    border-top: 1.5px solid #1C273E !important;
+    border-bottom: 1.5px solid #1C273E !important;
+}
+
+#clients-table-body tr:hover td {
+    background: #11192C !important;
+    border-top: 1.5px solid #00D2FF !important;
+    border-bottom: 1.5px solid #00D2FF !important;
+    color: #FFFFFF !important;
+}
+
+#clients-table-body tr:hover td:first-child {
+    border-left: 2.5px solid #00D2FF !important;
+    box-shadow: inset 3px 0 12px rgba(0, 210, 255, 0.35) !important;
+}
+
+#clients-table-body tr:hover td:last-child {
+    border-right: 2.5px solid #00D2FF !important;
+    box-shadow: inset -3px 0 12px rgba(0, 210, 255, 0.35) !important;
+}
+
+/* Nomi Clienti e Reddito */
+#clients-table-body strong[style*="color: #0f172a"],
+#clients-table-body strong {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+#clients-table-body span[style*="color: #334155"] {
+    color: #CBD5E1 !important;
+    font-weight: 600 !important;
+}
+
+/* 1. BADGE NAZIONALITÀ (CITTADINANZA) */
+#clients-table-body span[style*="background: #f0fdf4"],
+#clients-table-body span[style*="background:#f0fdf4"],
+.kpi-badge.success {
+    background: rgba(16, 185, 129, 0.16) !important;
+    color: #10B981 !important;
+    border: 1px solid #10B981 !important;
+    border-radius: 100px !important;
+    padding: 0.3rem 0.85rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+}
+
+/* 2. BADGE PRATICHE COLLEGATE */
+#clients-table-body .kpi-badge.info,
+.kpi-badge.info {
+    background: rgba(0, 210, 255, 0.16) !important;
+    color: #00D2FF !important;
+    border: 1px solid #00D2FF !important;
+    border-radius: 100px !important;
+    padding: 0.3rem 0.85rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+}
+
+#clients-table-body .kpi-badge.warning,
+.kpi-badge.warning {
+    background: rgba(245, 158, 11, 0.16) !important;
+    color: #F59E0B !important;
+    border: 1px solid #F59E0B !important;
+    border-radius: 100px !important;
+    padding: 0.3rem 0.85rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 10px rgba(245, 158, 11, 0.25) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+}

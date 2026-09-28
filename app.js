@@ -3129,6 +3129,7 @@ window.switchCrmModule = function(targetModule) {
     const navEng = document.getElementById("crm-nav-engine");
     const navBanche = document.getElementById("crm-nav-banche");
     const navFiliali = document.getElementById("crm-nav-filiali");
+    const navDoc = document.getElementById("crm-nav-documenti");
     const navAgenda = document.getElementById("crm-nav-agenda");
     const navReports = document.getElementById("crm-nav-reports");
     const navImpostazioni = document.getElementById("crm-nav-impostazioni");
@@ -3137,6 +3138,7 @@ window.switchCrmModule = function(targetModule) {
     const modCli = document.getElementById("module-clienti");
     const modPra = document.getElementById("module-pratiche");
     const modSchedaPra = document.getElementById("module-scheda-pratica");
+    const modDoc = document.getElementById("module-documenti");
     const modEng = document.getElementById("module-engine");
     const modBanche = document.getElementById("module-banche");
     const modFiliali = document.getElementById("module-filiali");
@@ -3149,8 +3151,8 @@ window.switchCrmModule = function(targetModule) {
         item.classList.toggle("active", item.getAttribute("data-module") === targetModule);
     });
 
-    [navDash, navCli, navPra, navEng, navBanche, navFiliali, navAgenda, navReports, navImpostazioni].forEach(btn => btn?.classList.remove("active"));
-    [modDash, modCli, modPra, modSchedaPra, modEng, modBanche, modFiliali, modAgenda, modReports, modImpostazioni].forEach(mod => { if (mod) mod.style.display = "none"; });
+    [navDash, navCli, navPra, navEng, navBanche, navFiliali, navDoc, navAgenda, navReports, navImpostazioni].forEach(btn => btn?.classList.remove("active"));
+    [modDash, modCli, modPra, modSchedaPra, modDoc, modEng, modBanche, modFiliali, modAgenda, modReports, modImpostazioni].forEach(mod => { if (mod) mod.style.display = "none"; });
     
     // Close mobile sidebar
     const sidebar = document.querySelector(".app-sidebar");
@@ -3164,6 +3166,10 @@ window.switchCrmModule = function(targetModule) {
         if (modCli) modCli.style.display = "block";
         if (window.syncClientsWithDeals) window.syncClientsWithDeals();
         renderCrmClients();
+        } else if (targetModule === "documenti") {
+        if (navDoc) navDoc.classList.add("active");
+        if (modDoc) modDoc.style.display = "block";
+        if (window.initDocumentiModule) window.initDocumentiModule(window.currentDocDealId);
     } else if (targetModule === "pratiche") {
         if (navPra) navPra.classList.add("active");
         if (modPra) modPra.style.display = "block";
@@ -4115,6 +4121,11 @@ function renderCrmDeals() {
     crmDeals.forEach(d => {
         const tr = document.createElement("tr");
         tr.className = "crm-deal-card-row";
+        tr.onclick = function(e) {
+            if (e.target.closest('button') || e.target.closest('a')) return;
+            document.querySelectorAll('.crm-deal-card-row.is-selected').forEach(el => el.classList.remove('is-selected'));
+            tr.classList.add('is-selected');
+        };
         const loanStr = typeof d.mutuo === "number" ? d.mutuo.toLocaleString('it-IT') : (d.mutuo || "--");
         const rataStr = typeof d.rata === "number" ? d.rata.toFixed(2) : (d.rata || "--");
         const statusBadgeHtml = window.getDealStatusBadgeHtml(d);
@@ -4371,40 +4382,22 @@ window.renderSchedaPratica = function(deal) {
         });
     }
 
-    // Card 4: Motivi Rifiuto KO
-    const motiviGrid = document.getElementById("sp-motivi-grid");
+    // Banner Allerta Rifiuto (KO)
     const isRifiutata = !!(deal.avanzamento && deal.avanzamento.rifiutata && deal.avanzamento.rifiutata.isRifiutata);
-    const selectedMotivo = isRifiutata ? deal.avanzamento.rifiutata.motivo : null;
+    const rejBanner = document.getElementById("sp-rejection-alert-banner");
+    const rejBannerTitle = document.getElementById("sp-rejection-banner-title");
+    const rejBannerDesc = document.getElementById("sp-rejection-banner-desc");
 
-    const activeTag = document.getElementById("sp-rejection-active-tag");
-    if (activeTag) activeTag.style.display = isRifiutata ? "block" : "none";
-
-    const annullaBox = document.getElementById("sp-annulla-rifiuto-box");
-    if (annullaBox) annullaBox.style.display = isRifiutata ? "block" : "none";
-
-    if (motiviGrid) {
-        motiviGrid.innerHTML = "";
-        window.MOTIVI_KO_CONFIG.forEach(m => {
-            const isSelected = isRifiutata && selectedMotivo === m.key;
-            const btn = document.createElement("button");
-            btn.type = "button";
-            btn.className = `scheda-ko-btn ${isSelected ? 'active-ko' : ''}`;
-            btn.onclick = () => window.impostaPraticaRifiutata(deal.id, m.key);
-
-            btn.innerHTML = `
-                <div class="scheda-ko-title">
-                    <span>${isSelected ? '🔴' : '⚪'}</span>
-                    <strong>${m.title}</strong>
-                </div>
-                <div class="scheda-ko-desc">${m.desc}</div>
-                ${isSelected && deal.avanzamento.rifiutata.date ? `
-                    <div style="font-size: 0.7rem; color: #dc2626; font-weight: 700; margin-top: 0.3rem;">
-                        📅 Rifiutata il: ${window.formatDataOra(deal.avanzamento.rifiutata.date)}
-                    </div>
-                ` : ''}
-            `;
-            motiviGrid.appendChild(btn);
-        });
+    if (rejBanner) {
+        if (isRifiutata) {
+            rejBanner.style.display = "block";
+            const motivoLbl = deal.avanzamento.rifiutata.motivoLabel || deal.avanzamento.rifiutata.motivo || "Bocciatura Banca";
+            const dataRej = deal.avanzamento.rifiutata.date ? window.formatDataOra(deal.avanzamento.rifiutata.date) : "--";
+            if (rejBannerTitle) rejBannerTitle.innerText = "⚠️ Pratica Rifiutata (KO): Motivo " + motivoLbl;
+            if (rejBannerDesc) rejBannerDesc.innerText = "Registrata il " + dataRej + ". Clicca per gestire le strategie di salvataggio o riaprire nel Wizard.";
+        } else {
+            rejBanner.style.display = "none";
+        }
     }
 
     // Bottom Card: Timeline Resoconto Storico
@@ -4872,7 +4865,7 @@ window.generateDocumentChecklist = function(deal) {
 /**
  * Renderizza la sezione interattiva Scheda Documenti in Scheda Pratica
  */
-window.renderSchedaDocumenti = function(deal) {
+window.renderSchedaDocumenti = function(deal, targetContainerId = "sp-documenti-container") {
     const container = document.getElementById("sp-documenti-grid");
     if (!container || !deal) return;
 
@@ -13037,3 +13030,231 @@ if (document.readyState === "loading") {
     initApp();
 }
 
+
+
+// ==========================================================================
+// 📑 MODULO LISTA & CHECKLIST DOCUMENTI (AUTONOMO A SÉ STANTE)
+// ==========================================================================
+window.currentDocDealId = null;
+
+window.initDocumentiModule = function(targetDealId = null) {
+    const selector = document.getElementById("doc-module-deal-selector");
+    const emptyBox = document.getElementById("doc-module-empty-selection");
+    const activeBox = document.getElementById("doc-module-active-checklist");
+    const dealsGrid = document.getElementById("doc-module-deals-grid-selection");
+    const summaryPill = document.getElementById("doc-module-deal-summary-pill");
+
+    if (!Array.isArray(crmDeals) || crmDeals.length === 0) {
+        if (selector) selector.innerHTML = '<option value="">Nessuna pratica salvata</option>';
+        if (emptyBox) {
+            emptyBox.style.display = "block";
+            emptyBox.innerHTML = `
+                <div style="font-size: 3rem; margin-bottom: 0.75rem;">📁</div>
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">Nessuna pratica presente in archivio</h3>
+                <p style="font-size: 0.88rem; color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto;">
+                    Crea una nuova pratica dal wizard o salva un preventivo per generare e gestire automaticamente la checklist documenti.
+                </p>
+                <button type="button" class="btn btn-primary" onclick="window.initNuovaPratica()" style="padding: 0.65rem 1.4rem; font-weight: 700; border-radius: 8px;">➕ Crea Nuova Pratica</button>
+            `;
+        }
+        if (activeBox) activeBox.style.display = "none";
+        if (summaryPill) summaryPill.style.display = "none";
+        return;
+    }
+
+    // Populate Selector Options
+    if (selector) {
+        selector.innerHTML = '<option value="">-- Seleziona una pratica --</option>' + crmDeals.map(d => {
+            const loanStr = typeof d.mutuo === "number" ? d.mutuo.toLocaleString('it-IT') + ' €' : (d.mutuo || '--');
+            return `<option value="${d.id}" ${String(d.id) === String(targetDealId) ? 'selected' : ''}>#${d.id} - ${d.cliente || 'Cliente'} (${d.banca || 'Banca'} - ${loanStr})</option>`;
+        }).join('');
+    }
+
+    // If targetDealId passed, select and render
+    if (targetDealId) {
+        window.currentDocDealId = String(targetDealId);
+        window.selectDealForDocumentModule(targetDealId);
+        return;
+    }
+
+    // If no deal selected, show selection grid
+    if (emptyBox && dealsGrid) {
+        emptyBox.style.display = "block";
+        if (activeBox) activeBox.style.display = "none";
+        if (summaryPill) summaryPill.style.display = "none";
+
+        dealsGrid.innerHTML = crmDeals.map(d => {
+            const loanStr = typeof d.mutuo === "number" ? d.mutuo.toLocaleString('it-IT') + ' €' : (d.mutuo || '--');
+            const bankLogo = (typeof window.getBankLogoHtml === "function") ? window.getBankLogoHtml(d.banca) : '';
+            return `
+                <div onclick="window.selectDealForDocumentModule('${d.id}')" class="card" style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem; cursor: pointer; transition: all 0.2s ease;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                        <div>
+                            <span style="font-size: 0.72rem; color: #00D2FF; font-weight: 800; display: block;">PRATICA #${d.id}</span>
+                            <strong style="color: #FFFFFF; font-size: 1.05rem; display: block;">${d.cliente || 'Cliente'}</strong>
+                        </div>
+                        <span style="font-size: 0.75rem; background: rgba(0, 210, 255, 0.15); color: #00D2FF; border: 1px solid #00D2FF; padding: 0.2rem 0.6rem; border-radius: 6px; font-weight: 700;">
+                            ${d.comune || 'Immobile'}
+                        </span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1C273E; padding-top: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem;">
+                            ${bankLogo}
+                            <strong style="color: #93C5FD; font-size: 0.85rem;">${d.banca || 'N.D.'}</strong>
+                        </div>
+                        <strong style="color: #10B981; font-size: 0.95rem;">${loanStr}</strong>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+};
+
+window.selectDealForDocumentModule = function(dealId) {
+    if (!dealId) {
+        window.currentDocDealId = null;
+        window.initDocumentiModule(null);
+        return;
+    }
+
+    const deal = crmDeals.find(d => String(d.id) === String(dealId));
+    if (!deal) return;
+
+    window.currentDocDealId = String(deal.id);
+    const selector = document.getElementById("doc-module-deal-selector");
+    if (selector) selector.value = String(deal.id);
+
+    const emptyBox = document.getElementById("doc-module-empty-selection");
+    const activeBox = document.getElementById("doc-module-active-checklist");
+    const summaryPill = document.getElementById("doc-module-deal-summary-pill");
+    const container = document.getElementById("doc-module-checklist-container");
+
+    if (emptyBox) emptyBox.style.display = "none";
+    if (activeBox) activeBox.style.display = "block";
+
+    const loanStr = typeof deal.mutuo === "number" ? deal.mutuo.toLocaleString('it-IT') + ' €' : (deal.mutuo || '--');
+    if (summaryPill) {
+        summaryPill.style.display = "inline-flex";
+        summaryPill.innerHTML = `
+            <span style="color: #94A3B8; font-size: 0.78rem;">Cliente:</span>
+            <strong style="color: #FFFFFF; font-size: 0.85rem;">${deal.cliente || 'Cliente'}</strong>
+            <span style="color: #1C273E;">|</span>
+            <span style="color: #94A3B8; font-size: 0.78rem;">Banca:</span>
+            <strong style="color: #00D2FF; font-size: 0.85rem;">${deal.banca || 'N.D.'}</strong>
+            <span style="color: #1C273E;">|</span>
+            <span style="color: #94A3B8; font-size: 0.78rem;">Importo:</span>
+            <strong style="color: #10B981; font-size: 0.85rem;">${loanStr}</strong>
+        `;
+    }
+
+    if (container && typeof window.renderSchedaDocumenti === "function") {
+        window.currentSchedaDealId = String(deal.id);
+        window.renderSchedaDocumenti(deal, "doc-module-checklist-container");
+    }
+};
+
+// Rewrite apriDocumentiPratica to switch cleanly to module-documenti with target deal
+window.apriDocumentiPratica = function(dealId) {
+    if (dealId) {
+        window.currentDocDealId = String(dealId);
+        window.switchCrmModule("documenti");
+        window.selectDealForDocumentModule(dealId);
+    } else {
+        window.currentDocDealId = null;
+        window.switchCrmModule("documenti");
+        window.initDocumentiModule(null);
+    }
+};
+
+// ==========================================================================
+// ❌ SCHERMATA UNICA DEDICATA: PRATICA RIFIUTATA (KO)
+// ==========================================================================
+window.apriSchermataPraticaRifiutata = function(dealId = null) {
+    const targetId = dealId || window.currentSchedaDealId;
+    const deal = crmDeals.find(d => String(d.id) === String(targetId));
+    if (!deal) return;
+
+    window.initAvanzamentoDeal(deal);
+    const modal = document.getElementById("modal-pratica-rifiutata");
+    const modalTitle = document.getElementById("modal-ko-deal-title");
+    const grid = document.getElementById("modal-ko-motivi-grid");
+    const btnAnnulla = document.getElementById("btn-modal-annulla-ko");
+
+    if (modalTitle) {
+        modalTitle.innerText = `Pratica #${deal.id} - ${deal.cliente || 'Cliente'} (${deal.banca || 'Banca'})`;
+    }
+
+    const isRifiutata = !!(deal.avanzamento && deal.avanzamento.rifiutata && deal.avanzamento.rifiutata.isRifiutata);
+    const currentMotivo = isRifiutata ? deal.avanzamento.rifiutata.motivo : null;
+
+    if (btnAnnulla) {
+        btnAnnulla.style.display = isRifiutata ? "inline-flex" : "none";
+    }
+
+    if (grid) {
+        grid.innerHTML = "";
+        window.MOTIVI_KO_CONFIG.forEach(m => {
+            const isSelected = isRifiutata && currentMotivo === m.key;
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = `scheda-ko-btn ${isSelected ? 'active-ko' : ''}`;
+            btn.style.cssText = `
+                background: ${isSelected ? 'rgba(239, 68, 68, 0.15)' : '#0D1424'};
+                border: 1.5px solid ${isSelected ? '#EF4444' : '#1C273E'};
+                box-shadow: ${isSelected ? '0 0 16px rgba(239, 68, 68, 0.4)' : 'none'};
+                border-radius: 10px;
+                padding: 1rem;
+                text-align: left;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            `;
+            btn.onclick = () => {
+                window.impostaPraticaRifiutata(deal.id, m.key);
+                window.apriSchermataPraticaRifiutata(deal.id);
+            };
+
+            btn.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.35rem;">
+                    <span>${isSelected ? '🔴' : '⚪'}</span>
+                    <strong style="color: #FFFFFF; font-size: 0.92rem;">${m.title}</strong>
+                </div>
+                <div style="font-size: 0.76rem; color: #94A3B8; line-height: 1.35;">${m.desc}</div>
+                ${isSelected && deal.avanzamento.rifiutata.date ? `
+                    <div style="font-size: 0.72rem; color: #EF4444; font-weight: 700; margin-top: 0.45rem;">
+                        📅 Registrato il: ${window.formatDataOra(deal.avanzamento.rifiutata.date)}
+                    </div>
+                ` : ''}
+            `;
+            grid.appendChild(btn);
+        });
+    }
+
+    if (modal) modal.style.display = "flex";
+};
+
+window.chiudiModalPraticaRifiutata = function() {
+    const modal = document.getElementById("modal-pratica-rifiutata");
+    if (modal) modal.style.display = "none";
+    if (window.currentSchedaDealId) {
+        const deal = crmDeals.find(d => String(d.id) === String(window.currentSchedaDealId));
+        if (deal && typeof window.renderSchedaPratica === "function") {
+            window.renderSchedaPratica(deal);
+        }
+    }
+};
+
+window.annullaPraticaRifiutataDaModal = function() {
+    if (!window.currentSchedaDealId) return;
+    window.annullaPraticaRifiutata(window.currentSchedaDealId);
+    window.chiudiModalPraticaRifiutata();
+};
+
+window.riposizionaPraticaRifiutata = function() {
+    window.chiudiModalPraticaRifiutata();
+    if (window.currentSchedaDealId && typeof window.modificaPreventivo === "function") {
+        window.modificaPreventivo(window.currentSchedaDealId);
+        if (typeof window.showToast === "function") {
+            window.showToast("🚀 Riapertura pratica nel Wizard per trovare banche alternative!", "info");
+        }
+    }
+};

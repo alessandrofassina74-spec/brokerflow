@@ -19,6 +19,9 @@
             transition: filter 0.15s ease-in-out;
         }
     </style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css?v=20260925_docs_v4">
     <script src="auth.js?v=20260925_docs_v4"></script>
     <script>
@@ -540,7 +543,7 @@
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-filiali" data-switch-module="filiali" onclick="switchCrmModule('filiali')">
                         <span style="font-size: 1.1rem;">🏢</span> Filiali
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-documenti" onclick="window.apriDocumentiPratica()">
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-documenti" data-switch-module="documenti" onclick="switchCrmModule('documenti')">
                         <span style="font-size: 1.1rem;">📄</span> Lista Documenti
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-agenda" data-switch-module="agenda" onclick="switchCrmModule('agenda')">
@@ -922,31 +925,118 @@
             </div>
         </div>
 
+        
+        <!-- MODULE: LISTA & CHECKLIST DOCUMENTI (SEZIONE AUTONOMA) -->
+        <div id="module-documenti" class="crm-module-section" style="display: none;">
+            
+            <!-- Header Section -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <h2 style="font-size: 1.6rem; font-weight: 800; color: #FFFFFF; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>📑</span> Lista &amp; Checklist Documenti
+                    </h2>
+                    <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 0.2rem;">
+                        Generazione e gestione documentale profilata per cliente e per istituto bancario.
+                    </p>
+                </div>
+                <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                    <button type="button" class="btn btn-primary" onclick="window.inviaChecklistWhatsApp()" style="background: #25D366; color: #ffffff; border: none; font-size: 0.82rem; font-weight: 700; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 8px rgba(37,211,102,0.3);">
+                        📲 Invia su WhatsApp
+                    </button>
+                    <button type="button" class="btn" onclick="window.copiaChecklistTesto()" style="background: #0D1424; border: 1px solid #1C273E; color: #F8FAFC; font-size: 0.82rem; font-weight: 600; padding: 0.55rem 0.95rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
+                        📋 Copia Testo
+                    </button>
+                    <button type="button" class="btn" onclick="window.stampaChecklistDocumenti()" style="background: #0D1424; border: 1px solid #1C273E; color: #F8FAFC; font-size: 0.82rem; font-weight: 600; padding: 0.55rem 0.95rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
+                        🖨️ Stampa Checklist
+                    </button>
+                </div>
+            </div>
+
+            <!-- SELETTORE PRATICA / BARRA DI STATO -->
+            <div style="background: #11192C; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; flex: 1;">
+                    <div style="min-width: 240px;">
+                        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">Seleziona Pratica</label>
+                        <select id="doc-module-deal-selector" onchange="window.selectDealForDocumentModule(this.value)" style="width: 100%; max-width: 380px; padding: 0.6rem 0.85rem; font-size: 0.9rem; font-weight: 700;">
+                            <!-- Populated dynamically with all deals -->
+                        </select>
+                    </div>
+                    <div id="doc-module-deal-summary-pill" style="display: none; align-items: center; gap: 0.75rem; background: #090E1B; border: 1px solid #1E2D4A; padding: 0.45rem 0.85rem; border-radius: 10px;">
+                        <!-- Summary tags -->
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn" onclick="switchCrmModule('pratiche')" style="background: #0D1424; border: 1px solid #1C273E; color: #00D2FF; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 0.9rem; border-radius: 8px;">
+                        📁 Vai all'Elenco Pratiche ➔
+                    </button>
+                </div>
+            </div>
+
+            <!-- VISTA A: NESSUNA PRATICA SELEZIONATA -->
+            <div id="doc-module-empty-selection" style="display: none; background: #11192C; border: 1.5px solid #1C273E; border-radius: 16px; padding: 3rem 2rem; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.4);">
+                <div style="font-size: 3rem; margin-bottom: 0.75rem;">📑</div>
+                <h3 style="font-size: 1.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.5rem;">Seleziona una pratica per visualizzare la documentazione</h3>
+                <p style="font-size: 0.88rem; color: #94A3B8; max-width: 600px; margin: 0 auto 1.5rem auto;">
+                    Scegli una pratica attiva tra quelle salvate per consultare la checklist dei documenti anagrafici, reddituali e bancari specifici.
+                </p>
+                <div id="doc-module-deals-grid-selection" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; max-width: 900px; margin: 0 auto; text-align: left;">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+
+            <!-- VISTA B: CHECKLIST DETTAGLIATA DELLA PRATICA SELEZIONATA -->
+            <div id="doc-module-active-checklist" style="display: block;">
+                <div id="doc-module-checklist-container"></div>
+            </div>
+
+        </div>
+
         <!-- MODULE: SCHEDA DEDICATA PRATICA & AVANZAMENTO BANCARIO -->
         <div id="module-scheda-pratica" class="crm-module-section" style="display: none;">
             
             <!-- Breadcrumb & Top Action Header -->
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
                 <div>
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.3rem;">
-                        <a href="javascript:void(0)" onclick="switchCrmModule('pratiche')" style="color: #0052ff; text-decoration: none; font-weight: 600;">📁 Pratiche</a>
-                        › <strong style="color: #0f172a;" id="sp-breadcrumb-title">Scheda Pratica #--</strong>
+                    <div style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0.3rem;">
+                        <a href="javascript:void(0)" onclick="switchCrmModule('pratiche')" style="color: #00D2FF; text-decoration: none; font-weight: 600;">📁 Pratiche</a>
+                        › <strong style="color: #FFFFFF;" id="sp-breadcrumb-title">Scheda Pratica #--</strong>
                     </div>
                     <div style="display: flex; align-items: center; gap: 0.75rem;">
-                        <h2 style="font-size: 1.75rem; font-weight: 800; color: #0f172a; margin: 0;" id="sp-header-title">Scheda Pratica</h2>
+                        <h2 style="font-size: 1.75rem; font-weight: 800; color: #FFFFFF; margin: 0;" id="sp-header-title">Scheda Pratica</h2>
                         <span id="sp-global-status-badge" class="badge-status" style="font-size: 0.85rem; padding: 0.3rem 0.8rem; font-weight: 700;">Caricata in Banca</span>
                     </div>
                 </div>
                 <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
-                    <button type="button" class="btn" onclick="switchCrmModule('pratiche')" style="background: #ffffff; border: 1px solid #cbd5e1; color: #334155; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
-                        ← Torna a Elenco Pratiche
+                    <button type="button" class="btn" onclick="switchCrmModule('pratiche')" style="background: #0D1424; border: 1.5px solid #1C273E; color: #F8FAFC; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                        ← Torna a Pratiche
                     </button>
-                    <button type="button" class="btn" onclick="if(window.currentSchedaDealId) window.modificaPreventivo(window.currentSchedaDealId)" style="background: #ffffff; border: 1px solid #cbd5e1; color: #334155; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
-                        ✏️ Modifica Dati Wizard
+                    <button type="button" class="btn" onclick="if(window.currentSchedaDealId) window.apriDocumentiPratica(window.currentSchedaDealId)" style="background: #0D1424; border: 1.5px solid #00D2FF; color: #00D2FF; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 0 12px rgba(0,210,255,0.2);">
+                        📑 Lista Documenti
                     </button>
-                    <button type="button" class="btn btn-primary" onclick="window.stampaSchedaPratica()" style="background: #071B3A; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.1rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                    <button type="button" class="btn" onclick="if(window.currentSchedaDealId) window.modificaPreventivo(window.currentSchedaDealId)" style="background: #0D1424; border: 1.5px solid #1C273E; color: #F8FAFC; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                        ✏️ Modifica Wizard
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="window.stampaSchedaPratica()" style="background: #00D2FF; color: #070B14; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.1rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
                         🖨️ Stampa Scheda
                     </button>
+                </div>
+            </div>
+
+            <!-- BANNER ALLERTA RIFIUTO (Visible only if practice is KO) -->
+            <div id="sp-rejection-alert-banner" style="display: none; background: rgba(239, 68, 68, 0.12); border: 1.5px solid #EF4444; border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 0 15px rgba(239, 68, 68, 0.25);">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem;">
+                        <span style="font-size: 1.4rem;">❌</span>
+                        <div>
+                            <strong style="color: #EF4444; font-size: 0.98rem; display: block;" id="sp-rejection-banner-title">Esito: Pratica Rifiutata (KO)</strong>
+                            <span style="color: #CBD5E1; font-size: 0.8rem;" id="sp-rejection-banner-desc">Motivo registrato e cronologia aggiornata.</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <button type="button" class="btn" onclick="window.apriSchermataPraticaRifiutata(window.currentSchedaDealId)" style="background: #EF4444; color: #FFFFFF; font-weight: 700; font-size: 0.8rem; padding: 0.45rem 0.9rem; border-radius: 7px; border: none; cursor: pointer;">
+                            ⚙️ Gestisci / Riposiziona Esito KO
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -957,93 +1047,95 @@
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     
                     <!-- Card 1: Dati Pratica & Cliente -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.8rem;">
+                    <div class="card" style="background: #11192C; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.2rem; border-bottom: 1px solid #1C273E; padding-bottom: 0.8rem;">
                             <div>
-                                <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; display: block;">Intestatario Pratica</span>
-                                <h3 style="font-size: 1.35rem; font-weight: 800; color: #071B3A; margin: 0.15rem 0 0 0;" id="sp-cliente-nome">--</h3>
+                                <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #94A3B8; display: block;">Intestatario Pratica</span>
+                                <h3 style="font-size: 1.35rem; font-weight: 800; color: #FFFFFF; margin: 0.15rem 0 0 0;" id="sp-cliente-nome">--</h3>
                             </div>
                             <div style="text-align: right;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block; font-weight: 700;">ID PRATICA</span>
-                                <strong style="font-size: 1.1rem; color: #006BFF;" id="sp-deal-id-display">#--</strong>
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block; font-weight: 700;">ID PRATICA</span>
+                                <strong style="font-size: 1.1rem; color: #00D2FF;" id="sp-deal-id-display">#--</strong>
                             </div>
                         </div>
 
                         <!-- Card 1 Details List -->
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem;">
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">Comune Immobile</span>
-                                <strong style="font-size: 0.95rem; color: #0f172a;" id="sp-comune-val">--</strong>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Comune Immobile</span>
+                                <strong style="font-size: 0.95rem; color: #FFFFFF;" id="sp-comune-val">--</strong>
                             </div>
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">Finalità / Scopo</span>
-                                <strong style="font-size: 0.95rem; color: #0f172a;" id="sp-scopo-val">Prima Casa</strong>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Finalità / Scopo</span>
+                                <strong style="font-size: 0.95rem; color: #FFFFFF;" id="sp-scopo-val">Prima Casa</strong>
                             </div>
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">📱 Cellulare / WhatsApp</span>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">📱 Cellulare / WhatsApp</span>
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.15rem;">
-                                    <strong style="font-size: 0.92rem; color: #0f172a;" id="sp-telefono-val">--</strong>
-                                    <button type="button" onclick="window.modificaContattiPratica(window.currentSchedaDealId, 'telefono')" style="background: none; border: none; font-size: 0.75rem; cursor: pointer; color: #006BFF; padding: 0 0.2rem;" title="Modifica Cellulare">✏️</button>
+                                    <strong style="font-size: 0.92rem; color: #FFFFFF;" id="sp-telefono-val">--</strong>
+                                    <button type="button" onclick="window.modificaContattiPratica(window.currentSchedaDealId, 'telefono')" style="background: none; border: none; font-size: 0.75rem; cursor: pointer; color: #00D2FF; padding: 0 0.2rem;" title="Modifica Cellulare">✏️</button>
                                 </div>
                             </div>
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">✉️ Email</span>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">✉️ Email</span>
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.15rem;">
-                                    <strong style="font-size: 0.92rem; color: #0f172a; word-break: break-all;" id="sp-email-val">--</strong>
-                                    <button type="button" onclick="window.modificaContattiPratica(window.currentSchedaDealId, 'email')" style="background: none; border: none; font-size: 0.75rem; cursor: pointer; color: #006BFF; padding: 0 0.2rem;" title="Modifica Email">✏️</button>
+                                    <strong style="font-size: 0.92rem; color: #FFFFFF; word-break: break-all;" id="sp-email-val">--</strong>
+                                    <button type="button" onclick="window.modificaContattiPratica(window.currentSchedaDealId, 'email')" style="background: none; border: none; font-size: 0.75rem; cursor: pointer; color: #00D2FF; padding: 0 0.2rem;" title="Modifica Email">✏️</button>
                                 </div>
                             </div>
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">Data Creazione</span>
-                                <strong style="font-size: 0.88rem; color: #334155;" id="sp-created-date">--</strong>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">📅 Data Creazione Preventivo</span>
+                                <strong style="font-size: 0.85rem; color: #CBD5E1;" id="sp-created-date">--</strong>
                             </div>
-                            <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #f1f5f9;">
-                                <span style="font-size: 0.72rem; color: #64748b; display: block;">Caricamento in Banca</span>
-                                <strong style="font-size: 0.88rem; color: #006BFF;" id="sp-caricata-date">--</strong>
+                            <div style="background: #0D1424; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid #1C273E;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">🏛️ Data Caricamento Banca</span>
+                                <strong style="font-size: 0.85rem; color: #00D2FF;" id="sp-caricata-date">--</strong>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Card 2: Banca & Condizioni Economiche -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.8rem;">
+                    <!-- Card 2: Banca Proposta & Condizioni Economiche -->
+                    <div class="card" style="background: #11192C; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; border-bottom: 1px solid #1C273E; padding-bottom: 0.8rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                <div id="sp-banca-logo-box" style="width: 44px; height: 44px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; overflow: hidden;">
+                                <div id="sp-banca-logo-box" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #0D1424; border-radius: 8px; border: 1px solid #1C273E; overflow: hidden;">
                                     🏛️
                                 </div>
                                 <div>
-                                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; display: block;">Istituto Bancario Proposto</span>
-                                    <h4 style="font-size: 1.2rem; font-weight: 800; color: #006BFF; margin: 0;" id="sp-banca-name">--</h4>
+                                    <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #94A3B8; display: block;">Istituto Bancario Assegnato</span>
+                                    <h3 style="font-size: 1.25rem; font-weight: 800; color: #00D2FF; margin: 0.1rem 0 0 0;" id="sp-banca-name">--</h3>
                                 </div>
                             </div>
-                            <span id="sp-banca-product-pill" style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 0.3rem 0.7rem; border-radius: 6px;">Prodotto Standard</span>
+                            <span id="sp-banca-product-pill" style="background: rgba(0, 210, 255, 0.15); color: #00D2FF; border: 1px solid #00D2FF; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px;">
+                                Mutuo Standard
+                            </span>
                         </div>
 
-                        <!-- Condizioni Economiche Grid -->
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem;">
-                            <div style="background: #f0f7ff; border: 1px solid #bfdbfe; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #1e40af; font-weight: 600; display: block;">Importo Mutuo Richiesto</span>
-                                <strong style="font-size: 1.25rem; color: #071B3A; font-weight: 800; display: block; margin-top: 0.15rem;" id="sp-cond-mutuo">-- €</strong>
+                        <!-- Card 2 Details Grid -->
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;">
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Importo Mutuo</span>
+                                <strong style="font-size: 1.15rem; color: #FFFFFF; font-weight: 800;" id="sp-cond-mutuo">-- €</strong>
                             </div>
-                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; display: block;">Valore Immobile</span>
-                                <strong style="font-size: 1.25rem; color: #334155; font-weight: 800; display: block; margin-top: 0.15rem;" id="sp-cond-valore">-- €</strong>
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Valore Immobile</span>
+                                <strong style="font-size: 1.15rem; color: #FFFFFF; font-weight: 800;" id="sp-cond-valore">-- €</strong>
                             </div>
-                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; display: block;">LTV (Loan-To-Value)</span>
-                                <strong style="font-size: 1.2rem; color: #334155; font-weight: 800; display: block; margin-top: 0.15rem;" id="sp-cond-ltv">--%</strong>
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">LTV</span>
+                                <strong style="font-size: 1.15rem; color: #00D2FF; font-weight: 800;" id="sp-cond-ltv">--%</strong>
                             </div>
-                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; display: block;">Durata Mutuo</span>
-                                <strong style="font-size: 1.2rem; color: #334155; font-weight: 800; display: block; margin-top: 0.15rem;" id="sp-cond-durata">-- anni</strong>
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Durata</span>
+                                <strong style="font-size: 1.1rem; color: #FFFFFF; font-weight: 800;" id="sp-cond-durata">-- Anni</strong>
                             </div>
-                            <div style="background: #ecfdf5; border: 1px solid #a7f3d0; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #065f46; font-weight: 600; display: block;">Rata Stimata Mensile</span>
-                                <strong style="font-size: 1.3rem; color: #047857; font-weight: 800; display: block; margin-top: 0.15rem;" id="sp-cond-rata">-- €/m</strong>
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Rata Stimata</span>
+                                <strong style="font-size: 1.2rem; color: #10B981; font-weight: 900;" id="sp-cond-rata">-- €/m</strong>
                             </div>
-                            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 0.9rem; border-radius: 8px;">
-                                <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; display: block;">Tasso Applicato / Tipologia</span>
-                                <strong style="font-size: 1.05rem; color: #334155; font-weight: 700; display: block; margin-top: 0.15rem;" id="sp-cond-tasso">Fisso</strong>
+                            <div style="background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1px solid #1C273E; text-align: center;">
+                                <span style="font-size: 0.72rem; color: #94A3B8; display: block;">Tasso Applicato</span>
+                                <strong style="font-size: 1.05rem; color: #CBD5E1; font-weight: 700;" id="sp-cond-tasso">--</strong>
                             </div>
                         </div>
                     </div>
@@ -1054,14 +1146,14 @@
                 <div style="display: flex; flex-direction: column; gap: 1.25rem;">
                     
                     <!-- Card 3: STATI DI AVANZAMENTO DELLA PRATICA -->
-                    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                    <div class="card" style="background: #11192C; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.15rem; font-weight: 800; color: #071B3A; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-                                <span>🚀</span> Stati di Avanzamento
+                            <h3 style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>🚀</span> Fasi di Avanzamento
                             </h3>
-                            <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Selezione Singola & Date</span>
+                            <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 600;">Selezione Singola & Date</span>
                         </div>
-                        <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem;">
+                        <p style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 1.25rem;">
                             Accendi i singoli pulsanti per avanzare la pratica. Alla selezione viene registrata la data di passaggio per il resoconto storico.
                         </p>
 
@@ -1069,31 +1161,12 @@
                         <div style="display: flex; flex-direction: column; gap: 0.75rem;" id="sp-stati-container">
                             <!-- Injected dynamically via JS: Presentata, Perizia, Ricezione perizia, Delibera reddituale, Delibera finale, Rogito -->
                         </div>
-                    </div>
 
-                    <!-- Card 4: AREA PRATICA RIFIUTATA (KO) -->
-                    <div id="sp-rejection-card" style="background: #fff8f8; border: 1.5px solid #fed7d7; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.04);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                            <h3 style="font-size: 1.1rem; font-weight: 800; color: #991b1b; margin: 0; display: flex; align-items: center; gap: 0.45rem;">
-                                <span>❌</span> Area Pratica Rifiutata
-                            </h3>
-                            <div id="sp-rejection-active-tag" style="display: none;">
-                                <span style="background: #ef4444; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 6px; text-transform: uppercase;">Pratica Rifiutata</span>
-                            </div>
-                        </div>
-                        <p style="font-size: 0.8rem; color: #7f1d1d; margin-bottom: 1rem;">
-                            Se la pratica è stata respinta, seleziona il motivo del rifiuto per registrarlo e aggiornare lo stato:
-                        </p>
-
-                        <!-- GRID 6 MOTIVI KO A PULSANTE -->
-                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem;" id="sp-motivi-grid">
-                            <!-- Injected dynamically via JS: rata reddito, sussistenza, fuori policy, datori di lavoro, segnalato, perizia KO -->
-                        </div>
-
-                        <!-- Ripristina / Annulla Rifiuto -->
-                        <div id="sp-annulla-rifiuto-box" style="display: none; margin-top: 1rem; padding-top: 0.85rem; border-top: 1px dashed #fca5a5; text-align: right;">
-                            <button type="button" class="btn" onclick="window.annullaPraticaRifiutata(window.currentSchedaDealId)" style="background: #ffffff; border: 1px solid #ef4444; color: #dc2626; font-size: 0.78rem; font-weight: 700; padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
-                                🔄 Annulla Stato Rifiutata & Ripristina Pratica
+                        <!-- Bottone Gestione / Segna Rifiuto (KO) -->
+                        <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #1C273E; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                            <span style="font-size: 0.78rem; color: #94A3B8;">Esito Negativo o Bocciatura Banca?</span>
+                            <button type="button" class="btn" onclick="window.apriSchermataPraticaRifiutata(window.currentSchedaDealId)" style="background: rgba(239, 68, 68, 0.15); border: 1.5px solid #EF4444; color: #EF4444; font-weight: 700; font-size: 0.82rem; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; transition: all 0.2s ease;">
+                                ❌ Segna Pratica come Rifiutata (KO)
                             </button>
                         </div>
                     </div>
@@ -1102,58 +1175,14 @@
 
             </div>
 
-            <!-- SECTION: CHECKLIST DOCUMENTI DA CONSEGNARE (GENERATA AUTOMATICAMENTE) -->
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 2rem;" id="sp-documenti-section">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.85rem; flex-wrap: wrap; gap: 1rem;">
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 0.6rem;">
-                            <h3 style="font-size: 1.25rem; font-weight: 800; color: #071B3A; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-                                <span>📑</span> Scheda Documenti da Consegnare
-                            </h3>
-                            <span id="sp-docs-profile-badge" style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 6px;">Profilato su misura</span>
-                        </div>
-                        <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.25rem;" id="sp-docs-profile-summary">
-                            Lista documenti generata automaticamente in base all'anagrafica, stato civile, tipologia di reddito e situazione abitativa del cliente.
-                        </p>
-                    </div>
-                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
-                        <button type="button" class="btn" onclick="window.inviaChecklistWhatsApp()" style="background: #25D366; color: #ffffff; border: none; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 0.9rem; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 6px rgba(37,211,102,0.25);">
-                            📲 Invia su WhatsApp
-                        </button>
-                        <button type="button" class="btn" onclick="window.copiaChecklistTesto()" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #334155; font-size: 0.82rem; font-weight: 600; padding: 0.5rem 0.85rem; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
-                            📋 Copia Testo
-                        </button>
-                        <button type="button" class="btn" onclick="window.stampaChecklistDocumenti()" style="background: #ffffff; border: 1px solid #cbd5e1; color: #334155; font-size: 0.82rem; font-weight: 600; padding: 0.5rem 0.85rem; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem;">
-                            🖨️ Stampa Checklist
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Progress Bar Documenti -->
-                <div style="margin-bottom: 1.5rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem 1.25rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <span style="font-size: 0.82rem; font-weight: 700; color: #334155;">Avanzamento Raccolta Documenti</span>
-                        <strong style="font-size: 0.88rem; color: #006BFF;" id="sp-docs-progress-text">0 / 0 Consegnati (0%)</strong>
-                    </div>
-                    <div style="width: 100%; height: 10px; background: #e2e8f0; border-radius: 6px; overflow: hidden;">
-                        <div id="sp-docs-progress-bar" style="width: 0%; height: 100%; background: linear-gradient(90deg, #006BFF, #10B981); border-radius: 6px; transition: width 0.3s ease;"></div>
-                    </div>
-                </div>
-
-                <!-- Contenitore Categorie Documenti -->
-                <div id="sp-documenti-grid" style="display: flex; flex-direction: column; gap: 1.25rem;">
-                    <!-- Injected dynamically by JS -->
-                </div>
-            </div>
-
             <!-- BOTTOM SECTION: RESOCONTO STORICO DELLA PRATICA (TIMELINE) -->
-            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.75rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin-bottom: 2.5rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 0.85rem;">
+            <div class="card" style="background: #11192C; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35); margin-bottom: 2.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 1px solid #1C273E; padding-bottom: 0.85rem;">
                     <div>
-                        <h3 style="font-size: 1.25rem; font-weight: 800; color: #071B3A; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
                             <span>📜</span> Resoconto Storico della Pratica (Timeline)
                         </h3>
-                        <p style="font-size: 0.82rem; color: #64748b; margin-top: 0.2rem;">
+                        <p style="font-size: 0.82rem; color: #94A3B8; margin-top: 0.2rem;">
                             Cronologia completa dei passaggi operativi, avanzamenti e registrazioni con marcatura oraria.
                         </p>
                     </div>
@@ -4481,5 +4510,63 @@
     <script src="assets/js/pdf.min.js"></script>
     <script src="engine.js?v=20260925_docs_v2"></script>
     <script src="app.js?v=20260925_docs_v2"></script>
+
+    <!-- MODALE SCHERMATA UNICA: DETTAGLIO ESITO PRATICA RIFIUTATA & STRATEGIA -->
+    <div id="modal-pratica-rifiutata" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(7, 11, 20, 0.85); backdrop-filter: blur(8px); z-index: 9999; align-items: center; justify-content: center; font-family: var(--font-sans); padding: 1rem;">
+        <div style="background: #11192C; border: 2px solid rgba(239, 68, 68, 0.4); width: 95%; max-width: 680px; max-height: 90vh; border-radius: 18px; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85); display: flex; flex-direction: column; overflow: hidden;">
+            
+            <!-- Modal Header -->
+            <div style="padding: 1.25rem 1.75rem; border-bottom: 1px solid #1C273E; display: flex; justify-content: space-between; align-items: center; background: #17111F;">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                    <span style="font-size: 1.4rem;">❌</span>
+                    <div>
+                        <h3 style="font-size: 1.15rem; font-weight: 800; color: #EF4444; margin: 0;">Esito Pratica Rifiutata (KO)</h3>
+                        <span style="font-size: 0.78rem; color: #94A3B8;" id="modal-ko-deal-title">Pratica #--</span>
+                    </div>
+                </div>
+                <button type="button" onclick="window.chiudiModalPraticaRifiutata()" style="background: none; border: none; font-size: 1.3rem; color: #94A3B8; cursor: pointer;">✕</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div style="padding: 1.5rem 1.75rem; overflow-y: auto; flex: 1;">
+                <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 1.25rem;">
+                    Seleziona il <strong>motivo principale della bocciatura</strong> comunicato dalla banca per registrare lo storico e attivare la strategia di ricollocamento:
+                </p>
+
+                <!-- Grid 6 Motivi KO -->
+                <div id="modal-ko-motivi-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+                    <!-- Populated dynamically by JS -->
+                </div>
+
+                <!-- Box Soluzioni di Salvataggio BrokerFlow -->
+                <div style="background: #090E1B; border: 1.5px solid #1E2D4A; border-left: 3.5px solid #00D2FF; border-radius: 12px; padding: 1.15rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.4rem;">
+                        <span style="font-size: 1.1rem;">💡</span>
+                        <strong style="color: #00D2FF; font-size: 0.9rem;">Strategia di Recupero BrokerFlow</strong>
+                    </div>
+                    <p style="font-size: 0.8rem; color: #94A3B8; margin: 0; line-height: 1.4;">
+                        BrokerFlow può ricaricare all'istante tutti i dati reddituali e anagrafici di questo cliente per trovare gli istituti alternativi con criteri compatibili (es. banche che ammettono contratti a termine, sussistenze ponderate o Fondo Garanzia).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div style="padding: 1rem 1.75rem; border-top: 1px solid #1C273E; background: #0D1424; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+                <button type="button" id="btn-modal-annulla-ko" onclick="window.annullaPraticaRifiutataDaModal()" class="btn" style="background: #1C1924; border: 1px solid #EF4444; color: #EF4444; font-size: 0.8rem; font-weight: 700; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; display: none;">
+                    🔄 Annulla KO &amp; Ripristina Pratica
+                </button>
+                <div style="display: flex; gap: 0.65rem; margin-left: auto;">
+                    <button type="button" onclick="window.riposizionaPraticaRifiutata()" class="btn btn-primary" style="background: var(--flow-gradient); color: #ffffff; font-size: 0.82rem; font-weight: 700; padding: 0.55rem 1.25rem; border-radius: 8px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem;">
+                        🚀 Trova Banche Alternative
+                    </button>
+                    <button type="button" onclick="window.chiudiModalPraticaRifiutata()" class="btn" style="background: #11192C; border: 1px solid #1C273E; color: #F8FAFC; font-size: 0.82rem; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer;">
+                        Chiudi
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
 </html>

@@ -12,3 +12,6 @@ backup_v2_parser/
 qa_suite/reports/screenshots/
 qa_suite/.venv/
 scratch/temp_docs/
+
+veste grafica old/
+data/tunnel.log
