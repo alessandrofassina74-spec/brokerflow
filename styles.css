@@ -2946,3 +2946,168 @@ span.bank-title {
         max-width: 100vw !important;
     }
 }
+
+
+/* ==========================================================================
+   WIZARD & PRACTICES MOBILE OPTIMIZATION (ZERO HORIZONTAL OVERFLOW)
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Header Container */
+    .wizard-header-container {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.75rem !important;
+    }
+    .wizard-header-container > div:last-child {
+        display: flex !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        gap: 0.5rem !important;
+    }
+    .wizard-header-container button {
+        flex: 1 !important;
+        justify-content: center !important;
+        padding: 0.55rem 0.65rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Stepper Bar on Mobile */
+    [id^="step-indicator-"] {
+        padding: 0.3rem 0.45rem !important;
+        gap: 0.3rem !important;
+    }
+    [id^="step-indicator-"] span {
+        font-size: 0.75rem !important;
+    }
+    [id^="step-circle-"] {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Editing banner on Mobile */
+    #engine-editing-banner {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 0.65rem 0.85rem !important;
+    }
+
+    /* Panel Grids to Single Column */
+    #phase-1-panel,
+    #phase-2-panel,
+    #phase-3-panel,
+    #phase-4-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #phase-1-panel > div,
+    #phase-2-panel > div,
+    #phase-3-panel > div,
+    #phase-4-panel > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding: 1.15rem 0.85rem !important;
+    }
+
+    /* Ensure phase 3 main 2fr 1fr grid stacks vertically */
+    #phase-3-panel > div {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+    }
+
+    /* All inner multi-column grids in wizard panels convert to 1 column */
+    #phase-3-panel [style*="grid-template-columns"],
+    #phase-2-panel [style*="grid-template-columns"],
+    #phase-1-panel [style*="grid-template-columns"],
+    #phase-4-panel [style*="grid-template-columns"],
+    #group-p3-standard-inputs {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+        width: 100% !important;
+    }
+
+    /* Subject, Coapplicant, Guarantor, Loan Cards inside Step 2 */
+    .subject-card,
+    .coapp-card,
+    .guarantor-card,
+    .loan-card,
+    .box-card {
+        padding: 1rem 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+
+    .subject-card [style*="grid-template-columns"],
+    .coapp-card [style*="grid-template-columns"],
+    .guarantor-card [style*="grid-template-columns"],
+    .loan-card [style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+        width: 100% !important;
+    }
+
+    /* Phase 4 Summary Grid (2 columns on mobile instead of 4) */
+    #phase4-summary-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.65rem !important;
+        width: 100% !important;
+    }
+
+    #phase4-summary-grid > div {
+        padding: 0.75rem 0.65rem !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    #phase4-summary-grid strong {
+        font-size: 1.15rem !important;
+    }
+
+    /* Bank Cards in Phase 4 */
+    #banche-list-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        width: 100% !important;
+    }
+
+    .bank-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        min-width: 0 !important;
+    }
+
+    /* Global input protection against width overflow */
+    input, select, textarea, button {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #phase4-summary-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .wizard-header-container h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .wizard-header-container button {
+        padding: 0.45rem 0.5rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    [id^="step-indicator-"] span {
+        display: none !important;
+    }
+}

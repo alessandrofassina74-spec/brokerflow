@@ -1218,17 +1218,17 @@
         <div id="module-engine" class="crm-module-section" style="display: none;">
             
             <!-- Top Header & Action Buttons -->
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <div class="wizard-header-container" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
                 <div>
                     <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 0.2rem;">Pratiche › <strong style="color: #FFFFFF;">Nuova pratica</strong></div>
                     <h2 style="font-size: 1.75rem; font-weight: 800; color: #FFFFFF; margin: 0;">Nuova pratica</h2>
                     <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.15rem;">Crea una nuova pratica in 4 semplici passaggi</p>
                 </div>
                 <div style="display: flex; gap: 0.75rem; align-items: center;">
-                    <button type="button" id="btn-wizard-back" onclick="window.prevWizardStep()" class="btn" style="display: none; background: #ffffff; border: 1.5px solid #1C273E; color: #E2E8F0; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; align-items: center; gap: 0.4rem;">
+                    <button type="button" id="btn-wizard-back" onclick="window.prevWizardStep()" class="btn" style="display: none; background: #11192C; border: 1.5px solid #1C273E; color: #F8FAFC; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; align-items: center; gap: 0.4rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
                         ← Indietro
                     </button>
-                    <button type="button" class="btn" onclick="window.savePratica(true)" style="background: #ffffff; border: 1.5px solid #1C273E; color: #E2E8F0; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                    <button type="button" id="btn-wizard-draft" class="btn" onclick="window.savePratica(true)" style="background: #11192C; border: 1.5px solid #00D2FF; color: #00D2FF; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);">
                         <span>💾</span> Salva bozza
                     </button>
                     <button type="button" id="btn-wizard-next" class="btn btn-primary" onclick="window.nextWizardStep()" style="background: #0052ff; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.4rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(0,82,255,0.3);">
@@ -1264,7 +1264,7 @@
 
             <!-- FASE 1: TIPOLOGIA MUTUO -->
             <div id="phase-1-panel" style="display: block;">
-                <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); max-width: 900px; margin: 0 auto;">
+                <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.03); max-width: 900px; margin: 0 auto;">
                     
                     <div style="margin-bottom: 2rem;">
                         <h3 style="font-size: 1.2rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.5rem 0;">Seleziona la tipologia di mutuo</h3>
@@ -1361,7 +1361,7 @@
                         <button type="button" id="btn-mode-file" data-phase2-mode="file" onclick="window.switchPhase2Mode('file')" class="btn btn-primary" style="background: #0052ff; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.25rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 12px rgba(0,82,255,0.25);">
                             📁 1. Carica Documenti / File (AI Parser)
                         </button>
-                        <button type="button" id="btn-mode-interview" data-phase2-mode="interview" onclick="window.switchPhase2Mode('interview')" class="btn" style="background: #ffffff; border: 1.5px solid #cbd5e1; color: #E2E8F0; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                        <button type="button" id="btn-mode-interview" data-phase2-mode="interview" onclick="window.switchPhase2Mode('interview')" class="btn" style="background: #11192C; border: 1.5px solid #1C273E; color: #F8FAFC; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
                             💬 2. Intervista Manuale Completa (18 Domande)
                         </button>
                     </div>
@@ -2979,7 +2979,7 @@
                             <span style="font-size: 0.8rem; color: #64748b;">Salva l'analisi completata per ritrovarla in qualsiasi momento nel modulo Pratiche e poterla modificare.</span>
                         </div>
                         <div style="display: flex; gap: 0.75rem;">
-                            <button type="button" class="btn" onclick="window.savePratica(true)" style="background: #ffffff; border: 1.5px solid #cbd5e1; color: #E2E8F0; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                            <button type="button" class="btn" onclick="window.savePratica(true)" style="background: #11192C; border: 1.5px solid #00D2FF; color: #00D2FF; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 0 10px rgba(0, 210, 255, 0.15);">
                                 📁 Salva come Bozza
                             </button>
                             <button type="button" class="btn btn-primary" onclick="window.savePratica(false)" style="background: #10b981; color: #ffffff; font-weight: 700; font-size: 0.85rem; padding: 0.6rem 1.4rem; border-radius: 8px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 4px 12px rgba(16,185,129,0.3);">
@@ -3416,10 +3416,10 @@
                                     <span id="sync-gcal-spinner">🔄</span> Sincronizza Google Calendar
                                 </button>
                             </div>
-                            <button type="button" onclick="window.syncAgendaWithDeals(true)" style="background: #ffffff; color: #E2E8F0; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                            <button type="button" onclick="window.syncAgendaWithDeals(true)" style="background: #11192C; color: #00D2FF; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
                                 <span>📁</span> Sincronizza Pratiche
                             </button>
-                            <button type="button" onclick="window.openAgendaSettingsModal()" style="background: #ffffff; color: #94A3B8; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
+                            <button type="button" onclick="window.openAgendaSettingsModal()" style="background: #11192C; color: #94A3B8; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
                                 <span>🎨</span> Personalizza Colori
                             </button>
                         </div>

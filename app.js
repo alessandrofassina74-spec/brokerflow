@@ -10536,7 +10536,7 @@ window.modificaPreventivo = window.riprendiPratica = function(dealId) {
     window.selectedBankId = deal.praticaData.selectedBankId || deal.selectedBankId || null;
     window.selectedBankProduct = deal.praticaData.selectedBankProduct || deal.selectedBankProduct || null;
     
-    // Show editing banner in engine
+    // Show editing banner in engine (Compact Dark Fintech design with title on top and action buttons below)
     let editBanner = document.getElementById("engine-editing-banner");
     if (!editBanner) {
         editBanner = document.createElement("div");
@@ -10548,25 +10548,27 @@ window.modificaPreventivo = window.riprendiPratica = function(dealId) {
     }
     if (editBanner) {
         editBanner.style.display = "flex";
-        editBanner.style.background = "#eff6ff";
-        editBanner.style.border = "1.5px solid #3b82f6";
-        editBanner.style.borderRadius = "10px";
-        editBanner.style.padding = "0.85rem 1.25rem";
-        editBanner.style.marginBottom = "1.25rem";
-        editBanner.style.justifyContent = "space-between";
-        editBanner.style.alignItems = "center";
-        editBanner.style.boxShadow = "0 2px 8px rgba(59, 130, 246, 0.1)";
+        editBanner.style.flexDirection = "column";
+        editBanner.style.gap = "0.55rem";
+        editBanner.style.background = "#0D1424";
+        editBanner.style.border = "1.5px solid #00D2FF";
+        editBanner.style.borderRadius = "12px";
+        editBanner.style.padding = "0.75rem 1rem";
+        editBanner.style.marginBottom = "1rem";
+        editBanner.style.boxShadow = "0 0 16px rgba(0, 210, 255, 0.25)";
         editBanner.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <span style="font-size: 1.4rem;">✏️</span>
-                <div>
-                    <strong style="color: #1e40af; font-size: 0.95rem; display: block;">Modifica Preventivo #${deal.id}</strong>
-                    <span style="color: #3b82f6; font-size: 0.82rem;">Stai modificando i parametri per <strong>${deal.cliente || 'Cliente'}</strong>. Modifica qualsiasi campo e salva le modifiche.</span>
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-size: 1.15rem;">✏️</span>
+                    <strong style="color: #00D2FF; font-size: 0.92rem;">Modifica Preventivo #${deal.id}</strong>
+                    <span style="color: #64748B; font-size: 0.8rem;">|</span>
+                    <span style="color: #E2E8F0; font-size: 0.82rem;">Cliente: <strong style="color: #FFFFFF;">${deal.cliente || 'Cliente'}</strong></span>
                 </div>
+                <span style="font-size: 0.74rem; color: #94A3B8; font-weight: 600;">Parametri sbloccati per la modifica</span>
             </div>
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
-                <button type="button" class="btn btn-primary" onclick="window.savePratica(false)" style="padding: 0.45rem 1rem; font-size: 0.82rem; background: #10b981; border: none; border-radius: 6px; cursor: pointer; color: #fff; font-weight: 700; display: flex; align-items: center; gap: 0.3rem;">💾 Salva Modifiche</button>
-                <button type="button" class="btn" onclick="window.initNuovaPratica()" style="padding: 0.45rem 0.85rem; font-size: 0.82rem; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; cursor: pointer; color: #475569;">➕ Nuova Pratica</button>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%;">
+                <button type="button" class="btn btn-primary" onclick="window.savePratica(false)" style="padding: 0.5rem 0.85rem; font-size: 0.82rem; background: #10B981; border: none; border-radius: 8px; cursor: pointer; color: #FFFFFF; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);">💾 Salva Modifiche</button>
+                <button type="button" class="btn" onclick="window.initNuovaPratica()" style="padding: 0.5rem 0.85rem; font-size: 0.82rem; background: #11192C; border: 1.5px solid #1C273E; border-radius: 8px; cursor: pointer; color: #F8FAFC; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.35rem;">➕ Nuova Pratica</button>
             </div>
         `;
     }
@@ -10845,12 +10847,21 @@ window.modificaPreventivo = window.riprendiPratica = function(dealId) {
         if (document.getElementById("p3-importo-field")) document.getElementById("p3-importo-field").value = impMutToRestore;
     }
     
-    // Ensure fresh database reload in background and recalculate with newest rates
-    if (typeof loadDatabases === "function") {
-        return loadDatabases(true).then(() => {
+    // Immediate calculation with in-memory database for instant 0ms mobile response
+    if (typeof updateCalculations === "function") {
+        try {
+            updateCalculations();
+        } catch (err) {
+            console.warn("Immediate updateCalculations in modificaPreventivo:", err);
+        }
+    }
+    
+    // Background refresh only if database is not loaded yet
+    if (typeof loadDatabases === "function" && (!BrokerFlowEngine.bankRulesDb || Object.keys(BrokerFlowEngine.bankRulesDb).length === 0)) {
+        return loadDatabases(false).then(() => {
             if (typeof updateCalculations === "function") updateCalculations();
         }).catch(e => {
-            console.warn("Could not reload fresh databases in modificaPreventivo:", e);
+            console.warn("Could not reload databases in modificaPreventivo:", e);
         });
     }
     return Promise.resolve();
