@@ -68,6 +68,20 @@
     // UTENTI PREDEFINITI CON GERARCHIA COMPLETA
     const DEFAULT_USERS = [
         {
+            email: "direzione@brokerflow.it",
+            password: "direzione",
+            name: "Marco Valeri (Direzione)",
+            company: "Credipass",
+            initials: "DG",
+            role: "direzione",
+            comuneUfficio: "Milano (MI)",
+            areaName: "Nazionale",
+            officeName: "Direzione Generale",
+            phone: "+39 02 8900 1000",
+            avatar: null,
+            createdAt: "2026-01-01"
+        },
+        {
             email: "dev@brokerflow.it",
             password: "1604",
             name: "Alessandro Fassina",
@@ -652,6 +666,20 @@
             adminTools.forEach(el => {
                 el.style.display = (user.role === "super_admin" || user.role === "direzione") ? "" : "none";
             });
+
+            // Toggle visibility of 'Coordinati' module button (Level 4 and above)
+            const canSeeCoordinati = ["responsabile_ufficio", "capo_area", "direzione", "super_admin"].includes(user.role);
+            const navCoordinati = document.getElementById("crm-nav-coordinati");
+            const mobileNavCoordinati = document.getElementById("mobile-nav-coordinati");
+            
+            if (navCoordinati) navCoordinati.style.display = canSeeCoordinati ? "flex" : "none";
+            if (mobileNavCoordinati) mobileNavCoordinati.style.display = canSeeCoordinati ? "flex" : "none";
+
+            // If user is currently in Coordinati module, re-render
+            const modCoordinati = document.getElementById("module-coordinati");
+            if (modCoordinati && modCoordinati.style.display !== "none" && typeof window.renderCoordinatiModule === "function") {
+                window.renderCoordinatiModule();
+            }
         },
 
         setupAutoLock() {

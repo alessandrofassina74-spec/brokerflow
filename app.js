@@ -3257,6 +3257,10 @@ var defaultDeals = [
     {
         id: "1249",
         cliente: "Hanane El Kotni",
+        brokerEmail: "broker.roma@societa.it",
+        brokerName: "Simone Moretti",
+        officeName: "Sede Roma Eur",
+        areaName: "Area Centro & Sud",
         mutuo: 180000,
         importoMutuo: 180000,
         valore: 250000,
@@ -3292,6 +3296,10 @@ var defaultDeals = [
     {
         id: "1248",
         cliente: "Marco Rossi",
+        brokerEmail: "broker.padova@societa.it",
+        brokerName: "Andrea Zanella",
+        officeName: "Filiale Padova Centro",
+        areaName: "Area Nord (Lombardia, Veneto, Piemonte)",
         mutuo: 180000,
         importoMutuo: 180000,
         valore: 220000,
@@ -10239,6 +10247,7 @@ window.savePratica = function(isDraft = false) {
         targetId = String(nextId);
         window.currentEditingDealId = targetId;
 
+        const currentUser = (window.Auth && typeof window.Auth.getCurrentUser === "function") ? window.Auth.getCurrentUser() : null;
         const newDeal = {
             id: targetId,
             cliente: clientName,
@@ -10250,12 +10259,17 @@ window.savePratica = function(isDraft = false) {
             valore: value,
             valoreImmobile: value,
             ltv: ltvVal,
+            durata: document.getElementById("wiz-p3-durata") ? parseInt(document.getElementById("wiz-p3-durata").value) : 25,
             banca: proposedBank,
             selectedBankId: selectedBankId,
             selectedBankProduct: selectedBankProduct,
             rata: simulatedRate,
-            stato: isDraft ? "bozza" : "preventivo_salvato",
-            label: isDraft ? "Bozza" : "Nuova Analisi",
+            stato: isDraft ? "bozza" : "lavorazione",
+            label: isDraft ? "Bozza" : "In Lavorazione",
+            brokerEmail: currentUser ? currentUser.email : "dev@brokerflow.it",
+            brokerName: currentUser ? currentUser.name : "Alessandro Fassina",
+            officeName: currentUser ? (currentUser.officeName || currentUser.comuneUfficio || "Sede") : "Sede",
+            areaName: currentUser ? (currentUser.areaName || "Nazionale") : "Nazionale",
             createdAt: new Date().toISOString(),
             praticaData: praticaPayload
         };

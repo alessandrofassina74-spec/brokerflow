@@ -165,6 +165,7 @@
             const navDash = document.getElementById("crm-nav-dashboard");
             const navCli = document.getElementById("crm-nav-clienti");
             const navPra = document.getElementById("crm-nav-pratiche");
+            const navCoordinati = document.getElementById("crm-nav-coordinati");
             const navEng = document.getElementById("crm-nav-engine");
             const navBanche = document.getElementById("crm-nav-banche");
             const navFiliali = document.getElementById("crm-nav-filiali");
@@ -174,6 +175,7 @@
             const modDash = document.getElementById("module-dashboard");
             const modCli = document.getElementById("module-clienti");
             const modPra = document.getElementById("module-pratiche");
+            const modCoordinati = document.getElementById("module-coordinati");
             const modSchedaPra = document.getElementById("module-scheda-pratica");
             const modEng = document.getElementById("module-engine");
             const modBanche = document.getElementById("module-banche");
@@ -186,8 +188,8 @@
                 item.classList.toggle("active", item.getAttribute("data-module") === targetModule);
             });
             
-            [navDash, navCli, navPra, navEng, navBanche, navFiliali, navAgenda, navReports].forEach(btn => btn?.classList.remove("active"));
-            [modDash, modCli, modPra, modSchedaPra, modEng, modBanche, modFiliali, modAgenda, modReports].forEach(mod => { if (mod) mod.style.display = "none"; });
+            [navDash, navCli, navPra, navCoordinati, navEng, navBanche, navFiliali, navAgenda, navReports].forEach(btn => btn?.classList.remove("active"));
+            [modDash, modCli, modPra, modCoordinati, modSchedaPra, modEng, modBanche, modFiliali, modAgenda, modReports].forEach(mod => { if (mod) mod.style.display = "none"; });
             
             // Close mobile sidebar on navigation
             const sidebar = document.querySelector(".app-sidebar");
@@ -226,6 +228,10 @@
                 if (navAgenda) navAgenda.classList.add("active");
                 if (modAgenda) modAgenda.style.display = "block";
                 if (window.initAgendaModule) window.initAgendaModule();
+            } else if (targetModule === "coordinati") {
+                if (navCoordinati) navCoordinati.classList.add("active");
+                if (modCoordinati) modCoordinati.style.display = "block";
+                if (window.renderCoordinatiModule) window.renderCoordinatiModule();
             } else if (targetModule === "reports") {
                 if (navReports) navReports.classList.add("active");
                 if (modReports) modReports.style.display = "block";
@@ -580,6 +586,10 @@
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-pratiche" data-switch-module="pratiche" data-tooltip="Pratiche" onclick="switchCrmModule('pratiche')">
                         <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📁</span>
                         <span class="sidebar-nav-label">Pratiche</span>
+                    </button>
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-coordinati" data-switch-module="coordinati" data-tooltip="Rete & Coordinati" onclick="switchCrmModule('coordinati')" style="display: none;">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem; color: #00D2FF;">👥</span>
+                        <span class="sidebar-nav-label">Coordinati</span>
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-engine" data-switch-module="engine" data-tooltip="Nuova Pratica (Engine)" onclick="window.initNuovaPratica()">
                         <span class="sidebar-nav-icon" style="font-size: 1.1rem;">🚀</span>
@@ -3202,7 +3212,15 @@
             </div>
 
             <!-- module-reports -->
-            <div id="module-reports" class="crm-module-section" style="display: none;">
+            
+        <!-- ========================================== -->
+        <!-- CRM MODULE: COORDINATI & GERARCHIA RETE   -->
+        <!-- ========================================== -->
+        <div id="module-coordinati" class="crm-module-section" style="display: none;">
+            <!-- Rendered dynamically by coordinati.js -->
+        </div>
+
+        <div id="module-reports" class="crm-module-section" style="display: none;">
                 <div style="background: #ffffff; padding: 2.25rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
                         <div>
@@ -3911,6 +3929,10 @@
             <button type="button" class="mobile-bottom-nav-item" data-module="pratiche" onclick="switchCrmModule('pratiche')">
                 <span class="icon">📁</span>
                 <span>Pratiche</span>
+            </button>
+            <button type="button" class="mobile-bottom-nav-item" id="mobile-nav-coordinati" data-module="coordinati" onclick="switchCrmModule('coordinati')" style="display: none;">
+                <span class="icon">👥</span>
+                <span>Coordinati</span>
             </button>
             <button type="button" class="mobile-bottom-nav-item" data-module="engine" onclick="window.initNuovaPratica()" style="color: #0052ff; font-weight: 800;">
                 <span class="icon" style="background: #0052ff; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: -12px; box-shadow: 0 4px 10px rgba(0,82,255,0.35);">🚀</span>
