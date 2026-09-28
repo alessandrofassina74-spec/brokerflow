@@ -3540,6 +3540,45 @@
                     </div>
         
                     
+                    
+                    <!-- SECTION 0.5: PRIORITÀ COMMERCIALE BANCHE & RANKING BOOST (Riservato Super Admin & Direzione) -->
+                    <div class="super-admin-only" style="background: #0D1424; border-radius: 16px; border: 1.5px solid #1C273E; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1.25rem; border-bottom: 1px solid #1C273E; padding-bottom: 1.25rem; margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem;">
+                                <div style="width: 52px; height: 52px; border-radius: 14px; background: rgba(245, 158, 11, 0.12); border: 1.5px solid rgba(245, 158, 11, 0.4); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #F59E0B; box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);">
+                                    ⭐
+                                </div>
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+                                        <span style="font-size: 0.72rem; font-weight: 800; color: #F59E0B; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); padding: 0.15rem 0.55rem; border-radius: 6px; letter-spacing: 0.05em; text-transform: uppercase;">
+                                            Strategia Commerciale Direzione
+                                        </span>
+                                        <span style="font-size: 0.75rem; color: #64748B;">• Ranking Boost (+3 / -3)</span>
+                                    </div>
+                                    <h2 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.35rem 0; display: flex; align-items: center; gap: 0.6rem;">
+                                        Priorità Commerciale Banche Partner
+                                    </h2>
+                                    <p style="font-size: 0.88rem; color: #94A3B8; margin: 0; max-width: 750px; line-height: 1.45;">
+                                        Assegna un punteggio di spinta o penalità (+1, +2, +3 oppure -1, -2, -3) a ciascuna banca convenzionata per incentivarla o abbassarla nella classifica dei risultati del comparatore mutui. I punteggi positivi portano la banca in alto, quelli negativi in basso.
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <button type="button" onclick="window.resetAllBankPriorityBoosts()" style="background: rgba(239, 68, 68, 0.12); color: #EF4444; border: 1px solid rgba(239, 68, 68, 0.3); font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1rem; border-radius: 10px; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.4rem;">
+                                    <span>↺</span> Ripristina Tutte a 0
+                                </button>
+                                <button type="button" onclick="window.saveBankPrioritySettingsFromUI()" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); color: #FFFFFF; font-weight: 800; font-size: 0.88rem; padding: 0.65rem 1.25rem; border-radius: 10px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);">
+                                    <span>💾</span> Salva Priorità Banche
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Bank Priority List Container -->
+                        <div id="settings-bank-priority-list" style="display: grid; grid-template-columns: 1fr; gap: 0.85rem;">
+                            <!-- Injected dynamically by window.renderBankPrioritySettingsUI() -->
+                        </div>
+                    </div>
+
                     <!-- SECTION 1: COLOR CUSTOMIZATION -->
                     <div style="background: #ffffff; border-radius: 16px; border: 1.5px solid #1C273E; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1.25rem; margin-bottom: 1.75rem;">

@@ -6536,6 +6536,14 @@ function updateCalculations() {
         if (tierA !== tierB) {
             return tierA - tierB;
         }
+
+        // --- COMMERCIAL PRIORITY BOOST (Direzione Generale / Super Admin) ---
+        const boostA = (typeof window.getBankPriorityBoost === "function") ? window.getBankPriorityBoost(a.bankId, a.name) : 0;
+        const boostB = (typeof window.getBankPriorityBoost === "function") ? window.getBankPriorityBoost(b.bankId, b.name) : 0;
+        if (boostA !== boostB) {
+            return boostB - boostA; // Higher score (+3, +2, +1) moves up, lower score (-1, -2, -3) moves down
+        }
+
         if (calcMode === "max") {
             const aMax = (typeof a.maxLoanGrantable === "number" && !isNaN(a.maxLoanGrantable)) ? a.maxLoanGrantable : 0;
             const bMax = (typeof b.maxLoanGrantable === "number" && !isNaN(b.maxLoanGrantable)) ? b.maxLoanGrantable : 0;
@@ -6886,6 +6894,13 @@ function updateCalculations() {
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
                             <span class="bank-title" style="font-size: 1.18rem; font-weight: 800; color: #FFFFFF !important; letter-spacing: 0.01em; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">${card.name}</span>
                             ${isSelectedCard ? '<span style="background: #eff6ff; color: #0052ff; border: 1px solid #93c5fd; font-weight: 800; font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 4px;">⭐ SCELTA</span>' : ''}
+                            ${(() => {
+                                const bScore = (typeof window.getBankPriorityBoost === "function") ? window.getBankPriorityBoost(card.bankId, card.name) : 0;
+                                if (bScore === 3) return '<span style="background: rgba(0, 210, 255, 0.18); color: #00D2FF; border: 1px solid rgba(0, 210, 255, 0.45); font-weight: 800; font-size: 0.68rem; padding: 0.1rem 0.45rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.25rem;">🚀 Top Priorità (+3)</span>';
+                                if (bScore === 2) return '<span style="background: rgba(16, 185, 129, 0.18); color: #10B981; border: 1px solid rgba(16, 185, 129, 0.45); font-weight: 800; font-size: 0.68rem; padding: 0.1rem 0.45rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.25rem;">⚡ Spinta (+2)</span>';
+                                if (bScore === 1) return '<span style="background: rgba(168, 85, 247, 0.18); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.45); font-weight: 800; font-size: 0.68rem; padding: 0.1rem 0.45rem; border-radius: 6px; display: inline-flex; align-items: center; gap: 0.25rem;">✨ In Evidenza (+1)</span>';
+                                return '';
+                            })()}
                         </div>
                         <div style="font-size: 0.75rem; font-weight: 600; margin-top: 0.25rem; display: flex; flex-direction: column; gap: 0.25rem;">
                             <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
@@ -12191,6 +12206,197 @@ const COLOR_PRESETS = {
         recall: "#fbbf24",
         google_calendar: "#38bdf8",
         altro: "#94a3b8"
+    }
+};
+
+
+// =========================================================================
+// GESTIONE PRIORITÀ COMMERCIALE BANCHE & RANKING BOOST (+3 / -3)
+// Riservato a: Super Admin (Livello 1) e Direzione Generale (Livello 2)
+// =========================================================================
+
+window.getCanonicalBankKey = function(bankIdOrName) {
+    if (!bankIdOrName) return "";
+    const s = String(bankIdOrName).toLowerCase().trim().replace(/_/g, " ").replace(/-/g, " ");
+    if (s.includes("agricole") || s.includes("creval") || s.includes("cariparma") || s.includes("friuladria")) return "credit_agricole";
+    if (s.includes("sardegna") || s.includes("bds")) return "banco_di_sardegna";
+    if (s.includes("mediobanca") || s.includes("chebanca") || s.includes("premier")) return "mediobanca_premier";
+    if (s.includes("mps") || s.includes("paschi")) return "mps";
+    if (s.includes("bper")) return "bper";
+    if (s.includes("bnl") || s.includes("paribas")) return "bnl";
+    if (s.includes("ing")) return "ing";
+    if (s.includes("sparkasse") || s.includes("bolzano")) return "sparkasse";
+    if (s.includes("bdm")) return "bdm";
+    return s.replace(/\s+/g, "_");
+};
+
+window.getBankPriorityBoosts = function() {
+    try {
+        const raw = localStorage.getItem("brokerflow_bank_priority_boosts");
+        return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+        return {};
+    }
+};
+
+window.getBankPriorityBoost = function(bankId, bankName = "") {
+    const boosts = window.getBankPriorityBoosts();
+    const key1 = window.getCanonicalBankKey(bankId);
+    const key2 = window.getCanonicalBankKey(bankName);
+    if (key1 && boosts[key1] !== undefined) return parseInt(boosts[key1], 10) || 0;
+    if (key2 && boosts[key2] !== undefined) return parseInt(boosts[key2], 10) || 0;
+    if (bankId && boosts[bankId] !== undefined) return parseInt(boosts[bankId], 10) || 0;
+    return 0;
+};
+
+window.setBankPriorityBoost = function(bankKey, boostScore) {
+    const boosts = window.getBankPriorityBoosts();
+    const canonicalKey = window.getCanonicalBankKey(bankKey);
+    const score = parseInt(boostScore, 10);
+    if (isNaN(score) || score === 0) {
+        delete boosts[canonicalKey];
+        delete boosts[bankKey];
+    } else {
+        boosts[canonicalKey] = Math.max(-3, Math.min(3, score));
+    }
+    localStorage.setItem("brokerflow_bank_priority_boosts", JSON.stringify(boosts));
+    
+    // Auto-update live preview in calculations if open
+    if (typeof window.updateCalculations === "function") {
+        try { window.updateCalculations(); } catch(e) {}
+    }
+};
+
+window.resetAllBankPriorityBoosts = function() {
+    if (!confirm("Sei sicuro di voler ripristinare tutti i punteggi di priorità delle banche a 0 (Neutro)?")) return;
+    localStorage.removeItem("brokerflow_bank_priority_boosts");
+    window.renderBankPrioritySettingsUI();
+    if (typeof window.updateCalculations === "function") {
+        try { window.updateCalculations(); } catch(e) {}
+    }
+    if (typeof window.showToast === "function") {
+        window.showToast("↺ Tutte le priorità commerciali delle banche sono state ripristinate a Neutro (0).", "info");
+    }
+};
+
+window.saveBankPrioritySettingsFromUI = function() {
+    const container = document.getElementById("settings-bank-priority-list");
+    if (!container) return;
+    const selects = container.querySelectorAll("select[data-bank-key]");
+    const boosts = {};
+    selects.forEach(sel => {
+        const k = sel.getAttribute("data-bank-key");
+        const val = parseInt(sel.value, 10) || 0;
+        if (val !== 0) {
+            boosts[k] = val;
+        }
+    });
+    localStorage.setItem("brokerflow_bank_priority_boosts", JSON.stringify(boosts));
+    window.renderBankPrioritySettingsUI();
+    if (typeof window.updateCalculations === "function") {
+        try { window.updateCalculations(); } catch(e) {}
+    }
+    if (typeof window.showToast === "function") {
+        window.showToast("✅ Priorità commerciali e ranking delle banche salvate con successo!", "success");
+    }
+};
+
+window.renderBankPrioritySettingsUI = function() {
+    const container = document.getElementById("settings-bank-priority-list");
+    if (!container) return;
+    
+    // Master list of partner banks
+    const partnerBanks = [
+        { key: "bper", name: "BPER Banca", subtitle: "Rete Nazionale • Acquisto, Surroga & Green" },
+        { key: "credit_agricole", name: "Crédit Agricole", subtitle: "Rete Nazionale • Mutuo Flexi Fisso / Variabile" },
+        { key: "bnl", name: "BNL BNP Paribas", subtitle: "Rete Nazionale • Tassi Convenzionati & Consap" },
+        { key: "ing", name: "ING Bank", subtitle: "Rete Digitale & Agenzie • Tasso Fisso e Arancio" },
+        { key: "mediobanca_premier", name: "Mediobanca Premier", subtitle: "Rete Nazionale • Mutui Specialistici & Deroghe" },
+        { key: "mps", name: "Monte dei Paschi di Siena", subtitle: "Rete Nazionale • Ampia Gamma Prodotti Famiglia" },
+        { key: "banco_di_sardegna", name: "Banco di Sardegna", subtitle: "Territorio Sardegna e Filiali Dedicate" },
+        { key: "bdm", name: "BDM Banca", subtitle: "Rete Territoriale Puglia, Basilicata e Centro-Sud" },
+        { key: "sparkasse", name: "Cassa di Risparmio di Bolzano (Sparkasse)", subtitle: "Rete Territoriale Triveneto & Lombardia" }
+    ];
+
+    const currentBoosts = window.getBankPriorityBoosts();
+
+    const boostOptions = [
+        { val: 3, label: "🚀 +3 Massima Spinta (Top Assoluto)", badge: "🟢 Massima Spinta (+3)", bg: "rgba(0, 210, 255, 0.18)", col: "#00D2FF", border: "rgba(0, 210, 255, 0.45)" },
+        { val: 2, label: "⚡ +2 Forte Spinta Commerciale", badge: "🟢 Forte Spinta (+2)", bg: "rgba(16, 185, 129, 0.18)", col: "#10B981", border: "rgba(16, 185, 129, 0.45)" },
+        { val: 1, label: "✨ +1 Leggera Spinta (In Evidenza)", badge: "🟣 In Evidenza (+1)", bg: "rgba(168, 85, 247, 0.18)", col: "#C084FC", border: "rgba(168, 85, 247, 0.45)" },
+        { val: 0, label: "⚪ 0 Neutro (Ordinamento Standard)", badge: "⚪ Neutro (0)", bg: "rgba(148, 163, 184, 0.12)", col: "#94A3B8", border: "rgba(148, 163, 184, 0.25)" },
+        { val: -1, label: "🔻 -1 Bassa Priorità", badge: "🟡 Bassa Priorità (-1)", bg: "rgba(245, 158, 11, 0.18)", col: "#F59E0B", border: "rgba(245, 158, 11, 0.45)" },
+        { val: -2, label: "⬇️ -2 Penalità Commerciale", badge: "🔴 Penalizzata (-2)", bg: "rgba(239, 68, 68, 0.18)", col: "#EF4444", border: "rgba(239, 68, 68, 0.45)" },
+        { val: -3, label: "⛔ -3 Massima Penalità (Fondo Classifica)", badge: "🔴 Minima Priorità (-3)", bg: "rgba(220, 38, 38, 0.25)", col: "#F87171", border: "rgba(220, 38, 38, 0.55)" }
+    ];
+
+    container.innerHTML = partnerBanks.map((bank, index) => {
+        const canonicalKey = window.getCanonicalBankKey(bank.key);
+        const score = currentBoosts[canonicalKey] !== undefined ? parseInt(currentBoosts[canonicalKey], 10) : 0;
+        const currentOpt = boostOptions.find(o => o.val === score) || boostOptions[3];
+
+        return `
+            <div class="bank-priority-row" style="background: #0B1222; border: 1.5px solid ${score > 0 ? '#00D2FF40' : (score < 0 ? '#EF444440' : '#1C273E')}; border-radius: 12px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.25);">
+                <div style="display: flex; align-items: center; gap: 1rem; min-width: 260px;">
+                    <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 8px; width: 58px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 2px 5px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+                        ${window.getBankLogoHtml(bank.name, 26)}
+                    </div>
+                    <div>
+                        <div style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 0.5rem;">
+                            <span>${bank.name}</span>
+                        </div>
+                        <div style="font-size: 0.78rem; color: #64748B; margin-top: 0.15rem;">
+                            ${bank.subtitle}
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                    <div id="bank-priority-badge-${bank.key}" style="background: ${currentOpt.bg}; color: ${currentOpt.col}; border: 1px solid ${currentOpt.border}; font-size: 0.78rem; font-weight: 800; padding: 0.35rem 0.75rem; border-radius: 8px; white-space: nowrap; min-width: 155px; text-align: center;">
+                        ${currentOpt.badge}
+                    </div>
+
+                    <div style="position: relative;">
+                        <select data-bank-key="${bank.key}" onchange="window.handleBankPrioritySelectChange('${bank.key}', this.value)" style="background: #111A30; color: #FFFFFF; border: 1.5px solid #2A3B5C; border-radius: 8px; padding: 0.5rem 1rem 0.5rem 0.85rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; outline: none; transition: border-color 0.2s;">
+                            ${boostOptions.map(opt => `
+                                <option value="${opt.val}" ${opt.val === score ? 'selected' : ''} style="background: #0D162B; color: #FFFFFF;">
+                                    ${opt.label}
+                                </option>
+                            `).join("")}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+};
+
+window.handleBankPrioritySelectChange = function(bankKey, val) {
+    const score = parseInt(val, 10) || 0;
+    window.setBankPriorityBoost(bankKey, score);
+    
+    // Update live badge for this row immediately
+    const badgeEl = document.getElementById(`bank-priority-badge-${bankKey}`);
+    if (badgeEl) {
+        const boostOptions = [
+            { val: 3, badge: "🟢 Massima Spinta (+3)", bg: "rgba(0, 210, 255, 0.18)", col: "#00D2FF", border: "rgba(0, 210, 255, 0.45)" },
+            { val: 2, badge: "🟢 Forte Spinta (+2)", bg: "rgba(16, 185, 129, 0.18)", col: "#10B981", border: "rgba(16, 185, 129, 0.45)" },
+            { val: 1, badge: "🟣 In Evidenza (+1)", bg: "rgba(168, 85, 247, 0.18)", col: "#C084FC", border: "rgba(168, 85, 247, 0.45)" },
+            { val: 0, badge: "⚪ Neutro (0)", bg: "rgba(148, 163, 184, 0.12)", col: "#94A3B8", border: "rgba(148, 163, 184, 0.25)" },
+            { val: -1, badge: "🟡 Bassa Priorità (-1)", bg: "rgba(245, 158, 11, 0.18)", col: "#F59E0B", border: "rgba(245, 158, 11, 0.45)" },
+            { val: -2, badge: "🔴 Penalizzata (-2)", bg: "rgba(239, 68, 68, 0.18)", col: "#EF4444", border: "rgba(239, 68, 68, 0.45)" },
+            { val: -3, badge: "🔴 Minima Priorità (-3)", bg: "rgba(220, 38, 38, 0.25)", col: "#F87171", border: "rgba(220, 38, 38, 0.55)" }
+        ];
+        const opt = boostOptions.find(o => o.val === score) || boostOptions[3];
+        badgeEl.style.background = opt.bg;
+        badgeEl.style.color = opt.col;
+        badgeEl.style.borderColor = opt.border;
+        badgeEl.innerHTML = opt.badge;
+    }
+    
+    if (typeof window.showToast === "function") {
+        const scoreText = score > 0 ? `+${score}` : `${score}`;
+        window.showToast(`⭐ Priorità commerciale aggiornata (${scoreText})`, "info");
     }
 };
 

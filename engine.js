@@ -69621,6 +69621,14 @@ const BrokerFlowEngine = {
             // "ok" banks come before "deroga" banks
             if (a.status === "ok" && b.status === "deroga") return -1;
             if (a.status === "deroga" && b.status === "ok") return 1;
+            
+            // Commercial Priority Boost (Super Admin & Direzione)
+            if (typeof window !== "undefined" && typeof window.getBankPriorityBoost === "function") {
+                const bA = window.getBankPriorityBoost(a.bankId, a.name);
+                const bB = window.getBankPriorityBoost(b.bankId, b.name);
+                if (bA !== bB) return bB - bA;
+            }
+            
             return a.rata - b.rata;
         });
 
