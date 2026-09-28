@@ -13525,3 +13525,40 @@ window.handleProvenienzaImmobileChange = function(val) {
         alertEl.innerHTML = "";
     }
 };
+
+// COLLAPSIBLE DESKTOP SIDEBAR
+window.toggleDesktopSidebar = function() {
+    const layout = document.getElementById("app-layout-wrapper") || document.body;
+    const isCollapsed = layout.classList.toggle("sidebar-collapsed");
+    localStorage.setItem("brokerflow_sidebar_collapsed", isCollapsed ? "true" : "false");
+
+    const icon = document.getElementById("sidebar-collapse-icon");
+    if (icon) icon.innerText = isCollapsed ? "▶" : "◀";
+
+    const text = document.getElementById("sidebar-collapse-text");
+    if (text) text.innerText = isCollapsed ? "› Espandi menu" : "‹ Riduci menu";
+
+    // Trigger window resize event so charts/tables re-adjust smoothly
+    window.dispatchEvent(new Event('resize'));
+};
+
+// Initialize sidebar collapse state on load
+document.addEventListener("DOMContentLoaded", function() {
+    const savedState = localStorage.getItem("brokerflow_sidebar_collapsed");
+    if (savedState === "true") {
+        const layout = document.getElementById("app-layout-wrapper") || document.body;
+        if (layout) layout.classList.add("sidebar-collapsed");
+        const icon = document.getElementById("sidebar-collapse-icon");
+        if (icon) icon.innerText = "▶";
+        const text = document.getElementById("sidebar-collapse-text");
+        if (text) text.innerText = "› Espandi menu";
+    }
+});
+
+// Keyboard shortcut Ctrl+B or Cmd+B to toggle sidebar
+document.addEventListener("keydown", function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "b") {
+        e.preventDefault();
+        window.toggleDesktopSidebar();
+    }
+});
