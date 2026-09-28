@@ -1524,7 +1524,8 @@ input, select, textarea, button {
 .desktop-only-cell {
     display: table-cell;
 }
-.deal-mobile-card-cell {
+.deal-mobile-card-cell,
+.client-mobile-card-cell {
     display: none;
 }
 
@@ -1720,7 +1721,7 @@ input, select, textarea, button {
     }
 
     /* -------------------------------------------------------------
-       2. PRATICHE: RESPONSIVE CARDS (No horizontal scroll!)
+       2. PRATICHE & CLIENTI: RESPONSIVE CARDS (No horizontal scroll!)
        ------------------------------------------------------------- */
     .crm-table-container {
         background: transparent !important;
@@ -1747,7 +1748,8 @@ input, select, textarea, button {
         width: 100% !important;
     }
 
-    .crm-deal-card-row {
+    .crm-deal-card-row,
+    .crm-client-card-row {
         display: block !important;
         width: 100% !important;
         background: transparent !important;
@@ -1759,52 +1761,67 @@ input, select, textarea, button {
         display: none !important;
     }
 
-    .deal-mobile-card-cell {
+    .deal-mobile-card-cell,
+    .client-mobile-card-cell {
         display: block !important;
         width: 100% !important;
         padding: 0 !important;
         border: none !important;
     }
 
+    /* CARD PRATICA (DARK FINTECH) */
     .deal-mobile-card {
-        background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03) !important;
+        background: #11192C !important;
+        border: 1.5px solid #1C273E !important;
+        border-radius: 14px !important;
+        padding: 1.15rem !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.35) !important;
         display: flex !important;
         flex-direction: column !important;
         gap: 0.75rem !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .deal-mobile-card:hover,
+    .deal-mobile-card:active {
+        border-color: #00D2FF !important;
+        box-shadow: 0 0 16px rgba(0, 210, 255, 0.4) !important;
     }
 
     .deal-mobile-header {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        border-bottom: 1px solid #f1f5f9 !important;
-        padding-bottom: 0.5rem !important;
+        border-bottom: 1px solid #1C273E !important;
+        padding-bottom: 0.6rem !important;
     }
 
     .deal-mobile-id {
         font-weight: 800 !important;
-        color: #006BFF !important;
+        color: #00D2FF !important;
         font-size: 0.92rem !important;
+        background: rgba(0, 210, 255, 0.15) !important;
+        border: 1.5px solid #00D2FF !important;
+        padding: 0.2rem 0.6rem !important;
+        border-radius: 6px !important;
+        letter-spacing: 0.02em !important;
+        box-shadow: 0 0 10px rgba(0, 210, 255, 0.35) !important;
     }
 
     .deal-mobile-title {
-        font-size: 0.98rem !important;
-        color: #0f172a !important;
+        font-size: 1rem !important;
+        color: #FFFFFF !important;
         font-weight: 800 !important;
     }
 
     .deal-mobile-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.55rem !important;
-        background: #f8fafc !important;
-        padding: 0.75rem !important;
-        border-radius: 8px !important;
-        border: 1px solid #f1f5f9 !important;
+        gap: 0.6rem !important;
+        background: #0D1424 !important;
+        padding: 0.85rem !important;
+        border-radius: 10px !important;
+        border: 1px solid #1C273E !important;
     }
 
     .deal-mobile-item {
@@ -1815,7 +1832,7 @@ input, select, textarea, button {
 
     .deal-mobile-lbl {
         font-size: 0.68rem !important;
-        color: #64748b !important;
+        color: #94A3B8 !important;
         font-weight: 700 !important;
         text-transform: uppercase !important;
         letter-spacing: 0.02em !important;
@@ -1823,46 +1840,121 @@ input, select, textarea, button {
 
     .deal-mobile-actions {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: 1.1fr 1.1fr 1fr 0.4fr !important;
         gap: 0.45rem !important;
         margin-top: 0.25rem !important;
     }
 
     .btn-m-action {
-        padding: 0.5rem 0.65rem !important;
+        padding: 0.55rem 0.65rem !important;
         font-size: 0.78rem !important;
         font-weight: 700 !important;
-        border-radius: 7px !important;
+        border-radius: 8px !important;
         cursor: pointer !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 0.35rem !important;
-        border: none !important;
         box-sizing: border-box !important;
+        transition: all 0.15s ease !important;
     }
 
     .btn-m-action.doc {
-        background: #eff6ff !important;
-        color: #006BFF !important;
-        border: 1.5px solid #bfdbfe !important;
+        background: #0D1424 !important;
+        border: 1.5px solid #00D2FF !important;
+        color: #00D2FF !important;
     }
 
     .btn-m-action.avz {
-        background: #006BFF !important;
-        color: #ffffff !important;
+        background: #00D2FF !important;
+        border: none !important;
+        color: #070B14 !important;
+        font-weight: 800 !important;
+        box-shadow: 0 0 10px rgba(0, 210, 255, 0.35) !important;
     }
 
     .btn-m-action.mod {
-        background: #ffffff !important;
-        color: #334155 !important;
-        border: 1px solid #cbd5e1 !important;
+        background: #0D1424 !important;
+        border: 1px solid #1C273E !important;
+        color: #CBD5E1 !important;
     }
 
     .btn-m-action.del {
-        background: #fee2e2 !important;
-        color: #ef4444 !important;
-        border: 1px solid #fca5a5 !important;
+        background: rgba(239, 68, 68, 0.15) !important;
+        border: 1px solid #EF4444 !important;
+        color: #EF4444 !important;
+    }
+
+    /* CARD CLIENTE (DARK FINTECH) */
+    .client-mobile-card {
+        background: #11192C !important;
+        border: 1.5px solid #1C273E !important;
+        border-radius: 14px !important;
+        padding: 1.15rem !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.35) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    .client-mobile-card:hover,
+    .client-mobile-card:active {
+        border-color: #00D2FF !important;
+        box-shadow: 0 0 16px rgba(0, 210, 255, 0.4) !important;
+    }
+
+    .client-mobile-header {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        border-bottom: 1px solid #1C273E !important;
+        padding-bottom: 0.6rem !important;
+    }
+
+    .client-mobile-title {
+        font-size: 1rem !important;
+        color: #FFFFFF !important;
+        font-weight: 800 !important;
+        display: block !important;
+    }
+
+    .client-mobile-id {
+        font-size: 0.75rem !important;
+        color: #00D2FF !important;
+        font-weight: 700 !important;
+        display: block !important;
+        margin-top: 1px !important;
+    }
+
+    .client-mobile-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.6rem !important;
+        background: #0D1424 !important;
+        padding: 0.85rem !important;
+        border-radius: 10px !important;
+        border: 1px solid #1C273E !important;
+    }
+
+    .client-mobile-item {
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+    }
+
+    .client-mobile-lbl {
+        font-size: 0.68rem !important;
+        color: #94A3B8 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.02em !important;
+    }
+
+    .client-mobile-actions {
+        display: flex !important;
+        gap: 0.45rem !important;
+        margin-top: 0.25rem !important;
     }
 
     /* -------------------------------------------------------------
