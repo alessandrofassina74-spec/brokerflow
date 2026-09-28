@@ -6883,10 +6883,10 @@ function updateCalculations() {
                             <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
                                 <span style="color: var(--text-muted); font-size: 0.7rem;">🏷️ Prodotto:</span>
                                 <span class="bank-product-badge" style="color: #00D2FF !important; background: rgba(0, 210, 255, 0.14); border: 1.5px solid rgba(0, 210, 255, 0.45); padding: 0.2rem 0.65rem; border-radius: 6px; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 0.3rem;"><span>⚡</span> <span>${card.prodName || 'Mutuo Standard'}</span></span>
-                                ${card.hasAccountBonus ? '<span style="color: #1e40af; background: #dbeafe; border: 1px solid #93c5fd; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">💳 Con Conto Corrente</span>' : ''}
-                                ${card.isWithoutAccountDiscount ? '<span style="color: #64748b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">ℹ️ Senza Sconto Conto</span>' : ''}
-                                ${card.hasCpiDiscount ? `<span style="color: #15803d; background: #dcfce7; border: 1px solid #86efac; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">🛡️ Sconto CPI (${card.cpiDiscountText})</span>` : ''}
-                                ${card.isWithoutCpi ? '<span style="color: #64748b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">ℹ️ Senza Polizza CPI</span>' : ''}
+                                ${card.hasAccountBonus ? '<span style="color: #38BDF8; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.15rem 0.5rem; border-radius: 6px; font-weight: 700; font-size: 0.72rem;">💳 Con Conto Corrente</span>' : ''}
+                                ${card.isWithoutAccountDiscount ? '<span style="color: #94A3B8; background: rgba(148, 163, 184, 0.12); border: 1px solid rgba(148, 163, 184, 0.25); padding: 0.15rem 0.5rem; border-radius: 6px; font-weight: 600; font-size: 0.72rem;">ℹ️ Senza Sconto Conto</span>' : ''}
+                                ${card.hasCpiDiscount ? `<span style="color: #34D399; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.15rem 0.5rem; border-radius: 6px; font-weight: 700; font-size: 0.72rem;">🛡️ Sconto CPI (${card.cpiDiscountText})</span>` : ''}
+                                ${card.isWithoutCpi ? '<span style="color: #94A3B8; background: rgba(148, 163, 184, 0.12); border: 1px solid rgba(148, 163, 184, 0.25); padding: 0.15rem 0.5rem; border-radius: 6px; font-weight: 600; font-size: 0.72rem;">ℹ️ Senza Polizza CPI</span>' : ''}
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.35rem;">
                                 <span style="color: var(--text-muted); font-size: 0.7rem;">📊 Tipo Tasso:</span>
@@ -6906,7 +6906,7 @@ function updateCalculations() {
                             ` : ''}
                             ${card.notes && card.notes.length > 0 ? `
                                 <div style="margin-top: 0.35rem; display: flex; flex-direction: column; gap: 0.2rem;">
-                                    ${card.notes.map(n => `<div style="font-size: 0.72rem; color: #334155; background: #f8fafc; border-left: 3px solid #3b82f6; padding: 0.2rem 0.45rem; border-radius: 0 4px 4px 0; line-height: 1.35;">${n}</div>`).join("")}
+                                    ${card.notes.map(n => `<div style="font-size: 0.72rem; color: #E2E8F0; background: #0B1222; border: 1px solid #1C273E; border-left: 3px solid #00D2FF; padding: 0.25rem 0.55rem; border-radius: 0 6px 6px 0; line-height: 1.35;">${n}</div>`).join("")}
                                 </div>
                             ` : ''}
                         </div>
@@ -6916,22 +6916,22 @@ function updateCalculations() {
             </div>
             
             ${(card.supportsCpiDiscount || card.supportsAccountOption) ? `
-                <div class="bank-card-discount-options" style="margin-top: 0.75rem; padding: 0.55rem 0.85rem; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1.5px solid #e2e8f0; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
-                    <div style="display: flex; align-items: center; gap: 0.35rem;">
-                        <span style="font-size: 0.85rem;">🎁</span>
-                        <span style="font-size: 0.74rem; font-weight: 700; color: #334155;">Opzioni Sconto ${card.name}:</span>
+                <div class="bank-card-discount-options" style="margin-top: 0.75rem; padding: 0.65rem 0.95rem; background: #0B1222; border: 1.5px solid #1C273E; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.65rem; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+                    <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: nowrap;">
+                        <span style="font-size: 0.95rem;">🎁</span>
+                        <span style="font-size: 0.76rem; font-weight: 800; color: #00D2FF; letter-spacing: 0.02em;">Opzioni Sconto ${card.name}:</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; flex: 1; justify-content: flex-end;">
                         ${card.supportsCpiDiscount ? `
-                            <label class="bank-cpi-toggle-label" style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; color: ${card.currentCpiSetting ? "#15803d" : "#64748b"}; background: ${card.currentCpiSetting ? "#ffffff" : "#f8fafc"}; border: 1.5px solid ${card.currentCpiSetting ? "#86efac" : "#cbd5e1"}; padding: 0.3rem 0.6rem; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); transition: all 0.2s;">
-                                <input type="checkbox" class="bank-cpi-checkbox" data-bank-id="${card.bankId}" ${card.currentCpiSetting ? "checked" : ""} onchange="window.setBankDiscountOption('${card.bankId}', 'hasCpi', this.checked)" style="width: 15px; height: 15px; accent-color: #16a34a; cursor: pointer;">
-                                <span>🛡️ Polizza CPI <span style="font-size: 0.7rem; color: #16a34a; font-weight: 800; background: #dcfce7; padding: 0.1rem 0.35rem; border-radius: 4px; margin-left: 0.2rem;">${card.cpiDiscountLabel || "-0,50%"}</span></span>
+                            <label class="bank-cpi-toggle-label" style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; color: ${card.currentCpiSetting ? "#34D399" : "#94A3B8"}; background: ${card.currentCpiSetting ? "rgba(16, 185, 129, 0.15)" : "#11192C"}; border: 1.5px solid ${card.currentCpiSetting ? "#10B981" : "#1C273E"}; padding: 0.35rem 0.75rem; border-radius: 8px; transition: all 0.2s ease;">
+                                <input type="checkbox" class="bank-cpi-checkbox" data-bank-id="${card.bankId}" ${card.currentCpiSetting ? "checked" : ""} onchange="window.setBankDiscountOption('${card.bankId}', 'hasCpi', this.checked)" style="width: 15px; height: 15px; accent-color: #10B981; cursor: pointer;">
+                                <span>🛡️ Polizza CPI <span style="font-size: 0.7rem; color: #34D399; font-weight: 800; background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.1rem 0.4rem; border-radius: 4px; margin-left: 0.25rem;">${card.cpiDiscountLabel || "-0,50%"}</span></span>
                             </label>
                         ` : ""}
                         ${card.supportsAccountOption ? `
-                            <label class="bank-conto-toggle-label" style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; color: ${card.currentAccountSetting ? "#1e40af" : "#64748b"}; background: ${card.currentAccountSetting ? "#ffffff" : "#f8fafc"}; border: 1.5px solid ${card.currentAccountSetting ? "#93c5fd" : "#cbd5e1"}; padding: 0.3rem 0.6rem; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); transition: all 0.2s;">
-                                <input type="checkbox" class="bank-conto-checkbox" data-bank-id="${card.bankId}" ${card.currentAccountSetting ? "checked" : ""} onchange="window.setBankDiscountOption('${card.bankId}', 'aperturaConto', this.checked)" style="width: 15px; height: 15px; accent-color: #2563eb; cursor: pointer;">
-                                <span>💳 Apertura Conto / Accredito${card.accountDiscountLabel ? ` <span style="font-size: 0.7rem; color: #1e40af; font-weight: 800; background: #dbeafe; padding: 0.1rem 0.35rem; border-radius: 4px; margin-left: 0.2rem;">${card.accountDiscountLabel}</span>` : ""}</span>
+                            <label class="bank-conto-toggle-label" style="display: flex; align-items: center; gap: 0.45rem; font-size: 0.76rem; font-weight: 700; cursor: pointer; color: ${card.currentAccountSetting ? "#38BDF8" : "#94A3B8"}; background: ${card.currentAccountSetting ? "rgba(0, 210, 255, 0.12)" : "#11192C"}; border: 1.5px solid ${card.currentAccountSetting ? "#00D2FF" : "#1C273E"}; padding: 0.35rem 0.75rem; border-radius: 8px; transition: all 0.2s ease;">
+                                <input type="checkbox" class="bank-conto-checkbox" data-bank-id="${card.bankId}" ${card.currentAccountSetting ? "checked" : ""} onchange="window.setBankDiscountOption('${card.bankId}', 'aperturaConto', this.checked)" style="width: 15px; height: 15px; accent-color: #00D2FF; cursor: pointer;">
+                                <span>💳 Conto / Accredito${card.accountDiscountLabel ? ` <span style="font-size: 0.7rem; color: #38BDF8; font-weight: 800; background: rgba(56, 189, 248, 0.2); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.1rem 0.4rem; border-radius: 4px; margin-left: 0.25rem;">${card.accountDiscountLabel}</span>` : ""}</span>
                             </label>
                         ` : ""}
                     </div>
@@ -6962,16 +6962,16 @@ function updateCalculations() {
     if (approvedBanks.length > 0 || (approvedBanks.length === 0 && derogaBanks.length > 0)) {
         const sec1Header = document.createElement("div");
         sec1Header.className = "approved-section-header";
-        sec1Header.style.cssText = "margin: 1rem 0 0.75rem 0; padding: 0.85rem 1.1rem; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 10px; display: flex; align-items: center; justify-content: space-between;";
+        sec1Header.style.cssText = "margin: 1rem 0 0.75rem 0; padding: 0.85rem 1.15rem; background: rgba(16, 185, 129, 0.1); border: 1.5px solid rgba(16, 185, 129, 0.35); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;";
         sec1Header.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
                 <span style="font-size: 1.3rem;">🟢</span>
                 <div>
-                    <strong style="color: #166534; font-size: 0.95rem; display: block;">Banche Pienamente Idonee (Senza Deroga)</strong>
-                    <span style="color: #15803d; font-size: 0.78rem;">Istituti i cui parametri (LTV, DSR, sussistenza, territorialità) sono conformi al 100% senza necessità di deroga.</span>
+                    <strong style="color: #10B981; font-size: 0.95rem; display: block; letter-spacing: 0.01em;">Banche Pienamente Idonee (Senza Deroga)</strong>
+                    <span style="color: #94A3B8; font-size: 0.78rem;">Istituti i cui parametri (LTV, DSR, sussistenza, territorialità) sono conformi al 100% senza necessità di deroga.</span>
                 </div>
             </div>
-            <span style="background: #dcfce7; color: #166534; font-size: 0.78rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px; border: 1px solid #86efac; white-space: nowrap;">${approvedBanks.length} Banche Idonee</span>
+            <span style="background: rgba(16, 185, 129, 0.2); color: #34D399; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.4); white-space: nowrap;">${approvedBanks.length} Banche Idonee</span>
         `;
         cardsContainer.appendChild(sec1Header);
         
@@ -6993,16 +6993,16 @@ function updateCalculations() {
     if (derogaBanks.length > 0) {
         const sec2Header = document.createElement("div");
         sec2Header.className = "deroga-section-header";
-        sec2Header.style.cssText = "margin: 1.75rem 0 0.75rem 0; padding: 0.85rem 1.1rem; background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 10px; display: flex; align-items: center; justify-content: space-between;";
+        sec2Header.style.cssText = "margin: 1.75rem 0 0.75rem 0; padding: 0.85rem 1.15rem; background: rgba(245, 158, 11, 0.1); border: 1.5px solid rgba(245, 158, 11, 0.35); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;";
         sec2Header.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
                 <span style="font-size: 1.3rem;">🟡</span>
                 <div>
-                    <strong style="color: #92400e; font-size: 0.95rem; display: block;">Banche Idonee con Deroga / Valutazione Speciale</strong>
-                    <span style="color: #b45309; font-size: 0.78rem;">Istituti con eccezioni gestibili che richiedono delibera di comitato crediti o condizioni integrative.</span>
+                    <strong style="color: #F59E0B; font-size: 0.95rem; display: block; letter-spacing: 0.01em;">Banche Idonee con Deroga / Valutazione Speciale</strong>
+                    <span style="color: #94A3B8; font-size: 0.78rem;">Istituti con eccezioni gestibili che richiedono delibera di comitato crediti o condizioni integrative.</span>
                 </div>
             </div>
-            <span style="background: #fef3c7; color: #92400e; font-size: 0.78rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px; border: 1px solid #fcd34d; white-space: nowrap;">${derogaBanks.length} In Deroga</span>
+            <span style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.4); white-space: nowrap;">${derogaBanks.length} In Deroga</span>
         `;
         cardsContainer.appendChild(sec2Header);
         
@@ -7017,16 +7017,16 @@ function updateCalculations() {
     if (koBanks.length > 0) {
         const sec3Header = document.createElement("div");
         sec3Header.className = "ko-section-header";
-        sec3Header.style.cssText = "margin: 1.75rem 0 0.75rem 0; padding: 0.85rem 1.1rem; background: #fef2f2; border: 1.5px solid #fecaca; border-radius: 10px; display: flex; align-items: center; justify-content: space-between;";
+        sec3Header.style.cssText = "margin: 1.75rem 0 0.75rem 0; padding: 0.85rem 1.15rem; background: rgba(239, 68, 68, 0.1); border: 1.5px solid rgba(239, 68, 68, 0.35); border-radius: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;";
         sec3Header.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
                 <span style="font-size: 1.3rem;">🚫</span>
                 <div>
-                    <strong style="color: #991b1b; font-size: 0.95rem; display: block;">Istituti e Banche Non Fattibili per questa operazione</strong>
-                    <span style="color: #b91c1c; font-size: 0.78rem;">I seguenti istituti non soddisfano uno o più criteri vincolanti di policy (territorialità, LTV, DSR o sussistenza).</span>
+                    <strong style="color: #EF4444; font-size: 0.95rem; display: block; letter-spacing: 0.01em;">Istituti e Banche Non Fattibili per questa operazione</strong>
+                    <span style="color: #94A3B8; font-size: 0.78rem;">I seguenti istituti non soddisfano uno o più criteri vincolanti di policy (territorialità, LTV, DSR o sussistenza).</span>
                 </div>
             </div>
-            <span style="background: #fee2e2; color: #dc2626; font-size: 0.78rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px; border: 1px solid #fca5a5; white-space: nowrap;">${koBanks.length} Banche Escluse</span>
+            <span style="background: rgba(239, 68, 68, 0.2); color: #F87171; font-size: 0.78rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.4); white-space: nowrap;">${koBanks.length} Banche Escluse</span>
         `;
         cardsContainer.appendChild(sec3Header);
         

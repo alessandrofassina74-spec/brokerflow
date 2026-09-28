@@ -2701,3 +2701,65 @@ span.bank-title {
 .bank-card .rule-value {
     color: #94A3B8 !important;
 }
+
+/* ==========================================================================
+   BANK CARD DISCOUNT OPTIONS & RESPONSIVE RULES (DARK FINTECH)
+   ========================================================================== */
+.bank-card-discount-options {
+    background: #0B1222 !important;
+    border: 1.5px solid #1C273E !important;
+    border-radius: 10px !important;
+    padding: 0.65rem 0.95rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 0.65rem !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.bank-cpi-toggle-label,
+.bank-conto-toggle-label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    padding: 0.35rem 0.75rem !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+
+@media (max-width: 768px) {
+    .bank-card-discount-options {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.65rem !important;
+        padding: 0.75rem !important;
+    }
+    .bank-card-discount-options > div:first-child {
+        justify-content: flex-start !important;
+    }
+    .bank-card-discount-options > div:last-child {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+    }
+    .bank-cpi-toggle-label,
+    .bank-conto-toggle-label {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 0.55rem 0.85rem !important;
+    }
+    .approved-section-header,
+    .deroga-section-header,
+    .ko-section-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.6rem !important;
+    }
+}
