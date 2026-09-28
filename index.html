@@ -512,7 +512,7 @@
     <div class="app-layout" id="app-layout-wrapper">
         
         <!-- LEFT SIDEBAR NAVIGATION (replicated from dashboard.jpg) -->
-        <aside class="app-sidebar">
+        <aside class="app-sidebar" id="main-app-sidebar">
             <div>
                 <!-- Sidebar Logo Header with Collapse Button -->
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.75rem; padding: 0 0.25rem;">
@@ -523,7 +523,7 @@
                             <span style="font-size: 0.54rem; font-weight: 800; letter-spacing: 0.14em; color: #94a3b8; text-transform: uppercase; display: block; margin-top: 0.1rem;">IL TUO MUTUO, SEMPLICE</span>
                         </div>
                     </div>
-                    <button type="button" id="btn-toggle-sidebar" onclick="window.toggleDesktopSidebar()" title="Riduci/Espandi menu (Ctrl+B)" style="background: rgba(255,255,255,0.06); color: #94a3b8; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; font-size: 0.8rem;">
+                    <button type="button" id="btn-toggle-sidebar" onclick="window.toggleDesktopSidebar()" title="Riduci / Espandi menu (Ctrl+B)" style="background: rgba(255,255,255,0.06); color: #94a3b8; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; font-size: 0.8rem; flex-shrink: 0;">
                         <span id="sidebar-collapse-icon">◀</span>
                     </button>
                 </div>
@@ -531,39 +531,50 @@
                 <!-- Navigation Links -->
                 <nav>
                     <button type="button" class="sidebar-nav-btn active" id="crm-nav-dashboard" data-switch-module="dashboard" data-tooltip="Dashboard" onclick="switchCrmModule('dashboard')">
-                        <span style="font-size: 1.1rem;">📊</span> Dashboard
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📊</span>
+                        <span class="sidebar-nav-label">Dashboard</span>
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-clienti" data-switch-module="clienti" data-tooltip="Clienti" onclick="switchCrmModule('clienti')">
-                        <span style="font-size: 1.1rem;">👥</span> Clienti
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">👥</span>
+                        <span class="sidebar-nav-label">Clienti</span>
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-pratiche" data-switch-module="pratiche" data-tooltip="Pratiche" onclick="switchCrmModule('pratiche')">
-                        <span style="font-size: 1.1rem;">📁</span> Pratiche
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📁</span>
+                        <span class="sidebar-nav-label">Pratiche</span>
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-engine" data-switch-module="engine" data-tooltip="Nuova Pratica" onclick="window.initNuovaPratica()">
-                        <span style="font-size: 1.1rem;">🚀</span> Nuova Pratica (Engine)
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-engine" data-switch-module="engine" data-tooltip="Nuova Pratica (Engine)" onclick="window.initNuovaPratica()">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">🚀</span>
+                        <span class="sidebar-nav-label">Nuova Pratica (Engine)</span>
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-banche" data-switch-module="banche" data-tooltip="Banche" onclick="switchCrmModule('banche')">
-                        <span style="font-size: 1.1rem;">🏛️</span> Banche convenzionate
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-banche" data-switch-module="banche" data-tooltip="Banche convenzionate" onclick="switchCrmModule('banche')">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">🏛️</span>
+                        <span class="sidebar-nav-label">Banche convenzionate</span>
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-filiali" data-switch-module="filiali" data-tooltip="Filiali" onclick="switchCrmModule('filiali')">
-                        <span style="font-size: 1.1rem;">🏢</span> Filiali
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">🏢</span>
+                        <span class="sidebar-nav-label">Filiali</span>
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-documenti" data-switch-module="documenti" data-tooltip="Documenti" onclick="switchCrmModule('documenti')">
-                        <span style="font-size: 1.1rem;">📄</span> Lista Documenti
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-documenti" data-switch-module="documenti" data-tooltip="Lista Documenti" onclick="switchCrmModule('documenti')">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📄</span>
+                        <span class="sidebar-nav-label">Lista Documenti</span>
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-agenda" data-switch-module="agenda" data-tooltip="Agenda" onclick="switchCrmModule('agenda')">
-                        <span style="font-size: 1.1rem;">📅</span> Agenda &amp; Scadenze
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-agenda" data-switch-module="agenda" data-tooltip="Agenda & Scadenze" onclick="switchCrmModule('agenda')">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📅</span>
+                        <span class="sidebar-nav-label">Agenda &amp; Scadenze</span>
                     </button>
-                    <button type="button" class="sidebar-nav-btn" id="crm-nav-reports" data-switch-module="reports" data-tooltip="Report" onclick="switchCrmModule('reports')">
-                        <span style="font-size: 1.1rem;">📈</span> Report &amp; Statistiche
+                    <button type="button" class="sidebar-nav-btn" id="crm-nav-reports" data-switch-module="reports" data-tooltip="Report & Statistiche" onclick="switchCrmModule('reports')">
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">📈</span>
+                        <span class="sidebar-nav-label">Report &amp; Statistiche</span>
                     </button>
                     <button type="button" class="sidebar-nav-btn" id="crm-nav-impostazioni" data-switch-module="impostazioni" data-tooltip="Impostazioni" onclick="switchCrmModule('impostazioni')">
-                        <span style="font-size: 1.1rem;">⚙️</span> Impostazioni
+                        <span class="sidebar-nav-icon" style="font-size: 1.1rem;">⚙️</span>
+                        <span class="sidebar-nav-label">Impostazioni</span>
                     </button>
                     
                     <div style="margin: 0.75rem 0 0.25rem 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.75rem;">
-                        <button type="button" class="sidebar-nav-btn" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2)); border: 1.5px solid rgba(168, 85, 247, 0.4); color: #e9d5ff; font-weight: 800;" onclick="window.openMultiBankChat()">
-                            <span style="font-size: 1.15rem;">🤖</span> Advisor Multi-Banca
+                        <button type="button" class="sidebar-nav-btn" data-tooltip="Advisor Multi-Banca" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2)); border: 1.5px solid rgba(168, 85, 247, 0.4); color: #e9d5ff; font-weight: 800;" onclick="window.openMultiBankChat()">
+                            <span class="sidebar-nav-icon" style="font-size: 1.15rem;">🤖</span>
+                            <span class="sidebar-nav-label">Advisor Multi-Banca</span>
                         </button>
                     </div>
                 </nav>
@@ -571,25 +582,25 @@
 
             <!-- Sidebar Footer Profile -->
             <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1rem; margin-top: 1rem;">
-                <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <div class="sidebar-user-wrapper" style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.75rem;">
                     <div style="display: flex; align-items: center; gap: 0.65rem;">
-                        <div id="sidebar-user-avatar" style="width: 34px; height: 34px; border-radius: 50%; background: #9333ea; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 0.85rem;">
+                        <div id="sidebar-user-avatar" style="width: 34px; height: 34px; border-radius: 50%; background: #9333ea; display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 0.85rem; flex-shrink: 0;">
                             AF
                         </div>
-                        <div>
+                        <div class="sidebar-user-text">
                             <strong id="sidebar-user-name" style="font-size: 0.82rem; color: #ffffff; display: block; line-height: 1.2;">Alessandro Fassina</strong>
                             <span id="sidebar-user-role" style="font-size: 0.72rem; color: #d8b4fe;">🟣 Super Admin</span>
                         </div>
                     </div>
-                    <button type="button" onclick="window.Auth.logout()" title="Disconnetti" style="background: none; border: none; color: #f87171; cursor: pointer; font-size: 0.9rem;">
+                    <button type="button" id="sidebar-user-logout-btn" onclick="window.Auth.logout()" title="Disconnetti" style="background: none; border: none; color: #f87171; cursor: pointer; font-size: 0.9rem;">
                         🚪
                     </button>
                 </div>
                 <button type="button" onclick="window.toggleDesktopSidebar()" id="sidebar-footer-collapse-btn" style="width: 100%; background: none; border: none; font-size: 0.76rem; font-weight: 700; color: #94a3b8; cursor: pointer; text-align: left; padding: 0.35rem 0.5rem; display: flex; align-items: center; gap: 0.35rem; border-radius: 6px; transition: background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.06)'" onmouseout="this.style.background='none'">
                     <span id="sidebar-collapse-text">‹ Riduci menu</span>
                 </button>
-                <button type="button" onclick="window.forzaAggiornamentoApp()" style="margin-top: 0.5rem; width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.5rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.35rem;">
-                    🔄 Svuota Cache & Aggiorna
+                <button type="button" id="sidebar-cache-btn" onclick="window.forzaAggiornamentoApp()" style="margin-top: 0.5rem; width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.5rem; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.35rem;">
+                    <span>🔄</span> <span class="sidebar-cache-text">Svuota Cache &amp; Aggiorna</span>
                 </button>
             </div>
         </aside>
@@ -613,12 +624,13 @@
             <!-- Top App Header Bar (Desktop) -->
             <div class="desktop-top-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
                 <div style="display: flex; align-items: center; gap: 0.85rem;">
-                    <button type="button" onclick="window.toggleDesktopSidebar()" class="btn" title="Riduci/Espandi menu laterale (Ctrl+B)" style="background: #11192C; border: 1.5px solid #1C273E; color: #E2E8F0; padding: 0.45rem 0.75rem; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
-                        <span>☰</span> <span class="sidebar-toggle-btn-label">Menu</span>
+                    <button type="button" onclick="window.toggleDesktopSidebar()" class="btn" title="Riduci/Espandi menu laterale (Ctrl+B)" style="background: #11192C; border: 1.5px solid #1C273E; color: #E2E8F0; padding: 0.5rem 0.85rem; border-radius: 8px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                        <span id="top-bar-sidebar-icon">☰</span> <span class="sidebar-toggle-btn-label">Menu</span>
                     </button>
                     <div>
                         <h1 style="font-size: 1.85rem; font-weight: 800; color: #FFFFFF; margin: 0; line-height: 1.1;">Dashboard Broker Flow</h1>
-                    <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.25rem;">Benvenuto Alessandro, seleziona una voce o clicca su Nuova Pratica.</p>
+                        <p style="font-size: 0.9rem; color: #64748b; margin-top: 0.25rem;">Benvenuto Alessandro, seleziona una voce o clicca su Nuova Pratica.</p>
+                    </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
                     <button type="button" data-switch-module="engine" onclick="window.initNuovaPratica()" class="btn btn-primary" style="background: #0052ff; color: #ffffff; font-weight: 700; font-size: 0.88rem; padding: 0.65rem 1.35rem; border-radius: 10px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; box-shadow: 0 4px 14px rgba(0,82,255,0.25);">
