@@ -2337,7 +2337,33 @@
                                 </div>
                             </div>
 
-                            <!-- SEZIONE: Dati Famiglia e Territorialità -->
+                            
+                            <!-- SEPARATORE GRAFICO & INTERVISTA COINTESTATARI E GARANTI -->
+                            <div id="wiz-coapplicants-guarantors-section" style="background: #0D1424; border: 2px solid #1E2D4A; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35); margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1.5px solid #1C273E; padding-bottom: 0.85rem; flex-wrap: wrap; gap: 0.75rem;">
+                                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                        <div style="background: rgba(0, 210, 255, 0.12); border: 1.5px solid rgba(0, 210, 255, 0.35); width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                            👥
+                                        </div>
+                                        <div>
+                                            <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF !important; margin: 0;">Intervista Partecipanti: 2° Richiedente / Cointestatari & Garanti</h3>
+                                            <span style="font-size: 0.78rem; color: #94A3B8;">Compila le interviste per tutti i soggetti che partecipano al reddito o prestano garanzia</span>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                                        <button type="button" onclick="window.addCoapplicantCard()" class="btn" style="background: rgba(0, 82, 255, 0.15); border: 1.5px solid #0052ff; color: #00D2FF; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.15rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 0 12px rgba(0, 82, 255, 0.2);">
+                                            ➕ Aggiungi 2° Richiedente / Cointestatario
+                                        </button>
+                                        <button type="button" onclick="window.addGuarantorCard()" class="btn" style="background: rgba(16, 185, 129, 0.15); border: 1.5px solid #10b981; color: #10B981; font-weight: 700; font-size: 0.85rem; padding: 0.55rem 1.15rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);">
+                                            🛡️ Aggiungi Garante
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="spouse-auto-card-container" style="margin-top: 0.75rem;"></div>
+                                <div id="coapplicant-cards-container" style="margin-top: 0.75rem;"></div>
+                                <div id="guarantor-cards-container" style="margin-top: 0.75rem;"></div>
+                            </div>
+<!-- SEZIONE: Dati Famiglia e Territorialità -->
                             <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.25rem 0;">🏘️ Dati Famiglia e Territorialità</h3>
                                 <div style="margin-bottom: 1.25rem;">
@@ -2442,28 +2468,11 @@
                             <button type="button" onclick="window.goToStep(3)" class="btn btn-primary" style="min-width: 280px; background: #0052ff; color: #ffffff; font-weight: 700; font-size: 0.95rem; padding: 0.85rem 1.5rem; border-radius: 10px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 0.4rem; box-shadow: 0 4px 14px rgba(0,82,255,0.3);">
                                 Prosegui ai Dati Mutuo (Fase 3) ➔
                             </button>
-                        </div>
+                        
+
+                
                     </div>
                 </div>
-
-                <!-- SEZIONE D'INSERIMENTO COINTESTATARI E GARANTI GLOBALE PER TUTTE LE MODALITÀ -->
-                <div id="wiz-coapplicants-guarantors-section" style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                    <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0;">👥 Ulteriori Soggetti nella Pratica (Cointestatari e Garanti)</h3>
-                    <p style="font-size: 0.82rem; color: #64748b; margin: 0 0 1.25rem 0;">Aggiungi cointestatari o garanti terzi per migliorare la fattibilità creditizia della pratica.</p>
-                    
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                        <button type="button" onclick="window.addCoapplicantCard()" class="btn" style="background: #ffffff; border: 1.5px solid #0052ff; color: #0052ff; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 6px rgba(0,82,255,0.08);">
-                            ➕ Inserisci altro richiedente
-                        </button>
-                        <button type="button" onclick="window.addGuarantorCard()" class="btn" style="background: #ffffff; border: 1.5px solid #16a34a; color: #16a34a; font-weight: 700; font-size: 0.85rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 2px 6px rgba(22,163,74,0.08);">
-                            🛡️ Inserisci garante
-                        </button>
-                    </div>
-
-                    <div id="coapplicant-cards-container" style="margin-top: 1rem;"></div>
-                    <div id="guarantor-cards-container" style="margin-top: 0.75rem;"></div>
-                </div>
-
             </div>
 
             <!-- FASE 3: DATI MUTUO E ANALISI (nuova pratica inserita.jpg) -->

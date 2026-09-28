@@ -524,11 +524,11 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                 👤 1. Anagrafica e Dati Personali
             </h4>
 
-            ${isGuarantor ? `
             <!-- RAPPORTO CON IL 1° RICHIEDENTE -->
-            <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1.25rem;">
-                <label style="display: block; font-size: 0.82rem; font-weight: 800; color: #166534; margin-bottom: 0.35rem;">🔗 Rapporto / Grado di Parentela con il 1° Richiedente *</label>
-                <select class="coapp-q-rapporto" onchange="const card = this.closest('.coapp-card'); const fb = card ? card.querySelector('.coapp-fratello-box') : null; if (fb) fb.style.display = (this.value === 'fratello_sorella' ? 'block' : 'none'); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #16a34a; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #ffffff; color: #166534;">
+            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 1.25rem;">
+                <label style="display: block; font-size: 0.82rem; font-weight: 800; color: #00D2FF; margin-bottom: 0.35rem;">🔗 Rapporto / Grado di Parentela con il 1° Richiedente *</label>
+                <select class="coapp-q-rapporto" onchange="const card = this.closest('.coapp-card'); const fb = card ? card.querySelector('.coapp-fratello-box') : null; if (fb) fb.style.display = (this.value === 'fratello_sorella' ? 'block' : 'none'); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1E2D4A; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #0B1222; color: #FFFFFF;">
+                    ${isGuarantor ? `
                     <option value="genitore" ${rapporto === "genitore" ? "selected" : ""}>👨‍👩‍👧 Genitore (Padre / Madre)</option>
                     <option value="marito_moglie" ${rapporto === "marito_moglie" || rapporto === "coniuge" ? "selected" : ""}>💍 Coniuge (Marito / Moglie)</option>
                     <option value="convivente" ${rapporto === "convivente" || rapporto === "compagno" ? "selected" : ""}>🏡 Convivente / Compagno/a</option>
@@ -537,18 +537,26 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     <option value="parente_terzo" ${rapporto === "parente_terzo" ? "selected" : ""}>👥 Altro parente entro 3° grado (Zio / Nonno / Cugino)</option>
                     <option value="terzo_non_parente" ${rapporto === "terzo_non_parente" ? "selected" : ""}>🤝 Soggetto Terzo / Non parente (Amico / Conoscente)</option>
                     <option value="datore_socio" ${rapporto === "datore_socio" ? "selected" : ""}>💼 Datore di Lavoro / Socio d'Affari</option>
+                    ` : `
+                    <option value="coniuge" ${rapporto === "coniuge" || isSpouse || rapporto === "marito_moglie" ? "selected" : ""}>💍 Coniuge (Marito / Moglie)</option>
+                    <option value="convivente" ${rapporto === "convivente" || rapporto === "compagno" ? "selected" : ""}>🏡 Convivente / Partner di fatto</option>
+                    <option value="genitore" ${rapporto === "genitore" ? "selected" : ""}>👨‍👩‍👧 Genitore (Padre / Madre)</option>
+                    <option value="figlio" ${rapporto === "figlio" ? "selected" : ""}>🧒 Figlio / Figlia</option>
+                    <option value="fratello_sorella" ${rapporto === "fratello_sorella" ? "selected" : ""}>👫 Fratello / Sorella</option>
+                    <option value="parente_terzo" ${rapporto === "parente_terzo" ? "selected" : ""}>👥 Altro parente entro 3° grado (Zio / Cugino / Nonno)</option>
+                    <option value="terzo_non_parente" ${rapporto === "terzo_non_parente" ? "selected" : ""}>🤝 Terzo non parente / Altro cointestatario</option>
+                    `}
                 </select>
-                <div class="coapp-fratello-box" style="display: ${rapporto === 'fratello_sorella' ? 'block' : 'none'}; margin-top: 0.65rem; background: #ffffff; border: 1px solid #86efac; border-radius: 6px; padding: 0.5rem 0.75rem;">
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #166534; margin-bottom: 0.2rem;">Ha un proprio nucleo familiare autonomo (stato di famiglia separato)?</label>
-                    <select class="coapp-fratello-nucleo-autonomo" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.4rem 0.6rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.8rem;">
+                <div class="coapp-fratello-box" style="display: ${rapporto === 'fratello_sorella' ? 'block' : 'none'}; margin-top: 0.65rem; background: #0B1222; border: 1.5px solid #1E2D4A; border-radius: 6px; padding: 0.5rem 0.75rem;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #00D2FF; margin-bottom: 0.2rem;">Ha un proprio nucleo familiare autonomo (stato di famiglia separato)?</label>
+                    <select class="coapp-fratello-nucleo-autonomo" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.4rem 0.6rem; border: 1.5px solid #1E2D4A; border-radius: 6px; font-size: 0.8rem; background: #0B1222; color: #FFFFFF;">
                         <option value="si" ${data.fratelloNucleoAutonomo === true || data.fratelloNucleoAutonomo === 'si' ? 'selected' : ''}>Sì (Nucleo autonomo separato dai genitori)</option>
                         <option value="no" ${data.fratelloNucleoAutonomo === false || data.fratelloNucleoAutonomo === 'no' ? 'selected' : ''}>No (Stesso nucleo / convivenza con genitori)</option>
                     </select>
-                    <span style="font-size: 0.68rem; color: #15803d; display: block; margin-top: 0.2rem;">Mediobanca Premier pondera il reddito dei fratelli al 100% solo se hanno un proprio nucleo familiare autonomo.</span>
+                    <span style="font-size: 0.68rem; color: #94A3B8; display: block; margin-top: 0.2rem;">Mediobanca Premier pondera il reddito dei fratelli al 100% solo se hanno un proprio nucleo familiare autonomo.</span>
                 </div>
-                <span style="font-size: 0.72rem; color: #15803d; display: block; margin-top: 0.3rem;">Fattore vincolante per l'ammissibilità nelle policy bancarie (es. molte banche richiedono garanti in 1° grado di parentela).</span>
+                <span style="font-size: 0.72rem; color: #94A3B8; display: block; margin-top: 0.3rem;">Indica il vincolo di parentela o convivenza con il 1° richiedente per la corretta verifica dei parametri bancari.</span>
             </div>
-            ` : ''}
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div>
                     <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">1. Nome *</label>
@@ -5640,16 +5648,71 @@ window.renderPhase4ClientSummary = function(pratica) {
     const container = document.getElementById("phase4-client-profile-card");
     if (!container) return;
     
-    const subjects = (pratica && Array.isArray(pratica.subjects) && pratica.subjects.length > 0) ? pratica.subjects : (window.wizardSubjects || []);
-    const totalIncome = (pratica && typeof pratica.totalIncome === "number") ? pratica.totalIncome : 0;
+    // Normalization to ensure ALL subjects (Richiedente 1, Cointestatari, Garanti) are retrieved
+    let subjects = [];
+    if (pratica && Array.isArray(pratica.subjects) && pratica.subjects.length > 0) {
+        subjects = pratica.subjects.map(s => Object.assign({}, s));
+    } else if (window.wizardSubjects && window.wizardSubjects.length > 0) {
+        subjects = window.wizardSubjects.map(s => Object.assign({}, s));
+    } else if (pratica && (pratica.applicant || pratica.richiedente || pratica.cliente)) {
+        subjects.push({
+            role: "Richiedente Principale",
+            nome: pratica.cliente || pratica.nome || "Richiedente",
+            cognome: pratica.cognome || "",
+            netto: pratica.netto || pratica.totalIncome || 0
+        });
+    }
+
+    // Merge coapplicantsData if not already in subjects
+    if (pratica && Array.isArray(pratica.coapplicantsData) && pratica.coapplicantsData.length > 0) {
+        pratica.coapplicantsData.forEach(c => {
+            const exists = subjects.some(s => (s.nome || "").toLowerCase() === (c.nome || "").toLowerCase() && (s.cognome || "").toLowerCase() === (c.cognome || "").toLowerCase());
+            if (!exists && (c.nome || c.netto)) {
+                subjects.push({
+                    role: "Cointestatario",
+                    rapporto: c.rapporto || (c.isSpouse ? "coniuge" : "cointestatario"),
+                    nome: c.nome,
+                    cognome: c.cognome,
+                    eta: c.dataNascita ? (new Date().getFullYear() - new Date(c.dataNascita).getFullYear()) : 35,
+                    cittadinanza: c.cittadinanza || "IT",
+                    tipoContratto: c.dipContratto ? ("dipendente_" + (c.dipContratto === "indeterminato" ? "ti" : "td")) : (c.macroCategoria || "dipendente_ti"),
+                    anzianitaMesi: parseInt(c.dipAnzianita) || 24,
+                    netto: parseFloat(c.netto) || 0
+                });
+            }
+        });
+    }
+
+    // Merge guarantorsData if not already in subjects
+    if (pratica && Array.isArray(pratica.guarantorsData) && pratica.guarantorsData.length > 0) {
+        pratica.guarantorsData.forEach(g => {
+            const exists = subjects.some(s => (s.nome || "").toLowerCase() === (g.nome || "").toLowerCase() && (s.cognome || "").toLowerCase() === (g.cognome || "").toLowerCase());
+            if (!exists && (g.nome || g.netto)) {
+                subjects.push({
+                    role: "Garante",
+                    rapporto: g.rapporto || "genitore",
+                    nome: g.nome,
+                    cognome: g.cognome,
+                    eta: g.dataNascita ? (new Date().getFullYear() - new Date(g.dataNascita).getFullYear()) : 55,
+                    cittadinanza: g.cittadinanza || "IT",
+                    tipoContratto: g.tipoContratto || "dipendente_ti",
+                    netto: parseFloat(g.netto) || 0
+                });
+            }
+        });
+    }
+
+    const totalIncome = (pratica && typeof pratica.totalIncome === "number" && pratica.totalIncome > 0)
+        ? pratica.totalIncome
+        : subjects.reduce((sum, s) => sum + (parseFloat(s.netto) || 0), 0);
     
     // Format helpers
     const formatMoney = (val) => "€ " + Math.round(parseFloat(val) || 0).toLocaleString("it-IT");
     
     // Status Civile format
     const suffix = (window.currentPhase2Mode === "file") ? "-file" : "";
-    const statoCivVal = (document.getElementById("wiz-q4-stato-civile" + suffix)?.value) || (document.getElementById("wiz-q4-stato-civile")?.value) || "celibe";
-    const regimeVal = (document.getElementById("wiz-q4-regime" + suffix)?.value) || (document.getElementById("wiz-q4-regime")?.value) || "separazione";
+    const statoCivVal = (document.getElementById("wiz-q4-stato-civile" + suffix)?.value) || (document.getElementById("wiz-q4-stato-civile")?.value) || pratica.statoCivile || "celibe";
+    const regimeVal = (document.getElementById("wiz-q4-regime" + suffix)?.value) || (document.getElementById("wiz-q4-regime")?.value) || pratica.regime || "separazione";
     let statoCivileText = "Celibe / Nubile";
     if (statoCivVal === "sposato" || statoCivVal === "coniugato") {
         statoCivileText = `Coniugato/a (${regimeVal === "comunione" ? "Comunione dei beni" : "Separazione dei beni"})`;
@@ -5675,6 +5738,7 @@ window.renderPhase4ClientSummary = function(pratica) {
     
     // Altre rate & Impegni
     const altreRateVal = pratica.altreRate || 0;
+    const patrimonioVal = parseFloat(pratica.patrimonioMobiliare ?? (document.getElementById("wiz-patrimonio-mobiliare")?.value) ?? 0) || 0;
     
     // Finalità label
     const finalitaLabels = {
@@ -5689,14 +5753,46 @@ window.renderPhase4ClientSummary = function(pratica) {
     };
     const finalitaLabel = finalitaLabels[pratica.finalita] || (pratica.finalita ? pratica.finalita.toUpperCase() : "Acquisto");
     
-    // Build Subjects List HTML
+    // Build Subjects List HTML with high contrast & explicit relationship
     let subjectsHtml = "";
     subjects.forEach((s, idx) => {
         const isPrimary = (s.role === "Richiedente Principale" || idx === 0);
         const roleLabel = s.role || (isPrimary ? "Richiedente Principale" : "Cointestatario");
-        const roleBadgeBg = isPrimary ? "#eff6ff" : (roleLabel.includes("Garante") ? "#fef3c7" : "#f0fdf4");
-        const roleBadgeColor = isPrimary ? "#1d4ed8" : (roleLabel.includes("Garante") ? "#b45309" : "#15803d");
-        const roleBadgeBorder = isPrimary ? "#bfdbfe" : (roleLabel.includes("Garante") ? "#fde68a" : "#bbf7d0");
+        const isGuar = roleLabel.includes("Garante") || s.role === "Garante";
+        
+        let roleBadgeBg = "rgba(0, 82, 255, 0.15)";
+        let roleBadgeColor = "#00D2FF";
+        let roleBadgeBorder = "rgba(0, 210, 255, 0.4)";
+        if (isGuar) {
+            roleBadgeBg = "rgba(245, 158, 11, 0.15)";
+            roleBadgeColor = "#F59E0B";
+            roleBadgeBorder = "rgba(245, 158, 11, 0.4)";
+        } else if (!isPrimary) {
+            roleBadgeBg = "rgba(16, 185, 129, 0.15)";
+            roleBadgeColor = "#10B981";
+            roleBadgeBorder = "rgba(16, 185, 129, 0.4)";
+        }
+        
+        // Relationship tag
+        let relTag = "";
+        if (!isPrimary) {
+            const r = s.rapporto || (s.isSpouse ? "coniuge" : (isGuar ? "genitore" : ""));
+            const relLabels = {
+                "coniuge": "💍 Coniuge",
+                "marito_moglie": "💍 Coniuge",
+                "convivente": "🏡 Convivente / Partner",
+                "compagno": "🏡 Convivente / Partner",
+                "genitore": "👨‍👩‍👧 Genitore",
+                "figlio": "🧒 Figlio/a",
+                "fratello_sorella": "👫 Fratello/Sorella",
+                "parente_terzo": "👥 Parente",
+                "terzo_non_parente": "🤝 Terzo non parente",
+                "datore_socio": "💼 Socio / Datore"
+            };
+            if (r) {
+                relTag = `<span style="background: #1E2D4A; color: #E2E8F0; border: 1px solid #334155; font-size: 0.72rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 6px;">${relLabels[r] || r}</span>`;
+            }
+        }
         
         // Work label
         let workLabel = "Dipendente a tempo indeterminato";
@@ -5704,7 +5800,7 @@ window.renderPhase4ClientSummary = function(pratica) {
         if (macro === "dipendente") {
             const subType = (s.tipoContratto === "dipendente_td" || s.tipoContratto === "determinato") ? "Tempo Determinato" : (s.tipoContratto === "apprendista" ? "Apprendista" : "Tempo Indeterminato");
             const anzMesi = s.anzianitaMesi || s.anzianita || 0;
-            const anzStr = anzMesi > 0 ? (anzMesi >= 12 ? ` (anzianità: ${(anzMesi/12).toFixed(1).replace('.0','')} anni)` : ` (anzianità: ${anzMesi} mesi)`) : "";
+            const anzStr = anzMesi > 0 ? (anzMesi >= 12 ? ` • Anzianità: ${(anzMesi/12).toFixed(1).replace('.0','')} anni` : ` • Anzianità: ${anzMesi} mesi`) : "";
             const orarioStr = s.orarioLavoro === "part_time" ? " (Part-time)" : "";
             workLabel = `💼 Dipendente ${subType}${orarioStr}${anzStr}`;
         } else if (macro === "autonomo") {
@@ -5717,8 +5813,6 @@ window.renderPhase4ClientSummary = function(pratica) {
             workLabel = `🧹 Lavoratore Domestico (Colf / Badante)`;
         } else if (macro === "interinale") {
             workLabel = `⏱️ Lavoratore Somministrato (Interinale)`;
-        } else if (macro === "garante") {
-            workLabel = `🛡️ Garante a supporto`;
         }
         
         // Citizen label
@@ -5734,70 +5828,73 @@ window.renderPhase4ClientSummary = function(pratica) {
         const subjNetto = (typeof s.netto === "number" && s.netto > 0) ? s.netto : (s.incomeNetto || 0);
         
         subjectsHtml += `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.85rem 1rem; display: flex; flex-direction: column; gap: 0.4rem;">
+            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1rem 1.15rem; display: flex; flex-direction: column; gap: 0.6rem; box-shadow: 0 4px 16px rgba(0,0,0,0.35);">
                 <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1rem;">👤</span>
-                        <strong style="color: #0f172a; font-size: 0.92rem;">${s.nome || 'Richiedente'} ${s.cognome || ''}</strong>
-                        <span style="font-size: 0.78rem; color: #64748b;">(${s.eta || 35} anni, ${citStr})</span>
+                    <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                        <span style="font-size: 1.15rem;">👤</span>
+                        <strong style="color: #FFFFFF !important; font-size: 0.98rem; font-weight: 800; letter-spacing: 0.01em;">${(s.nome || 'Richiedente').toUpperCase()} ${(s.cognome || '').toUpperCase()}</strong>
+                        <span style="font-size: 0.8rem; color: #94A3B8; font-weight: 600;">(${s.eta || 35} anni • ${citStr})</span>
+                        ${relTag}
                     </div>
-                    <span style="background: ${roleBadgeBg}; color: ${roleBadgeColor}; border: 1px solid ${roleBadgeBorder}; font-size: 0.72rem; font-weight: 800; padding: 0.15rem 0.55rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.03em;">
+                    <span style="background: ${roleBadgeBg}; color: ${roleBadgeColor}; border: 1.5px solid ${roleBadgeBorder}; font-size: 0.74rem; font-weight: 800; padding: 0.25rem 0.7rem; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.04em;">
                         ${roleLabel}
                     </span>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.82rem; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 0.4rem; margin-top: 0.15rem;">
-                    <span>${workLabel}</span>
-                    <strong style="color: #0052ff; font-size: 0.95rem;">${formatMoney(subjNetto)} / mese</strong>
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.84rem; color: #CBD5E1; border-top: 1px dashed #1E2D4A; padding-top: 0.55rem; margin-top: 0.2rem;">
+                    <span style="color: #94A3B8;">${workLabel}</span>
+                    <strong style="color: #00D2FF !important; font-size: 1.05rem; font-weight: 800;">${formatMoney(subjNetto)} <span style="font-size: 0.75rem; font-weight: 600; color: #94A3B8;">/ mese</span></strong>
                 </div>
             </div>
         `;
     });
 
     container.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.6rem;">
-                <div style="background: #eff6ff; border: 1px solid #bfdbfe; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.15rem; flex-wrap: wrap; gap: 0.75rem; border-bottom: 1.5px solid #1C273E; padding-bottom: 0.85rem;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="background: rgba(0, 210, 255, 0.12); border: 1.5px solid rgba(0, 210, 255, 0.35); width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
                     📋
                 </div>
                 <div>
-                    <h3 style="font-size: 1.02rem; font-weight: 800; color: #0f172a; margin: 0;">Sintesi Pratica & Profilo Richiedenti</h3>
-                    <span style="font-size: 0.76rem; color: #64748b;">Quadro riassuntivo anagrafico, reddituale e situazione familiare</span>
+                    <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF !important; margin: 0;">Sintesi Pratica & Profilo Richiedenti</h3>
+                    <span style="font-size: 0.78rem; color: #94A3B8;">Quadro riassuntivo completo: anagrafica, redditi certificati e situazione patrimoniale</span>
                 </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                <span style="background: #f1f5f9; border: 1px solid #cbd5e1; color: #334155; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px;">
+            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                <span style="background: #0D1424; border: 1.5px solid #1C273E; color: #E2E8F0; font-size: 0.78rem; font-weight: 700; padding: 0.35rem 0.75rem; border-radius: 8px;">
                     🎯 ${finalitaLabel}
                 </span>
-                <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.75rem; font-weight: 800; padding: 0.25rem 0.65rem; border-radius: 6px;">
-                    💰 Reddito Complessivo: ${formatMoney(totalIncome)}/m
+                <span style="background: rgba(0, 210, 255, 0.12); border: 1.5px solid #00D2FF; color: #00D2FF; font-size: 0.82rem; font-weight: 800; padding: 0.35rem 0.85rem; border-radius: 8px; box-shadow: 0 0 12px rgba(0, 210, 255, 0.25);">
+                    💰 Reddito Netto Complessivo: ${formatMoney(totalIncome)}/m
                 </span>
             </div>
         </div>
 
-        <!-- Subjects Grid -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.75rem; margin-bottom: 0.85rem;">
+        <!-- Subjects Grid (All Participants Visible) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 0.85rem; margin-bottom: 1rem;">
             ${subjectsHtml}
         </div>
 
-        <!-- Family & Commitments Strip -->
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.75rem 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; font-size: 0.8rem;">
+        <!-- Family, Commitments & Savings Strip -->
+        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 0.9rem 1.25rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; font-size: 0.82rem;">
             <div>
-                <span style="color: #64748b; display: block; font-size: 0.72rem; font-weight: 600;">👨‍👩‍👧‍👦 Situazione Familiare</span>
-                <strong style="color: #1e293b;">${statoCivileText}</strong>
+                <span style="color: #94A3B8; display: block; font-size: 0.74rem; font-weight: 700; margin-bottom: 0.2rem;">👨‍👩‍👧‍👦 Situazione Familiare</span>
+                <strong style="color: #FFFFFF !important; font-size: 0.88rem;">${statoCivileText}</strong>
             </div>
             <div>
-                <span style="color: #64748b; display: block; font-size: 0.72rem; font-weight: 600;">🏠 Nucleo & Figli</span>
-                <strong style="color: #1e293b;">${personeNucleo} person${personeNucleo === 1 ? 'a' : 'e'} nel nucleo • ${figliText}</strong>
+                <span style="color: #94A3B8; display: block; font-size: 0.74rem; font-weight: 700; margin-bottom: 0.2rem;">🏠 Nucleo & Figli</span>
+                <strong style="color: #FFFFFF !important; font-size: 0.88rem;">${personeNucleo} person${personeNucleo === 1 ? 'a' : 'e'} nel nucleo • ${figliText}</strong>
             </div>
             <div>
-                <span style="color: #64748b; display: block; font-size: 0.72rem; font-weight: 600;">💳 Altri Impegni / Rate in corso</span>
-                <strong style="color: ${altreRateVal > 0 ? '#dc2626' : '#15803d'};">
+                <span style="color: #94A3B8; display: block; font-size: 0.74rem; font-weight: 700; margin-bottom: 0.2rem;">💳 Altri Impegni / Rate in corso</span>
+                <strong style="color: ${altreRateVal > 0 ? '#EF4444' : '#10B981'} !important; font-size: 0.88rem;">
                     ${altreRateVal > 0 ? `⚠️ ${formatMoney(altreRateVal)} / mese` : '✅ Nessun impegno attivo'}
                 </strong>
             </div>
             <div>
-                <span style="color: #64748b; display: block; font-size: 0.72rem; font-weight: 600;">📍 Territorio Immobile</span>
-                <strong style="color: #1e293b;">Provincia: ${pratica.provImmobile ? pratica.provImmobile.toUpperCase() : 'Non specificata'}</strong>
+                <span style="color: #94A3B8; display: block; font-size: 0.74rem; font-weight: 700; margin-bottom: 0.2rem;">💰 Risparmi / Patrimonio Dichiarato</span>
+                <strong style="color: #00D2FF !important; font-size: 0.88rem;">
+                    ${patrimonioVal > 0 ? `${formatMoney(patrimonioVal)} disponibili` : 'Nessun risparmio dichiarato'}
+                </strong>
             </div>
         </div>
     `;
