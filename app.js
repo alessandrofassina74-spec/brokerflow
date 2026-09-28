@@ -4183,10 +4183,25 @@ window.getDealStatusBadgeHtml = function(d) {
     return `<span class="badge-status ${d.stato || 'nuova'}">${d.label || 'Preventivo'}</span>`;
 };
 
+window.handlePraticheSearch = function(query) {
+    if (typeof window.renderCrmDeals === "function") {
+        window.renderCrmDeals();
+    }
+};
+
+window.clearPraticheSearch = function() {
+    const input = document.getElementById("pratiche-search-input");
+    if (input) input.value = "";
+    if (typeof window.renderCrmDeals === "function") {
+        window.renderCrmDeals();
+    }
+};
+
 function renderCrmDeals() {
     const tbody = document.getElementById("deals-table-body");
     if (!tbody) return;
     tbody.innerHTML = "";
+    
     if (!Array.isArray(crmDeals) || crmDeals.length === 0) {
         tbody.innerHTML = `
             <tr>
@@ -4198,9 +4213,63 @@ function renderCrmDeals() {
                 </td>
             </tr>
         `;
+        const countText = document.getElementById("pratiche-count-text");
+        if (countText) countText.innerText = "0 pratiche";
         return;
     }
-    crmDeals.forEach(d => {
+
+    // Sort strictly from newest to oldest
+    const sortedDeals = [...crmDeals].sort((a, b) => {
+        const timeA = new Date(a.createdAt || a.dataCreazione || a.updatedAt || a.data || 0).getTime() || (parseInt(a.id, 10) || 0);
+        const timeB = new Date(b.createdAt || b.dataCreazione || b.updatedAt || b.data || 0).getTime() || (parseInt(b.id, 10) || 0);
+        return timeB - timeA;
+    });
+
+    // Apply search filter if query is present
+    const searchInput = document.getElementById("pratiche-search-input");
+    const query = (searchInput ? searchInput.value : "").trim().toLowerCase();
+    
+    const filteredDeals = query ? sortedDeals.filter(d => {
+        const idStr = String(d.id || "").toLowerCase();
+        const clientStr = String(d.cliente || d.name || "").toLowerCase();
+        const comuneStr = String(d.comune || "").toLowerCase();
+        const bancaStr = String(d.banca || "").toLowerCase();
+        const mutuoStr = String(d.mutuo || "").toLowerCase();
+        const statoStr = String(d.stato || d.label || "").toLowerCase();
+        return idStr.includes(query) || clientStr.includes(query) || comuneStr.includes(query) || bancaStr.includes(query) || mutuoStr.includes(query) || statoStr.includes(query);
+    }) : sortedDeals;
+
+    // Update count indicator
+    const countText = document.getElementById("pratiche-count-text");
+    if (countText) {
+        if (query) {
+            countText.innerText = `${filteredDeals.length} di ${sortedDeals.length} pratiche`;
+        } else {
+            countText.innerText = `${sortedDeals.length} pratiche`;
+        }
+    }
+
+    const clearBtn = document.getElementById("pratiche-search-clear-btn");
+    if (clearBtn) {
+        clearBtn.style.display = query ? "block" : "none";
+    }
+
+    if (filteredDeals.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="9" style="text-align: center; padding: 2.5rem 1.5rem; color: #64748b;">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+                    <strong style="color: #0f172a; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">Nessuna pratica trovata per "${query}"</strong>
+                    <span style="font-size: 0.85rem; display: block; margin-bottom: 1rem;">Prova a cercare con un altro nome, ID, comune o banca.</span>
+                    <button type="button" class="btn" onclick="window.clearPraticheSearch()" style="background: #1E293B; color: #00D2FF; border: 1px solid #00D2FF; padding: 0.45rem 1rem; font-size: 0.82rem; font-weight: 700; border-radius: 8px; cursor: pointer;">Azzera Ricerca</button>
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    filteredDeals.forEach(d => {
+
         const tr = document.createElement("tr");
         tr.className = "crm-deal-card-row";
         tr.onclick = function(e) {
@@ -12267,10 +12336,24 @@ window.setBankPriorityBoost = function(bankKey, boostScore) {
     }
 };
 
+window.openBankPrioritiesModal = function() {
+    const modal = document.getElementById("modal-bank-priorities");
+    if (!modal) return;
+    modal.style.display = "flex";
+    const searchInput = document.getElementById("bank-priority-search-input");
+    if (searchInput) searchInput.value = "";
+    window.renderBankPriorityModalGrid();
+};
+
+window.closeBankPrioritiesModal = function() {
+    const modal = document.getElementById("modal-bank-priorities");
+    if (modal) modal.style.display = "none";
+};
+
 window.resetAllBankPriorityBoosts = function() {
     if (!confirm("Sei sicuro di voler ripristinare tutti i punteggi di priorità delle banche a 0 (Neutro)?")) return;
     localStorage.removeItem("brokerflow_bank_priority_boosts");
-    window.renderBankPrioritySettingsUI();
+    window.renderBankPriorityModalGrid();
     if (typeof window.updateCalculations === "function") {
         try { window.updateCalculations(); } catch(e) {}
     }
@@ -12280,7 +12363,7 @@ window.resetAllBankPriorityBoosts = function() {
 };
 
 window.saveBankPrioritySettingsFromUI = function() {
-    const container = document.getElementById("settings-bank-priority-list");
+    const container = document.getElementById("modal-bank-priority-grid");
     if (!container) return;
     const selects = container.querySelectorAll("select[data-bank-key]");
     const boosts = {};
@@ -12292,17 +12375,18 @@ window.saveBankPrioritySettingsFromUI = function() {
         }
     });
     localStorage.setItem("brokerflow_bank_priority_boosts", JSON.stringify(boosts));
-    window.renderBankPrioritySettingsUI();
+    window.renderBankPriorityModalGrid();
     if (typeof window.updateCalculations === "function") {
         try { window.updateCalculations(); } catch(e) {}
     }
     if (typeof window.showToast === "function") {
         window.showToast("✅ Priorità commerciali e ranking delle banche salvate con successo!", "success");
     }
+    window.closeBankPrioritiesModal();
 };
 
-window.renderBankPrioritySettingsUI = function() {
-    const container = document.getElementById("settings-bank-priority-list");
+window.renderBankPriorityModalGrid = function(filterQuery = "") {
+    const container = document.getElementById("modal-bank-priority-grid");
     if (!container) return;
     
     // Master list of partner banks
@@ -12321,62 +12405,95 @@ window.renderBankPrioritySettingsUI = function() {
     const currentBoosts = window.getBankPriorityBoosts();
 
     const boostOptions = [
-        { val: 3, label: "🚀 +3 Massima Spinta (Top Assoluto)", badge: "🟢 Massima Spinta (+3)", bg: "rgba(0, 210, 255, 0.18)", col: "#00D2FF", border: "rgba(0, 210, 255, 0.45)" },
-        { val: 2, label: "⚡ +2 Forte Spinta Commerciale", badge: "🟢 Forte Spinta (+2)", bg: "rgba(16, 185, 129, 0.18)", col: "#10B981", border: "rgba(16, 185, 129, 0.45)" },
-        { val: 1, label: "✨ +1 Leggera Spinta (In Evidenza)", badge: "🟣 In Evidenza (+1)", bg: "rgba(168, 85, 247, 0.18)", col: "#C084FC", border: "rgba(168, 85, 247, 0.45)" },
-        { val: 0, label: "⚪ 0 Neutro (Ordinamento Standard)", badge: "⚪ Neutro (0)", bg: "rgba(148, 163, 184, 0.12)", col: "#94A3B8", border: "rgba(148, 163, 184, 0.25)" },
+        { val: 3, label: "🚀 +3 Massima Spinta (Top)", badge: "🟢 Massima Spinta (+3)", bg: "rgba(0, 210, 255, 0.18)", col: "#00D2FF", border: "rgba(0, 210, 255, 0.45)" },
+        { val: 2, label: "⚡ +2 Forte Spinta", badge: "🟢 Forte Spinta (+2)", bg: "rgba(16, 185, 129, 0.18)", col: "#10B981", border: "rgba(16, 185, 129, 0.45)" },
+        { val: 1, label: "✨ +1 Leggera Spinta", badge: "🟣 In Evidenza (+1)", bg: "rgba(168, 85, 247, 0.18)", col: "#C084FC", border: "rgba(168, 85, 247, 0.45)" },
+        { val: 0, label: "⚪ 0 Neutro (Standard)", badge: "⚪ Neutro (0)", bg: "rgba(148, 163, 184, 0.12)", col: "#94A3B8", border: "rgba(148, 163, 184, 0.25)" },
         { val: -1, label: "🔻 -1 Bassa Priorità", badge: "🟡 Bassa Priorità (-1)", bg: "rgba(245, 158, 11, 0.18)", col: "#F59E0B", border: "rgba(245, 158, 11, 0.45)" },
         { val: -2, label: "⬇️ -2 Penalità Commerciale", badge: "🔴 Penalizzata (-2)", bg: "rgba(239, 68, 68, 0.18)", col: "#EF4444", border: "rgba(239, 68, 68, 0.45)" },
-        { val: -3, label: "⛔ -3 Massima Penalità (Fondo Classifica)", badge: "🔴 Minima Priorità (-3)", bg: "rgba(220, 38, 38, 0.25)", col: "#F87171", border: "rgba(220, 38, 38, 0.55)" }
+        { val: -3, label: "⛔ -3 Massima Penalità", badge: "🔴 Minima Priorità (-3)", bg: "rgba(220, 38, 38, 0.25)", col: "#F87171", border: "rgba(220, 38, 38, 0.55)" }
     ];
 
-    container.innerHTML = partnerBanks.map((bank, index) => {
+    const cleanQuery = filterQuery.trim().toLowerCase();
+    const filteredBanks = cleanQuery ? partnerBanks.filter(b => {
+        return b.name.toLowerCase().includes(cleanQuery) || b.subtitle.toLowerCase().includes(cleanQuery) || b.key.includes(cleanQuery);
+    }) : partnerBanks;
+
+    const counterEl = document.getElementById("bank-priority-counter");
+    if (counterEl) {
+        counterEl.innerText = cleanQuery ? `${filteredBanks.length} di ${partnerBanks.length} banche` : `${partnerBanks.length} banche partner`;
+    }
+
+    const clearBtn = document.getElementById("bank-priority-search-clear");
+    if (clearBtn) {
+        clearBtn.style.display = cleanQuery ? "block" : "none";
+    }
+
+    if (filteredBanks.length === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem 1.5rem; color: #64748B;">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+                <strong style="color: #FFFFFF; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">Nessuna banca trovata per "${cleanQuery}"</strong>
+                <span style="font-size: 0.85rem; display: block; margin-bottom: 1rem;">Prova a cercare con un altro nome o territorio.</span>
+                <button type="button" class="btn" onclick="window.clearBankPrioritySearch()" style="background: #111A30; color: #00D2FF; border: 1.5px solid #00D2FF; padding: 0.45rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.82rem; cursor: pointer;">Azzera Ricerca</button>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = filteredBanks.map(bank => {
         const canonicalKey = window.getCanonicalBankKey(bank.key);
         const score = currentBoosts[canonicalKey] !== undefined ? parseInt(currentBoosts[canonicalKey], 10) : 0;
         const currentOpt = boostOptions.find(o => o.val === score) || boostOptions[3];
 
         return `
-            <div class="bank-priority-row" style="background: #0B1222; border: 1.5px solid ${score > 0 ? '#00D2FF40' : (score < 0 ? '#EF444440' : '#1C273E')}; border-radius: 12px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.25);">
-                <div style="display: flex; align-items: center; gap: 1rem; min-width: 260px;">
-                    <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 8px; width: 58px; height: 38px; display: flex; align-items: center; justify-content: center; padding: 2px 5px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
-                        ${window.getBankLogoHtml(bank.name, 26)}
-                    </div>
-                    <div>
-                        <div style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; display: flex; align-items: center; gap: 0.5rem;">
-                            <span>${bank.name}</span>
+            <div class="bank-priority-card" style="background: #0B1222; border: 1.5px solid ${score > 0 ? '#00D2FF45' : (score < 0 ? '#EF444445' : '#1C273E')}; border-radius: 12px; padding: 1.15rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 195px; height: 100%; box-sizing: border-box; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                
+                <!-- Top: Fixed Frame Logo & Title -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.65rem;">
+                        <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 8px; width: 56px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 2px 4px; overflow: hidden; flex-shrink: 0; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">
+                            ${window.getBankLogoHtml(bank.name, 24)}
                         </div>
-                        <div style="font-size: 0.78rem; color: #64748B; margin-top: 0.15rem;">
-                            ${bank.subtitle}
+                        <div style="min-width: 0; flex: 1;">
+                            <h4 style="font-size: 1.02rem; font-weight: 800; color: #FFFFFF; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${bank.name}">
+                                ${bank.name}
+                            </h4>
+                            <div style="font-size: 0.74rem; color: #64748B; margin-top: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${bank.subtitle}">
+                                ${bank.subtitle}
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-                    <div id="bank-priority-badge-${bank.key}" style="background: ${currentOpt.bg}; color: ${currentOpt.col}; border: 1px solid ${currentOpt.border}; font-size: 0.78rem; font-weight: 800; padding: 0.35rem 0.75rem; border-radius: 8px; white-space: nowrap; min-width: 155px; text-align: center;">
+                <!-- Middle: Live Status Badge (Equal Height) -->
+                <div style="margin: 0.65rem 0;">
+                    <div id="modal-bank-priority-badge-${bank.key}" style="background: ${currentOpt.bg}; color: ${currentOpt.col}; border: 1px solid ${currentOpt.border}; font-size: 0.76rem; font-weight: 800; padding: 0.35rem 0.65rem; border-radius: 6px; text-align: center; height: 26px; display: flex; align-items: center; justify-content: center; width: 100%; box-sizing: border-box;">
                         ${currentOpt.badge}
                     </div>
+                </div>
 
-                    <div style="position: relative;">
-                        <select data-bank-key="${bank.key}" onchange="window.handleBankPrioritySelectChange('${bank.key}', this.value)" style="background: #111A30; color: #FFFFFF; border: 1.5px solid #2A3B5C; border-radius: 8px; padding: 0.5rem 1rem 0.5rem 0.85rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; outline: none; transition: border-color 0.2s;">
-                            ${boostOptions.map(opt => `
-                                <option value="${opt.val}" ${opt.val === score ? 'selected' : ''} style="background: #0D162B; color: #FFFFFF;">
-                                    ${opt.label}
-                                </option>
-                            `).join("")}
-                        </select>
-                    </div>
+                <!-- Bottom: Full-Width Priority Selector -->
+                <div>
+                    <select data-bank-key="${bank.key}" onchange="window.handleModalBankPriorityChange('${bank.key}', this.value)" style="width: 100%; background: #111A30; color: #FFFFFF; border: 1.5px solid #2A3B5C; border-radius: 8px; padding: 0.55rem 0.75rem; font-size: 0.82rem; font-weight: 700; cursor: pointer; outline: none; transition: border-color 0.2s; box-sizing: border-box;">
+                        ${boostOptions.map(opt => `
+                            <option value="${opt.val}" ${opt.val === score ? 'selected' : ''} style="background: #0D162B; color: #FFFFFF;">
+                                ${opt.label}
+                            </option>
+                        `).join("")}
+                    </select>
                 </div>
             </div>
         `;
     }).join("");
 };
 
-window.handleBankPrioritySelectChange = function(bankKey, val) {
+window.handleModalBankPriorityChange = function(bankKey, val) {
     const score = parseInt(val, 10) || 0;
     window.setBankPriorityBoost(bankKey, score);
     
-    // Update live badge for this row immediately
-    const badgeEl = document.getElementById(`bank-priority-badge-${bankKey}`);
+    // Update live badge for this card
+    const badgeEl = document.getElementById(`modal-bank-priority-badge-${bankKey}`);
     if (badgeEl) {
         const boostOptions = [
             { val: 3, badge: "🟢 Massima Spinta (+3)", bg: "rgba(0, 210, 255, 0.18)", col: "#00D2FF", border: "rgba(0, 210, 255, 0.45)" },
@@ -12396,8 +12513,18 @@ window.handleBankPrioritySelectChange = function(bankKey, val) {
     
     if (typeof window.showToast === "function") {
         const scoreText = score > 0 ? `+${score}` : `${score}`;
-        window.showToast(`⭐ Priorità commerciale aggiornata (${scoreText})`, "info");
+        window.showToast(`⭐ Priorità aggiornata (${scoreText})`, "info");
     }
+};
+
+window.filterBankPrioritiesModal = function(query) {
+    window.renderBankPriorityModalGrid(query);
+};
+
+window.clearBankPrioritySearch = function() {
+    const input = document.getElementById("bank-priority-search-input");
+    if (input) input.value = "";
+    window.renderBankPriorityModalGrid("");
 };
 
 window.initImpostazioniModule = function() {
