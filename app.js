@@ -4015,14 +4015,14 @@ function renderCrmClients() {
                     </div>
 
                     <div class="client-mobile-actions">
-                        <button type="button" class="btn-m-action doc" onclick="startDealForClient('${c.id}')" style="background: #00D2FF; color: #070B14; font-weight: 800; flex: 1.2;">
+                        <button type="button" class="btn-m-action doc" onclick="startDealForClient('${c.id}')" style="background: #00D2FF; color: #070B14; font-weight: 800;">
                             ➕ Nuova Pratica
                         </button>
-                        <button type="button" class="btn-m-action avz" onclick="openClientProfileModal('${c.id}')" style="background: #0D1424; border: 1.5px solid #1C273E; color: #CBD5E1; flex: 1;">
+                        <button type="button" class="btn-m-action avz" onclick="openClientProfileModal('${c.id}')" style="background: #0D1424; border: 1.5px solid #1C273E; color: #CBD5E1;">
                             ✏️ Modifica
                         </button>
-                        <button type="button" class="btn-m-action del" onclick="eliminaCliente('${c.id}')" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; color: #EF4444; flex: 0.4;">
-                            🗑️
+                        <button type="button" class="btn-m-action del" onclick="eliminaCliente('${c.id}')" style="background: rgba(239, 68, 68, 0.15); border: 1px solid #EF4444; color: #EF4444;">
+                            🗑️ Elimina
                         </button>
                     </div>
                 </div>
@@ -4263,10 +4263,10 @@ function renderCrmDeals() {
                     </div>
 
                     <div class="deal-mobile-actions">
-                        <button type="button" class="btn-m-action doc" onclick="window.apriDocumentiPratica('${d.id}')">📑 Documenti</button>
                         <button type="button" class="btn-m-action avz" onclick="window.apriSchedaPratica('${d.id}')">🏛️ Avanzamento</button>
+                        <button type="button" class="btn-m-action doc" onclick="window.apriDocumentiPratica('${d.id}')">📑 Documenti</button>
                         <button type="button" class="btn-m-action mod" onclick="window.modificaPreventivo('${d.id}')" title="Modifica nel Wizard">✏️ Modifica</button>
-                        <button type="button" class="btn-m-action del" onclick="window.eliminaPratica('${d.id}')" title="Elimina pratica">🗑️</button>
+                        <button type="button" class="btn-m-action del" onclick="window.eliminaPratica('${d.id}')" title="Elimina pratica">🗑️ Elimina</button>
                     </div>
                 </div>
             </td>`;

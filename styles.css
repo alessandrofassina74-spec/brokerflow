@@ -1847,9 +1847,20 @@ input, select, textarea, button {
 
     .deal-mobile-actions {
         display: grid !important;
-        grid-template-columns: 1.1fr 1.1fr 1fr 0.4fr !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.5rem !important;
+        margin-top: 0.4rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .client-mobile-actions {
+        display: grid !important;
+        grid-template-columns: 1.2fr 1fr 1fr !important;
         gap: 0.45rem !important;
-        margin-top: 0.25rem !important;
+        margin-top: 0.35rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .btn-m-action {
