@@ -3111,3 +3111,117 @@ span.bank-title {
         display: none !important;
     }
 }
+
+
+/* ==========================================================================
+   BANK CARD RESPONSIVE HEADER & RATE SECTION (DESKTOP + MOBILE)
+   ========================================================================== */
+.bank-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+    width: 100%;
+}
+
+.bank-name-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.bank-card-rate-section {
+    text-align: right;
+    flex-shrink: 0;
+    min-width: 220px;
+    max-width: 100%;
+}
+
+.bank-card-rate-section .bank-rate-val {
+    letter-spacing: -0.02em;
+}
+
+.rate-selection-wrapper {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .bank-card-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.85rem !important;
+        width: 100% !important;
+    }
+
+    .bank-name-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .bank-card-rate-section {
+        text-align: left !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        background: #0B1222 !important;
+        border: 1.5px solid #1C273E !important;
+        border-radius: 10px !important;
+        padding: 0.75rem 0.85rem !important;
+        box-sizing: border-box !important;
+        margin-top: 0.35rem !important;
+    }
+
+    .bank-card-rate-section * {
+        text-align: left !important;
+    }
+
+    .rate-selection-wrapper {
+        justify-content: stretch !important;
+        width: 100% !important;
+        margin-top: 0.65rem !important;
+    }
+
+    .rate-selection-wrapper button,
+    .rate-selection-wrapper .btn,
+    .rate-selection-wrapper span {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.55rem 0.85rem !important;
+        font-size: 0.84rem !important;
+        box-sizing: border-box !important;
+    }
+
+    .bank-card {
+        padding: 1rem 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    .bank-card-discount-options {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+        padding: 0.65rem 0.75rem !important;
+    }
+
+    .bank-cpi-toggle-label,
+    .bank-conto-toggle-label {
+        width: 100% !important;
+        justify-content: space-between !important;
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    .rules-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+    }
+}

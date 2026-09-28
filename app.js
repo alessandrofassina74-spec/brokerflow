@@ -6799,16 +6799,16 @@ function updateCalculations() {
         if (card.status !== "ko" && !card.isNotFeasible) {
             if (isSelectedCard) {
                 selectionBtnHtml = `
-                    <div style="margin-top: 0.45rem; display: flex; justify-content: flex-end;">
-                        <span style="background: #0052ff; color: #ffffff; font-weight: 800; font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,82,255,0.3); display: inline-flex; align-items: center; gap: 0.35rem;">
+                    <div class="rate-selection-wrapper" style="margin-top: 0.5rem; display: flex; justify-content: flex-end;">
+                        <span style="background: #0052ff; color: #ffffff; font-weight: 800; font-size: 0.75rem; padding: 0.35rem 0.85rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,82,255,0.3); display: inline-flex; align-items: center; gap: 0.35rem;">
                             <span>⭐</span> <span>Offerta Selezionata</span>
                         </span>
                     </div>
                 `;
             } else {
                 selectionBtnHtml = `
-                    <div style="margin-top: 0.45rem; display: flex; justify-content: flex-end;">
-                        <button type="button" class="btn" onclick="window.selectBankForPratica('${card.bankId}', '${card.prodName || ''}')" style="background: #0B1222; color: #00D2FF; border: 1.5px solid #00D2FF; font-weight: 800; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 8px; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(0,210,255,0.2);" onmouseover="this.style.background='rgba(0,210,255,0.18)'" onmouseout="this.style.background='#0B1222'">
+                    <div class="rate-selection-wrapper" style="margin-top: 0.5rem; display: flex; justify-content: flex-end;">
+                        <button type="button" class="btn" onclick="window.selectBankForPratica('${card.bankId}', '${card.prodName || ''}')" style="background: #0B1222; color: #00D2FF; border: 1.5px solid #00D2FF; font-weight: 800; font-size: 0.78rem; padding: 0.4rem 0.95rem; border-radius: 8px; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(0,210,255,0.2);" onmouseover="this.style.background='rgba(0,210,255,0.18)'" onmouseout="this.style.background='#0B1222'">
                             <span>🎯</span> <span>Seleziona Questa Offerta</span>
                         </button>
                     </div>
@@ -6819,21 +6819,21 @@ function updateCalculations() {
         if (calcMode === "max") {
             if (card.status === "ko") {
                 rateDisplayHtml = `
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--danger); margin-bottom: 0.15rem;">Non Fattibile (Policy KO)</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">Max Erogabile: --</div>
+                    <div class="bank-card-rate-section">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #EF4444; margin-bottom: 0.15rem;">🔴 Non Fattibile (Policy KO)</div>
+                        <div style="font-size: 0.82rem; color: var(--text-muted);">Max Erogabile: --</div>
                     </div>
                 `;
             } else {
                 const statusBadge = card.status === "deroga" 
-                    ? `<span style="font-size: 0.75rem; color: var(--warning); font-weight: 700;">🟡 In Deroga</span>` 
-                    : `<span style="font-size: 0.75rem; color: var(--success); font-weight: 700;">🟢 Fattibile</span>`;
+                    ? `<span style="font-size: 0.75rem; color: #F59E0B; font-weight: 800;">🟡 In Deroga</span>` 
+                    : `<span style="font-size: 0.75rem; color: #10B981; font-weight: 800;">🟢 Fattibile</span>`;
                 rateDisplayHtml = `
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.1rem;">Importo Max Concedibile:</div>
-                        <div style="font-size: 1.35rem; font-weight: 800; color: var(--success);">${formatNumber(card.maxLoanGrantable, 0)} €</div>
-                        <div style="font-size: 0.75rem; color: var(--text-light); font-weight: 600; margin-top: 0.15rem;">Rata: ${formatNumber(card.maxRataSimulated, 2)} €/m | ${getDetailedRateText(card)}</div>
-                        <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.1rem;">Fattore vincolante: <em>${card.limitingFactor}</em> | ${statusBadge}</div>
+                    <div class="bank-card-rate-section">
+                        <div style="font-size: 0.74rem; color: #94A3B8; margin-bottom: 0.1rem; font-weight: 600;">Importo Max Concedibile:</div>
+                        <div style="font-size: 1.38rem; font-weight: 800; color: #10B981; line-height: 1.2;">${formatNumber(card.maxLoanGrantable, 0)} €</div>
+                        <div style="font-size: 0.78rem; color: #F8FAFC; font-weight: 700; margin-top: 0.2rem; word-break: break-word;">Rata: <strong style="color: #00D2FF;">${formatNumber(card.maxRataSimulated, 2)} €/m</strong> | <span>${getDetailedRateText(card)}</span></div>
+                        <div style="font-size: 0.72rem; color: #94A3B8; margin-top: 0.15rem;">Fattore vincolante: <em style="color: #CBD5E1;">${card.limitingFactor}</em> | ${statusBadge}</div>
                         ${selectionBtnHtml}
                     </div>
                 `;
@@ -6841,27 +6841,27 @@ function updateCalculations() {
         } else {
             if (card.status === "ko") {
                 rateDisplayHtml = `
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--danger); margin-bottom: 0.15rem;">Non Fattibile (Policy KO)</div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted); text-decoration: line-through;">${card.rata < 999999 ? formatNumber(card.rata, 2) + ' €/mese' : '--'}</div>
-                        <div style="font-size: 0.7rem; color: var(--text-muted);">${getDetailedRateText(card, true)}</div>
+                    <div class="bank-card-rate-section">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #EF4444; margin-bottom: 0.15rem;">🔴 Non Fattibile (Policy KO)</div>
+                        <div style="font-size: 0.85rem; color: #94A3B8; text-decoration: line-through;">${card.rata < 999999 ? formatNumber(card.rata, 2) + ' €/mese' : '--'}</div>
+                        <div style="font-size: 0.74rem; color: #64748B; margin-top: 0.15rem;">${getDetailedRateText(card, true)}</div>
                     </div>
                 `;
             } else if (card.status === "deroga") {
                 rateDisplayHtml = `
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--warning); margin-bottom: 0.15rem;">In Deroga (Eccezione Gestibile)</div>
-                        <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-light);">${formatNumber(card.rata, 2)} €/mese</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">${getDetailedRateText(card)}</div>
+                    <div class="bank-card-rate-section">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #F59E0B; margin-bottom: 0.15rem;">🟡 In Deroga (Eccezione Gestibile)</div>
+                        <div style="font-size: 1.38rem; font-weight: 800; color: #F8FAFC; line-height: 1.2;">${formatNumber(card.rata, 2)} <span style="font-size: 0.85rem; font-weight: 600; color: #94A3B8;">€/mese</span></div>
+                        <div style="font-size: 0.78rem; color: #00D2FF; font-weight: 700; margin-top: 0.2rem; word-break: break-word;">${getDetailedRateText(card)}</div>
                         ${selectionBtnHtml}
                     </div>
                 `;
             } else {
                 rateDisplayHtml = `
-                    <div style="text-align: right;">
-                        <div style="font-size: 0.9rem; font-weight: 700; color: var(--success); margin-bottom: 0.15rem;">Fattibile (Approved)</div>
-                        <div style="font-size: 1.15rem; font-weight: 700; color: var(--text-light);">${formatNumber(card.rata, 2)} €/mese</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted);">${getDetailedRateText(card)}</div>
+                    <div class="bank-card-rate-section">
+                        <div style="font-size: 0.85rem; font-weight: 800; color: #10B981; margin-bottom: 0.15rem;">🟢 Fattibile (Approved)</div>
+                        <div style="font-size: 1.38rem; font-weight: 800; color: #FFFFFF; line-height: 1.2;">${formatNumber(card.rata, 2)} <span style="font-size: 0.85rem; font-weight: 600; color: #94A3B8;">€/mese</span></div>
+                        <div style="font-size: 0.78rem; color: #00D2FF; font-weight: 700; margin-top: 0.2rem; word-break: break-word;">${getDetailedRateText(card)}</div>
                         ${selectionBtnHtml}
                     </div>
                 `;
