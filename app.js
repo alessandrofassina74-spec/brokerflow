@@ -9984,6 +9984,8 @@ window.savePratica = function(isDraft = false) {
         durata: document.getElementById("wiz-p3-durata") ? parseInt(document.getElementById("wiz-p3-durata").value) : 25,
         finalita: document.getElementById("wiz-p3-finalita") ? document.getElementById("wiz-p3-finalita").value : "acquisto",
         isAsta: (document.getElementById("wiz-p3-finalita")?.value === "asta" || document.getElementById("wiz-p3-is-asta")?.checked === true),
+        provenienzaImmobile: document.getElementById("wiz-p3-provenienza") ? document.getElementById("wiz-p3-provenienza").value : "compravendita",
+        provenienzaNote: document.getElementById("wiz-p3-provenienza-note") ? document.getElementById("wiz-p3-provenienza-note").value.trim() : "",
         tipoTasso: document.getElementById("wiz-p3-tipo-tasso") ? document.getElementById("wiz-p3-tipo-tasso").value : "any",
         aperturaConto: document.getElementById("phase4-flag-conto") ? (document.getElementById("phase4-flag-conto").checked ? "si" : "no") : (document.getElementById("wiz-p3-apertura-conto") ? document.getElementById("wiz-p3-apertura-conto").value : "si"),
         hasCpi: document.getElementById("phase4-flag-cpi") ? document.getElementById("phase4-flag-cpi").checked : true,
@@ -13457,5 +13459,69 @@ window.riposizionaPraticaRifiutata = function() {
         if (typeof window.showToast === "function") {
             window.showToast("🚀 Riapertura pratica nel Wizard per trovare banche alternative!", "info");
         }
+    }
+};
+
+window.handleProvenienzaImmobileChange = function(val) {
+    const alertEl = document.getElementById("wiz-p3-provenienza-alert");
+    if (!alertEl) return;
+    
+    if (val === "donazione") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(245, 158, 11, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(245, 158, 11, 0.35)";
+        alertEl.style.color = "#FBBF24";
+        alertEl.innerHTML = `
+            <strong>🎁 Attenzione - Provenienza da Donazione:</strong><br>
+            Verificare la decorrenza dei termini di legge (20 anni dalla trascrizione della donazione o 10 anni dalla morte del donante). Se i termini non sono decorsi, gli istituti bancari richiedono la stipula di una polizza assicurativa <em>Donazione Safe / Donazione Protetta</em> oppure atto notarile di rinuncia all'azione di restituzione/riduzione da parte di tutti i legittimari.
+        `;
+    } else if (val === "successione") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(56, 189, 248, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(56, 189, 248, 0.35)";
+        alertEl.style.color = "#38BDF8";
+        alertEl.innerHTML = `
+            <strong>⚖️ Nota - Provenienza da Successione:</strong><br>
+            Accertarsi dell'avvenuta presentazione della dichiarazione di successione, pagamento imposte e predisposizione dell'atto di accettazione espressa o tacita dell'eredità contestualmente al rogito notarile.
+        `;
+    } else if (val === "asta") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(168, 85, 247, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(168, 85, 247, 0.35)";
+        alertEl.style.color = "#C084FC";
+        alertEl.innerHTML = `
+            <strong>🏛️ Nota - Acquisto all'Asta Giudiziaria:</strong><br>
+            Il titolo di trasferimento sarà costituito dal Decreto di Trasferimento emesso dal Giudice delle Esecuzioni con ordine di cancellazione dei pignoramenti e gravami pregressi.
+        `;
+    } else if (val === "usucapione") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(245, 158, 11, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(245, 158, 11, 0.35)";
+        alertEl.style.color = "#FBBF24";
+        alertEl.innerHTML = `
+            <strong>⚖️ Nota - Usucapione Accertata:</strong><br>
+            Necessaria sentenza passata in giudicato o verbale di accordo di conciliazione/mediazione debitamente trascritto nei Registri Immobiliari.
+        `;
+    } else if (val === "costruzione") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(16, 185, 129, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(16, 185, 129, 0.35)";
+        alertEl.style.color = "#34D399";
+        alertEl.innerHTML = `
+            <strong>🏗️ Nota - Costruzione in Proprio:</strong><br>
+            Il titolo originario è costituito dall'atto di acquisto del terreno edificabile unitamente al titolo abilitativo edilizio (Permesso di Costruire / SCIA) e all'accatastamento dell'immobile ultimato.
+        `;
+    } else if (val === "divisione") {
+        alertEl.style.display = "block";
+        alertEl.style.background = "rgba(56, 189, 248, 0.12)";
+        alertEl.style.border = "1.5px solid rgba(56, 189, 248, 0.35)";
+        alertEl.style.color = "#38BDF8";
+        alertEl.innerHTML = `
+            <strong>📑 Nota - Divisione Ereditaria / Scioglimento Comunione:</strong><br>
+            Atto notarile di assegnazione con eventuale versamento di conguaglio in denaro.
+        `;
+    } else {
+        alertEl.style.display = "none";
+        alertEl.innerHTML = "";
     }
 };

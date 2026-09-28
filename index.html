@@ -2481,8 +2481,10 @@
             <div id="phase-3-panel" style="display: none;">
                 
                 <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem;">
-                    <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.75rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
-                        <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.5rem 0;">🏠 Dati del Mutuo & Operazione</h3>
+                    <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 14px; padding: 1.75rem; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+                        <h3 style="font-size: 1.15rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.5rem 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <span>🏠</span> Dati del Mutuo, Immobile &amp; Operazione
+                        </h3>
                         
                         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-bottom: 1.25rem;">
                             <div>
@@ -2596,6 +2598,55 @@
                                 </select>
                             </div>
                         </div>
+
+                        
+                        <!-- SEZIONE PROVENIENZA IMMOBILE (INFORMATIVA) -->
+                        <div style="background: #0B1222; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.35rem; margin-top: 1.25rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+                                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <span style="font-size: 1.1rem;">🏛️</span>
+                                    <div>
+                                        <strong style="color: #FFFFFF; font-size: 0.92rem; display: block;">Titolo di Provenienza dell'Immobile</strong>
+                                        <span style="color: #94A3B8; font-size: 0.76rem;">Modalità di acquisto/trasferimento del dante causa (a titolo informativo per istruttoria notarile e bancaria).</span>
+                                    </div>
+                                </div>
+                                <span style="font-size: 0.72rem; font-weight: 700; background: rgba(0, 210, 255, 0.12); color: #00D2FF; border: 1px solid rgba(0, 210, 255, 0.3); padding: 0.2rem 0.6rem; border-radius: 6px;">
+                                    ℹ️ Rilevazione Notarile
+                                </span>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">
+                                        📜 Titolo di Provenienza Attuale *
+                                    </label>
+                                    <select id="wiz-p3-provenienza" onchange="window.handleProvenienzaImmobileChange(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 700; color: #FFFFFF; background: #0D1424;">
+                                        <option value="compravendita" selected>📜 Compravendita / Atto di Acquisto (Ordinario)</option>
+                                        <option value="successione">⚖️ Successione Ereditaria (Legittima o Testamentaria)</option>
+                                        <option value="donazione">🎁 Donazione (Atto di Donazione / Titolo Gratuito)</option>
+                                        <option value="costruzione">🏗️ Costruzione in Proprio (su Terreno di Proprietà)</option>
+                                        <option value="asta">🏛️ Decreto di Trasferimento da Asta Giudiziaria</option>
+                                        <option value="permuta">🔄 Permuta Immobiliare</option>
+                                        <option value="divisione">📑 Divisione Ereditaria / Scioglimento Comunione</option>
+                                        <option value="cooperativa">🏢 Assegnazione da Cooperativa Edilizia / Ente</option>
+                                        <option value="usucapione">⚖️ Usucapione Accertata (Sentenza Giudiziale)</option>
+                                        <option value="altro">🔲 Altra Provenienza / Caso Particolare</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">
+                                        📝 Note e Dettagli Provenienza (Facoltativo)
+                                    </label>
+                                    <input type="text" id="wiz-p3-provenienza-note" placeholder="es. Atto Notaio Rossi 2018 / Polizza Donazione Safe / Accettazione tacita..." style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; color: #FFFFFF; background: #0D1424;">
+                                </div>
+                            </div>
+
+                            <!-- Alert Informativo Dinamico per Provenienza -->
+                            <div id="wiz-p3-provenienza-alert" style="margin-top: 0.85rem; padding: 0.65rem 0.95rem; border-radius: 8px; font-size: 0.78rem; display: none; line-height: 1.45;">
+                            </div>
+                        </div>
+
 
                         <!-- GRUPPO SPECIALIZZATO: ACQUISTO + RISTRUTTURAZIONE (2 VOCI DISTINTE) -->
                         <div id="group-p3-acquisto-ristrutturazione-wrapper" style="display: none; background: #0D1424; border: 1.5px solid #93c5fd; border-radius: 12px; padding: 1.25rem; margin-top: 0.5rem; box-shadow: 0 2px 8px rgba(37,99,235,0.06);">
