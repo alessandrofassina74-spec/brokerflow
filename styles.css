@@ -424,7 +424,8 @@ input:focus, select:focus, textarea:focus {
 .bank-title {
     font-size: 1.15rem;
     font-weight: 800;
-    color: #0f172a;
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
 .status-badge {
@@ -2641,4 +2642,57 @@ span[id*="computed-income"] {
 .coapp-card h1, .coapp-card h2, .coapp-card h3, .coapp-card h4, .coapp-card h5,
 .guarantor-card h1, .guarantor-card h2, .guarantor-card h3, .guarantor-card h4, .guarantor-card h5 {
     color: #FFFFFF !important;
+}
+
+
+/* ==========================================================================
+   PHASE 4: RESULTS, BANK NAMES & PRODUCT BADGES CONTRAST (BROKERFLOW)
+   ========================================================================== */
+.bank-title,
+.bank-card .bank-title,
+.bank-card-header .bank-title,
+span.bank-title {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.18rem !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6) !important;
+}
+
+.bank-product-badge {
+    color: #00D2FF !important;
+    background: rgba(0, 210, 255, 0.14) !important;
+    border: 1.5px solid rgba(0, 210, 255, 0.45) !important;
+    font-weight: 800 !important;
+}
+
+#phase4-summary-grid > div,
+#phase4-rata-card,
+#phase4-client-profile-card,
+.chosen-bank-summary-banner {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    color: #FFFFFF !important;
+}
+
+#phase4-rata-card strong,
+#phase4-max-loan,
+#phase4-rata-sostenibile {
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+}
+
+#phase4-rata-card span,
+#phase4-max-loan-label,
+#phase4-rata-label {
+    color: #94A3B8 !important;
+    font-weight: 700 !important;
+}
+
+.bank-card .rule-label {
+    color: #E2E8F0 !important;
+    font-weight: 600 !important;
+}
+
+.bank-card .rule-value {
+    color: #94A3B8 !important;
 }

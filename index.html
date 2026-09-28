@@ -2841,17 +2841,17 @@
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                     
                     <!-- OBIETTIVO DELL'ANALISI -->
-                    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                    <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
                         <div>
-                            <strong style="font-size: 0.95rem; color: #1e3a8a; display: block;">🎯 Obiettivo dell'Analisi Creditizia</strong>
-                            <span style="font-size: 0.8rem; color: #3b82f6;">Scegli se valutare la fattibilità per un importo specifico o calcolare la capacità massima erogabile</span>
+                            <strong style="font-size: 0.95rem; color: #FFFFFF; display: block;">🎯 Obiettivo dell'Analisi Creditizia</strong>
+                            <span style="font-size: 0.8rem; color: #94A3B8;">Scegli se valutare la fattibilità per un importo specifico o calcolare la capacità massima erogabile</span>
                         </div>
                         <div style="display: flex; gap: 1.5rem;">
-                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #1e3a8a;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">
                                 <input type="radio" name="wiz-calc-mode" id="wiz-calc-mode-exact" value="exact" checked style="accent-color: #0052ff;" onchange="if (window.updateCalculations) window.updateCalculations();">
                                 Valuta Cifra Esatta
                             </label>
-                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #1e3a8a;">
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.85rem; font-weight: 700; color: #FFFFFF;">
                                 <input type="radio" name="wiz-calc-mode" id="wiz-calc-mode-max" value="max" style="accent-color: #0052ff;" onchange="if (window.updateCalculations) window.updateCalculations();">
                                 Importo Massimo Concedibile (Fido Max)
                             </label>
@@ -2859,17 +2859,17 @@
                     </div>
                     
                     <div id="phase4-summary-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
-                        <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center;">
+                        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center;">
                             <span id="phase4-max-loan-label" style="font-size: 0.74rem; color: #64748b; font-weight: 600; display: block; margin-bottom: 0.35rem;">Importo Finanziabile</span>
                             <strong id="phase4-max-loan" style="font-size: 1.35rem; color: #FFFFFF;">€ 236.000</strong>
                         </div>
-                        <div id="phase4-rata-card" style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center;">
+                        <div id="phase4-rata-card" style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center;">
                             <span id="phase4-rata-label" style="font-size: 0.74rem; color: #64748b; font-weight: 600; display: block; margin-bottom: 0.35rem;">Rata Mensile Stimata</span>
                             <strong id="phase4-rata-sostenibile" style="font-size: 1.35rem; color: #FFFFFF;">€ 1.180/mese</strong>
                         </div>
-                        <div style="background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 0.85rem 1rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #0D1424;">
-                            <label for="phase4-quick-tasso" style="font-size: 0.74rem; color: #1e40af; font-weight: 700; display: block; margin-bottom: 0.3rem; cursor: pointer;">🔄 Tipo Tasso Richiesto</label>
-                            <select id="phase4-quick-tasso" onchange="window.handlePhase4TassoChange(this.value)" style="width: 100%; padding: 0.45rem 0.6rem; border: 1.5px solid #3b82f6; border-radius: 8px; font-size: 0.84rem; font-weight: 700; color: #1e3a8a; background: #ffffff; cursor: pointer; text-align: center;">
+                        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 0.85rem 1rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <label for="phase4-quick-tasso" style="font-size: 0.74rem; color: #00D2FF; font-weight: 700; display: block; margin-bottom: 0.3rem; cursor: pointer;">🔄 Tipo Tasso Richiesto</label>
+                            <select id="phase4-quick-tasso" onchange="window.handlePhase4TassoChange(this.value)" style="width: 100%; padding: 0.45rem 0.6rem; border: 1.5px solid #3b82f6; border-radius: 8px; font-size: 0.84rem; font-weight: 700; color: #FFFFFF; background: #ffffff; cursor: pointer; text-align: center;">
                                 <option value="any">✨ Tutti i Tassi</option>
                                 <option value="fisso" selected>🔒 Tasso Fisso</option>
                                 <option value="variabile">📈 Tasso Variabile</option>
@@ -2878,18 +2878,18 @@
                                 <option value="opzione">🔄 Con Opzione</option>
                             </select>
                         </div>
-                        <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.1rem; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                             <span style="font-size: 0.74rem; color: #64748b; font-weight: 600; display: block; margin-bottom: 0.35rem;">Score Cliente</span>
                             <div id="phase4-score-cliente"><span style="background: #dcfce7; color: #15803d; font-size: 0.85rem; font-weight: 800; padding: 0.25rem 0.7rem; border-radius: 6px;">🟢 Eccellente</span></div>
                         </div>
                     </div>
 
                     <!-- FASE 4: RIASSUNTO PRATICA & PROFILO CLIENTI -->
-                    <div id="phase4-client-profile-card" style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div id="phase4-client-profile-card" style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                         <!-- Popolato dinamicamente da renderPhase4ClientSummary() -->
                     </div>
 
-                    <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                    <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.35);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
                             <h3 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF; margin: 0;">🏆 Soluzioni consigliate banche</h3>
                             <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Valutazione e classifica in base alle policy creditizie vigenti</span>
@@ -2901,7 +2901,7 @@
                     </div>
 
                     <!-- Bottom Save Bar for Step 4 -->
-                    <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                    <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
                         <div>
                             <strong style="color: #FFFFFF; font-size: 0.95rem; display: block;">💾 Salva Preventivo e Aggiungi a Pratiche</strong>
                             <span style="font-size: 0.8rem; color: #64748b;">Salva l'analisi completata per ritrovarla in qualsiasi momento nel modulo Pratiche e poterla modificare.</span>

@@ -6655,30 +6655,35 @@ function updateCalculations() {
         const isApproved = (chosenBank.status === "ok");
         const selBanner = document.createElement("div");
         selBanner.className = "chosen-bank-summary-banner";
-        selBanner.style.cssText = "background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border: 2px solid #3b82f6; border-radius: 12px; padding: 0.9rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12); flex-wrap: wrap; gap: 0.75rem;";
+        selBanner.style.cssText = "background: linear-gradient(135deg, rgba(0, 210, 255, 0.14) 0%, rgba(13, 22, 43, 0.98) 100%), #0D162B; border: 2px solid #00D2FF; border-radius: 12px; padding: 0.9rem 1.25rem; margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0, 210, 255, 0.25); flex-wrap: wrap; gap: 0.75rem;";
         selBanner.innerHTML = `
             <div style="display: flex; align-items: center; gap: 0.85rem;">
-                <div style="background: #ffffff; border: 1.5px solid #93c5fd; border-radius: 8px; width: 56px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 2px 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); overflow: hidden;">
+                <div style="background: #FFFFFF; border: 1.5px solid #1C273E; border-radius: 8px; width: 56px; height: 36px; display: flex; align-items: center; justify-content: center; padding: 2px 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); overflow: hidden;">
                     ${window.getBankLogoHtml(chosenBank.name, 26)}
                 </div>
                 <div>
                     <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                        <span style="font-size: 0.72rem; font-weight: 800; color: #1e40af; text-transform: uppercase; letter-spacing: 0.05em;">⭐ Offerta Selezionata per la Pratica</span>
-                        <span style="font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 4px; font-weight: 800; background: ${isApproved ? '#dcfce7' : '#fef3c7'}; color: ${isApproved ? '#15803d' : '#b45309'}; border: 1px solid ${isApproved ? '#86efac' : '#fcd34d'};">
+                        <span style="font-size: 0.74rem; font-weight: 800; color: #00D2FF; text-transform: uppercase; letter-spacing: 0.05em;">⭐ Offerta Selezionata per la Pratica</span>
+                        <span style="font-size: 0.72rem; padding: 0.15rem 0.55rem; border-radius: 6px; font-weight: 800; background: ${isApproved ? 'rgba(16, 185, 129, 0.18)' : 'rgba(245, 158, 11, 0.18)'}; color: ${isApproved ? '#4ADE80' : '#FBBF24'}; border: 1px solid ${isApproved ? '#10B981' : '#F59E0B'};">
                             ${isApproved ? '🟢 Pienamente Idonea' : '🟡 In Deroga'}
                         </span>
                     </div>
-                    <strong style="font-size: 1.05rem; color: #0f172a; display: block; margin-top: 0.15rem;">${chosenBank.name} <span style="font-size: 0.82rem; font-weight: 600; color: #475569;">(${chosenBank.prodName || 'Mutuo Standard'})</span></strong>
+                    <strong style="font-size: 1.15rem; color: #FFFFFF !important; display: block; margin-top: 0.25rem;">
+                        ${chosenBank.name} 
+                        <span style="font-size: 0.86rem; font-weight: 800; color: #00D2FF !important; background: rgba(0, 210, 255, 0.15); border: 1px solid rgba(0, 210, 255, 0.4); padding: 0.15rem 0.55rem; border-radius: 6px; margin-left: 0.4rem;">
+                            ${chosenBank.prodName || 'Mutuo Standard'}
+                        </span>
+                    </strong>
                 </div>
             </div>
             <div style="display: flex; align-items: center; gap: 1.25rem; text-align: right;">
                 <div>
-                    <div style="font-size: 0.7rem; color: #64748b; font-weight: 600;">Rata Mensile</div>
-                    <strong style="font-size: 1.15rem; color: #0052ff;">€ ${formatNumber(calcMode === 'max' ? chosenBank.maxRataSimulated : chosenBank.rata, 2)}</strong>
+                    <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600;">Rata Mensile</div>
+                    <strong style="font-size: 1.25rem; color: #00D2FF;">€ ${formatNumber(calcMode === 'max' ? chosenBank.maxRataSimulated : chosenBank.rata, 2)}</strong>
                 </div>
                 <div>
-                    <div style="font-size: 0.7rem; color: #64748b; font-weight: 600;">Tasso Applicato</div>
-                    <strong style="font-size: 1.15rem; color: #0f172a;">${chosenBank.tan.toFixed(2)}% <span style="font-size: 0.7rem; color: #64748b; font-weight: normal;">(${chosenBank.tipo || 'Standard'})</span></strong>
+                    <div style="font-size: 0.72rem; color: #94A3B8; font-weight: 600;">Tasso Applicato</div>
+                    <strong style="font-size: 1.25rem; color: #FFFFFF;">${chosenBank.tan.toFixed(2)}% <span style="font-size: 0.74rem; color: #94A3B8; font-weight: normal;">(${chosenBank.tipo || 'Standard'})</span></strong>
                 </div>
             </div>
         `;
@@ -6803,7 +6808,7 @@ function updateCalculations() {
             } else {
                 selectionBtnHtml = `
                     <div style="margin-top: 0.45rem; display: flex; justify-content: flex-end;">
-                        <button type="button" class="btn" onclick="window.selectBankForPratica('${card.bankId}', '${card.prodName || ''}')" style="background: #ffffff; color: #0052ff; border: 1.5px solid #0052ff; font-weight: 700; font-size: 0.75rem; padding: 0.28rem 0.7rem; border-radius: 6px; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.3rem;" onmouseover="this.style.background='#eff6ff'" onmouseout="this.style.background='#ffffff'">
+                        <button type="button" class="btn" onclick="window.selectBankForPratica('${card.bankId}', '${card.prodName || ''}')" style="background: #0B1222; color: #00D2FF; border: 1.5px solid #00D2FF; font-weight: 800; font-size: 0.78rem; padding: 0.35rem 0.85rem; border-radius: 8px; cursor: pointer; transition: all 0.15s; display: inline-flex; align-items: center; gap: 0.35rem; box-shadow: 0 2px 8px rgba(0,210,255,0.2);" onmouseover="this.style.background='rgba(0,210,255,0.18)'" onmouseout="this.style.background='#0B1222'">
                             <span>🎯</span> <span>Seleziona Questa Offerta</span>
                         </button>
                     </div>
@@ -6871,13 +6876,13 @@ function updateCalculations() {
                     </div>
                     <div>
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="bank-title">${card.name}</span>
+                            <span class="bank-title" style="font-size: 1.18rem; font-weight: 800; color: #FFFFFF !important; letter-spacing: 0.01em; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">${card.name}</span>
                             ${isSelectedCard ? '<span style="background: #eff6ff; color: #0052ff; border: 1px solid #93c5fd; font-weight: 800; font-size: 0.7rem; padding: 0.1rem 0.45rem; border-radius: 4px;">⭐ SCELTA</span>' : ''}
                         </div>
                         <div style="font-size: 0.75rem; font-weight: 600; margin-top: 0.25rem; display: flex; flex-direction: column; gap: 0.25rem;">
                             <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
                                 <span style="color: var(--text-muted); font-size: 0.7rem;">🏷️ Prodotto:</span>
-                                <span style="color: #0f172a; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem;">${card.prodName || 'Mutuo Standard'}</span>
+                                <span class="bank-product-badge" style="color: #00D2FF !important; background: rgba(0, 210, 255, 0.14); border: 1.5px solid rgba(0, 210, 255, 0.45); padding: 0.2rem 0.65rem; border-radius: 6px; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.02em; display: inline-flex; align-items: center; gap: 0.3rem;"><span>⚡</span> <span>${card.prodName || 'Mutuo Standard'}</span></span>
                                 ${card.hasAccountBonus ? '<span style="color: #1e40af; background: #dbeafe; border: 1px solid #93c5fd; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">💳 Con Conto Corrente</span>' : ''}
                                 ${card.isWithoutAccountDiscount ? '<span style="color: #64748b; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 600; font-size: 0.72rem;">ℹ️ Senza Sconto Conto</span>' : ''}
                                 ${card.hasCpiDiscount ? `<span style="color: #15803d; background: #dcfce7; border: 1px solid #86efac; padding: 0.15rem 0.4rem; border-radius: 4px; font-weight: 700; font-size: 0.72rem;">🛡️ Sconto CPI (${card.cpiDiscountText})</span>` : ''}
