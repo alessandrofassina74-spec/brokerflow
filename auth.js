@@ -703,6 +703,11 @@
         // MODALE GESTIONE UTENTI, COMUNI & ALBERO GERARCHICO
         // =========================================================================
         openUsersModal() {
+            const user = this.getCurrentUser();
+            if (!user || (user.role !== "super_admin" && user.role !== "direzione")) {
+                alert("Accesso negato: l'Organigramma di Rete e la Gestione Utenti sono riservati esclusivamente a Super Admin e Direzione Generale.");
+                return;
+            }
             const modal = document.getElementById("users-management-modal");
             if (!modal) return;
             this.editingUserEmail = null;
