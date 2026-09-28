@@ -483,11 +483,11 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             <div style="display: flex; align-items: center; gap: 0.6rem;">
                 <div style="background: #16a34a; color: #ffffff; border-radius: 8px; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; box-shadow: 0 2px 6px rgba(22,163,74,0.3);">🛡️</div>
                 <div>
-                    <strong style="font-size: 1.05rem; color: #166534; display: block;">🛡️ Intervista Garante Terzo</strong>
+                    <strong style="font-size: 1.05rem; color: #4ADE80; display: block;">🛡️ Intervista Garante Terzo</strong>
                     <span style="font-size: 0.75rem; color: #64748b;">Soggetto garante a supporto della capacità reddituale e patrimoniale</span>
                 </div>
             </div>
-            <button type="button" onclick="document.getElementById('${id}').remove(); if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="background: #fee2e2; color: #ef4444; border: 1px solid #fca5a5; border-radius: 6px; padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.82rem; font-weight: 700;">🗑️ Rimuovi Garante</button>
+            <button type="button" onclick="document.getElementById('${id}').remove(); if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.82rem; font-weight: 700;">🗑️ Rimuovi Garante</button>
         `;
     } else if (isSpouse) {
         badgeHtml = `
@@ -498,29 +498,29 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     <span style="font-size: 0.75rem; color: #64748b;">(Cointestatario obbligatorio in regime di comunione dei beni)</span>
                 </div>
             </div>
-            <span style="font-size: 0.72rem; background: #dbeafe; color: #1e40af; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px;">Comunione dei Beni</span>
+            <span style="font-size: 0.72rem; background: rgba(0, 82, 255, 0.2); color: #60A5FA; font-weight: 700; padding: 0.25rem 0.65rem; border-radius: 6px;">Comunione dei Beni</span>
         `;
     } else {
         badgeHtml = `
             <div style="display: flex; align-items: center; gap: 0.6rem;">
                 <div style="background: #0f172a; color: #ffffff; border-radius: 8px; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem;">+</div>
                 <div>
-                    <strong style="font-size: 1.05rem; color: #0f172a; display: block;">👥 Intervista Ulteriore Richiedente</strong>
+                    <strong style="font-size: 1.05rem; color: #FFFFFF; display: block;">👥 Intervista Ulteriore Richiedente</strong>
                     <span style="font-size: 0.75rem; color: #64748b;">Cointestatario aggiuntivo nella pratica</span>
                 </div>
             </div>
-            <button type="button" onclick="document.getElementById('${id}').remove(); if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="background: #fee2e2; color: #ef4444; border: 1px solid #fca5a5; border-radius: 6px; padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.82rem; font-weight: 700;">🗑️ Rimuovi Richiedente</button>
+            <button type="button" onclick="document.getElementById('${id}').remove(); if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 6px; padding: 0.4rem 0.75rem; cursor: pointer; font-size: 0.82rem; font-weight: 700;">🗑️ Rimuovi Richiedente</button>
         `;
     }
 
     return `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; border-bottom: 2px solid #1C273E; padding-bottom: 0.85rem;">
             ${badgeHtml}
         </div>
         
         <!-- SEZIONE 1: ANAGRAFICA E STATO CIVILE (PUNTO 1) -->
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-            <h4 style="font-size: 0.95rem; font-weight: 800; color: #0f172a; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.4rem;">
+        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <h4 style="font-size: 0.95rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0; display: flex; align-items: center; gap: 0.4rem;">
                 👤 1. Anagrafica e Dati Personali
             </h4>
 
@@ -559,22 +559,22 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">1. Nome *</label>
-                    <input type="text" class="coapp-q1-nome coapp-nome" value="${nome}" placeholder="Nome del richiedente" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; font-weight: 600; color: #0f172a;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">1. Nome *</label>
+                    <input type="text" class="coapp-q1-nome coapp-nome" value="${nome}" placeholder="Nome del richiedente" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">2. Cognome *</label>
-                    <input type="text" class="coapp-q2-cognome coapp-cognome" value="${cognome}" placeholder="Cognome" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; font-weight: 600; color: #0f172a;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">2. Cognome *</label>
+                    <input type="text" class="coapp-q2-cognome coapp-cognome" value="${cognome}" placeholder="Cognome" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 600; color: #FFFFFF;">
                 </div>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">3. Data di Nascita *</label>
-                    <input type="date" class="coapp-q3-data-nascita coapp-data-nascita" value="${dataNascita}" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; color: #0f172a;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">3. Data di Nascita *</label>
+                    <input type="date" class="coapp-q3-data-nascita coapp-data-nascita" value="${dataNascita}" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; color: #FFFFFF;">
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">Sesso</label>
-                    <select class="coapp-q-sesso coapp-sesso" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">Sesso</label>
+                    <select class="coapp-q-sesso coapp-sesso" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="F" ${sesso === "F" ? "selected" : ""}>Femmina (F)</option>
                         <option value="M" ${sesso === "M" ? "selected" : ""}>Maschio (M)</option>
                     </select>
@@ -584,7 +584,7 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             <!-- Domanda 4 & 5 (Stato Civile, Regime, Alimenti, Figli) -->
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">4. Stato Civile</label>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">4. Stato Civile</label>
                     <select class="coapp-q4-stato-civile" onchange="
                         const card = this.closest('.coapp-card');
                         const sposBox = card.querySelector('.coapp-sposato-details');
@@ -592,7 +592,7 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                         if (sposBox) sposBox.style.display = (this.value === 'sposato') ? 'grid' : 'none';
                         if (alimBox) alimBox.style.display = (this.value === 'separato' || this.value === 'divorziato') ? 'block' : 'none';
                         window.updateCoappCalculatedIncome(card);
-                    " style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    " style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="celibe_nubile" ${statoCivile === "celibe_nubile" ? "selected" : ""}>Celibe / Nubile</option>
                         <option value="convivente" ${statoCivile === "convivente" ? "selected" : ""}>Convivente</option>
                         <option value="sposato" ${statoCivile === "sposato" ? "selected" : ""}>Sposato/a</option>
@@ -602,13 +602,13 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">5. Figli a carico</label>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">5. Figli a carico</label>
                     <select class="coapp-q5-figli" onchange="
                         const card = this.closest('.coapp-card');
                         const numInp = card.querySelector('.coapp-q5-num-figli');
                         if (numInp) numInp.dataset.userEdited = 'true';
                         window.updateCoappChildrenAgesUI(card);
-                    " style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    " style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="no" ${figli === "no" ? "selected" : ""}>No</option>
                         <option value="si" ${figli === "si" ? "selected" : ""}>Sì</option>
                     </select>
@@ -616,67 +616,67 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             </div>
 
             <!-- Sposato Sub-fields for Coapp / Guarantor -->
-            <div class="coapp-sposato-details" style="display: ${statoCivile === 'sposato' ? 'grid' : 'none'}; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; background: #f8fafc; padding: 0.85rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <div class="coapp-sposato-details" style="display: ${statoCivile === 'sposato' ? 'grid' : 'none'}; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; background: #0B1222; padding: 0.85rem; border-radius: 8px; border: 1.5px solid #1C273E;">
                 <div>
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Regime patrimoniale</label>
-                    <select class="coapp-q4-regime" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Regime patrimoniale</label>
+                    <select class="coapp-q4-regime" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         <option value="comunione" ${regime === "comunione" ? "selected" : ""}>Comunione dei beni</option>
                         <option value="separazione" ${regime === "separazione" ? "selected" : ""}>Separazione dei beni</option>
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Sposato da quanti anni?</label>
-                    <input type="number" class="coapp-q4-anni-sposato" value="${anniSposato}" min="0" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Sposato da quanti anni?</label>
+                    <input type="number" class="coapp-q4-anni-sposato" value="${anniSposato}" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                 </div>
                 <div style="grid-column: span 2; display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
                     <input type="checkbox" class="coapp-q4-separazione-ante-stipula" ${separazioneAnteStipula ? 'checked' : ''} style="width: 16px; height: 16px; cursor: pointer;">
-                    <label style="font-size: 0.78rem; font-weight: 600; color: #475569; cursor: pointer;">Faranno separazione dei beni ante stipula</label>
+                    <label style="font-size: 0.78rem; font-weight: 600; color: #E2E8F0; cursor: pointer;">Faranno separazione dei beni ante stipula</label>
                 </div>
             </div>
 
             <!-- Alimenti Sub-fields (Separato / Divorziato) for Coapp / Guarantor -->
-            <div class="coapp-alimenti-details" style="display: ${(statoCivile === 'separato' || statoCivile === 'divorziato') ? 'block' : 'none'}; margin-bottom: 1rem; background: #f8fafc; padding: 0.85rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <div class="coapp-alimenti-details" style="display: ${(statoCivile === 'separato' || statoCivile === 'divorziato') ? 'block' : 'none'}; margin-bottom: 1rem; background: #0B1222; padding: 0.85rem; border-radius: 8px; border: 1.5px solid #1C273E;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div>
-                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Gestione alimenti</label>
+                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Gestione alimenti</label>
                         <select class="coapp-q4-alimenti coapp-alimenti" onchange="
                             const card = this.closest('.coapp-card');
                             const box = card.querySelector('.coapp-alimenti-amount-box');
                             if (box) box.style.display = (this.value === 'paga' || this.value === 'riceve') ? 'block' : 'none';
                             window.updateCoappCalculatedIncome(card);
-                        " style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                        " style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                             <option value="nessuno" ${alimenti === "nessuno" ? "selected" : ""}>Non paga né riceve alimenti</option>
                             <option value="paga" ${alimenti === "paga" ? "selected" : ""}>Paga alimenti mensili</option>
                             <option value="riceve" ${alimenti === "riceve" ? "selected" : ""}>Riceve alimenti mensili</option>
                         </select>
                     </div>
                     <div class="coapp-alimenti-amount-box" style="display: ${(alimenti === 'paga' || alimenti === 'riceve') ? 'block' : 'none'};">
-                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Importo alimenti (€/mese)</label>
-                        <input type="number" class="coapp-q4-alimenti-importo coapp-alimenti-importo" value="${alimentiImporto}" min="0" placeholder="€ / mese" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; font-weight: 700; background: #ffffff;">
+                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Importo alimenti (€/mese)</label>
+                        <input type="number" class="coapp-q4-alimenti-importo coapp-alimenti-importo" value="${alimentiImporto}" min="0" placeholder="€ / mese" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; background: #0B1222; color: #FFFFFF;">
                     </div>
                 </div>
             </div>
 
             <!-- Figli count, Assegno Unico and Ages for Coapp / Guarantor -->
-            <div class="coapp-figli-count-box" style="display: ${figli === 'si' ? 'block' : 'none'}; margin-bottom: 1rem; background: #f8fafc; padding: 0.85rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+            <div class="coapp-figli-count-box" style="display: ${figli === 'si' ? 'block' : 'none'}; margin-bottom: 1rem; background: #0B1222; padding: 0.85rem; border-radius: 8px; border: 1.5px solid #1C273E;">
                 <div style="margin-bottom: 0.6rem;">
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Numero figli a carico (modificabile)</label>
-                    <input type="number" class="coapp-q5-num-figli" value="${numFigli}" min="0" oninput="this.dataset.userEdited = 'true'; window.updateCoappChildrenAgesUI(this.closest('.coapp-card'));" onchange="this.dataset.userEdited = 'true'; window.updateCoappChildrenAgesUI(this.closest('.coapp-card'));" style="width: 100%; max-width: 180px; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; font-weight: 700; background: #ffffff;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Numero figli a carico (modificabile)</label>
+                    <input type="number" class="coapp-q5-num-figli" value="${numFigli}" min="0" oninput="this.dataset.userEdited = 'true'; window.updateCoappChildrenAgesUI(this.closest('.coapp-card'));" onchange="this.dataset.userEdited = 'true'; window.updateCoappChildrenAgesUI(this.closest('.coapp-card'));" style="width: 100%; max-width: 180px; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; background: #0B1222; color: #FFFFFF;">
                 </div>
 
                 <!-- Assegno Unico for Coapp / Guarantor -->
                 <div class="coapp-assegno-unico-box" style="margin-bottom: 0.75rem;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div>
-                            <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Percepisce Assegno Unico?</label>
-                            <select class="coapp-q15-assegno-unico-select" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Percepisce Assegno Unico?</label>
+                            <select class="coapp-q15-assegno-unico-select" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                                 <option value="no" ${assegnoUnicoSelect === "no" ? "selected" : ""}>No</option>
                                 <option value="si" ${assegnoUnicoSelect === "si" ? "selected" : ""}>Sì</option>
                             </select>
                         </div>
                         <div>
-                            <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Importo mensile (€)</label>
-                            <input type="number" class="coapp-q15-assegno-unico" value="${assegnoUnico}" min="0" placeholder="€ / mese" oninput="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Importo mensile (€)</label>
+                            <input type="number" class="coapp-q15-assegno-unico" value="${assegnoUnico}" min="0" placeholder="€ / mese" oninput="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
                 </div>
@@ -692,16 +692,16 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">6. Cittadinanza</label>
-                    <select class="coapp-q6-cittadinanza coapp-cittadinanza" onchange="const pEl = this.closest('.coapp-card').querySelector('.coapp-extra-ue-box'); if(pEl) pEl.style.display = (this.value === 'extra') ? 'block' : 'none'; if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">6. Cittadinanza</label>
+                    <select class="coapp-q6-cittadinanza coapp-cittadinanza" onchange="const pEl = this.closest('.coapp-card').querySelector('.coapp-extra-ue-box'); if(pEl) pEl.style.display = (this.value === 'extra') ? 'block' : 'none'; if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="italiana" ${cittadinanza === "italiana" || cittadinanza === "IT" ? "selected" : ""}>Italiana</option>
                         <option value="ue" ${cittadinanza === "ue" || cittadinanza === "UE" ? "selected" : ""}>Comunitaria UE</option>
                         <option value="extra" ${cittadinanza === "extra" || cittadinanza === "extra_UE" ? "selected" : ""}>Extra UE</option>
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">7. Abitazione attuale</label>
-                    <select class="coapp-q7-abitazione" onchange="const affBox = this.closest('.coapp-card').querySelector('.coapp-affitto-box'); if(affBox) affBox.style.display = (this.value === 'affitto') ? 'block' : 'none';" style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">7. Abitazione attuale</label>
+                    <select class="coapp-q7-abitazione" onchange="const affBox = this.closest('.coapp-card').querySelector('.coapp-affitto-box'); if(affBox) affBox.style.display = (this.value === 'affitto') ? 'block' : 'none';" style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="proprieta" ${abitazione === "proprieta" ? "selected" : ""}>Proprietà</option>
                         <option value="affitto" ${abitazione === "affitto" ? "selected" : ""}>Affitto</option>
                         <option value="famiglia" ${abitazione === "famiglia" || abitazione === "genitori" ? "selected" : ""}>Presso famiglia / Coniuge / Gratuito</option>
@@ -710,19 +710,19 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             </div>
 
             <!-- Extra UE Box for coapp -->
-            <div class="coapp-extra-ue-box" style="display: ${(cittadinanza === 'extra' || cittadinanza === 'extra_UE') ? 'block' : 'none'}; background: #fefce8; padding: 0.85rem; border-radius: 8px; border: 1px solid #fef08a; margin-bottom: 1rem;">
+            <div class="coapp-extra-ue-box" style="display: ${(cittadinanza === 'extra' || cittadinanza === 'extra_UE') ? 'block' : 'none'}; background: #0D1424; padding: 0.85rem; border-radius: 8px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                     <div>
-                        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #854d0e; margin-bottom: 0.25rem;">Scadenza permesso soggiorno</label>
-                        <select class="coapp-q6-permesso coapp-permesso" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Scadenza permesso soggiorno</label>
+                        <select class="coapp-q6-permesso coapp-permesso" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                             <option value="valido" ${permScadenza === "valido" ? "selected" : ""}>A tempo indeterminato / Valido</option>
                             <option value="scaduto_ricevuta" ${permScadenza === "scaduto_ricevuta" ? "selected" : ""}>In rinnovo con ricevuta</option>
                             <option value="scaduto" ${permScadenza === "scaduto" ? "selected" : ""}>Scaduto</option>
                         </select>
                     </div>
                     <div>
-                        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #854d0e; margin-bottom: 0.25rem;">Famiglia risiede in Italia?</label>
-                        <select class="coapp-q14-famiglia" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                        <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Famiglia risiede in Italia?</label>
+                        <select class="coapp-q14-famiglia" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                             <option value="italia" ${famigliaSede === "italia" ? "selected" : ""}>Sì, in Italia</option>
                             <option value="estero" ${famigliaSede === "estero" ? "selected" : ""}>No, al paese d'origine</option>
                         </select>
@@ -732,24 +732,24 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
 
             <!-- Affitto Box for coapp -->
             <div class="coapp-affitto-box" style="display: ${abitazione === 'affitto' ? 'block' : 'none'}; margin-bottom: 1rem;">
-                <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Canone affitto mensile intestato (€)</label>
-                <input type="number" class="coapp-q7-canone-affitto" value="${canoneAffitto}" min="0" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Canone affitto mensile intestato (€)</label>
+                <input type="number" class="coapp-q7-canone-affitto" value="${canoneAffitto}" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem;">
             </div>
 
             <div>
-                <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.3rem;">8. Banca attuale del richiedente</label>
-                <input type="text" class="coapp-q8-banca-attuale" value="${bancaAttuale}" placeholder="es. Intesa Sanpaolo, UniCredit, Banco BPM..." style="width: 100%; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem;">
+                <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.3rem;">8. Banca attuale del richiedente</label>
+                <input type="text" class="coapp-q8-banca-attuale" value="${bancaAttuale}" placeholder="es. Intesa Sanpaolo, UniCredit, Banco BPM..." style="width: 100%; padding: 0.6rem 0.8rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem;">
             </div>
         </div>
 
         <!-- SEZIONE 2: OCCUPAZIONE E REDDITO (PUNTO 2) -->
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 1rem 0;">
+        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0;">
                 💼 2. Occupazione e Reddito (Domande 9 - 10 Cascata Completa)
             </h3>
             
             <div style="margin-bottom: 1rem;">
-                <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">10. Categoria Lavorativa / Situazione Reddituale</label>
+                <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">10. Categoria Lavorativa / Situazione Reddituale</label>
                 <select class="coapp-macro-categoria coapp-tipo" onchange="
                     const card = this.closest('.coapp-card');
                     const isNoIncome = this.value === 'no_lavoro';
@@ -769,7 +769,7 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     if (penCascade) penCascade.style.display = (this.value === 'pensionato') ? 'block' : 'none';
 
                     window.updateCoappCalculatedIncome(card);
-                " style="width: 100%; padding: 0.65rem 0.85rem; border: 2px solid #0052ff; border-radius: 8px; font-size: 0.9rem; font-weight: 700; background: #ffffff; color: #0f172a;">
+                " style="width: 100%; padding: 0.65rem 0.85rem; border: 2px solid #0052ff; border-radius: 8px; font-size: 0.9rem; font-weight: 700; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                     <option value="no_lavoro" ${macroCategoria === "no_lavoro" ? "selected" : ""}>❌ Nessun reddito / A carico (Casalinga, Disoccupato, ecc.)</option>
                     <option value="dipendente" ${macroCategoria === "dipendente" || macroCategoria === "dipendente_ti" || macroCategoria === "dipendente_td" ? "selected" : ""}>👔 Lavoratore Dipendente</option>
                     <option value="autonomo" ${macroCategoria === "autonomo" ? "selected" : ""}>💼 Lavoratore Autonomo / P.IVA</option>
@@ -780,101 +780,101 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
             </div>
 
             <!-- Avviso Nessun Reddito -->
-            <div class="coapp-no-income-msg" style="display: ${macroCategoria === 'no_lavoro' ? 'block' : 'none'}; background: #f8fafc; padding: 0.85rem 1.1rem; border-radius: 8px; border: 1px dashed #cbd5e1; font-size: 0.82rem; color: #64748b;">
+            <div class="coapp-no-income-msg" style="display: ${macroCategoria === 'no_lavoro' ? 'block' : 'none'}; background: #0B1222; padding: 0.85rem 1.1rem; border-radius: 8px; border: 1.5px dashed #1C273E; font-size: 0.82rem; color: #64748b;">
                 ℹ️ <strong>Nessun reddito proprio:</strong> Il richiedente è inserito a carico con reddito € 0/mese. La Sezione 1 (Anagrafica) e la Sezione 3 (Prestiti/CRIF) restano attive e valide.
             </div>
 
             <!-- Dettagli Reddito (Visibili solo se ha un'occupazione) -->
             <div class="coapp-income-details-box" style="display: ${macroCategoria !== 'no_lavoro' ? 'block' : 'none'};">
                 <div style="margin-bottom: 1rem;">
-                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">9. Professione / Qualifica</label>
-                    <input type="text" class="coapp-q9-professione" value="${professione}" placeholder="es. Impiegato Tecnico, Operaio, Medico..." style="width: 100%; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">9. Professione / Qualifica</label>
+                    <input type="text" class="coapp-q9-professione" value="${professione}" placeholder="es. Impiegato Tecnico, Operaio, Medico..." style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                 </div>
 
                 <!-- CASCATA DIPENDENTE COMPLETA CON CASELLE CU -->
-                <div class="coapp-dipendente-cascade" style="display: ${(macroCategoria === 'dipendente' || macroCategoria === 'dipendente_ti' || macroCategoria === 'dipendente_td' || macroCategoria === 'colf_badanti' || macroCategoria === 'interinale') ? 'block' : 'none'}; background: #f8fafc; padding: 1.25rem; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 1rem;">
+                <div class="coapp-dipendente-cascade" style="display: ${(macroCategoria === 'dipendente' || macroCategoria === 'dipendente_ti' || macroCategoria === 'dipendente_td' || macroCategoria === 'colf_badanti' || macroCategoria === 'interinale') ? 'block' : 'none'}; background: #0B1222; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Tipo di Contratto</label>
-                            <select class="coapp-q10-dip-contratto" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Tipo di Contratto</label>
+                            <select class="coapp-q10-dip-contratto" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                                 <option value="indeterminato" ${dipContratto === "indeterminato" ? "selected" : ""}>Tempo Indeterminato</option>
                                 <option value="determinato" ${dipContratto === "determinato" ? "selected" : ""}>Tempo Determinato</option>
                                 <option value="apprendista" ${dipContratto === "apprendista" ? "selected" : ""}>Apprendistato</option>
                             </select>
                         </div>
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Anzianità lavorativa (mesi)</label>
-                            <input type="number" class="coapp-q10-anzianita coapp-anzianita" value="${dipAnzianita}" min="0" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anzianità lavorativa (mesi)</label>
+                            <input type="number" class="coapp-q10-anzianita coapp-anzianita" value="${dipAnzianita}" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Orario Lavoro</label>
-                            <select class="coapp-q10-dip-orario coapp-orario" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Orario Lavoro</label>
+                            <select class="coapp-q10-dip-orario coapp-orario" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                                 <option value="full_time" ${dipOrario === "full_time" ? "selected" : ""}>Full-time</option>
                                 <option value="part_time" ${dipOrario === "part_time" ? "selected" : ""}>Part-time</option>
                             </select>
                         </div>
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Partita IVA Datore Lavoro</label>
-                            <input type="text" class="coapp-q10-datore-piva coapp-datore" value="${dipDatorePiva}" placeholder="11 cifre o Nome Azienda" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Partita IVA Datore Lavoro</label>
+                            <input type="text" class="coapp-q10-datore-piva coapp-datore" value="${dipDatorePiva}" placeholder="11 cifre o Nome Azienda" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
 
-                    <p style="font-size: 0.75rem; font-weight: 700; color: #0052ff; margin: 0 0 0.75rem 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem;">CASELLE CERTIFICAZIONE UNICA (CU):</p>
+                    <p style="font-size: 0.75rem; font-weight: 700; color: #0052ff; margin: 0 0 0.75rem 0; border-bottom: 1px solid #1C273E; padding-bottom: 0.25rem;">CASELLE CERTIFICAZIONE UNICA (CU):</p>
                     <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 1 (Dip. Lordi)</label>
-                            <input type="number" class="coapp-cu1" value="${cu1}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu1" value="${cu1}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 2 (Altri Lordi)</label>
-                            <input type="number" class="coapp-cu2" value="${cu2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu2" value="${cu2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 6 (Giorni Lav.)</label>
-                            <input type="number" class="coapp-cu6" value="${cu6}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu6" value="${cu6}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
                     <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 21 (Ritenute)</label>
-                            <input type="number" class="coapp-cu21" value="${cu21}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu21" value="${cu21}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 22 (Regionale)</label>
-                            <input type="number" class="coapp-cu22" value="${cu22}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu22" value="${cu22}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 26 (Comunale Saldo)</label>
-                            <input type="number" class="coapp-cu26" value="${cu26}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu26" value="${cu26}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
                     <div style="grid-template-columns: repeat(4, 1fr); display: grid; gap: 0.75rem;">
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 27 (Comunale Acc.)</label>
-                            <input type="number" class="coapp-cu27" value="${cu27}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu27" value="${cu27}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 29 (Cedolare)</label>
-                            <input type="number" class="coapp-cu29" value="${cu29}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu29" value="${cu29}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 365 (Bonus)</label>
-                            <input type="number" class="coapp-cu365" value="${cu365}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu365" value="${cu365}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                         <div>
                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 810 (TFR Acc.)</label>
-                            <input type="number" class="coapp-cu810" value="${cu810}" style="width: 100%; padding: 0.5rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <input type="number" class="coapp-cu810" value="${cu810}" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
                 </div>
 
                 <!-- CASCATA AUTONOMO COMPLETA CON 2 ANNI DI MODELLO REDDITI (LM / RN) -->
-                <div class="coapp-autonomo-cascade" style="display: ${macroCategoria === 'autonomo' ? 'block' : 'none'}; background: #f8fafc; padding: 1.25rem; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 1rem;">
+                <div class="coapp-autonomo-cascade" style="display: ${macroCategoria === 'autonomo' ? 'block' : 'none'}; background: #0B1222; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.85rem;">
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Regime Fiscale</label>
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Regime Fiscale</label>
                             <select class="coapp-autonomo-regime" onchange="
                                 const card = this.closest('.coapp-card');
                                 const forf = card.querySelector('.coapp-autonomo-forfettario');
@@ -882,26 +882,26 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                                 if (forf) forf.style.display = (this.value === 'forfettario') ? 'block' : 'none';
                                 if (ord) ord.style.display = (this.value === 'ordinario') ? 'block' : 'none';
                                 window.updateCoappCalculatedIncome(card);
-                            " style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            " style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                                 <option value="forfettario" ${autonomoRegime === "forfettario" ? "selected" : ""}>Regime Forfettario</option>
                                 <option value="ordinario" ${autonomoRegime === "ordinario" ? "selected" : ""}>Regime Ordinario</option>
                             </select>
                         </div>
                         <div>
-                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Anni Attività</label>
-                            <input type="number" class="coapp-autonomo-anni" value="${autonomoAnni}" min="0" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anni Attività</label>
+                            <input type="number" class="coapp-autonomo-anni" value="${autonomoAnni}" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                         </div>
                     </div>
 
                     <!-- Opzione 1 solo Modello Unico -->
-                    <div style="margin-bottom: 1rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 0.6rem 0.85rem; display: flex; align-items: center; gap: 0.6rem;">
+                    <div style="margin-bottom: 1rem; background: #0B1222; color: #FFFFFF; border: 1.5px dashed #1C273E; border-radius: 8px; padding: 0.6rem 0.85rem; display: flex; align-items: center; gap: 0.6rem;">
                         <input type="checkbox" class="coapp-autonomo-single-unico" ${singleUnico ? 'checked' : ''} onchange="
                             const card = this.closest('.coapp-card');
                             const a2 = card.querySelectorAll('.coapp-autonomo-anno2');
                             a2.forEach(el => el.style.display = this.checked ? 'none' : 'block');
                             window.updateCoappCalculatedIncome(card);
                         " style="width: 16px; height: 16px; cursor: pointer;">
-                        <label style="font-size: 0.78rem; font-weight: 700; color: #334155; cursor: pointer; user-select: none;">
+                        <label style="font-size: 0.78rem; font-weight: 700; color: #E2E8F0; cursor: pointer; user-select: none;">
                             📝 Calcola con 1 solo Modello Unico (Attività aperta da meno di 2 anni / 1 solo anno fiscale)
                         </label>
                     </div>
@@ -909,63 +909,63 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     <!-- Autonomo Forfettario (2 Anni) -->
                     <div class="coapp-autonomo-forfettario" style="display: ${autonomoRegime === 'forfettario' ? 'block' : 'none'};">
                         <!-- UNICO 2026 -->
-                        <div style="background: #ffffff; border: 1.5px solid #0052ff; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                        <div style="background: #0B1222; color: #FFFFFF; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                             <div style="font-size: 0.78rem; font-weight: 800; color: #0052ff; margin-bottom: 0.5rem;">
                                 📘 MODELLO REDDITI 2026 (Anno Fiscale 2025) - QUADRO LM
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Compensati/Ricavi)</label>
-                                    <input type="number" class="coapp-lm22" value="${lm22}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm22" value="${lm22}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Spese/Abbatt.)</label>
-                                    <input type="number" class="coapp-lm27" value="${lm27}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm27" value="${lm27}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Contributi INPS)</label>
-                                    <input type="number" class="coapp-lm35" value="${lm35}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm35" value="${lm35}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                             <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Reddito Netto/Imp.)</label>
-                                    <input type="number" class="coapp-lm36" value="${lm36}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm36" value="${lm36}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sost.)</label>
-                                    <input type="number" class="coapp-lm39" value="${lm39}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm39" value="${lm39}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                         </div>
 
                         <!-- UNICO 2025 -->
-                        <div class="coapp-autonomo-anno2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem; display: ${singleUnico ? 'none' : 'block'};">
-                            <div style="font-size: 0.78rem; font-weight: 800; color: #475569; margin-bottom: 0.5rem;">
+                        <div class="coapp-autonomo-anno2" style="background: #0B1222; color: #FFFFFF; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; display: ${singleUnico ? 'none' : 'block'};">
+                            <div style="font-size: 0.78rem; font-weight: 800; color: #E2E8F0; margin-bottom: 0.5rem;">
                                 📗 MODELLO REDDITI 2025 (Anno Fiscale 2024) - QUADRO LM
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Compensati/Ricavi)</label>
-                                    <input type="number" class="coapp-lm22-anno2" value="${lm22_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm22-anno2" value="${lm22_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Spese/Abbatt.)</label>
-                                    <input type="number" class="coapp-lm27-anno2" value="${lm27_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm27-anno2" value="${lm27_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Contributi INPS)</label>
-                                    <input type="number" class="coapp-lm35-anno2" value="${lm35_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm35-anno2" value="${lm35_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                             <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Reddito Netto/Imp.)</label>
-                                    <input type="number" class="coapp-lm36-anno2" value="${lm36_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm36-anno2" value="${lm36_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sost.)</label>
-                                    <input type="number" class="coapp-lm39-anno2" value="${lm39_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-lm39-anno2" value="${lm39_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                         </div>
@@ -974,71 +974,71 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                     <!-- Autonomo Ordinario (2 Anni) -->
                     <div class="coapp-autonomo-ordinario" style="display: ${autonomoRegime === 'ordinario' ? 'block' : 'none'};">
                         <!-- UNICO 2026 -->
-                        <div style="background: #ffffff; border: 1.5px solid #0052ff; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                        <div style="background: #0B1222; color: #FFFFFF; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                             <div style="font-size: 0.78rem; font-weight: 800; color: #0052ff; margin-bottom: 0.5rem;">
                                 📘 MODELLO REDDITI 2026 (Anno Fiscale 2025) - QUADRO RN/RV
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Compl.)</label>
-                                    <input type="number" class="coapp-rn1" value="${rn1}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn1" value="${rn1}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Imponibile)</label>
-                                    <input type="number" class="coapp-rn4" value="${rn4}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn4" value="${rn4}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                    <input type="number" class="coapp-rn26" value="${rn26}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn26" value="${rn26}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Regionale)</label>
-                                    <input type="number" class="coapp-rv2" value="${rv2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv2" value="${rv2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Comunale Saldo)</label>
-                                    <input type="number" class="coapp-rv10" value="${rv10}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv10" value="${rv10}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Comunale Acc.)</label>
-                                    <input type="number" class="coapp-rv17" value="${rv17}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv17" value="${rv17}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                         </div>
 
                         <!-- UNICO 2025 -->
-                        <div class="coapp-autonomo-anno2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem; display: ${singleUnico ? 'none' : 'block'};">
-                            <div style="font-size: 0.78rem; font-weight: 800; color: #475569; margin-bottom: 0.5rem;">
+                        <div class="coapp-autonomo-anno2" style="background: #0B1222; color: #FFFFFF; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; display: ${singleUnico ? 'none' : 'block'};">
+                            <div style="font-size: 0.78rem; font-weight: 800; color: #E2E8F0; margin-bottom: 0.5rem;">
                                 📗 MODELLO REDDITI 2025 (Anno Fiscale 2024) - QUADRO RN/RV
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Compl.)</label>
-                                    <input type="number" class="coapp-rn1-anno2" value="${rn1_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn1-anno2" value="${rn1_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Imponibile)</label>
-                                    <input type="number" class="coapp-rn4-anno2" value="${rn4_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn4-anno2" value="${rn4_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                    <input type="number" class="coapp-rn26-anno2" value="${rn26_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rn26-anno2" value="${rn26_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem;">
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Regionale)</label>
-                                    <input type="number" class="coapp-rv2-anno2" value="${rv2_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv2-anno2" value="${rv2_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Comunale Saldo)</label>
-                                    <input type="number" class="coapp-rv10-anno2" value="${rv10_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv10-anno2" value="${rv10_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                                 <div>
                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Comunale Acc.)</label>
-                                    <input type="number" class="coapp-rv17-anno2" value="${rv17_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.82rem; background: #ffffff;">
+                                    <input type="number" class="coapp-rv17-anno2" value="${rv17_anno2}" oninput="window.updateCoappCalculatedIncome(this.closest('.coapp-card'))" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222; color: #FFFFFF;">
                                 </div>
                             </div>
                         </div>
@@ -1046,65 +1046,65 @@ window.renderFullCoapplicantCardHtml = function(id, isSpouse = false, data = {},
                 </div>
 
                 <!-- CASCATA PENSIONATO -->
-                <div class="coapp-pensionato-cascade" style="display: ${macroCategoria === 'pensionato' ? 'block' : 'none'}; background: #f8fafc; padding: 1.25rem; border-radius: 10px; border: 1px solid #e2e8f0; margin-bottom: 1rem;">
+                <div class="coapp-pensionato-cascade" style="display: ${macroCategoria === 'pensionato' ? 'block' : 'none'}; background: #0B1222; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                     <div>
-                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">Ente Erogatore / Tipologia Pensione</label>
-                        <input type="text" class="coapp-pensione-tipo" value="${pensioneTipo}" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; background: #ffffff;">
+                        <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Ente Erogatore / Tipologia Pensione</label>
+                        <input type="text" class="coapp-pensione-tipo" value="${pensioneTipo}" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222; color: #FFFFFF;">
                     </div>
                 </div>
 
                 <!-- COMMON NET INCOME FIELD -->
                 <div style="margin-bottom: 1rem;">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
-                        <label style="display: block; font-size: 0.80rem; font-weight: 700; color: #334155; margin-bottom: 0;">Reddito Netto Mensile Indicativo (€) *</label>
-                        <button type="button" onclick="window.openPayslipCalculator(this.closest('.coapp-card').querySelector('.coapp-netto'), '${isGuarantor ? 'Garante' : (isSpouse ? 'Coniuge' : 'Richiedente')} - ' + (this.closest('.coapp-card').querySelector('.coapp-nome')?.value || 'Coobbligato'))" style="background: #f0fdf4; border: 1px solid #86efac; color: #166534; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem; transition: background 0.15s;">
+                        <label style="display: block; font-size: 0.80rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0;">Reddito Netto Mensile Indicativo (€) *</label>
+                        <button type="button" onclick="window.openPayslipCalculator(this.closest('.coapp-card').querySelector('.coapp-netto'), '${isGuarantor ? 'Garante' : (isSpouse ? 'Coniuge' : 'Richiedente')} - ' + (this.closest('.coapp-card').querySelector('.coapp-nome')?.value || 'Coobbligato'))" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #4ADE80; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.25rem; transition: background 0.15s;">
                             🧾 Calcola da Buste Paga
                         </button>
                     </div>
-                    <input type="number" class="coapp-netto" value="${netto}" min="0" oninput="if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 2.5px solid #0052ff; border-radius: 8px; font-size: 0.95rem; font-weight: 800; color: #0052ff; background: #ffffff; outline: none;">
+                    <input type="number" class="coapp-netto" value="${netto}" min="0" oninput="if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 2.5px solid #0052ff; border-radius: 8px; font-size: 0.95rem; font-weight: 800; color: #0052ff; background: #0B1222; color: #FFFFFF; outline: none;">
                     <span style="font-size: 0.72rem; color: #64748b; display: block; margin-top: 0.3rem;">Il reddito netto mensile determinato da CU/Modello Unico, calcolo buste paga o inserito manualmente.</span>
                 </div>
             </div>
         </div>
 
         <!-- SEZIONE 3: PRESTITI & AFFIDABILITÀ CREDITIZIA (PUNTO 3) -->
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 1rem 0;">
+        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 10px; padding: 1.25rem; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1rem 0;">
                 💳 3. Prestiti & Affidabilità Creditizia (Domande 11 - 13)
             </h3>
             
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;">
                 <div>
-                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">11. Prestiti in essere?</label>
-                    <select class="coapp-q11-has-loans" onchange="const lbox = this.closest('.coapp-card').querySelector('.coapp-loans-details-box'); if(lbox) lbox.style.display = (this.value === 'si') ? 'grid' : 'none'; if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">11. Prestiti in essere?</label>
+                    <select class="coapp-q11-has-loans" onchange="const lbox = this.closest('.coapp-card').querySelector('.coapp-loans-details-box'); if(lbox) lbox.style.display = (this.value === 'si') ? 'grid' : 'none'; if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="no" ${hasLoans === "no" ? "selected" : ""}>No</option>
                         <option value="si" ${hasLoans === "si" ? "selected" : ""}>Sì</option>
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">12. Pignoramenti?</label>
-                    <select class="coapp-q12-pignoramenti" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">12. Pignoramenti?</label>
+                    <select class="coapp-q12-pignoramenti" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="no" ${pignoramenti === "no" ? "selected" : ""}>No</option>
                         <option value="si" ${pignoramenti === "si" ? "selected" : ""}>Sì</option>
                     </select>
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 0.35rem;">13. Segnalazioni CRIF?</label>
-                    <select class="coapp-q13-crif-sofferenze" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.88rem; background: #ffffff;">
+                    <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">13. Segnalazioni CRIF?</label>
+                    <select class="coapp-q13-crif-sofferenze" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222; color: #FFFFFF;">
                         <option value="no" ${crifSofferenze === "no" ? "selected" : ""}>No (Regolare)</option>
                         <option value="si" ${crifSofferenze === "si" ? "selected" : ""}>Sì (Ritardi passati)</option>
                     </select>
                 </div>
             </div>
 
-            <div class="coapp-loans-details-box" style="display: ${hasLoans === 'si' ? 'grid' : 'none'}; grid-template-columns: 1fr 1fr; gap: 1rem; background: #f8fafc; padding: 0.85rem; border-radius: 8px; border: 1px solid #cbd5e1;">
+            <div class="coapp-loans-details-box" style="display: ${hasLoans === 'si' ? 'grid' : 'none'}; grid-template-columns: 1fr 1fr; gap: 1rem; background: #0B1222; padding: 0.85rem; border-radius: 8px; border: 1.5px solid #1C273E;">
                 <div>
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Rata mensile totale prestiti (€)</label>
-                    <input type="number" class="coapp-loans-rata" value="${loansRata}" min="0" oninput="if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #ef4444;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Rata mensile totale prestiti (€)</label>
+                    <input type="number" class="coapp-loans-rata" value="${loansRata}" min="0" oninput="if(window.updateCalculatedIncome) window.updateCalculatedIncome(); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #ef4444;">
                 </div>
                 <div>
-                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #334155; margin-bottom: 0.25rem;">Debito residuo totale (€)</label>
-                    <input type="number" class="coapp-loans-debito" value="${loansDebito}" min="0" style="width: 100%; padding: 0.55rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.25rem;">Debito residuo totale (€)</label>
+                    <input type="number" class="coapp-loans-debito" value="${loansDebito}" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem;">
                 </div>
             </div>
         </div>

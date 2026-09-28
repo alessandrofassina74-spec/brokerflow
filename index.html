@@ -1587,39 +1587,39 @@
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                             
                             <!-- SEZIONE 1: Dati Anagrafici e Stato Civile (Q1 - Q8) -->
-                            <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.25rem 0;">👤 1. Anagrafica e Stato Civile (Domande 1 - 8)</h3>
                                 
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">1. Nome</label>
-                                        <input type="text" id="wiz-q1-nome" value="Marco" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="text" id="wiz-q1-nome" value="Marco" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">2. Cognome</label>
-                                        <input type="text" id="wiz-q2-cognome" value="Rossi" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="text" id="wiz-q2-cognome" value="Rossi" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                 </div>
 
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">📱 Cellulare / WhatsApp</label>
-                                        <input type="tel" id="wiz-q1-telefono" placeholder="es. 340 1234567" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="tel" id="wiz-q1-telefono" placeholder="es. 340 1234567" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">✉️ Email</label>
-                                        <input type="email" id="wiz-q1-email" placeholder="es. mario.rossi@email.it" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="email" id="wiz-q1-email" placeholder="es. mario.rossi@email.it" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                 </div>
 
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">3. Data di nascita</label>
-                                        <input type="date" id="wiz-q3-data-nascita" value="1980-01-01" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="date" id="wiz-q3-data-nascita" value="1980-01-01" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">4. Stato civile</label>
-                                        <select id="wiz-q4-stato-civile" onchange="window.toggleMarriageFields(this.value); window.handleMarriageRegimeChange(); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q4-stato-civile" onchange="window.toggleMarriageFields(this.value); window.handleMarriageRegimeChange(); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="celibe" selected>Celibe / Nubile</option>
                                             <option value="sposato">Sposato/a</option>
                                             <option value="separato">Separato/a</option>
@@ -1672,14 +1672,14 @@
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">5. Figli a carico</label>
-                                        <select id="wiz-q5-figli" onchange="window.toggleChildrenFields('')" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q5-figli" onchange="window.toggleChildrenFields('')" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="no">No</option>
                                             <option value="si" selected>Sì</option>
                                         </select>
                                     </div>
                                     <div id="group-figli-count" style="display: block;">
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Numero figli a carico</label>
-                                        <input type="number" id="wiz-q5-num-figli" value="2" placeholder="N°" oninput="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI(''); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" onchange="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI(''); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="number" id="wiz-q5-num-figli" value="2" placeholder="N°" oninput="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI(''); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" onchange="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI(''); if(window.suggestFamilyComponentsFromDOM) window.suggestFamilyComponentsFromDOM();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                 </div>
 
@@ -1688,14 +1688,14 @@
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Percepisce Assegno Unico?</label>
-                                            <select id="wiz-q15-assegno-unico-select" onchange="window.toggleAssegnoUnicoFields('')" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                            <select id="wiz-q15-assegno-unico-select" onchange="window.toggleAssegnoUnicoFields('')" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                                 <option value="no">No</option>
                                                 <option value="si" selected>Sì</option>
                                             </select>
                                         </div>
                                         <div id="group-assegno-unico-valore-wrapper" style="display: block;">
                                             <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Importo mensile (€)</label>
-                                            <input type="number" id="wiz-q15-assegno-unico" value="280" placeholder="€ / mese" oninput="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI('');" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                            <input type="number" id="wiz-q15-assegno-unico" value="280" placeholder="€ / mese" oninput="if(window.updateChildrenAgesUI) window.updateChildrenAgesUI('');" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                         </div>
                                     </div>
                                 </div>
@@ -1712,7 +1712,7 @@
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">6. Cittadinanza</label>
-                                        <select id="wiz-q6-cittadinanza" onchange="document.getElementById('group-extra-ue').style.display = this.value === 'extra' ? 'block' : 'none';" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q6-cittadinanza" onchange="document.getElementById('group-extra-ue').style.display = this.value === 'extra' ? 'block' : 'none';" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="italiana" selected>Italiana</option>
                                             <option value="ue">Unione Europea</option>
                                             <option value="extra">Extra UE</option>
@@ -1720,7 +1720,7 @@
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">7. Abitazione attuale</label>
-                                        <select id="wiz-q7-abitazione" onchange="window.toggleAbitazioneFields(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q7-abitazione" onchange="window.toggleAbitazioneFields(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="proprieta">Proprietà</option>
                                             <option value="affitto" selected>Affitto</option>
                                             <option value="genitori">Presso genitori / Gratuito</option>
@@ -1756,17 +1756,17 @@
                             </div>
 
                             <!-- SEZIONE 2: Occupazione e Reddito (Q9 - Q10 Cascata Completa) -->
-                            <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+                            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.25rem 0;">💼 2. Occupazione e Reddito (Domande 9 - 10 Cascata Completa)</h3>
                                 
                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">9. Professione / Qualifica</label>
-                                        <input type="text" id="wiz-q9-professione" value="Impiegato Tecnico Specialist" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #ffffff !important;">
+                                        <input type="text" id="wiz-q9-professione" value="Impiegato Tecnico Specialist" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">10. Categoria Lavorativa</label>
-                                        <select id="wiz-q10-macro-categoria" onchange="window.toggleQ10MacroCategory(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #ffffff !important;">
+                                        <select id="wiz-q10-macro-categoria" onchange="window.toggleQ10MacroCategory(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #0B1222 !important; color: #FFFFFF !important;">
                                             <option value="dipendente" selected>👔 Lavoratore Dipendente</option>
                                             <option value="autonomo">💼 Lavoratore Autonomo / P.IVA</option>
                                             <option value="colf_badanti">🧹 Colf / Badante</option>
@@ -1781,7 +1781,7 @@
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Tipo di Contratto</label>
-                                            <select id="wiz-q10-dip-contratto" onchange="window.toggleQ10DipendenteSub(this.value); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <select id="wiz-q10-dip-contratto" onchange="window.toggleQ10DipendenteSub(this.value); if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 <option value="indeterminato" selected>Tempo Indeterminato</option>
                                                 <option value="determinato">Tempo Determinato</option>
                                                 <option value="apprendista">Apprendistato</option>
@@ -1789,7 +1789,7 @@
                                         </div>
                                         <div>
                                             <label id="lbl-q10-duration" style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anzianità lavorativa (mesi)</label>
-                                            <input type="number" id="wiz-q10-anzianita-dipendente" value="24" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-anzianita-dipendente" value="24" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
 
@@ -1802,7 +1802,7 @@
                                             </label>
                                             <div id="box-q10-stagioni-input" style="display: none; align-items: center; gap: 0.5rem;">
                                                 <span style="font-size: 0.75rem; color: #1e40af; font-weight: 700;">Stagioni/anni consecutivi:</span>
-                                                <input type="number" id="wiz-q10-dip-stagioni-consecutive" value="2" min="1" oninput="if(window.updateCalculations) window.updateCalculations();" style="width: 65px; padding: 0.35rem 0.5rem; border: 1.5px solid #3b82f6; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-align: center; background: #ffffff;">
+                                                <input type="number" id="wiz-q10-dip-stagioni-consecutive" value="2" min="1" oninput="if(window.updateCalculations) window.updateCalculations();" style="width: 65px; padding: 0.35rem 0.5rem; border: 1.5px solid #3b82f6; border-radius: 6px; font-size: 0.82rem; font-weight: 700; text-align: center; background: #0B1222; color: #FFFFFF;">
                                             </div>
                                         </div>
                                         <span style="font-size: 0.7rem; color: #3b82f6; display: block; margin-top: 0.3rem;">Crédit Agricole e Banco di Sardegna ammettono deroghe per lavoratori stagionali con continuità pluriennale (min. 2 stagioni consecutive).</span>
@@ -1810,61 +1810,61 @@
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Orario Lavoro</label>
-                                            <select id="wiz-q10-dip-orario" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <select id="wiz-q10-dip-orario" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 <option value="full_time" selected>Full-time</option>
                                                 <option value="part_time">Part-time</option>
                                             </select>
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Partita IVA Datore Lavoro</label>
-                                            <input type="text" id="wiz-q10-datore-piva" placeholder="11 cifre" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="text" id="wiz-q10-datore-piva" placeholder="11 cifre" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
                                     <p style="font-size: 0.75rem; font-weight: 700; color: #0052ff; margin: 0 0 0.75rem 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem;">CASELLE CERTIFICAZIONE UNICA (CU):</p>
                                     <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 1 (Dip. Lordi)</label>
-                                            <input type="number" id="wiz-q10-cu1" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu1" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 2 (Altri Lordi)</label>
-                                            <input type="number" id="wiz-q10-cu2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 6 (Giorni Lav.)</label>
-                                            <input type="number" id="wiz-q10-cu6" value="365" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu6" value="365" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
                                     <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 21 (Ritenute)</label>
-                                            <input type="number" id="wiz-q10-cu21" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu21" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 22 (Regionale)</label>
-                                            <input type="number" id="wiz-q10-cu22" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu22" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 26 (Comunale Saldo)</label>
-                                            <input type="number" id="wiz-q10-cu26" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu26" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
                                     <div style="grid-template-columns: repeat(4, 1fr); display: grid; gap: 0.75rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 27 (Comunale Acc.)</label>
-                                            <input type="number" id="wiz-q10-cu27" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu27" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 29 (Cedolare)</label>
-                                            <input type="number" id="wiz-q10-cu29" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu29" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 365 (Bonus)</label>
-                                            <input type="number" id="wiz-q10-cu365" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu365" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 810 (TFR Acc.)</label>
-                                            <input type="number" id="wiz-q10-cu810" value="0" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-cu810" value="0" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
                                 </div>
@@ -1874,14 +1874,14 @@
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.85rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Regime Fiscale</label>
-                                            <select id="wiz-q10-autonomo-regime" onchange="window.toggleQ10AutonomoRegime(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <select id="wiz-q10-autonomo-regime" onchange="window.toggleQ10AutonomoRegime(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 <option value="forfettario" selected>Regime Forfettario</option>
                                                 <option value="ordinario">Regime Ordinario</option>
                                             </select>
                                         </div>
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anni Attività</label>
-                                            <input type="number" id="wiz-q10-autonomo-anni" value="5" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-autonomo-anni" value="5" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
 
@@ -1896,7 +1896,7 @@
                                     <!-- Autonomo Forfettario (2 Anni) -->
                                     <div id="group-q10-autonomo-forfettario" style="display: block;">
                                         <!-- UNICO 2026 -->
-                                        <div style="background: #ffffff; border: 1.5px solid #0052ff; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                                        <div style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                                             <div style="font-size: 0.78rem; font-weight: 800; color: #0052ff; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
                                                 <span>📘 MODELLO REDDITI 2026 (Anno Fiscale 2025) - QUADRO LM</span>
                                                 <span style="font-size: 0.70rem; background: #eff6ff; padding: 0.1rem 0.4rem; border-radius: 4px;">Anno Corrente</span>
@@ -1904,31 +1904,31 @@
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Compensati/Ricavi)</label>
-                                                    <input type="number" id="wiz-q10-lm22" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm22" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Spese/Abbatt.)</label>
-                                                    <input type="number" id="wiz-q10-lm27" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm27" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Contributi INPS)</label>
-                                                    <input type="number" id="wiz-q10-lm35" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm35" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                             <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Reddito Netto/Imponibile)</label>
-                                                    <input type="number" id="wiz-q10-lm36" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm36" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sostitutiva)</label>
-                                                    <input type="number" id="wiz-q10-lm39" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm39" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- UNICO 2025 -->
-                                        <div id="box-q10-forfettario-anno2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem;">
+                                        <div id="box-q10-forfettario-anno2" style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem;">
                                             <div style="font-size: 0.78rem; font-weight: 800; color: #94A3B8; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
                                                 <span>📗 MODELLO REDDITI 2025 (Anno Fiscale 2024) - QUADRO LM</span>
                                                 <span style="font-size: 0.70rem; background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 4px;">Anno Precedente</span>
@@ -1936,25 +1936,25 @@
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Compensati/Ricavi)</label>
-                                                    <input type="number" id="wiz-q10-lm22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Spese/Abbatt.)</label>
-                                                    <input type="number" id="wiz-q10-lm27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Contributi INPS)</label>
-                                                    <input type="number" id="wiz-q10-lm35-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm35-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                             <div style="grid-template-columns: 1fr 1fr; display: grid; gap: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Reddito Netto/Imponibile)</label>
-                                                    <input type="number" id="wiz-q10-lm36-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm36-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sostitutiva)</label>
-                                                    <input type="number" id="wiz-q10-lm39-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-lm39-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                         </div>
@@ -1963,7 +1963,7 @@
                                     <!-- Autonomo Ordinario (2 Anni) -->
                                     <div id="group-q10-autonomo-ordinario" style="display: none;">
                                         <!-- UNICO 2026 -->
-                                        <div style="background: #ffffff; border: 1.5px solid #0052ff; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                                        <div style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                                             <div style="font-size: 0.78rem; font-weight: 800; color: #0052ff; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
                                                 <span>📘 MODELLO REDDITI 2026 (Anno Fiscale 2025) - QUADRO RN/RV</span>
                                                 <span style="font-size: 0.70rem; background: #eff6ff; padding: 0.1rem 0.4rem; border-radius: 4px;">Anno Corrente</span>
@@ -1971,35 +1971,35 @@
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Compl.)</label>
-                                                    <input type="number" id="wiz-q10-rn1" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn1" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Imponibile)</label>
-                                                    <input type="number" id="wiz-q10-rn4" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn4" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                                    <input type="number" id="wiz-q10-rn26" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn26" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Regionale)</label>
-                                                    <input type="number" id="wiz-q10-rv2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Comunale Saldo)</label>
-                                                    <input type="number" id="wiz-q10-rv10" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv10" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Comunale Acc.)</label>
-                                                    <input type="number" id="wiz-q10-rv17" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv17" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                         </div>
 
                                         <!-- UNICO 2025 -->
-                                        <div id="box-q10-ordinario-anno2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem;">
+                                        <div id="box-q10-ordinario-anno2" style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem;">
                                             <div style="font-size: 0.78rem; font-weight: 800; color: #94A3B8; margin-bottom: 0.5rem; display: flex; justify-content: space-between;">
                                                 <span>📗 MODELLO REDDITI 2025 (Anno Fiscale 2024) - QUADRO RN/RV</span>
                                                 <span style="font-size: 0.70rem; background: #f1f5f9; padding: 0.1rem 0.4rem; border-radius: 4px;">Anno Precedente</span>
@@ -2007,29 +2007,29 @@
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Compl.)</label>
-                                                    <input type="number" id="wiz-q10-rn1-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn1-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Imponibile)</label>
-                                                    <input type="number" id="wiz-q10-rn4-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn4-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                                    <input type="number" id="wiz-q10-rn26-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rn26-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                             <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.6rem;">
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Regionale)</label>
-                                                    <input type="number" id="wiz-q10-rv2-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv2-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Comunale Saldo)</label>
-                                                    <input type="number" id="wiz-q10-rv10-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv10-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                                 <div>
                                                     <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Comunale Acc.)</label>
-                                                    <input type="number" id="wiz-q10-rv17-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                    <input type="number" id="wiz-q10-rv17-anno2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                 </div>
                                             </div>
                                         </div>
@@ -2040,7 +2040,7 @@
                                 <div id="group-q10-pensionato-cascade" style="display: none; background: #0D1424; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Ente Erogatore / Tipologia Pensione</label>
-                                        <input type="text" id="wiz-q10-pensione-tipo" value="INPS (Pensione di Vecchiaia)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                        <input type="text" id="wiz-q10-pensione-tipo" value="INPS (Pensione di Vecchiaia)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                     </div>
                                 </div>
 
@@ -2053,7 +2053,7 @@
                                                 🧾 Calcola da Buste Paga
                                             </button>
                                         </div>
-                                        <input type="number" id="wiz-q10-netto-mensile" value="2100.70" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.65rem 0.85rem; border: 2.5px solid #0052ff; border-radius: 8px; font-size: 0.95rem; font-weight: 800; color: #0052ff; background: #ffffff !important; outline: none;">
+                                        <input type="number" id="wiz-q10-netto-mensile" value="2100.70" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.65rem 0.85rem; border: 2.5px solid #0052ff; border-radius: 8px; font-size: 0.95rem; font-weight: 800; color: #0052ff; background: #0B1222 !important; color: #FFFFFF !important; outline: none;">
                                         <span style="font-size: 0.72rem; color: #64748b; display: block; margin-top: 0.3rem;">Il reddito netto mensile calcolato per il richiedente principale.</span>
                                     </div>
                                 </div>
@@ -2074,7 +2074,7 @@
                                     
                                     <div style="margin-bottom: 1rem;">
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Categoria Secondo Reddito</label>
-                                        <select id="wiz-q10-macro-categoria-2" onchange="window.toggleQ10MacroCategory2(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #ffffff !important;">
+                                        <select id="wiz-q10-macro-categoria-2" onchange="window.toggleQ10MacroCategory2(this.value)" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; font-weight: 700; background: #0B1222 !important; color: #FFFFFF !important;">
                                             <option value="dipendente" selected>👔 Lavoratore Dipendente</option>
                                             <option value="autonomo">💼 Lavoratore Autonomo / P.IVA</option>
                                             <option value="colf_badanti">🧹 Colf / Badante</option>
@@ -2089,7 +2089,7 @@
                                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                             <div>
                                                 <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Tipo di Contratto</label>
-                                                <select id="wiz-q10-dip-contratto-2" onchange="window.toggleQ10DipendenteSub2(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <select id="wiz-q10-dip-contratto-2" onchange="window.toggleQ10DipendenteSub2(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     <option value="indeterminato" selected>Tempo Indeterminato</option>
                                                     <option value="determinato">Tempo Determinato</option>
                                                     <option value="apprendista">Apprendistato</option>
@@ -2097,50 +2097,50 @@
                                             </div>
                                             <div>
                                                 <label id="lbl-q10-duration-2" style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anzianità lavorativa (mesi)</label>
-                                                <input type="number" id="wiz-q10-anzianita-dipendente-2" value="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-anzianita-dipendente-2" value="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                         </div>
                                         <p style="font-size: 0.75rem; font-weight: 700; color: #0052ff; margin: 0 0 0.75rem 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem;">CASELLE CERTIFICAZIONE UNICA (CU):</p>
                                         <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 1 (Dip. Lordi)</label>
-                                                <input type="number" id="wiz-q10-cu1-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu1-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 2 (Altri Lordi)</label>
-                                                <input type="number" id="wiz-q10-cu2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 6 (Giorni Lav.)</label>
-                                                <input type="number" id="wiz-q10-cu6-2" value="365" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu6-2" value="365" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                         </div>
                                         <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.75rem;">
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 21 (Ritenute)</label>
-                                                <input type="number" id="wiz-q10-cu21-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu21-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 22 (Add. Regionale)</label>
-                                                <input type="number" id="wiz-q10-cu22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 26 (Add. Comunale)</label>
-                                                <input type="number" id="wiz-q10-cu26-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu26-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                         </div>
                                         <div style="grid-template-columns: repeat(3, 1fr); display: grid; gap: 0.75rem; margin-bottom: 0.5rem;">
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 27 (Acconto Com.)</label>
-                                                <input type="number" id="wiz-q10-cu27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 29 (Saldi Add.)</label>
-                                                <input type="number" id="wiz-q10-cu29-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu29-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.72rem; font-weight: 700; color: #64748b; margin-bottom: 0.25rem;">Punto 365 (Fringe Ben.)</label>
-                                                <input type="number" id="wiz-q10-cu365-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-cu365-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.5rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                         </div>
                                     </div>
@@ -2150,19 +2150,19 @@
                                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 0.85rem;">
                                             <div>
                                                 <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Regime Fiscale</label>
-                                                <select id="wiz-q10-autonomo-regime-2" onchange="window.toggleQ10AutonomoRegime2(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <select id="wiz-q10-autonomo-regime-2" onchange="window.toggleQ10AutonomoRegime2(this.value)" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     <option value="forfettario" selected>Regime Forfettario</option>
                                                     <option value="ordinario">Regime Ordinario / Semplificato</option>
                                                 </select>
                                             </div>
                                             <div>
                                                 <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Anzianità P.IVA (mesi)</label>
-                                                <input type="number" id="wiz-q10-anzianita-autonomo-2" value="24" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                                <input type="number" id="wiz-q10-anzianita-autonomo-2" value="24" min="0" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                             </div>
                                         </div>
 
                                         <!-- Opzione 1 solo Modello Unico 2 -->
-                                        <div style="margin-bottom: 1rem; background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 0.6rem 0.85rem; display: flex; align-items: center; gap: 0.6rem;">
+                                        <div style="margin-bottom: 1rem; background: #080D1A; border: 1px dashed #1C273E; border-radius: 8px; padding: 0.6rem 0.85rem; display: flex; align-items: center; gap: 0.6rem;">
                                             <input type="checkbox" id="wiz-q10-autonomo-single-unico-2" onchange="window.toggleSingleUnico2(this.checked)" style="width: 16px; height: 16px; cursor: pointer;">
                                             <label for="wiz-q10-autonomo-single-unico-2" style="font-size: 0.78rem; font-weight: 700; color: #E2E8F0; cursor: pointer; user-select: none;">
                                                 📝 Calcola con 1 solo Modello Unico (Attività recente / 1 solo anno fiscale)
@@ -2172,63 +2172,63 @@
                                         <!-- Sotto-sezione Forfettario 2 (2 Anni) -->
                                         <div id="group-q10-autonomo-forfettario-2" style="display: block;">
                                             <!-- UNICO 2026 -->
-                                            <div style="background: #ffffff; border: 1.5px solid #16a34a; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                                            <div style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                                                 <div style="font-size: 0.78rem; font-weight: 800; color: #16a34a; margin-bottom: 0.5rem;">
                                                     📘 MODELLO REDDITI 2026 (Anno Fiscale 2025)
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Ricavi/Compensi)</label>
-                                                        <input type="number" id="wiz-q10-lm36-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm36-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sostitutiva)</label>
-                                                        <input type="number" id="wiz-q10-lm39-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm39-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Tot. Componenti)</label>
-                                                        <input type="number" id="wiz-q10-lm22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm22-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Dilazione C.)</label>
-                                                        <input type="number" id="wiz-q10-lm27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm27-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Deduzioni)</label>
-                                                        <input type="number" id="wiz-q10-lm35-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm35-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <!-- UNICO 2025 -->
-                                            <div id="box-q10-forfettario-anno2-2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem;">
+                                            <div id="box-q10-forfettario-anno2-2" style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem;">
                                                 <div style="font-size: 0.78rem; font-weight: 800; color: #94A3B8; margin-bottom: 0.5rem;">
                                                     📗 MODELLO REDDITI 2025 (Anno Fiscale 2024)
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM36 (Ricavi/Compensi)</label>
-                                                        <input type="number" id="wiz-q10-lm36-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm36-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM39 (Imposta Sostitutiva)</label>
-                                                        <input type="number" id="wiz-q10-lm39-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm39-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM22 (Tot. Componenti)</label>
-                                                        <input type="number" id="wiz-q10-lm22-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm22-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM27 (Dilazione C.)</label>
-                                                        <input type="number" id="wiz-q10-lm27-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm27-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">LM35 (Deduzioni)</label>
-                                                        <input type="number" id="wiz-q10-lm35-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-lm35-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2237,71 +2237,71 @@
                                         <!-- Sotto-sezione Ordinario 2 (2 Anni) -->
                                         <div id="group-q10-autonomo-ordinario-2" style="display: none;">
                                             <!-- UNICO 2026 -->
-                                            <div style="background: #ffffff; border: 1.5px solid #16a34a; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
+                                            <div style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem; margin-bottom: 0.85rem;">
                                                 <div style="font-size: 0.78rem; font-weight: 800; color: #16a34a; margin-bottom: 0.5rem;">
                                                     📘 MODELLO REDDITI 2026 (Anno Fiscale 2025)
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Complessivo)</label>
-                                                        <input type="number" id="wiz-q10-rn1-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn1-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                                        <input type="number" id="wiz-q10-rn26-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn26-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Tass. S.)</label>
-                                                        <input type="number" id="wiz-q10-rn4-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn4-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Add. Reg.)</label>
-                                                        <input type="number" id="wiz-q10-rv2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Add. Com.)</label>
-                                                        <input type="number" id="wiz-q10-rv10-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv10-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Acconto Com.)</label>
-                                                        <input type="number" id="wiz-q10-rv17-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv17-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <!-- UNICO 2025 -->
-                                            <div id="box-q10-ordinario-anno2-2" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.85rem;">
+                                            <div id="box-q10-ordinario-anno2-2" style="background: #080D1A; border: 1.5px solid #1C273E; border-radius: 8px; padding: 0.85rem;">
                                                 <div style="font-size: 0.78rem; font-weight: 800; color: #94A3B8; margin-bottom: 0.5rem;">
                                                     📗 MODELLO REDDITI 2025 (Anno Fiscale 2024)
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN1 (Reddito Complessivo)</label>
-                                                        <input type="number" id="wiz-q10-rn1-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn1-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN26 (Imposta Netta)</label>
-                                                        <input type="number" id="wiz-q10-rn26-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn26-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                                 <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem;">
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RN4 (Tass. S.)</label>
-                                                        <input type="number" id="wiz-q10-rn4-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rn4-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV2 (Add. Reg.)</label>
-                                                        <input type="number" id="wiz-q10-rv2-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv2-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV10 (Add. Com.)</label>
-                                                        <input type="number" id="wiz-q10-rv10-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv10-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                     <div>
                                                         <label style="display: block; font-size: 0.70rem; font-weight: 700; color: #64748b; margin-bottom: 0.2rem;">RV17 (Acconto Com.)</label>
-                                                        <input type="number" id="wiz-q10-rv17-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #ffffff !important;">
+                                                        <input type="number" id="wiz-q10-rv17-anno2-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.45rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.82rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                                     </div>
                                                 </div>
                                             </div>
@@ -2312,7 +2312,7 @@
                                     <div id="group-q10-pensionato-cascade-2" style="display: none; background: #0D1424; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-bottom: 1rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Ente Erogatore / Tipologia Pensione</label>
-                                            <input type="text" id="wiz-q10-pensione-tipo-2" value="INPS" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #ffffff !important;">
+                                            <input type="text" id="wiz-q10-pensione-tipo-2" value="INPS" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
 
@@ -2320,7 +2320,7 @@
                                     <div id="group-q10-locazione-cascade-2" style="display: none; background: rgba(16, 185, 129, 0.08); padding: 1.25rem; border-radius: 10px; border: 1px solid #bbf7d0; margin-bottom: 1rem;">
                                         <div>
                                             <label style="display: block; font-size: 0.78rem; font-weight: 700; color: #10B981; margin-bottom: 0.35rem;">Canone Mensile da Contratto di Locazione (€)</label>
-                                            <input type="number" id="wiz-q10-locazione-netto-2" value="600" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #10B981; background: #ffffff !important;">
+                                            <input type="number" id="wiz-q10-locazione-netto-2" value="600" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #10B981; background: #0B1222 !important; color: #FFFFFF !important;">
                                         </div>
                                     </div>
 
@@ -2332,7 +2332,7 @@
                                                 🧾 Calcola da Buste Paga
                                             </button>
                                         </div>
-                                        <input type="number" id="wiz-q10-netto-mensile-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #0052ff; background: #ffffff !important;">
+                                        <input type="number" id="wiz-q10-netto-mensile-2" value="0" oninput="window.updateCalculatedIncome()" style="width: 100%; padding: 0.55rem; border: 1.5px solid #1C273E; border-radius: 6px; font-size: 0.85rem; font-weight: 700; color: #0052ff; background: #0B1222 !important; color: #FFFFFF !important;">
                                     </div>
                                 </div>
                             </div>
@@ -2364,50 +2364,50 @@
                                 <div id="guarantor-cards-container" style="margin-top: 0.75rem;"></div>
                             </div>
 <!-- SEZIONE: Dati Famiglia e Territorialità -->
-                            <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
+                            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.25rem 0;">🏘️ Dati Famiglia e Territorialità</h3>
                                 <div style="margin-bottom: 1.25rem;">
                                     <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">Componenti nucleo familiare</label>
-                                    <input type="number" id="wiz-persone-nucleo" value="1" min="1" max="10" oninput="this.dataset.userEdited='true'; if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                    <input type="number" id="wiz-persone-nucleo" value="1" min="1" max="10" oninput="this.dataset.userEdited='true'; if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                 </div>
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">📍 Comune dell'immobile</label>
-                                        <input type="text" id="wiz-prov-immobile" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="text" id="wiz-prov-immobile" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">🏠 Comune di residenza</label>
-                                        <input type="text" id="wiz-prov-residenza" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="text" id="wiz-prov-residenza" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">🏢 Comune di lavoro</label>
-                                        <input type="text" id="wiz-prov-lavoro" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <input type="text" id="wiz-prov-lavoro" list="comuni-list" placeholder="es. Milano, Roma, Padova..." value="" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                     </div>
                                 </div>
                             </div>
 
                             <!-- SEZIONE 3: Prestiti & Affidabilità Creditizia -->
-                            <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
+                            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 1.25rem 0;">💳 3. Prestiti &amp; Affidabilità Creditizia (Domande 11 - 13)</h3>
                                 
                                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1rem;">
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">11. Prestiti in essere?</label>
-                                        <select id="wiz-q11-has-loans" onchange="document.getElementById('group-loans-builder').style.display = this.value === 'si' ? 'block' : 'none';" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q11-has-loans" onchange="document.getElementById('group-loans-builder').style.display = this.value === 'si' ? 'block' : 'none';" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="no" selected>No</option>
                                             <option value="si">Sì</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">12. Pignoramenti?</label>
-                                        <select id="wiz-q12-pignoramenti" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q12-pignoramenti" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="no" selected>No</option>
                                             <option value="si">Sì</option>
                                         </select>
                                     </div>
                                     <div>
                                         <label style="display: block; font-size: 0.8rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">13. Segnalazioni CRIF?</label>
-                                        <select id="wiz-q13-crif-sofferenze" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #ffffff; color: #FFFFFF;">
+                                        <select id="wiz-q13-crif-sofferenze" onchange="if(window.updateCalculations) window.updateCalculations();" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #1C273E; border-radius: 8px; font-size: 0.88rem; outline: none; background: #0B1222; color: #FFFFFF; color: #FFFFFF;">
                                             <option value="no" selected>No (Regolare)</option>
                                             <option value="si">Sì (Ritardi passati)</option>
                                         </select>
@@ -2417,7 +2417,7 @@
                                 <div id="group-loans-builder" style="display: none; background: #0D1424; padding: 1.25rem; border-radius: 10px; border: 1.5px solid #1C273E; margin-top: 1rem;">
                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                                         <strong style="font-size: 0.88rem; color: #FFFFFF;">Elenco Finanziamenti / Prestiti Personali</strong>
-                                        <button type="button" onclick="window.addNewLoanCard()" class="btn" style="background: #ffffff; border: 1.5px solid #0052ff; color: #0052ff; font-weight: 700; font-size: 0.78rem; padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer;">
+                                        <button type="button" onclick="window.addNewLoanCard()" class="btn" style="background: #080D1A; border: 1.5px solid #1C273E; color: #0052ff; font-weight: 700; font-size: 0.78rem; padding: 0.4rem 0.85rem; border-radius: 6px; cursor: pointer;">
                                             + Aggiungi prestito
                                         </button>
                                     </div>
@@ -2433,7 +2433,7 @@
                             </div>
 
                             <!-- SEZIONE 4: Patrimonio & Risparmi Disponibili (Crédit Agricole & ING) -->
-                            <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
+                            <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); margin-top: 1.25rem;">
                                 <h3 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.4rem 0;">💰 4. Patrimonio Mobiliare &amp; Risparmi Disponibili</h3>
                                 <p style="font-size: 0.8rem; color: #64748b; margin: 0 0 1.25rem 0;">Liquidità, libretti e investimenti a supporto dell'operazione e per la copertura delle spese vive d'atto (notaio, agenzia, imposte).</p>
                                 
@@ -2442,7 +2442,7 @@
                                         <label style="display: block; font-size: 0.82rem; font-weight: 700; color: #E2E8F0; margin-bottom: 0.35rem;">
                                             Liquidità e risparmi disponibili (c/c, titoli, fondi) al netto dell'anticipo (€)
                                         </label>
-                                        <input type="number" id="wiz-patrimonio-mobiliare" value="25000" min="0" oninput="if(window.updatePatrimonioDisplay) window.updatePatrimonioDisplay(); if(window.updateCalculations) window.updateCalculations();" placeholder="es. 25.000" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; font-weight: 700; color: #FFFFFF; background: #ffffff;">
+                                        <input type="number" id="wiz-patrimonio-mobiliare" value="25000" min="0" oninput="if(window.updatePatrimonioDisplay) window.updatePatrimonioDisplay(); if(window.updateCalculations) window.updateCalculations();" placeholder="es. 25.000" style="width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.9rem; font-weight: 700; color: #FFFFFF; background: #0B1222; color: #FFFFFF;">
                                     </div>
                                     <div id="box-spese-atto-preview" style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 10px; padding: 0.85rem 1rem;">
                                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
@@ -2457,7 +2457,7 @@
                             </div>
 
                         <!-- Right Sidebar Mode Interview (Bottom Banner) -->
-                        <div style="background: #ffffff; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
+                        <div style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;">
                             <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
                                 <h4 style="font-size: 0.95rem; font-weight: 800; color: #FFFFFF; margin: 0;">💼 Dati Economici Calcolati</h4>
                                 <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.5rem 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
@@ -2473,6 +2473,8 @@
                 
                     </div>
                 </div>
+            </div>
+
             </div>
 
             <!-- FASE 3: DATI MUTUO E ANALISI (nuova pratica inserita.jpg) -->

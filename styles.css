@@ -2583,3 +2583,62 @@ span[id*="computed-income"] {
     color: #00D2FF !important;
     text-shadow: 0 0 10px rgba(0, 210, 255, 0.4) !important;
 }
+
+
+/* ==========================================================================
+   WIZARD & CO-APPLICANT DARK FINTECH PERFECTION (BROKERFLOW)
+   ========================================================================== */
+#phase-1-panel, #phase-2-panel, #phase-3-panel, #phase-4-panel,
+#phase2-mode-interview-box, #phase2-mode-file-box,
+#wiz-coapplicants-guarantors-section {
+    color: #FFFFFF !important;
+}
+
+#phase-2-panel > div,
+#phase2-mode-interview-box > div,
+#phase2-mode-file-box > div,
+.coapp-card,
+.guarantor-card,
+.coapp-extra-ue-box {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    color: #FFFFFF !important;
+}
+
+.coapp-extra-ue-box {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    border-radius: 8px !important;
+    color: #E2E8F0 !important;
+}
+
+.coapp-extra-ue-box label,
+.coapp-extra-ue-box span {
+    color: #E2E8F0 !important;
+}
+
+#phase-2-panel input, #phase-2-panel select, #phase-2-panel textarea,
+#phase-3-panel input, #phase-3-panel select, #phase-3-panel textarea,
+#phase-4-panel input, #phase-4-panel select, #phase-4-panel textarea,
+.coapp-card input, .coapp-card select, .coapp-card textarea,
+.guarantor-card input, .guarantor-card select, .guarantor-card textarea {
+    background-color: #0B1222 !important;
+    border: 1.5px solid #1C273E !important;
+    color: #FFFFFF !important;
+}
+
+#phase-2-panel label,
+#phase-3-panel label,
+#phase-4-panel label,
+.coapp-card label,
+.guarantor-card label {
+    color: #E2E8F0 !important;
+}
+
+#phase-2-panel h1, #phase-2-panel h2, #phase-2-panel h3, #phase-2-panel h4, #phase-2-panel h5,
+#phase-3-panel h1, #phase-3-panel h2, #phase-3-panel h3, #phase-3-panel h4, #phase-3-panel h5,
+#phase-4-panel h1, #phase-4-panel h2, #phase-4-panel h3, #phase-4-panel h4, #phase-4-panel h5,
+.coapp-card h1, .coapp-card h2, .coapp-card h3, .coapp-card h4, .coapp-card h5,
+.guarantor-card h1, .guarantor-card h2, .guarantor-card h3, .guarantor-card h4, .guarantor-card h5 {
+    color: #FFFFFF !important;
+}
