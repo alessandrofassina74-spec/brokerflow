@@ -418,21 +418,24 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))
-        elif self.path == '/api/google-calendar-events':
+        elif self.path.startswith('/api/google-calendar-events'):
             try:
                 sys.path.insert(0, os.path.join(BASE_DIR, "scripts"))
                 import sync_google_calendar
-                cached = sync_google_calendar.get_cached_google_calendar()
-                if not cached:
-                    cached = sync_google_calendar.fetch_and_cache_google_calendar()
+                # Force refresh if requested or older than 60 seconds
+                force = 'force=1' in self.path
+                max_age = 0 if force else 60
+                cached = sync_google_calendar.get_cached_google_calendar(max_age_seconds=max_age)
                 self.send_response(200)
                 self.send_header('Content-type', 'application/json')
+                self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "success", **cached}, ensure_ascii=False).encode('utf-8'))
             except Exception as e:
                 self.send_response(500)
                 self.send_header('Content-type', 'application/json')
+                self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
                 self.send_header('Access-Control-Allow-Origin', '*')
                 self.end_headers()
                 self.wfile.write(json.dumps({"status": "error", "message": str(e)}).encode('utf-8'))

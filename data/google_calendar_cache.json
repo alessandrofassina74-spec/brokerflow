@@ -1,78 +1,8 @@
 {
-  "updated_at": "2026-09-25T13:38:40.479105",
+  "updated_at": "2026-09-28T18:02:06.407650",
   "feed_url": "https://calendar.google.com/calendar/ical/alessandro.fassina%40credipass.it/private-f6aaf5491172e94c8aa7283c89974f36/basic.ics",
-  "count": 566,
+  "count": 570,
   "events": [
-    {
-      "id": "gcal_Icalb539750c920e74ec96c048d91adaf675",
-      "title": "Recall - Lead Id 746156 - BELLON GUIDO UMBERTO",
-      "type": "recall",
-      "date": "2025-09-25",
-      "time": "10:00",
-      "duration": "60",
-      "client": "BELLON GUIDO UMBERTO",
-      "location": "",
-      "notes": "Memo: Recall per lead creato il 27/09/2024.Ecco le note inserite:necessario attendere fine estateSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Icalb539750c920e74ec96c048d91adaf675",
-      "completed": false
-    },
-    {
-      "id": "gcal_0ri4d50mnvsov2p03tqnibgtgk@google.com",
-      "title": "MPORTANTE: Presentazione progetto Comparabile Casa | Aruba - Credipass",
-      "type": "altro",
-      "date": "2025-09-25",
-      "time": "11:30",
-      "duration": "60",
-      "client": "",
-      "location": "",
-      "notes": "",
-      "source": "google_calendar",
-      "googleUid": "0ri4d50mnvsov2p03tqnibgtgk@google.com",
-      "completed": false
-    },
-    {
-      "id": "gcal_3cqr75u319ili6pjbi5iqspcl4@google.com",
-      "title": "RIUNIONE BPM",
-      "type": "altro",
-      "date": "2025-09-25",
-      "time": "14:30",
-      "duration": "60",
-      "client": "",
-      "location": "",
-      "notes": "Partecipa con Google Meet: https://meet.google.com/njc-wagc-jvc Oppure componi: (IT) +39 02 3041 9739 PIN: 535294427# Altri numeri di telefono: https://tel.meet/njc-wagc-jvc?pin=9203045068784&hs=7 Scopri di più su Meet all’indirizzo: https://support....",
-      "source": "google_calendar",
-      "googleUid": "3cqr75u319ili6pjbi5iqspcl4@google.com",
-      "completed": false
-    },
-    {
-      "id": "gcal_Icald979f0e761bea4aabb806216a5d24485",
-      "title": "Recall - Lead Id 851192 - KUNDJA  GENTJAN",
-      "type": "recall",
-      "date": "2025-09-26",
-      "time": "16:35",
-      "duration": "60",
-      "client": "KUNDJA  GENTJAN",
-      "location": "Montecchio Maggiore",
-      "notes": "Memo: Recall per lead creato il 03/05/2025.Ecco le note inserite:non ha ancora trovatoSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Icald979f0e761bea4aabb806216a5d24485",
-      "completed": false
-    },
-    {
-      "id": "gcal_Ical1a8e3088d55c82b7e78fbb5bb2a27d31",
-      "title": "Recall - Lead Id 904385 - VALENTE EUGENIO",
-      "type": "recall",
-      "date": "2025-09-27",
-      "time": "10:00",
-      "duration": "60",
-      "client": "VALENTE EUGENIO",
-      "location": "Monte di Malo",
-      "notes": "Memo: Recall per lead creato il 18/09/2025.Ecco le note inserite:è già seguito da un broker, vuole comunque un recall per doman imattinaSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical1a8e3088d55c82b7e78fbb5bb2a27d31",
-      "completed": false
-    },
     {
       "id": "gcal_Ical6aa94a76a132f5083f79257855ad9e49",
       "title": "Recall - Lead Id 848983 - AMBROSETTI ENRICO",
@@ -662,20 +592,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical349594574b499e90c91a0d3a51ac55d3",
-      "title": "Recall - Lead Id 920961 - CHIODO KATIA",
-      "type": "recall",
-      "date": "2025-11-05",
-      "time": "18:00",
-      "duration": "60",
-      "client": "CHIODO KATIA",
-      "location": "Velo d'Astico",
-      "notes": "Memo: Recall per lead creato il 29/10/2025.Ecco le note inserite:chiamata all'orario concordato ma non risponde. Ho inviato messaggio per accordarci per latra dataSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical349594574b499e90c91a0d3a51ac55d3",
-      "completed": false
-    },
-    {
       "id": "gcal_794r5l728uc67oo3520hsd9ji4@google.com",
       "title": "ale - con Tofazzal",
       "type": "altro",
@@ -687,6 +603,20 @@
       "notes": "",
       "source": "google_calendar",
       "googleUid": "794r5l728uc67oo3520hsd9ji4@google.com",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical349594574b499e90c91a0d3a51ac55d3",
+      "title": "Recall - Lead Id 920961 - CHIODO KATIA",
+      "type": "recall",
+      "date": "2025-11-05",
+      "time": "18:00",
+      "duration": "60",
+      "client": "CHIODO KATIA",
+      "location": "Velo d'Astico",
+      "notes": "Memo: Recall per lead creato il 29/10/2025.Ecco le note inserite:chiamata all'orario concordato ma non risponde. Ho inviato messaggio per accordarci per latra dataSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical349594574b499e90c91a0d3a51ac55d3",
       "completed": false
     },
     {
@@ -1054,20 +984,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Icalb88c3a03975c98df7de144375587ceb7",
-      "title": "Recall - Lead Id 920961 - CHIODO KATIA",
-      "type": "recall",
-      "date": "2025-11-14",
-      "time": "12:00",
-      "duration": "60",
-      "client": "CHIODO KATIA",
-      "location": "Velo d'Astico",
-      "notes": "Memo: Recall per lead creato il 29/10/2025.Ecco le note inserite:le settimana prossima non è possibile incontrarci perchè sovraccarica di lavoro, ci sentiamo per organizzare per quella dopoSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Icalb88c3a03975c98df7de144375587ceb7",
-      "completed": false
-    },
-    {
       "id": "gcal_Icalb3082b7cf60f7f61109e9e9c2b239462",
       "title": "Recall - Lead Id 920581 - DOLEANU PETRE",
       "type": "recall",
@@ -1079,6 +995,20 @@
       "notes": "Memo: Recall per lead creato il 28/10/2025.Ecco le note inserite:fisssato appSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icalb3082b7cf60f7f61109e9e9c2b239462",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icalb88c3a03975c98df7de144375587ceb7",
+      "title": "Recall - Lead Id 920961 - CHIODO KATIA",
+      "type": "recall",
+      "date": "2025-11-14",
+      "time": "12:00",
+      "duration": "60",
+      "client": "CHIODO KATIA",
+      "location": "Velo d'Astico",
+      "notes": "Memo: Recall per lead creato il 29/10/2025.Ecco le note inserite:le settimana prossima non è possibile incontrarci perchè sovraccarica di lavoro, ci sentiamo per organizzare per quella dopoSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Icalb88c3a03975c98df7de144375587ceb7",
       "completed": false
     },
     {
@@ -1180,20 +1110,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Icalb5320d8dac5ec74c7c73994bdfd58729",
-      "title": "Recall - Lead Id 849907 - MARCHI SERENA  DE",
-      "type": "recall",
-      "date": "2025-11-20",
-      "time": "18:08",
-      "duration": "60",
-      "client": "MARCHI SERENA  DE",
-      "location": "",
-      "notes": "Memo: Recall per lead creato il 28/04/2025.SCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Icalb5320d8dac5ec74c7c73994bdfd58729",
-      "completed": false
-    },
-    {
       "id": "gcal_Icalae0a7a1a8f894278c13a8d93263b1d0c",
       "title": "Recall - Lead Id 814313 -   SILVANA",
       "type": "recall",
@@ -1205,6 +1121,20 @@
       "notes": "Memo: Recall per lead creato il 12/02/2025.Ecco le note inserite:recSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icalae0a7a1a8f894278c13a8d93263b1d0c",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icalb5320d8dac5ec74c7c73994bdfd58729",
+      "title": "Recall - Lead Id 849907 - MARCHI SERENA  DE",
+      "type": "recall",
+      "date": "2025-11-20",
+      "time": "18:08",
+      "duration": "60",
+      "client": "MARCHI SERENA  DE",
+      "location": "",
+      "notes": "Memo: Recall per lead creato il 28/04/2025.SCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Icalb5320d8dac5ec74c7c73994bdfd58729",
       "completed": false
     },
     {
@@ -1530,20 +1460,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Icalcb6c0b496bb185408a66c4ea609b7b6f",
-      "title": "Recall - Lead Id 931341 - BAMBORE SALIF",
-      "type": "recall",
-      "date": "2025-12-05",
-      "time": "16:00",
-      "duration": "60",
-      "client": "BAMBORE SALIF",
-      "location": "",
-      "notes": "Memo: Recall per lead creato il 24/11/2025.Ecco le note inserite:appuntamento in presenza domani alle 16, pratica bireddito SCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Icalcb6c0b496bb185408a66c4ea609b7b6f",
-      "completed": false
-    },
-    {
       "id": "gcal_Icaldee4b55fb98672c3b9b770d610956e6c",
       "title": "Recall - Lead Id 904029 - ARTEMIO ROMANI",
       "type": "recall",
@@ -1555,6 +1471,20 @@
       "notes": "Memo: Recall per lead creato il 18/09/2025.Ecco le note inserite:il cliente mi richiama, fissato app per domani ore 16SCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icaldee4b55fb98672c3b9b770d610956e6c",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icalcb6c0b496bb185408a66c4ea609b7b6f",
+      "title": "Recall - Lead Id 931341 - BAMBORE SALIF",
+      "type": "recall",
+      "date": "2025-12-05",
+      "time": "16:00",
+      "duration": "60",
+      "client": "BAMBORE SALIF",
+      "location": "",
+      "notes": "Memo: Recall per lead creato il 24/11/2025.Ecco le note inserite:appuntamento in presenza domani alle 16, pratica bireddito SCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Icalcb6c0b496bb185408a66c4ea609b7b6f",
       "completed": false
     },
     {
@@ -1684,20 +1614,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical4d55cf7966f96395db7078792d9af559",
-      "title": "Recall - Lead Id 937143 - BONATO FRANCESCO",
-      "type": "recall",
-      "date": "2025-12-12",
-      "time": "18:00",
-      "duration": "60",
-      "client": "BONATO FRANCESCO",
-      "location": "Noventa Vicentina",
-      "notes": "Memo: Recall per lead creato il 10/12/2025.Ecco le note inserite:riprovo più tardiSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical4d55cf7966f96395db7078792d9af559",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical3e5e6874f865c70927b670498991b871",
       "title": "Recall - Lead Id 937142 - SAMPALEAN IACOV SEPTIMIUM",
       "type": "recall",
@@ -1709,6 +1625,20 @@
       "notes": "Memo: Recall per lead creato il 10/12/2025.Ecco le note inserite:riprovo in serataSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical3e5e6874f865c70927b670498991b871",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical4d55cf7966f96395db7078792d9af559",
+      "title": "Recall - Lead Id 937143 - BONATO FRANCESCO",
+      "type": "recall",
+      "date": "2025-12-12",
+      "time": "18:00",
+      "duration": "60",
+      "client": "BONATO FRANCESCO",
+      "location": "Noventa Vicentina",
+      "notes": "Memo: Recall per lead creato il 10/12/2025.Ecco le note inserite:riprovo più tardiSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical4d55cf7966f96395db7078792d9af559",
       "completed": false
     },
     {
@@ -2720,20 +2650,6 @@
       "completed": false
     },
     {
-      "id": "gcal_6oo3cdr565gjebb4c5ijab9kcksj2b9ocoom8bb6corj6cr174o68phj70@google.com",
-      "title": "Verifica di grammatica",
-      "type": "altro",
-      "date": "2026-03-26",
-      "time": "16:00",
-      "duration": "60",
-      "client": "",
-      "location": "",
-      "notes": "This is an event reminder",
-      "source": "google_calendar",
-      "googleUid": "6oo3cdr565gjebb4c5ijab9kcksj2b9ocoom8bb6corj6cr174o68phj70@google.com",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical34c1f58178a76cab42e765f87ac090ab",
       "title": "Recall - Lead Id 976348 - TRISTANO MATTEO",
       "type": "recall",
@@ -2745,6 +2661,20 @@
       "notes": "Memo: Recall per lead creato il 23/03/2026.SCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical34c1f58178a76cab42e765f87ac090ab",
+      "completed": false
+    },
+    {
+      "id": "gcal_6oo3cdr565gjebb4c5ijab9kcksj2b9ocoom8bb6corj6cr174o68phj70@google.com",
+      "title": "Verifica di grammatica",
+      "type": "altro",
+      "date": "2026-03-26",
+      "time": "16:00",
+      "duration": "60",
+      "client": "",
+      "location": "",
+      "notes": "This is an event reminder",
+      "source": "google_calendar",
+      "googleUid": "6oo3cdr565gjebb4c5ijab9kcksj2b9ocoom8bb6corj6cr174o68phj70@google.com",
       "completed": false
     },
     {
@@ -4582,20 +4512,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical0187bf60220068532042afb884d0022e",
-      "title": "Appuntamento - Lead Id 1007466 - SINGH MANDEEP",
-      "type": "incontro",
-      "date": "2026-06-08",
-      "time": "17:00",
-      "duration": "60",
-      "client": "SINGH MANDEEP",
-      "location": "Vicenza",
-      "notes": "Memo: Appuntamento per lead creato il 04/06/2026.Ecco le note inserite:indiaEcco i dettagli dell'appuntamento:CLIENTE HA VISTO UNA CASA ALL'ASTA CHE VORREBBE ACQUISTARE ,LAVORA A TEMPO INDET C/O UNA CONCERIA ANNI 38 QUASI,LA CIFRA RICHIESTA SAREBBE €...",
-      "source": "google_calendar",
-      "googleUid": "Ical0187bf60220068532042afb884d0022e",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical95f3cc49696b519f779be62e35608561",
       "title": "Recall - Lead Id 1007466 - SINGH MANDEEP",
       "type": "recall",
@@ -4607,6 +4523,20 @@
       "notes": "Memo: Recall per lead creato il 04/06/2026.Ecco le note inserite:fissato app SCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical95f3cc49696b519f779be62e35608561",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical0187bf60220068532042afb884d0022e",
+      "title": "Appuntamento - Lead Id 1007466 - SINGH MANDEEP",
+      "type": "incontro",
+      "date": "2026-06-08",
+      "time": "17:00",
+      "duration": "60",
+      "client": "SINGH MANDEEP",
+      "location": "Vicenza",
+      "notes": "Memo: Appuntamento per lead creato il 04/06/2026.Ecco le note inserite:indiaEcco i dettagli dell'appuntamento:CLIENTE HA VISTO UNA CASA ALL'ASTA CHE VORREBBE ACQUISTARE ,LAVORA A TEMPO INDET C/O UNA CONCERIA ANNI 38 QUASI,LA CIFRA RICHIESTA SAREBBE €...",
+      "source": "google_calendar",
+      "googleUid": "Ical0187bf60220068532042afb884d0022e",
       "completed": false
     },
     {
@@ -4750,20 +4680,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical9b2d9d69918195f414db1c18000d46d8",
-      "title": "Recall - Lead Id 1007466 - SINGH MANDEEP",
-      "type": "recall",
-      "date": "2026-06-11",
-      "time": "19:00",
-      "duration": "60",
-      "client": "SINGH MANDEEP",
-      "location": "Vicenza",
-      "notes": "Memo: Recall per lead creato il 04/06/2026.Ecco le note inserite:non rispondeSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical9b2d9d69918195f414db1c18000d46d8",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical2ae5469e7aa06c90bb33352d2876ddd1",
       "title": "Recall - Lead Id 1005692 - BAZZAN SAMANTHA",
       "type": "recall",
@@ -4775,6 +4691,20 @@
       "notes": "Memo: Recall per lead creato il 30/05/2026.Ecco le note inserite:non riesco a parlarle, fa uno squillo e va in segreteriaSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical2ae5469e7aa06c90bb33352d2876ddd1",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical9b2d9d69918195f414db1c18000d46d8",
+      "title": "Recall - Lead Id 1007466 - SINGH MANDEEP",
+      "type": "recall",
+      "date": "2026-06-11",
+      "time": "19:00",
+      "duration": "60",
+      "client": "SINGH MANDEEP",
+      "location": "Vicenza",
+      "notes": "Memo: Recall per lead creato il 04/06/2026.Ecco le note inserite:non rispondeSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical9b2d9d69918195f414db1c18000d46d8",
       "completed": false
     },
     {
@@ -5142,20 +5072,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical0c2e4d7f16f5a49fbe9e3e469bd834e6",
-      "title": "Recall - Lead Id 1014186 - DJIBRIL THIAM",
-      "type": "recall",
-      "date": "2026-06-26",
-      "time": "18:00",
-      "duration": "60",
-      "client": "DJIBRIL THIAM",
-      "location": "",
-      "notes": "Memo: Recall per lead creato il 17/06/2026.Ecco le note inserite:sono in attesa che annia gli orari del lavoro della prossima settimana per fissare un incontroSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical0c2e4d7f16f5a49fbe9e3e469bd834e6",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical232ecbba548fc6d7618e107be7ed986f",
       "title": "Recall - Lead Id 1016323 - ATU OSAS",
       "type": "recall",
@@ -5167,6 +5083,20 @@
       "notes": "Memo: Recall per lead creato il 22/06/2026.Ecco le note inserite:ci sentiamo domani per fissare appuntamento. Inizialmente chiedeva 200.000 ma non li può avere. Ci incontriamo e gli spiegoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical232ecbba548fc6d7618e107be7ed986f",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical0c2e4d7f16f5a49fbe9e3e469bd834e6",
+      "title": "Recall - Lead Id 1014186 - DJIBRIL THIAM",
+      "type": "recall",
+      "date": "2026-06-26",
+      "time": "18:00",
+      "duration": "60",
+      "client": "DJIBRIL THIAM",
+      "location": "",
+      "notes": "Memo: Recall per lead creato il 17/06/2026.Ecco le note inserite:sono in attesa che annia gli orari del lavoro della prossima settimana per fissare un incontroSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical0c2e4d7f16f5a49fbe9e3e469bd834e6",
       "completed": false
     },
     {
@@ -5450,20 +5380,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical4f7204f95faaf9be4457b61fcc26791a",
-      "title": "Recall - Lead Id 1014186 - DJIBRIL THIAM",
-      "type": "recall",
-      "date": "2026-07-09",
-      "time": "16:00",
-      "duration": "60",
-      "client": "DJIBRIL THIAM",
-      "location": "",
-      "notes": "Memo: Recall per lead creato il 17/06/2026.Ecco le note inserite:fissato appSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical4f7204f95faaf9be4457b61fcc26791a",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical49e21a9f4fa2b76f70165e52b508ba98",
       "title": "Recall - Lead Id 1024717 - DE MARCHI GESSICA",
       "type": "recall",
@@ -5475,6 +5391,20 @@
       "notes": "Memo: Recall per lead creato il 08/07/2026.Ecco le note inserite:non risponde, provo nel pomeriggioSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical49e21a9f4fa2b76f70165e52b508ba98",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical4f7204f95faaf9be4457b61fcc26791a",
+      "title": "Recall - Lead Id 1014186 - DJIBRIL THIAM",
+      "type": "recall",
+      "date": "2026-07-09",
+      "time": "16:00",
+      "duration": "60",
+      "client": "DJIBRIL THIAM",
+      "location": "",
+      "notes": "Memo: Recall per lead creato il 17/06/2026.Ecco le note inserite:fissato appSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical4f7204f95faaf9be4457b61fcc26791a",
       "completed": false
     },
     {
@@ -5982,20 +5912,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical1497e639fe49db61130a0316ab7e4b01",
-      "title": "Recall - Lead Id 1035011 - RIZZO CHRISTIAN",
-      "type": "recall",
-      "date": "2026-08-07",
-      "time": "17:00",
-      "duration": "60",
-      "client": "RIZZO CHRISTIAN",
-      "location": "Vicenza",
-      "notes": "Memo: Recall per lead creato il 31/07/2026.SCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical1497e639fe49db61130a0316ab7e4b01",
-      "completed": false
-    },
-    {
       "id": "gcal_Icalc0048472cc43b6dbefa62a97c47b7739",
       "title": "Recall - Lead Id 1036887 - ALOE GIOVANNI",
       "type": "recall",
@@ -6007,6 +5923,20 @@
       "notes": "Memo: Recall per lead creato il 05/08/2026.Ecco le note inserite:Non risponde, inviato messaggio, domani richiamoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icalc0048472cc43b6dbefa62a97c47b7739",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical1497e639fe49db61130a0316ab7e4b01",
+      "title": "Recall - Lead Id 1035011 - RIZZO CHRISTIAN",
+      "type": "recall",
+      "date": "2026-08-07",
+      "time": "17:00",
+      "duration": "60",
+      "client": "RIZZO CHRISTIAN",
+      "location": "Vicenza",
+      "notes": "Memo: Recall per lead creato il 31/07/2026.SCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical1497e639fe49db61130a0316ab7e4b01",
       "completed": false
     },
     {
@@ -6710,20 +6640,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical17572df4ca387495b4cfe8ffbfb6beca",
-      "title": "Recall - Lead Id 946938 - SICARI  GIUSEPPE",
-      "type": "recall",
-      "date": "2026-09-07",
-      "time": "16:00",
-      "duration": "60",
-      "client": "SICARI  GIUSEPPE",
-      "location": "Abano Terme",
-      "notes": "Memo: Recall per lead creato il 16/01/2026.Ecco le note inserite:lunedì incontro la banca per alcuni chiarimentiSCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical17572df4ca387495b4cfe8ffbfb6beca",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical15a039865b771de670aa368933095435",
       "title": "Recall - Lead Id 977050 - CAMPADELLO DARIO",
       "type": "recall",
@@ -6735,6 +6651,20 @@
       "notes": "Memo: Recall per lead creato il 24/03/2026.Ecco le note inserite:cliente rientrato, sta recuperando gli ultimi doc poi procediamoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical15a039865b771de670aa368933095435",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical17572df4ca387495b4cfe8ffbfb6beca",
+      "title": "Recall - Lead Id 946938 - SICARI  GIUSEPPE",
+      "type": "recall",
+      "date": "2026-09-07",
+      "time": "16:00",
+      "duration": "60",
+      "client": "SICARI  GIUSEPPE",
+      "location": "Abano Terme",
+      "notes": "Memo: Recall per lead creato il 16/01/2026.Ecco le note inserite:lunedì incontro la banca per alcuni chiarimentiSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical17572df4ca387495b4cfe8ffbfb6beca",
       "completed": false
     },
     {
@@ -6892,20 +6822,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical6d8a463955c3b2b423f72d5dfb98f93e",
-      "title": "Appuntamento - Lead Id 1047534 - BASSO STEFANIA",
-      "type": "incontro",
-      "date": "2026-09-11",
-      "time": "19:30",
-      "duration": "60",
-      "client": "BASSO STEFANIA",
-      "location": "Sandrigo",
-      "notes": "Memo: Appuntamento per lead creato il 08/09/2026.Ecco le note inserite: Importo Richiesto: 220.000,00€ Valore Immobile: 220.000,00€ LTV Reale: 100% , LTV applicato: 100% Durata: 30 anni Tipo Di Tasso: Fisso , Spread: 0,00% , Indice: 0,00% , Tasso: 3,...",
-      "source": "google_calendar",
-      "googleUid": "Ical6d8a463955c3b2b423f72d5dfb98f93e",
-      "completed": false
-    },
-    {
       "id": "gcal_Icalecd3455722684d6f8a3a4cfa9c049026",
       "title": "Recall - Lead Id 1047534 - BASSO STEFANIA",
       "type": "recall",
@@ -6917,6 +6833,20 @@
       "notes": "Memo: Recall per lead creato il 08/09/2026.Ecco le note inserite:contatta la cliente per conferma appSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icalecd3455722684d6f8a3a4cfa9c049026",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical6d8a463955c3b2b423f72d5dfb98f93e",
+      "title": "Appuntamento - Lead Id 1047534 - BASSO STEFANIA",
+      "type": "incontro",
+      "date": "2026-09-11",
+      "time": "19:30",
+      "duration": "60",
+      "client": "BASSO STEFANIA",
+      "location": "Sandrigo",
+      "notes": "Memo: Appuntamento per lead creato il 08/09/2026.Ecco le note inserite: Importo Richiesto: 220.000,00€ Valore Immobile: 220.000,00€ LTV Reale: 100% , LTV applicato: 100% Durata: 30 anni Tipo Di Tasso: Fisso , Spread: 0,00% , Indice: 0,00% , Tasso: 3,...",
+      "source": "google_calendar",
+      "googleUid": "Ical6d8a463955c3b2b423f72d5dfb98f93e",
       "completed": false
     },
     {
@@ -7214,6 +7144,20 @@
       "completed": false
     },
     {
+      "id": "gcal_Ical153356a9af1bc745ce8921dc9ca320b2",
+      "title": "Recall - Lead Id 1051666 - GARBIN MATTEO",
+      "type": "recall",
+      "date": "2026-09-21",
+      "time": "16:00",
+      "duration": "60",
+      "client": "GARBIN MATTEO",
+      "location": "Costabissara",
+      "notes": "Memo: Recall per lead creato il 16/09/2026.Ecco le note inserite:operazione impossibile, vorrebbe acquistare la nuda proprietà dalla madre per 1/3 del valore dell'immobile, ha un contratto di apprendistato da 1000 euro.",
+      "source": "google_calendar",
+      "googleUid": "Ical153356a9af1bc745ce8921dc9ca320b2",
+      "completed": false
+    },
+    {
       "id": "gcal_Ical367d5cc891c56e67ce16ca5be2af6b76",
       "title": "Recall - Lead Id 1046634 - BESELEA ASAN",
       "type": "recall",
@@ -7239,20 +7183,6 @@
       "notes": "Memo: Recall per lead creato il 08/09/2026.Ecco le note inserite:app rinviato perchè il marito era via per lavoro, capiamo quando torna per fissare un nuovo appuntamentoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Icalee96bfdec03b43398b3acd7aac845ac1",
-      "completed": false
-    },
-    {
-      "id": "gcal_Ical153356a9af1bc745ce8921dc9ca320b2",
-      "title": "Recall - Lead Id 1051666 - GARBIN MATTEO",
-      "type": "recall",
-      "date": "2026-09-21",
-      "time": "16:00",
-      "duration": "60",
-      "client": "GARBIN MATTEO",
-      "location": "Costabissara",
-      "notes": "Memo: Recall per lead creato il 16/09/2026.Ecco le note inserite:operazione impossibile, vorrebbe acquistare la nuda proprietà dalla madre per 1/3 del valore dell'immobile, ha un contratto di apprendistato da 1000 euro.",
-      "source": "google_calendar",
-      "googleUid": "Ical153356a9af1bc745ce8921dc9ca320b2",
       "completed": false
     },
     {
@@ -7382,20 +7312,6 @@
       "completed": false
     },
     {
-      "id": "gcal_Ical974d7292b355fd06709ec231dc977e76",
-      "title": "Recall - Lead Id 990890 - BOUSSOU MURIELLE",
-      "type": "recall",
-      "date": "2026-09-25",
-      "time": "18:00",
-      "duration": "60",
-      "client": "BOUSSOU MURIELLE",
-      "location": "Piazzola sul Brenta",
-      "notes": "Memo: Recall per lead creato il 23/04/2026.Ecco le note inserite:ancora in maternità.SCHEDA LEAD: (CLICCA QUI!)",
-      "source": "google_calendar",
-      "googleUid": "Ical974d7292b355fd06709ec231dc977e76",
-      "completed": false
-    },
-    {
       "id": "gcal_Ical32df8b422b5347970ad3cb6f1017f335",
       "title": "Recall - Lead Id 1016323 - ATU OSAS",
       "type": "recall",
@@ -7407,6 +7323,20 @@
       "notes": "Memo: Recall per lead creato il 22/06/2026.Ecco le note inserite:sta ancora cercandoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical32df8b422b5347970ad3cb6f1017f335",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical974d7292b355fd06709ec231dc977e76",
+      "title": "Recall - Lead Id 990890 - BOUSSOU MURIELLE",
+      "type": "recall",
+      "date": "2026-09-25",
+      "time": "18:00",
+      "duration": "60",
+      "client": "BOUSSOU MURIELLE",
+      "location": "Piazzola sul Brenta",
+      "notes": "Memo: Recall per lead creato il 23/04/2026.Ecco le note inserite:ancora in maternità.SCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical974d7292b355fd06709ec231dc977e76",
       "completed": false
     },
     {
@@ -7480,6 +7410,34 @@
       "completed": false
     },
     {
+      "id": "gcal_Ical49b1904e9f8780b1d741144ec7f36eb8",
+      "title": "Recall - Lead Id 1056962 - MARZARI ANDREA",
+      "type": "recall",
+      "date": "2026-09-28",
+      "time": "18:00",
+      "duration": "60",
+      "client": "MARZARI ANDREA",
+      "location": "Caldogno",
+      "notes": "Memo: Recall per lead creato il 26/09/2026.Ecco le note inserite:telefono spento, ho. inviato messaggio con biglietto da visita, richiamo nel pomeriggioSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical49b1904e9f8780b1d741144ec7f36eb8",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical2ca9291d52f79a8a8e50ebc5dd4e25f0",
+      "title": "Recall - Lead Id 1057203 - REKIC HAJRUDIN",
+      "type": "recall",
+      "date": "2026-09-28",
+      "time": "18:00",
+      "duration": "60",
+      "client": "REKIC HAJRUDIN",
+      "location": "Isola Vicentina",
+      "notes": "Memo: Recall per lead creato il 27/09/2026.Ecco le note inserite:cliente chiede 250 su 300, monoreddito muratore, 4 persone a carico. Attendo il cudSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical2ca9291d52f79a8a8e50ebc5dd4e25f0",
+      "completed": false
+    },
+    {
       "id": "gcal_Icalede084d6df048054b9d67e34f9a44ecf",
       "title": "Recall - Lead Id 1046634 - BESELEA ASAN",
       "type": "recall",
@@ -7494,6 +7452,20 @@
       "completed": false
     },
     {
+      "id": "gcal_Ical10bda29ad5147831f0e10c15233cfe8b",
+      "title": "Recall - Lead Id 1057198 - EHIGIE EKI",
+      "type": "recall",
+      "date": "2026-09-29",
+      "time": "13:30",
+      "duration": "60",
+      "client": "EHIGIE EKI",
+      "location": "Schio",
+      "notes": "Memo: Recall per lead creato il 27/09/2026.Ecco le note inserite:non risponde, richiamoSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical10bda29ad5147831f0e10c15233cfe8b",
+      "completed": false
+    },
+    {
       "id": "gcal_Ical10bac76734ceac1051ab85dd5b55d834",
       "title": "Recall - Lead Id 1041979 - CARRILLO CLAUDIA",
       "type": "recall",
@@ -7505,6 +7477,20 @@
       "notes": "Memo: Recall per lead creato il 28/08/2026.Ecco le note inserite:chiamata ma non risponde, ho scrittoSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical10bac76734ceac1051ab85dd5b55d834",
+      "completed": false
+    },
+    {
+      "id": "gcal_Ical32f8f8fff24546a36b4c115114993832",
+      "title": "Recall - Lead Id 1057325 - SERGIU ACATRINEI",
+      "type": "recall",
+      "date": "2026-09-29",
+      "time": "18:00",
+      "duration": "60",
+      "client": "SERGIU ACATRINEI",
+      "location": "Bassano del Grappa",
+      "notes": "Memo: Recall per lead creato il 28/09/2026.Ecco le note inserite:chiede mutuo 100%, ma sono entrambi over 36, ho porposto un 95% con prestito a parte. Attendo i doc di redditoSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical32f8f8fff24546a36b4c115114993832",
       "completed": false
     },
     {
@@ -7550,6 +7536,20 @@
       "completed": false
     },
     {
+      "id": "gcal_Ical5f6dbcb23e87e5c8ac88ca3b058541b9",
+      "title": "Recall - Lead Id 1047534 - BASSO STEFANIA",
+      "type": "recall",
+      "date": "2026-09-30",
+      "time": "13:52",
+      "duration": "60",
+      "client": "BASSO STEFANIA",
+      "location": "Sandrigo",
+      "notes": "Memo: Recall per lead creato il 08/09/2026.Ecco le note inserite:sabato hanno rinviato, sono in attesa di una nuova dataSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical5f6dbcb23e87e5c8ac88ca3b058541b9",
+      "completed": false
+    },
+    {
       "id": "gcal_Ical31641a56d1ea370dba9ddebd2e2ad1c2",
       "title": "Recall - Lead Id 971035 - LOVO  FRANCESCO",
       "type": "recall",
@@ -7575,6 +7575,20 @@
       "notes": "Memo: Recall per lead creato il 16/03/2026.Ecco le note inserite:non risponde, spero sia una cosa temporaneaSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical21faf04e92f3ff7f23b1a281fb2cde52",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icala2a98aa55eb44671fbb1129502bb10c7",
+      "title": "Recall - Lead Id 1055666 - BORDIGNON MATTIA",
+      "type": "recall",
+      "date": "2026-10-02",
+      "time": "15:53",
+      "duration": "60",
+      "client": "BORDIGNON MATTIA",
+      "location": "Mussolente",
+      "notes": "Memo: Recall per lead creato il 24/09/2026.Ecco le note inserite:chiede un sal in bioedilizia 80%. Bireddito, entrambi infermieri, lei dipendente TI e lui PIVA. Attendo doc di reddito",
+      "source": "google_calendar",
+      "googleUid": "Icala2a98aa55eb44671fbb1129502bb10c7",
       "completed": false
     },
     {
@@ -7662,6 +7676,34 @@
       "completed": false
     },
     {
+      "id": "gcal_Ical7f8c5aee78624ebbe21222e12460f30c",
+      "title": "Recall - Lead Id 1026036 - BATTAGIN GIADA",
+      "type": "recall",
+      "date": "2026-10-15",
+      "time": "18:00",
+      "duration": "60",
+      "client": "BATTAGIN GIADA",
+      "location": "Cassola",
+      "notes": "Memo: Recall per lead creato il 11/07/2026.Ecco le note inserite:non trova casaSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Ical7f8c5aee78624ebbe21222e12460f30c",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icalece59cbc97de040e358e6ae19e8c159f",
+      "title": "Recall - Lead Id 990890 - BOUSSOU MURIELLE",
+      "type": "recall",
+      "date": "2026-10-15",
+      "time": "18:00",
+      "duration": "60",
+      "client": "BOUSSOU MURIELLE",
+      "location": "Piazzola sul Brenta",
+      "notes": "Memo: Recall per lead creato il 23/04/2026.Ecco le note inserite:ci sentiamo periodicamente ma è ancora in maternitàSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Icalece59cbc97de040e358e6ae19e8c159f",
+      "completed": false
+    },
+    {
       "id": "gcal_Ical1dbb068c33d0fd458d68e1a1407cc920",
       "title": "Recall - Lead Id 1043168 - JANE MAAME",
       "type": "recall",
@@ -7673,6 +7715,20 @@
       "notes": "Memo: Recall per lead creato il 31/08/2026.Ecco le note inserite:siamo inattesa della prossima busta paga senza cigSCHEDA LEAD: (CLICCA QUI!)",
       "source": "google_calendar",
       "googleUid": "Ical1dbb068c33d0fd458d68e1a1407cc920",
+      "completed": false
+    },
+    {
+      "id": "gcal_Icalaee7f1fa4fa3a80846a0f69b05e83af8",
+      "title": "Recall - Lead Id 1016323 - ATU OSAS",
+      "type": "recall",
+      "date": "2026-10-23",
+      "time": "19:00",
+      "duration": "60",
+      "client": "ATU OSAS",
+      "location": "",
+      "notes": "Memo: Recall per lead creato il 22/06/2026.Ecco le note inserite:sta ancora cercando ma con il suo budget è duraSCHEDA LEAD: (CLICCA QUI!)",
+      "source": "google_calendar",
+      "googleUid": "Icalaee7f1fa4fa3a80846a0f69b05e83af8",
       "completed": false
     },
     {
@@ -7858,20 +7914,6 @@
       "completed": false
     },
     {
-      "id": "gcal_284kv2poutlu6js0bhu531mkan@google.com",
-      "title": "ale - ratizzazione AE",
-      "type": "altro",
-      "date": "2027-05-31",
-      "time": "09:00",
-      "duration": "60",
-      "client": "",
-      "location": "",
-      "notes": "",
-      "source": "google_calendar",
-      "googleUid": "284kv2poutlu6js0bhu531mkan@google.com",
-      "completed": false
-    },
-    {
       "id": "gcal_6uak6r9sc8jibq6i8phsf7cok9@google.com",
       "title": "scuola chiusa",
       "type": "altro",
@@ -7883,6 +7925,20 @@
       "notes": "",
       "source": "google_calendar",
       "googleUid": "6uak6r9sc8jibq6i8phsf7cok9@google.com",
+      "completed": false
+    },
+    {
+      "id": "gcal_284kv2poutlu6js0bhu531mkan@google.com",
+      "title": "ale - ratizzazione AE",
+      "type": "altro",
+      "date": "2027-05-31",
+      "time": "09:00",
+      "duration": "60",
+      "client": "",
+      "location": "",
+      "notes": "",
+      "source": "google_calendar",
+      "googleUid": "284kv2poutlu6js0bhu531mkan@google.com",
       "completed": false
     },
     {

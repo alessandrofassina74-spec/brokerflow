@@ -30,6 +30,7 @@ def set_configured_url(url):
         json.dump({"ical_url": url, "updated_at": datetime.now().isoformat()}, f, indent=2)
 
 def parse_ical_feed(ical_text):
+    # Unfold wrapped lines in iCalendar (RFC 5545)
     unfolded = re.sub(r'\r?\n[ \t]', '', ical_text)
     events = []
     
@@ -55,7 +56,6 @@ def parse_ical_feed(ical_text):
         
         summary = ev_data.get('SUMMARY', '').strip()
         dtstart_raw = ev_data.get('DTSTART', '').strip()
-        dtend_raw = ev_data.get('DTEND', '').strip()
         desc = ev_data.get('DESCRIPTION', '').strip()
         loc = ev_data.get('LOCATION', '').strip()
         uid = ev_data.get('UID', '').strip()
@@ -69,23 +69,34 @@ def parse_ical_feed(ical_text):
         duration_mins = 60
         
         if dtstart_raw:
+            # Handle YYYYMMDD (all-day event)
             if len(dtstart_raw) == 8 and dtstart_raw.isdigit():
                 try:
                     dt = datetime.strptime(dtstart_raw, '%Y%m%d')
                     if min_date <= dt.date() <= max_date:
                         date_str = dt.strftime('%Y-%m-%d')
                         time_str = '09:00'
-                except:
+                except Exception:
                     pass
+            # Handle timestamps with 'T' (e.g. 20260928T180000Z or 20260928T180000)
             elif 'T' in dtstart_raw:
                 try:
                     clean_ts = dtstart_raw.replace('Z', '')
-                    if len(clean_ts) >= 15:
-                        dt = datetime.strptime(clean_ts[:15], '%Y%m%dT%H%M%S')
+                    t_idx = clean_ts.find('T')
+                    if t_idx >= 8:
+                        date_part = clean_ts[:8]
+                        time_part = clean_ts[t_idx+1:t_idx+7].ljust(6, '0')
+                        dt_naive = datetime.strptime(date_part + time_part, '%Y%m%d%H%M%S')
+                        
                         if dtstart_raw.endswith('Z'):
-                            dt = dt.replace(tzinfo=timezone.utc)
+                            dt_utc = dt_naive.replace(tzinfo=timezone.utc)
                             if LOCAL_TZ:
-                                dt = dt.astimezone(LOCAL_TZ)
+                                dt = dt_utc.astimezone(LOCAL_TZ)
+                            else:
+                                dt = dt_utc + timedelta(hours=2)
+                        else:
+                            dt = dt_naive
+                            
                         if min_date <= dt.date() <= max_date:
                             date_str = dt.strftime('%Y-%m-%d')
                             time_str = dt.strftime('%H:%M')
@@ -174,11 +185,28 @@ def fetch_and_cache_google_calendar(url=None):
         
     return cache_payload
 
-def get_cached_google_calendar():
+def get_cached_google_calendar(max_age_seconds=120):
     if os.path.exists(CACHE_PATH):
         try:
             with open(CACHE_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+            updated_at_str = data.get("updated_at")
+            if updated_at_str and max_age_seconds:
+                updated_at = datetime.fromisoformat(updated_at_str)
+                age = (datetime.now() - updated_at).total_seconds()
+                if age < max_age_seconds and data.get("events"):
+                    return data
         except Exception:
             pass
-    return None
+    # If missing, stale, or error -> fetch fresh
+    try:
+        return fetch_and_cache_google_calendar()
+    except Exception as e:
+        # Fallback to stale cache if network fails
+        if os.path.exists(CACHE_PATH):
+            try:
+                with open(CACHE_PATH, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+        return {"updated_at": datetime.now().isoformat(), "count": 0, "events": [], "error": str(e)}

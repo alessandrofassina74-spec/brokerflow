@@ -3195,7 +3195,7 @@
 
             <!-- MODULE: AGENDA & SCADENZARIO PRATICHE -->
             <div id="module-agenda" class="crm-module-section" style="display: none;">
-                <div style="background: #ffffff; padding: 1.75rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); margin-bottom: 2rem;">
+                <div style="background: #0D1424; border: 1.5px solid #1C273E; padding: 1.75rem; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); margin-bottom: 2rem;">
                     
                     <!-- Header Section: Title & Main Action (Nuovo Evento) at Top -->
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
@@ -3338,9 +3338,12 @@
                             </p>
                         </div>
                         <div style="display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap;">
-                            <button type="button" id="btn-sync-gcal" onclick="window.syncGoogleCalendar(true)" style="background: #ffffff; color: #1a73e8; border: 1.5px solid #1a73e8; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 1px 3px rgba(26,115,232,0.1);">
-                                <span id="sync-gcal-spinner">🔄</span> Sincronizza Google Calendar
-                            </button>
+                            <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                                <span id="agenda-sync-timestamp" style="font-size: 0.78rem; color: #94A3B8;"></span>
+                                <button type="button" id="btn-sync-gcal" onclick="window.syncGoogleCalendar(true, true)" style="background: rgba(26,115,232,0.15); color: #38BDF8; border: 1.5px solid #1A73E8; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                                    <span id="sync-gcal-spinner">🔄</span> Sincronizza Google Calendar
+                                </button>
+                            </div>
                             <button type="button" onclick="window.syncAgendaWithDeals(true)" style="background: #ffffff; color: #E2E8F0; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 0.5rem 0.95rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;">
                                 <span>📁</span> Sincronizza Pratiche
                             </button>

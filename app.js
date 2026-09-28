@@ -12431,27 +12431,45 @@ window.saveAgendaEventsList = function(events) {
     }
 };
 
-window.syncGoogleCalendar = async function(showToast) {
+window.syncGoogleCalendar = async function(showToast, force) {
     const btn = document.getElementById("btn-sync-gcal");
     const spinner = document.getElementById("sync-gcal-spinner");
+    const timestampEl = document.getElementById("agenda-sync-timestamp");
+    const settingsStatus = document.getElementById("settings-gcal-status-text");
+
     if (spinner) spinner.innerText = "⏳";
     if (btn) btn.disabled = true;
+
+    const feedUrl = localStorage.getItem("brokerflow_google_calendar_url") || DEFAULT_GCAL_FEED_URL;
 
     try {
         const res = await fetch("/api/sync-google-calendar", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ url: DEFAULT_GCAL_FEED_URL })
+            headers: { 
+                "Content-Type": "application/json",
+                "Cache-Control": "no-cache"
+            },
+            cache: "no-store",
+            body: JSON.stringify({ url: feedUrl, force: !!force, t: Date.now() })
         });
         const data = await res.json();
 
         if (data.status === "success" && Array.isArray(data.events)) {
             localStorage.setItem("brokerflow_google_calendar_cache", JSON.stringify(data.events));
-            localStorage.setItem("brokerflow_google_calendar_url", DEFAULT_GCAL_FEED_URL);
+            localStorage.setItem("brokerflow_google_calendar_url", feedUrl);
+            const nowTime = new Date().toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' });
+            localStorage.setItem("brokerflow_google_calendar_last_sync", nowTime);
             
             window.updateAgendaKPIs();
             window.renderAgendaCalendar();
             window.renderAgendaEventsList();
+
+            if (timestampEl) {
+                timestampEl.innerHTML = `<span style="color: #10B981; font-weight: 700;">🟢 Sincronizzato alle ${nowTime} (${data.events.length} eventi)</span>`;
+            }
+            if (settingsStatus) {
+                settingsStatus.innerHTML = `🟢 Sincronizzato alle ${nowTime} (${data.events.length} eventi)`;
+            }
 
             if (showToast && typeof window.showToast === "function") {
                 window.showToast(`🗓️ Google Calendar: ${data.events.length} appuntamenti sincronizzati!`, "success");
@@ -12463,6 +12481,9 @@ window.syncGoogleCalendar = async function(showToast) {
         console.error("Errore sincronizzazione Google Calendar:", err);
         if (showToast && typeof window.showToast === "function") {
             window.showToast(`⚠️ Impossibile sincronizzare Google Calendar: ${err.message}`, "error");
+        }
+        if (timestampEl && !timestampEl.innerText) {
+            timestampEl.innerHTML = `<span style="color: #EF4444;">⚠️ Ultimo tentativo sync fallito</span>`;
         }
     } finally {
         if (spinner) spinner.innerText = "🔄";
@@ -12545,10 +12566,23 @@ window.initAgendaModule = function() {
     window.renderAgendaCalendar();
     window.renderAgendaEventsList();
 
-    // Auto-fetch Google Calendar if cache not yet populated
-    const cached = localStorage.getItem("brokerflow_google_calendar_cache");
-    if (!cached) {
-        window.syncGoogleCalendar(false);
+    const lastSync = localStorage.getItem("brokerflow_google_calendar_last_sync");
+    const timestampEl = document.getElementById("agenda-sync-timestamp");
+    if (timestampEl && lastSync) {
+        timestampEl.innerHTML = `<span style="color: #10B981; font-weight: 700;">🟢 Sincronizzato alle ${lastSync}</span>`;
+    }
+
+    // Always trigger background sync to fetch newest Google Calendar events seamlessly
+    window.syncGoogleCalendar(false);
+
+    // Setup periodic 60s auto-refresh for Google Calendar while on Agenda screen
+    if (!window._agendaAutoSyncInterval) {
+        window._agendaAutoSyncInterval = setInterval(() => {
+            const modAgenda = document.getElementById("module-agenda");
+            if (modAgenda && modAgenda.style.display !== "none") {
+                window.syncGoogleCalendar(false);
+            }
+        }, 60000);
     }
 };
 
@@ -12805,9 +12839,9 @@ window.renderAgendaEventsList = function() {
 
     if (events.length === 0) {
         container.innerHTML = `
-            <div style="text-align: center; padding: 3rem 1.5rem; background: #f8fafc; border-radius: 12px; border: 2px dashed #cbd5e1; color: #64748b;">
+            <div style="text-align: center; padding: 3rem 1.5rem; background: #0D1424; border-radius: 12px; border: 2px dashed #1C273E; color: #94A3B8;">
                 <span style="font-size: 2.2rem; display: block; margin-bottom: 0.5rem;">📅</span>
-                <strong style="color: #334155; font-size: 0.98rem; display: block; margin-bottom: 0.35rem;">Nessun appuntamento o scadenza in questa data</strong>
+                <strong style="color: #FFFFFF; font-size: 0.98rem; display: block; margin-bottom: 0.35rem;">Nessun appuntamento o scadenza in questa data</strong>
                 <p style="font-size: 0.84rem; margin: 0; line-height: 1.4;">Non ci sono impegni registrati per <strong>${formatAgendaItalianDate(window.agendaSelectedDate)}</strong>.<br>Clicca su <strong>+ Nuovo Evento</strong> per aggiungerne uno o seleziona un altro giorno dal calendario.</p>
             </div>
         `;
@@ -12863,7 +12897,7 @@ window.renderAgendaEventsList = function() {
                                 🗓️ ${ev.date} ${ev.time ? 'alle ' + ev.time : ''}
                             </span>
                         </div>
-                        <h4 style="font-size: 1.05rem; font-weight: 800; color: #0f172a; margin: 0 0 0.25rem 0; ${ev.completed ? 'text-decoration: line-through;' : ''}">
+                        <h4 style="font-size: 1.05rem; font-weight: 800; color: #FFFFFF; margin: 0 0 0.25rem 0; ${ev.completed ? 'text-decoration: line-through;' : ''}">
                             ${ev.title}
                         </h4>
                     </div>
@@ -12884,11 +12918,11 @@ window.renderAgendaEventsList = function() {
                 </div>
 
                 <!-- Event Details: Client, Deal, Location, Notes -->
-                <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.84rem; color: #334155; margin-top: 0.4rem;">
-                    ${ev.client ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong>👤 Cliente / Lead:</strong> <span>${ev.client}</span></div>` : ''}
-                    ${ev.deal ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong>📁 Pratica:</strong> <span>${ev.deal}</span></div>` : ''}
-                    ${ev.location ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong>📍 Luogo:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(ev.location)}" target="_blank" style="color:#0052ff;text-decoration:none;">${ev.location} ↗</a></div>` : ''}
-                    ${ev.notes ? `<div style="font-size:0.8rem;color:#64748b;background:#f8fafc;padding:0.5rem 0.75rem;border-radius:6px;border:1px solid #f1f5f9;margin-top:0.25rem;">📝 ${ev.notes}</div>` : ''}
+                <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.84rem; color: #E2E8F0; margin-top: 0.4rem;">
+                    ${ev.client ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong style="color:#94A3B8;">👤 Cliente / Lead:</strong> <span style="font-weight:700;color:#FFFFFF;">${ev.client}</span></div>` : ''}
+                    ${ev.deal ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong style="color:#94A3B8;">📁 Pratica:</strong> <span style="color:#38BDF8;">${ev.deal}</span></div>` : ''}
+                    ${ev.location ? `<div style="display:flex;align-items:center;gap:0.4rem;"><strong style="color:#94A3B8;">📍 Luogo:</strong> <a href="https://maps.google.com/?q=${encodeURIComponent(ev.location)}" target="_blank" style="color:#00D2FF;text-decoration:none;">${ev.location} ↗</a></div>` : ''}
+                    ${ev.notes ? `<div style="font-size:0.8rem;color:#94A3B8;background:#0B1222;padding:0.5rem 0.75rem;border-radius:6px;border:1px solid #1C273E;margin-top:0.25rem;">📝 ${ev.notes}</div>` : ''}
                 </div>
 
                 <!-- One-Click Calendar Integrations / Direct Actions -->

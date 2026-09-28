@@ -1254,14 +1254,14 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* ==========================================================================
-   AGENDA & CALENDAR STYLES
+   AGENDA & CALENDAR STYLES (DARK FINTECH)
    ========================================================================== */
 .agenda-kpi-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    background: #0D1424;
+    border: 1.5px solid #1C273E;
     border-radius: 12px;
     padding: 1.15rem 1.25rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1269,7 +1269,8 @@ input:focus, select:focus, textarea:focus {
 }
 .agenda-kpi-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    border-color: #00D2FF;
 }
 .agenda-kpi-icon {
     width: 44px;
@@ -1287,9 +1288,9 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     font-size: 0.76rem;
     font-weight: 700;
-    color: #64748b;
+    color: #94A3B8;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1.5px solid #1C273E;
     margin-bottom: 0.5rem;
 }
 
@@ -1308,37 +1309,40 @@ input:focus, select:focus, textarea:focus {
     justify-content: center;
     font-size: 0.84rem;
     font-weight: 600;
-    color: #334155;
-    background: #ffffff;
-    border: 1px solid #f1f5f9;
+    color: #F8FAFC;
+    background: #0B1222;
+    border: 1px solid #1C273E;
     cursor: pointer;
     position: relative;
     transition: all 0.15s ease;
 }
 
 .calendar-day-cell:hover {
-    background: #eff6ff;
-    border-color: #bfdbfe;
-    color: #0052ff;
+    background: #1C273E;
+    border-color: #00D2FF;
+    color: #00D2FF;
 }
 
 .calendar-day-cell.other-month {
-    color: #cbd5e1;
-    background: #f8fafc;
+    color: #475569;
+    background: #070B14;
     border-color: transparent;
+    opacity: 0.4;
 }
 
 .calendar-day-cell.today {
-    border: 2px solid #0052ff;
+    border: 2px solid #00D2FF;
     font-weight: 800;
-    color: #0052ff;
+    color: #00D2FF;
+    background: rgba(0, 210, 255, 0.08);
 }
 
 .calendar-day-cell.selected {
-    background: #0052ff !important;
-    color: #ffffff !important;
+    background: var(--flow-gradient, linear-gradient(135deg, #00D2FF 0%, #0052FF 100%)) !important;
+    color: #FFFFFF !important;
     font-weight: 800;
-    box-shadow: 0 4px 10px rgba(0, 82, 255, 0.35);
+    box-shadow: 0 4px 14px rgba(0, 210, 255, 0.4);
+    border-color: #00D2FF !important;
 }
 
 .calendar-day-cell .event-dots {
@@ -1355,20 +1359,21 @@ input:focus, select:focus, textarea:focus {
 }
 
 .agenda-event-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    background: #0D1424;
+    border: 1.5px solid #1C273E;
     border-radius: 12px;
     padding: 1.25rem 1.35rem;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     transition: all 0.2s ease;
-    border-left: 4px solid #0052ff;
+    border-left: 4px solid #00D2FF;
 }
 
 .agenda-event-card:hover {
-    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    border-color: #00D2FF;
 }
 
 .agenda-event-card.type-rogito { border-left-color: #10b981; }
