@@ -3236,3 +3236,29 @@ span.bank-title {
         gap: 0.5rem !important;
     }
 }
+
+
+/* ==========================================================================
+   MOBILE SIDEBAR BACKDROP & OUTSIDE CLICK DISMISSAL
+   ========================================================================== */
+.mobile-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(4, 7, 15, 0.72);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 1000000;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+}
+
+.mobile-sidebar-backdrop.active {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}

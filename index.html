@@ -233,10 +233,49 @@
             }
         };
 
+        window.openMobileSidebar = function() {
+            const sidebar = document.querySelector(".app-sidebar");
+            const backdrop = document.getElementById("mobile-sidebar-backdrop");
+            if (sidebar) sidebar.classList.add("mobile-open");
+            if (backdrop) backdrop.classList.add("active");
+        };
+
+        window.closeMobileSidebar = function() {
+            const sidebar = document.querySelector(".app-sidebar");
+            const backdrop = document.getElementById("mobile-sidebar-backdrop");
+            if (sidebar) sidebar.classList.remove("mobile-open");
+            if (backdrop) backdrop.classList.remove("active");
+        };
+
         window.toggleMobileSidebar = function() {
             const sidebar = document.querySelector(".app-sidebar");
-            if (sidebar) sidebar.classList.toggle("mobile-open");
+            if (sidebar && sidebar.classList.contains("mobile-open")) {
+                window.closeMobileSidebar();
+            } else {
+                window.openMobileSidebar();
+            }
         };
+
+        // Close mobile sidebar when clicking/tapping outside
+        document.addEventListener("click", function(e) {
+            const sidebar = document.querySelector(".app-sidebar");
+            if (!sidebar || !sidebar.classList.contains("mobile-open")) return;
+            const isClickInsideSidebar = sidebar.contains(e.target);
+            const isClickOnToggle = e.target.closest && e.target.closest("[onclick*='toggleMobileSidebar']");
+            if (!isClickInsideSidebar && !isClickOnToggle) {
+                window.closeMobileSidebar();
+            }
+        });
+
+        document.addEventListener("touchstart", function(e) {
+            const sidebar = document.querySelector(".app-sidebar");
+            if (!sidebar || !sidebar.classList.contains("mobile-open")) return;
+            const isTouchInsideSidebar = sidebar.contains(e.target);
+            const isTouchOnToggle = e.target.closest && e.target.closest("[onclick*='toggleMobileSidebar']");
+            if (!isTouchInsideSidebar && !isTouchOnToggle) {
+                window.closeMobileSidebar();
+            }
+        }, { passive: true });
 
         window.initNuovaPratica = function() {
             window.currentEditingDealId = null;
@@ -604,6 +643,7 @@
                 </button>
             </div>
         </aside>
+        <div id="mobile-sidebar-backdrop" onclick="window.closeMobileSidebar()" class="mobile-sidebar-backdrop"></div>
 
         <!-- MAIN APP CONTENT AREA -->
         <main class="app-main-content">
