@@ -2358,3 +2358,60 @@ div.selected,
     align-items: center !important;
     gap: 0.35rem !important;
 }
+
+/* WIZARD ENGINE PANELS & CARDS (DARK FINTECH) */
+#phase-1-panel > div,
+#phase-2-panel > div,
+#phase-3-panel > div,
+#phase-4-panel > div {
+    background: #11192C !important;
+    border: 1.5px solid #1C273E !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35) !important;
+}
+
+#module-engine h2,
+#module-engine h3,
+#phase-1-panel h3,
+#phase-2-panel h3,
+#phase-3-panel h3,
+#phase-4-panel h3 {
+    color: #FFFFFF !important;
+}
+
+#phase-1-panel p,
+#phase-2-panel p,
+#phase-3-panel p,
+#phase-4-panel p {
+    color: #94A3B8 !important;
+}
+
+.mortgage-type-card {
+    background: #0D1424 !important;
+    border: 1.5px solid #1C273E !important;
+    color: #FFFFFF !important;
+}
+
+.mortgage-type-card:hover {
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 16px rgba(0, 210, 255, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+.mortgage-type-card.active {
+    background: rgba(0, 210, 255, 0.12) !important;
+    border-color: #00D2FF !important;
+    box-shadow: 0 0 18px rgba(0, 210, 255, 0.4) !important;
+}
+
+.mortgage-type-card strong {
+    color: #FFFFFF !important;
+}
+
+.mortgage-type-card span {
+    color: #94A3B8 !important;
+}
+
+.mortgage-type-card > div:first-child {
+    background: #11192C !important;
+    border: 1px solid #1C273E !important;
+}

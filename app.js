@@ -1664,31 +1664,46 @@ window.goToStep = function(stepNum) {
     }
     window.wizardCurrentStep = stepNum;
     for (let i = 1; i <= 4; i++) {
+        const ind = document.getElementById(`step-indicator-${i}`);
         const circle = document.getElementById(`step-circle-${i}`);
         const text = document.getElementById(`step-text-${i}`);
         if (circle && text) {
             if (i < stepNum) {
-                circle.style.background = "#10b981";
-                circle.style.color = "#ffffff";
+                if (ind) {
+                    ind.style.borderColor = "#10B981";
+                    ind.style.boxShadow = "0 0 10px rgba(16, 185, 129, 0.25)";
+                    ind.style.background = "#070B14";
+                }
+                circle.style.background = "#10B981";
+                circle.style.color = "#FFFFFF";
                 circle.innerHTML = "✓";
-                text.style.color = "#0f172a";
+                text.style.color = "#10B981";
                 text.style.fontWeight = "700";
             } else if (i === stepNum) {
-                circle.style.background = "#0052ff";
-                circle.style.color = "#ffffff";
+                if (ind) {
+                    ind.style.borderColor = "#00D2FF";
+                    ind.style.boxShadow = "0 0 14px rgba(0, 210, 255, 0.4)";
+                    ind.style.background = "#070B14";
+                }
+                circle.style.background = "#00D2FF";
+                circle.style.color = "#070B14";
                 circle.innerHTML = `${i}`;
-                text.style.color = "#0f172a";
+                text.style.color = "#FFFFFF";
                 text.style.fontWeight = "800";
             } else {
-                circle.style.background = "#e2e8f0";
-                circle.style.color = "#64748b";
+                if (ind) {
+                    ind.style.borderColor = "#1C273E";
+                    ind.style.boxShadow = "none";
+                    ind.style.background = "#070B14";
+                }
+                circle.style.background = "#11192C";
+                circle.style.color = "#94A3B8";
                 circle.innerHTML = `${i}`;
-                text.style.color = "#64748b";
+                text.style.color = "#94A3B8";
                 text.style.fontWeight = "600";
             }
         }
     }
-
     const backBtn = document.getElementById("btn-wizard-back");
     if (backBtn) backBtn.style.display = (stepNum > 1) ? "inline-flex" : "none";
 
@@ -3563,47 +3578,46 @@ window.updateDashboardStats = function() {
                 const loanStr = typeof d.mutuo === "number" ? d.mutuo.toLocaleString('it-IT') : (d.mutuo || "--");
                 const statusBadge = (typeof window.getDealStatusBadgeHtml === "function") 
                     ? window.getDealStatusBadgeHtml(d) 
-                    : `<span style="font-size: 0.75rem; background: #e0f2fe; color: #0284c7; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700;">${d.stato || 'In corso'}</span>`;
+                    : `<span style="font-size: 0.75rem; background: rgba(0, 210, 255, 0.15); color: #00D2FF; border: 1px solid #00D2FF; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700;">${d.stato || 'In corso'}</span>`;
                 const bankLogo = (typeof window.getBankLogoHtml === "function") ? window.getBankLogoHtml(d.banca || d.bancaScelta) : '';
                 const bankName = d.banca || d.bancaScelta || "In valutazione";
 
                 return `
-                    <tr class="dash-deal-row" style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;">
-                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0052ff; cursor: pointer;" onclick="window.apriSchedaPratica('${d.id}')">#${d.id}</strong></td>
-                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a; font-size: 0.88rem;">${d.cliente || 'Cliente'}</strong></td>
+                    <tr class="dash-deal-row" style="border-bottom: 1px solid #1C273E; transition: background 0.15s ease;">
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #00D2FF; cursor: pointer;" onclick="window.apriSchedaPratica('${d.id}')">#${d.id}</strong></td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #FFFFFF; font-size: 0.88rem;">${d.cliente || 'Cliente'}</strong></td>
                         <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;">
                             <div style="display: flex; align-items: center; gap: 0.35rem;">
                                 ${bankLogo}
-                                <span style="color: #334155; font-weight: 600; font-size: 0.82rem;">${bankName}</span>
+                                <span style="color: #00D2FF; font-weight: 700; font-size: 0.88rem;">${bankName}</span>
                             </div>
                         </td>
                         <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;">${statusBadge}</td>
-                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #0f172a;">€ ${loanStr}</strong></td>
+                        <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem;"><strong style="color: #10B981; font-weight: 800; font-size: 0.92rem;">€ ${loanStr}</strong></td>
                         <td class="desktop-only-cell" style="padding: 0.75rem 0.5rem; text-align: right;">
-                            <button type="button" onclick="window.apriSchedaPratica('${d.id}')" style="background: #eff6ff; color: #0052ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 0.3rem 0.65rem; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Apri ➔</button>
+                            <button type="button" onclick="window.apriSchedaPratica('${d.id}')" style="background: rgba(0, 210, 255, 0.15); color: #00D2FF; border: 1px solid #00D2FF; border-radius: 6px; padding: 0.3rem 0.65rem; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Apri ➔</button>
                         </td>
                         <!-- Mobile Card View -->
                         <td class="deal-mobile-card-cell" style="padding: 0.65rem 0; border: none;">
-                            <div class="dash-mobile-deal-card" onclick="window.apriSchedaPratica('${d.id}')" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.85rem; cursor: pointer; display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div class="dash-mobile-deal-card" onclick="window.apriSchedaPratica('${d.id}')" style="background: #0D1424; border: 1.5px solid #1C273E; border-radius: 10px; padding: 0.85rem; cursor: pointer; display: flex; flex-direction: column; gap: 0.4rem;">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <div style="display: flex; align-items: center; gap: 0.45rem;">
-                                        <span style="font-weight: 800; color: #0052ff; font-size: 0.85rem;">#${d.id}</span>
-                                        <strong style="color: #0f172a; font-size: 0.92rem;">${d.cliente || 'Cliente'}</strong>
+                                        <span style="font-weight: 800; color: #00D2FF; font-size: 0.85rem;">#${d.id}</span>
+                                        <strong style="color: #FFFFFF; font-size: 0.92rem;">${d.cliente || 'Cliente'}</strong>
                                     </div>
                                     <div>${statusBadge}</div>
                                 </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #475569;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #94A3B8;">
                                     <div style="display: flex; align-items: center; gap: 0.35rem;">
                                         ${bankLogo}
-                                        <span style="font-weight: 600; color: #334155;">${bankName}</span>
+                                        <span style="font-weight: 700; color: #00D2FF;">${bankName}</span>
                                     </div>
-                                    <strong style="color: #0f172a; font-size: 0.9rem;">€ ${loanStr}</strong>
+                                    <strong style="color: #10B981; font-size: 0.9rem;">€ ${loanStr}</strong>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                `;
-            }).join("");
+                `;}).join("");
         }
     }
 
